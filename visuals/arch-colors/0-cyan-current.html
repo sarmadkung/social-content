@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../templates/variant-d/base.css">
+<style>:root{--accent:#5BC8E4}</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #01</div>
+  <h1>You optimised the code. The time was <em>never there.</em></h1>
+  <div class="stage">
+    <div class="flow">
+      <div class="node"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M9 21h6M12 17v4"/></svg>
+        <div class="nm">client</div><div class="mt">12 ms</div></div>
+      <div class="conn">→</div>
+      <div class="node"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 18h10a4 4 0 000-8 6 6 0 00-11.6 2A3.5 3.5 0 006 18z"/></svg>
+        <div class="nm">CDN</div><div class="mt">8 ms</div></div>
+      <div class="conn">→</div>
+      <div class="node"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg>
+        <div class="nm">API</div><div class="mt">31 ms</div></div>
+      <div class="conn">→</div>
+      <div class="node hot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+        <div class="nm">postgres</div><div class="mt">240 ms</div></div>
+    </div>
+    <div class="points">
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20h-20"/></svg></div>
+        <h4>Measure first</h4>
+        <p>81% of this request is one query. Every hour spent on the API layer buys back 31 ms at most.</p>
+      </div>
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 17l5-6 4 3 4-7 5 5"/></svg></div>
+        <h4>p99, not average</h4>
+        <p>The mean hides the request that times out. Users feel the tail, not the middle.</p>
+      </div>
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="7" r="2.5"/><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.5 8l7 3M8.5 16l7-3"/></svg></div>
+        <h4>Usually an N+1</h4>
+        <p>One query per row in a loop. It looks like a slow database and it is a slow access pattern.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>291 ms total</span></div>
+</div></body></html>

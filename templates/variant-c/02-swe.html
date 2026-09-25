@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--accent:var(--swe)}</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering #02</div>
+  <h1>One word turns a retry into an <em>outage</em></h1>
+  <div class="win">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="file">retry.ts</span><span class="tag">full jitter</span></div>
+    <div class="code">
+      <div class="ln"><span class="no">1</span><span class="tx"><span class="k">const</span> ceiling = base * 2 ** attempt;</span></div>
+      <div class="ln"><span class="no">2</span><span class="tx"></span></div>
+      <div class="ln"><span class="no">3</span><span class="tx"><span class="c">// 1000 clients all wake at the same instant</span></span></div>
+      <div class="ln out"><span class="no">4</span><span class="tx"><span class="s"><span class="k">const</span></span> delay = ceiling;</span></div>
+      <div class="ln"><span class="no">5</span><span class="tx"></span></div>
+      <div class="ln"><span class="no">6</span><span class="tx"><span class="c">// 1000 clients spread across the window</span></span></div>
+      <div class="ln hl"><span class="no">7</span><span class="tx"><span class="k">const</span> delay = Math.random() * ceiling;</span></div>
+      <div class="ln"><span class="no">8</span><span class="tx"></span></div>
+      <div class="ln"><span class="no">9</span><span class="tx"><span class="k">if</span> (breaker.open) <span class="k">throw</span> FailFast;</span></div>
+      <div class="ln"><span class="no">10</span><span class="tx"><span class="k">if</span> (!budget.allows()) <span class="k">throw</span> FailFast;</span></div>
+      <div class="ln"><span class="no">11</span><span class="tx"><span class="k">await</span> sleep(delay);</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1000 rps → 240 rps</span></div>
+</div></body></html>

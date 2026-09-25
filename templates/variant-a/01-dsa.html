@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+:root{--accent:var(--dsa)}
+.scale{display:flex;gap:9px;margin-top:8px}
+.cell{
+  flex:1;height:132px;border-radius:10px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:7px;
+  background:var(--panel);border:1px solid var(--line);
+}
+.cell .n{font-family:var(--mono);font-size:17px;color:var(--ink-3)}
+.cell .v{font-family:var(--mono);font-size:19px;letter-spacing:.08em;color:var(--ink-3)}
+.cell.yes{background:color-mix(in srgb,var(--yes) 12%,var(--panel));border-color:color-mix(in srgb,var(--yes) 40%,transparent)}
+.cell.yes .v{color:var(--yes)}
+.cell.flip{background:color-mix(in srgb,var(--yes) 22%,var(--panel));border-color:var(--yes);box-shadow:0 0 0 3px color-mix(in srgb,var(--yes) 22%,transparent)}
+.cell.flip .n{color:var(--ink)}
+.axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:18px;color:var(--ink-3);margin-top:16px}
+.marker{position:relative;height:74px;margin-top:2px}
+.marker .tick{position:absolute;left:46.4%;top:0;width:2px;height:26px;background:var(--yes)}
+.marker .lbl{
+  position:absolute;left:46.4%;top:32px;transform:translateX(-50%);
+  font-family:var(--mono);font-size:20px;color:var(--yes);white-space:nowrap;
+  border:1px solid color-mix(in srgb,var(--yes) 45%,transparent);border-radius:8px;padding:8px 14px;
+  background:color-mix(in srgb,var(--yes) 10%,var(--bg));
+}
+.q{font-family:var(--mono);font-size:21px;color:var(--ink-2);margin-bottom:22px}
+.q span{color:var(--accent)}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #03</div>
+  <h1>Binary search is not about <em>sorted arrays</em></h1>
+  <div class="stage">
+    <div class="q">can Koko finish the piles at <span>speed k</span> within H hours?</div>
+    <div class="scale">
+      <div class="cell"><div class="n">1</div><div class="v">NO</div></div>
+      <div class="cell"><div class="n">2</div><div class="v">NO</div></div>
+      <div class="cell"><div class="n">3</div><div class="v">NO</div></div>
+      <div class="cell"><div class="n">4</div><div class="v">NO</div></div>
+      <div class="cell"><div class="n">5</div><div class="v">NO</div></div>
+      <div class="cell"><div class="n">6</div><div class="v">NO</div></div>
+      <div class="cell flip yes"><div class="n">7</div><div class="v">YES</div></div>
+      <div class="cell yes"><div class="n">8</div><div class="v">YES</div></div>
+      <div class="cell yes"><div class="n">9</div><div class="v">YES</div></div>
+      <div class="cell yes"><div class="n">10</div><div class="v">YES</div></div>
+      <div class="cell yes"><div class="n">11</div><div class="v">YES</div></div>
+      <div class="cell yes"><div class="n">12</div><div class="v">YES</div></div>
+      <div class="cell yes"><div class="n">13</div><div class="v">YES</div></div>
+    </div>
+    <div class="marker"><div class="tick"></div><div class="lbl">the flip — first YES is the answer</div></div>
+    <div class="sub" style="max-width:34ch">One flip from NO to YES is all binary search needs. Nothing here is sorted — you are searching the answer space, not the input.</div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>O(n log R)</span></div>
+</div></body></html>

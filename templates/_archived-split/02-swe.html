@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+:root{--accent:var(--swe)}
+.card{gap:22px}
+.mini h4{font-family:var(--mono);font-size:17px;font-weight:500;color:var(--ink-2);margin-bottom:4px;white-space:nowrap}
+.mini .t{font-family:var(--mono);font-size:15px;margin-bottom:12px}
+.mini.bad .t{color:var(--swe)}
+.mini.good .t{color:var(--yes)}
+.chart{height:150px;display:flex;align-items:flex-end;gap:5px;border-bottom:1px solid var(--line);padding-bottom:1px}
+.bar{flex:1;border-radius:4px 4px 0 0;min-height:3px}
+.bad .bar{background:color-mix(in srgb,var(--swe) 80%,transparent)}
+.good .bar{background:color-mix(in srgb,var(--yes) 72%,transparent)}
+.cap{display:flex;justify-content:space-between;font-family:var(--mono);font-size:15px;color:var(--ink-3);margin-top:10px}
+</style></head><body><div class="edge"></div>
+<div class="frame">
+  <div class="series">Software Engineering #02</div>
+  <div class="body">
+    <div>
+      <h1>Backoff without jitter just <em>moves the stampede</em></h1>
+      <div class="note">Same policy. Same number of requests. The random delay is the entire fix.</div>
+    </div>
+    <div class="card">
+      <div class="mini bad">
+        <h4>1000 clients · backoff only</h4>
+        <div class="t">all retries land at t+2s</div>
+        <div class="chart">
+          <div class="bar" style="height:3px"></div><div class="bar" style="height:3px"></div>
+          <div class="bar" style="height:3px"></div><div class="bar" style="height:3px"></div>
+          <div class="bar" style="height:100%"></div>
+          <div class="bar" style="height:3px"></div><div class="bar" style="height:3px"></div>
+          <div class="bar" style="height:3px"></div><div class="bar" style="height:3px"></div>
+          <div class="bar" style="height:3px"></div><div class="bar" style="height:3px"></div>
+          <div class="bar" style="height:3px"></div>
+        </div>
+        <div class="cap"><span>t+0s</span><span>peak 1000 rps</span><span>t+6s</span></div>
+      </div>
+      <div class="mini good">
+        <h4>1000 clients · backoff+jitter</h4>
+        <div class="t">the same retries, spread out</div>
+        <div class="chart">
+          <div class="bar" style="height:16%"></div><div class="bar" style="height:27%"></div>
+          <div class="bar" style="height:21%"></div><div class="bar" style="height:31%"></div>
+          <div class="bar" style="height:24%"></div><div class="bar" style="height:34%"></div>
+          <div class="bar" style="height:20%"></div><div class="bar" style="height:28%"></div>
+          <div class="bar" style="height:23%"></div><div class="bar" style="height:30%"></div>
+          <div class="bar" style="height:18%"></div><div class="bar" style="height:26%"></div>
+        </div>
+        <div class="cap"><span>t+0s</span><span>peak 240 rps</span><span>t+6s</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>retry storms</span></div>
+</div></body></html>

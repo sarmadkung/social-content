@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+:root{--accent:var(--ai)}
+.card{gap:9px}
+.blk{border-radius:9px;padding:14px 16px;font-family:var(--mono);font-size:17px;color:var(--ink-3);
+  background:#0D1016;border:1px solid var(--line)}
+.blk.dead{text-decoration:line-through;text-decoration-color:#5A6472;color:#7B8494}
+.blk.live{background:color-mix(in srgb,var(--ai) 16%,#0D1016);border-color:color-mix(in srgb,var(--ai) 50%,transparent);color:var(--ink)}
+.split{display:flex;align-items:center;gap:14px;margin:14px 0 8px}
+.split .ln{flex:1;height:1px;background:var(--line)}
+.split .tx{font-family:var(--mono);font-size:16px;color:var(--ai);letter-spacing:.08em}
+</style></head><body><div class="edge"></div>
+<div class="frame">
+  <div class="series">AI Engineering #02</div>
+  <div class="body">
+    <div>
+      <h1>Your agent doesn't need more context. It needs <em>less.</em></h1>
+      <div class="note">Stale context doesn't sit there quietly. It competes with the current truth — and sometimes wins.</div>
+    </div>
+    <div class="card">
+      <h3><span>step 20 · window</span><span>41,200 tok</span></h3>
+      <div class="blk dead">plan v1 — abandoned at step 6</div>
+      <div class="blk dead">auth.ts — as it was 3 edits ago</div>
+      <div class="blk dead">failed approach + stack trace</div>
+      <div class="blk">12 tool calls, verbatim</div>
+      <div class="blk live">the 3 lines this step needs</div>
+      <div class="split"><span class="ln"></span><span class="tx">EVICT</span><span class="ln"></span></div>
+      <h3><span>what the model actually sees</span><span>4,800 tok</span></h3>
+      <div class="blk">outcomes of 12 calls, 3 lines</div>
+      <div class="blk live">auth.ts — current</div>
+      <div class="blk live">the 3 lines this step needs</div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>context engineering</span></div>
+</div></body></html>

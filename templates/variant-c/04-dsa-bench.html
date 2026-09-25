@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--accent:var(--dsa)}</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #05</div>
+  <h1>Your O(n) solution is <em>O(n²)</em></h1>
+  <div class="win term">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="file">bench — zsh</span><span class="tag">queue from an array</span></div>
+    <div class="code term">
+      <div class="ln"><span class="tx"><span class="pr">$</span> node bench.js</span></div>
+      <div class="ln"><span class="tx">&nbsp;</span></div>
+      <div class="ln"><span class="tx"><span class="dim">// queue.shift() — every element slides left</span></span></div>
+      <div class="ln out"><span class="tx"><span class="s">shift()    n=100,000        1,240 ms</span></span></div>
+      <div class="ln out"><span class="tx"><span class="s">shift()    n=200,000        4,910 ms</span></span></div>
+      <div class="ln"><span class="tx">                             <span class="dim">2x input → 4x time</span></span></div>
+      <div class="ln"><span class="tx">&nbsp;</span></div>
+      <div class="ln"><span class="tx"><span class="dim">// head index — nothing moves</span></span></div>
+      <div class="ln hl"><span class="tx">head++     n=100,000            3 ms</span></div>
+      <div class="ln hl"><span class="tx">head++     n=1,000,000         21 ms</span></div>
+      <div class="ln"><span class="tx">                            <span class="dim">10x input → 7x time</span></span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>shift() is not free</span></div>
+</div></body></html>

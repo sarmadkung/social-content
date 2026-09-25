@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+:root{--accent:var(--dsa)}
+.row{display:flex;align-items:center;gap:14px;padding:11px 16px;border-radius:9px;
+  background:#0D1016;border:1px solid var(--line);font-family:var(--mono);font-size:18px}
+.row .k{color:var(--ink-3);width:74px}
+.row .v{color:var(--ink-3);letter-spacing:.08em}
+.row.y{background:color-mix(in srgb,var(--yes) 10%,#0D1016);border-color:color-mix(in srgb,var(--yes) 32%,transparent)}
+.row.y .v{color:var(--yes)}
+.row.first{background:color-mix(in srgb,var(--yes) 20%,#0D1016);border-color:var(--yes)}
+.row.first .k{color:var(--ink)}
+.row .tag{margin-left:auto;color:var(--yes);font-size:16px}
+</style></head><body><div class="edge"></div>
+<div class="frame">
+  <div class="series">DSA Series #03</div>
+  <div class="body">
+    <div>
+      <h1>Binary search is not about <em>sorted arrays</em></h1>
+      <div class="note">It needs one flip from NO to YES — nothing more. Here you are searching the answer space, not the input.</div>
+    </div>
+    <div class="card">
+      <h3><span>can Koko finish in H hours?</span><span>k = speed</span></h3>
+      <div class="row"><span class="k">k = 1</span><span class="v">NO</span></div>
+      <div class="row"><span class="k">k = 2</span><span class="v">NO</span></div>
+      <div class="row"><span class="k">k = 3</span><span class="v">NO</span></div>
+      <div class="row"><span class="k">k = 4</span><span class="v">NO</span></div>
+      <div class="row"><span class="k">k = 5</span><span class="v">NO</span></div>
+      <div class="row"><span class="k">k = 6</span><span class="v">NO</span></div>
+      <div class="row y first"><span class="k">k = 7</span><span class="v">YES</span><span class="tag">← the flip</span></div>
+      <div class="row y"><span class="k">k = 8</span><span class="v">YES</span></div>
+      <div class="row y"><span class="k">k = 9</span><span class="v">YES</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>O(n log R)</span></div>
+</div></body></html>

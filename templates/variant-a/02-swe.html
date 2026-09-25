@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+:root{--accent:var(--swe)}
+.panels{display:flex;gap:34px;margin-top:6px}
+.p{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px}
+.p h3{font-family:var(--mono);font-size:18px;font-weight:500;letter-spacing:.02em;color:var(--ink-2);margin-bottom:6px;white-space:nowrap}
+.p .tag{font-family:var(--mono);font-size:17px;margin-bottom:20px}
+.bad .tag{color:var(--ink-3)}
+.good .tag{color:var(--yes)}
+.chart{height:300px;display:flex;align-items:flex-end;gap:5px}
+.bar{flex:1;border-radius:4px 4px 0 0;min-height:3px}
+.bad .bar{background:#3A4453}
+.good .bar{background:var(--accent)}
+.cap{display:flex;justify-content:space-between;font-family:var(--mono);font-size:16px;color:var(--ink-3);margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+.note{font-family:var(--mono);font-size:19px;color:var(--ink-2);margin-top:26px;display:flex;gap:12px;align-items:baseline}
+.note b{color:var(--accent);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering #02</div>
+  <h1>Backoff without jitter just <em>moves the stampede</em></h1>
+  <div class="stage">
+    <div class="panels">
+      <div class="p bad">
+        <h3>1000 clients · backoff only</h3>
+        <div class="tag">retries land together at t+2s</div>
+        <div class="chart">
+          <div class="bar" style="height:4px"></div><div class="bar" style="height:4px"></div>
+          <div class="bar" style="height:4px"></div><div class="bar" style="height:4px"></div>
+          <div class="bar" style="height:100%"></div>
+          <div class="bar" style="height:4px"></div><div class="bar" style="height:4px"></div>
+          <div class="bar" style="height:4px"></div><div class="bar" style="height:4px"></div>
+          <div class="bar" style="height:4px"></div><div class="bar" style="height:4px"></div>
+          <div class="bar" style="height:4px"></div>
+        </div>
+        <div class="cap"><span>t+0s</span><span>peak 1000 rps</span><span>t+6s</span></div>
+      </div>
+      <div class="p good">
+        <h3>1000 clients · backoff+jitter</h3>
+        <div class="tag">the same retries, spread out</div>
+        <div class="chart">
+          <div class="bar" style="height:11%"></div><div class="bar" style="height:19%"></div>
+          <div class="bar" style="height:15%"></div><div class="bar" style="height:22%"></div>
+          <div class="bar" style="height:17%"></div><div class="bar" style="height:24%"></div>
+          <div class="bar" style="height:14%"></div><div class="bar" style="height:20%"></div>
+          <div class="bar" style="height:16%"></div><div class="bar" style="height:21%"></div>
+          <div class="bar" style="height:13%"></div><div class="bar" style="height:18%"></div>
+        </div>
+        <div class="cap"><span>t+0s</span><span>peak 240 rps</span><span>t+6s</span></div>
+      </div>
+    </div>
+    <div class="note"><b>→</b><span>Same retry policy. Same number of requests. The random delay is the entire fix.</span></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>retry storms</span></div>
+</div></body></html>

@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--accent:var(--swe)}</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering #04</div>
+  <h1>The retry that <em>charged them twice</em></h1>
+  <div class="win">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="file">payments/charge.ts</span><span class="tag">idempotency</span></div>
+    <div class="code term">
+      <div class="ln"><span class="tx"><span class="dim">@@ retries were safe. the handler was not. @@</span></span></div>
+      <div class="ln"><span class="tx">&nbsp;</span></div>
+      <div class="ln out"><span class="tx"><span class="s">- await charge(customer, amount);</span></span></div>
+      <div class="ln add"><span class="tx">+ await charge(customer, amount, {</span></div>
+      <div class="ln add"><span class="tx">+   idempotencyKey: order.id,</span></div>
+      <div class="ln add"><span class="tx">+ });</span></div>
+      <div class="ln"><span class="tx">&nbsp;</span></div>
+      <div class="ln out"><span class="tx"><span class="s">- CREATE TABLE charges (id uuid);</span></span></div>
+      <div class="ln add"><span class="tx">+ CREATE UNIQUE INDEX ON charges (key);</span></div>
+      <div class="ln"><span class="tx">&nbsp;</span></div>
+      <div class="ln"><span class="tx"><span class="dim">// the network will deliver twice. plan for it.</span></span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>at-least-once delivery</span></div>
+</div></body></html>

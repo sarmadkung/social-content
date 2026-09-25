@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--accent:var(--ai)}
+.ln.watch{background:#151A22;box-shadow:inset 3px 0 0 var(--ink-2)}
+.ln.watch .tx{color:var(--ink)}
+.ln.watch .tx::after{content:"  \2190 look here";color:var(--ink-3)}
+</style></head><body>
+<div class="frame">
+  <div class="series">AI Engineering #04</div>
+  <h1>The prompt got better. Something else got <em>worse.</em></h1>
+  <div class="win term">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="file">evals — zsh</span><span class="tag">120 cases</span></div>
+    <div class="code term">
+      <div class="ln"><span class="tx"><span class="pr">$</span> eval run --suite all --vs main</span></div>
+      <div class="ln"><span class="tx">&nbsp;</span></div>
+      <div class="ln"><span class="tx"><span class="dim">suite            n     pass      Δ</span></span></div>
+      <div class="ln hl"><span class="tx">extraction      40    94%    +11</span></div>
+      <div class="ln hl"><span class="tx">summarise       30    91%     +6</span></div>
+      <div class="ln"><span class="tx">classify        30    88%      0</span></div>
+      <div class="ln watch"><span class="tx">tool-calling    20    61%    -23</span></div>
+      <div class="ln"><span class="tx">&nbsp;</span></div>
+      <div class="ln"><span class="tx"><span class="dim">overall 86% (+2) — ship? no.</span></span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>eval before ship</span></div>
+</div></body></html>

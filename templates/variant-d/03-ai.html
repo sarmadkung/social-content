@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--accent:var(--ai)}</style></head><body>
+<div class="frame">
+  <div class="series">AI Engineering #03</div>
+  <h1>RAG is four decisions, not <em>one library</em></h1>
+  <div class="stage">
+    <div class="flow">
+      <div class="node"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18"/></svg>
+        <div class="nm">chunk</div><div class="mt">recall ceiling</div></div>
+      <div class="conn">→</div>
+      <div class="node"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="1.6"/><circle cx="17" cy="7" r="1.6"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/><circle cx="12" cy="12" r="1.6"/></svg>
+        <div class="nm">embed</div><div class="mt">query shape</div></div>
+      <div class="conn">→</div>
+      <div class="node"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>
+        <div class="nm">retrieve</div><div class="mt">top-k</div></div>
+      <div class="conn">→</div>
+      <div class="node hot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h10M4 12h7M4 17h4"/><path d="M17 8v9l3-3M17 17l-3-3"/></svg>
+        <div class="nm">rerank</div><div class="mt">precision</div></div>
+    </div>
+    <div class="points">
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h16M4 18h9"/></svg></div>
+        <h4>Chunking is a ceiling</h4>
+        <p>If the answer is split across two chunks, no retriever downstream can recover it.</p>
+      </div>
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg></div>
+        <h4>Embeddings have a shape</h4>
+        <p>A model trained on sentences will not match a one-word query. Test on your real questions.</p>
+      </div>
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12l5 5L19 7"/></svg></div>
+        <h4>Rerank earns the precision</h4>
+        <p>Retrieve wide and cheap, then rerank narrow. Skipping this is why top-k feels random.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>retrieval pipeline</span></div>
+</div></body></html>

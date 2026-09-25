@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+:root{--accent:var(--ai)}
+.win{display:flex;gap:30px;align-items:stretch;margin-top:4px}
+.col{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:11px}
+.col h3{font-family:var(--mono);font-size:19px;font-weight:500;color:var(--ink-2);letter-spacing:.04em;margin-bottom:9px;display:flex;justify-content:space-between}
+.col h3 span{color:var(--ink-3)}
+.blk{border-radius:8px;padding:18px 18px;font-family:var(--mono);font-size:18px;color:var(--ink-3);background:#0D1016;border:1px solid var(--line)}
+.blk.dead{text-decoration:line-through;text-decoration-color:#5A6472;color:#7B8494}
+.blk.live{background:color-mix(in srgb,var(--ai) 16%,#0D1016);border-color:color-mix(in srgb,var(--ai) 50%,transparent);color:var(--ink)}
+.blk.fill{flex:1;min-height:56px;display:flex;align-items:center;justify-content:center;color:#5E6977;font-size:16px;letter-spacing:.08em}
+.arrow{align-self:center;font-family:var(--mono);font-size:34px;color:var(--ai);padding:0 4px}
+.note{font-family:var(--mono);font-size:19px;color:var(--ink-2);margin-top:26px;display:flex;gap:12px;align-items:baseline}
+.note b{color:var(--ai);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">AI Engineering #02</div>
+  <h1>Your agent doesn't need more context. It needs <em>less.</em></h1>
+  <div class="stage">
+    <div class="win">
+      <div class="col">
+        <h3>step 20 · window<span>41,200 tok</span></h3>
+        <div class="blk dead">plan v1 — abandoned at step 6</div>
+        <div class="blk dead">auth.ts — as it was 3 edits ago</div>
+        <div class="blk">12 tool calls, verbatim</div>
+        <div class="blk dead">failed approach + stack trace</div>
+        <div class="blk live">the 3 lines this step needs</div>
+        <div class="blk fill">· · ·</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="col">
+        <h3>after eviction<span>4,800 tok</span></h3>
+        <div class="blk">outcomes of 12 calls, 3 lines</div>
+        <div class="blk live">the 3 lines this step needs</div>
+        <div class="blk live">auth.ts — current</div>
+        <div class="blk fill">retrieved on demand</div>
+      </div>
+    </div>
+    <div class="note"><b>→</b><span>Stale context doesn't sit there quietly. It competes with the current truth — and sometimes wins.</span></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>context engineering</span></div>
+</div></body></html>

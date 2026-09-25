@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--accent:var(--dsa)}</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #04</div>
+  <h1>A while loop inside a for loop that is still <em>O(n)</em></h1>
+  <div class="stage">
+    <div class="shapes">
+      <div>
+        <div class="arr">
+          <div class="cellwrap"><div class="cell">2</div><div class="idx">0</div></div>
+          <div class="cellwrap"><div class="cell">1</div><div class="idx">1</div></div>
+          <div class="cellwrap"><div class="cell">2</div><div class="idx">2</div></div>
+          <div class="cellwrap"><div class="cell cur">4</div><div class="idx">3</div></div>
+          <div class="cellwrap"><div class="cell">3</div><div class="idx">4</div></div>
+        </div>
+      </div>
+      <div class="op">pop while<br>top &lt; 4<br>→</div>
+      <div class="stack">
+        <div class="lbl">stack (indices)</div>
+        <div class="sb gone">2</div>
+        <div class="sb gone">1</div>
+        <div class="sb gone">0</div>
+        <div class="sb top">3</div>
+        <div class="cap">3 popped, 1 pushed</div>
+      </div>
+    </div>
+    <div class="points">
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M3 14l9 4 9-4"/></svg></div>
+        <h4>The invariant</h4>
+        <p>The stack stays decreasing from bottom to top. Anything that breaks it has found its answer.</p>
+      </div>
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 9h13l-3-3"/><path d="M20 15H7l3 3"/></svg></div>
+        <h4>Why it is O(n)</h4>
+        <p>The inner while loop looks quadratic. It isn't — each index enters and leaves exactly once.</p>
+      </div>
+      <div class="pt">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></div>
+        <h4>How to spot it</h4>
+        <p>"Next greater", "previous smaller", "days until warmer" — all the same shape.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>monotonic stack</span></div>
+</div></body></html>

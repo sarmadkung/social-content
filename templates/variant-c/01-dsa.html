@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--accent:var(--dsa)}</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #03</div>
+  <h1>The one line that <em>throws away the answer</em></h1>
+  <div class="win">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="file">koko-eating-bananas.js</span><span class="tag">first-yes search</span></div>
+    <div class="code">
+      <div class="ln"><span class="no">1</span><span class="tx"><span class="k">let</span> lo = 1, hi = max(piles);</span></div>
+      <div class="ln"><span class="no">2</span><span class="tx"></span></div>
+      <div class="ln"><span class="no">3</span><span class="tx"><span class="c">// invariant: the answer is in [lo, hi]</span></span></div>
+      <div class="ln"><span class="no">4</span><span class="tx"><span class="k">while</span> (lo &lt; hi) {</span></div>
+      <div class="ln"><span class="no">5</span><span class="tx">  <span class="k">const</span> mid = lo + ((hi - lo) &gt;&gt; 1);</span></div>
+      <div class="ln"><span class="no">6</span><span class="tx"></span></div>
+      <div class="ln"><span class="no">7</span><span class="tx">  <span class="k">if</span> (canFinish(piles, mid, H))</span></div>
+      <div class="ln out"><span class="no">8</span><span class="tx">    <span class="s">hi = mid - 1;</span></span></div>
+      <div class="ln hl"><span class="no">9</span><span class="tx">    hi = mid;</span></div>
+      <div class="ln"><span class="no">10</span><span class="tx">  <span class="k">else</span> lo = mid + 1;</span></div>
+      <div class="ln"><span class="no">11</span><span class="tx">}</span></div>
+      <div class="ln"><span class="no">12</span><span class="tx"><span class="k">return</span> lo;  <span class="c">// the first YES</span></span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>mid passed → mid still counts</span></div>
+</div></body></html>
