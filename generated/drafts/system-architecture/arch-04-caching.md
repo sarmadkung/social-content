@@ -1,8 +1,10 @@
 SERIES:    SYSTEM ARCHITECTURE #04
 TITLE:     Caching: Where to Cache, and When to Forget
 PILLAR:    System Design & Architecture — for juniors learning the basics, seniors who care about invalidation
+LEVEL:     INTERMEDIATE
 HEADLINE:  The fastest request is one you skip
 LAYOUT:    ANATOMY
+STATUS:    draft
 ---
 Your database answers the same question 1,000 times a minute. The answer changes once a day.
 

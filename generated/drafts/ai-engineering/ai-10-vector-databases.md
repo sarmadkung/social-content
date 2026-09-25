@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #10
 TITLE:     Vector Databases and Similarity Search
 PILLAR:    AI Engineering — for developers scaling search and RAG
+LEVEL:     INTERMEDIATE
 HEADLINE:  Find similar without checking everything
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 RAG needs "find the chunks closest to this question". With a few thousand chunks, a loop is fine. With millions, checking every one on every request gets slow.
 

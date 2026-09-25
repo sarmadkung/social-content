@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #08
 TITLE:     Tool Calling: How a Model Asks Your Code to Act
 PILLAR:    AI Engineering — for developers connecting LLMs to real systems
+LEVEL:     INTERMEDIATE
 HEADLINE:  The model asks. Your code runs.
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 A model cannot check your order status. It has no access to your database. Tool calling is how it asks your code to check.
 

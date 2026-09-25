@@ -1,8 +1,8 @@
 
 ---
 name: linkedin-content
-description: Use when writing, planning, or reviewing LinkedIn content for Muhammad Sarmad — enforces positioning, the three content pillars, series labels, and tone.
-version: 1.4
+description: Use when writing, planning, or reviewing LinkedIn content for Muhammad Sarmad — enforces positioning, the five content pillars, series labels, and tone.
+version: 1.5
 owner: Muhammad Sarmad
 works-with: any (Claude, ChatGPT, Gemini, local)
 ---
@@ -31,26 +31,45 @@ decides what it looks like.
 
 ## Output format
 
-For a `COPY` or `FULL` request (see section 0), the text portion is:
+For a `COPY` or `FULL` request (see section 0), return each post in exactly this
+shape. It is the one post format for the whole system — the master prompt, the
+drafts in `generated/`, `scripts/build_queue.py` and `scripts/validate.py` all
+use it.
 
-1. A series label line (e.g. `DSA SERIES #04`).
-2. A title line.
-3. The post body, ready to paste — no markdown headers, short paragraphs.
-4. A one-line note on which pillar it serves and who it is for.
+```
+SERIES:    <series label and number, e.g. DSA SERIES #04>
+TITLE:     <title>
+PILLAR:    <pillar> — for <who benefits most>
+LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
+HEADLINE:  <image headline, 8 words or fewer>
+LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>
+STATUS:    <draft | approved | scheduled | published>
+---
+<post body, ready to paste — no markdown headers, short paragraphs>
+```
+
+New posts start as `STATUS: draft`. Only the text below `---` goes into LinkedIn.
+
+**Teaching order for every educational post:** problem → plain idea → technical
+name. Open with a concrete situation (numbers help), explain the idea in plain
+words, and only then say "this is called X". Every post includes a concrete
+example (code, numbers, a text diagram or before/after), a "when not to use it"
+line, and one common mistake with its fix. The full block order lives in
+`prompts/master-content-prompt.md`.
 
 ---
 
 ## 0. Request keywords
 
 Every request begins with one keyword that sets what to return. Honor it
-exactly — do not return more than asked, and do not return less.
+exactly — do not return more than asked, and do not return less. This table is
+the only definition of the keywords; the visual skill refers back to it.
 
 | Keyword | Return | Skills to apply |
 | --- | --- | --- |
-| `COPY` | Post text only. No image, no HTML. | content skill only |
-| `VISUAL` | The generated image itself. No post text. | visual skill only |
-| `FULL` | Post text **and** the generated image, in that order. | both skills |
-| `VISUAL-HTML` | HTML that renders the image, for pixel-exact output. | visual skill only |
+| `COPY` | Post text only, in the format above. No image. | content skill only |
+| `VISUAL` | The image: the HTML/CSS that renders it, or the rendered PNG (visual skill §0b). No post text. | visual skill only |
+| `FULL` | Post text **and** the image, in that order. | both skills |
 
 If no keyword is given, assume `FULL`.
 
@@ -130,9 +149,21 @@ architecture, scalable systems, and AI engineering.
 Stay accessible to juniors without becoming simplistic for experienced
 engineers.
 
-## 4. Three content pillars
+## 4. Five content pillars
 
-Do not create a separate pillar for every technology. There are three.
+Do not create a separate pillar for every technology. There are exactly five,
+in this order, each with its own series label and visual accent:
+
+| # | Pillar | Series label | Roadmap |
+| --- | --- | --- | --- |
+| 1 | Problem solving | `DSA SERIES #NN` (+ bonus `DSA QUIZ #NN`) | `pillars/01-dsa-problem-solving.md` |
+| 2 | Software engineering | `SOFTWARE ENGINEERING #NN` | `pillars/02-software-engineering.md` |
+| 3 | System design | `SYSTEM ARCHITECTURE #NN` | `pillars/03-system-design.md` |
+| 4 | AI engineering | `AI ENGINEERING #NN` | `pillars/04-ai-engineering.md` |
+| 5 | Dev growth | `DEV GROWTH #NN` | `pillars/05-dev-growth.md` |
+
+A sixth pillar needs a deliberate decision, its own roadmap file and its own
+accent — never a quiet addition.
 
 ### Pillar 1 — Problem solving
 
@@ -152,6 +183,11 @@ algorithms.
 
 Do not simply publish code. Explain **why the solution works** and how an
 engineer recognizes the same pattern in another problem.
+
+DSA posts also: state the complexity **and the reason for it**, include a tiny
+walkthrough on a real input, and give the invariant or one-line proof when there
+is one (e.g. why moving the left pointer in two pointers can never skip the
+answer).
 
 **Pattern recognition block (required on every DSA pattern post):** add a
 `Spot it when the problem says…` block just before "When to use it / when not
@@ -175,18 +211,29 @@ performance, native integrations.
 *Backend* — Node.js, Go, Rust, REST, GraphQL, gRPC, WebSockets, distributed
 systems, event-driven systems, microservices.
 
-*Infrastructure / architecture* — PostgreSQL, MongoDB, Redis, Docker, AWS,
-CI/CD, scalability, observability, testing.
+*Infrastructure* — PostgreSQL, MongoDB, Redis, Docker, AWS, CI/CD,
+observability, testing.
 
-Focus on real engineering problems: architecture decisions, system design,
-trade-offs, performance, scalability, reliability, developer experience,
+Focus on real engineering problems at the level of one service or codebase:
+design decisions, trade-offs, performance, scalability, reliability, developer experience,
 maintainability, testing strategy, production engineering, lessons from real
 products.
 
 Demonstrate **hands-on engineering experience**, not generic framework
 tutorials.
 
-### Pillar 3 — AI engineering
+### Pillar 3 — System design
+
+How systems are built to scale, stay up and stay simple — one building block and
+its trade-off per post: scaling, load balancing, caching, CDNs, replication,
+sharding, queues, event-driven architecture, consistency models, reliability
+patterns, and full case studies (URL shortener, rate limiter, chat, notifications).
+
+Where software engineering is one service done well, system design is how many
+services, stores and networks fit together — and what fails when they do not.
+Name real, verifiable systems; never invent throughput or latency figures.
+
+### Pillar 4 — AI engineering
 
 Reflect hands-on AI engineering and active work with modern AI approaches — not
 AI as something being learned from scratch.
@@ -206,6 +253,14 @@ observability, security, failure modes, production trade-offs.
 Avoid generic "AI is changing everything" posts unless there is a concrete
 engineering insight.
 
+### Pillar 5 — Dev growth
+
+How developers grow from student to senior: learning a new technology, reading
+unfamiliar code, debugging, asking good questions, interviews, design docs,
+estimation, and working well with AI tools. Every post is concrete numbered
+steps or a clear comparison — never generic motivation — and draws on real
+experience through `[PERSONAL: ...]` markers rather than invented stories.
+
 ## 5. Connecting the pillars
 
 The pillars should not feel disconnected. Look for intersections:
@@ -218,7 +273,7 @@ The pillars should not feel disconnected. Look for intersections:
   production system.
 - **DSA + software engineering** — how algorithmic thinking affects production
   engineering decisions.
-- **All three** — building reliable AI systems requires strong fundamentals,
+- **All of them** — building reliable AI systems requires strong fundamentals,
   sound architecture, and an understanding of modern AI capabilities.
 
 Overall narrative: **strong fundamentals + practical software engineering +
@@ -229,11 +284,12 @@ system architecture + modern AI engineering.**
 Use recognizable series labels:
 
 ```
-DSA SERIES #01            Reclaiming Data Structures & Algorithms
 DSA SERIES #02            Hash Maps: The Pattern Behind Two Sum
-AI ENGINEERING #01        What Actually Makes an AI Agent an Agent?
-SOFTWARE ENGINEERING #01  Designing Reliable APIs
-SYSTEM ARCHITECTURE #01   Designing Systems That Scale
+DSA QUIZ #01              Which Pattern Is This?
+SOFTWARE ENGINEERING #01  Ship the Boring Architecture First
+SYSTEM ARCHITECTURE #01   What System Design Actually Is
+AI ENGINEERING #01        Agents Are Software, Not Magic
+DEV GROWTH #01            How to Learn a New Technology Fast
 ```
 
 Series are different perspectives on the same engineering identity — not
@@ -274,4 +330,4 @@ curriculum · YouTube content system · LinkedIn-to-YouTube repurposing ·
 newsletter strategy · audience feedback system · topic prioritization · content
 analytics · brand voice examples · examples of high-performing posts.
 
-*End of v1.4*
+*End of v1.5*

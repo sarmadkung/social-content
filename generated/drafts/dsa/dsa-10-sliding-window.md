@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #10
 TITLE:     Sliding Window (Fixed and Variable Size)
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs working on subarray and substring problems
+LEVEL:     INTERMEDIATE
 HEADLINE:  Don't recompute. Slide the window.
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 "Best run of k days" does not mean re-adding k numbers each time.
 Add the new day. Remove the old one. Done.

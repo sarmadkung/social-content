@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #06
 TITLE:     Embeddings: Turning Text into Numbers
 PILLAR:    AI Engineering — for developers building search and RAG
+LEVEL:     BEGINNER
 HEADLINE:  Embeddings turn meaning into numbers
 LAYOUT:    ANATOMY
+STATUS:    draft
 ---
 Search for "cheap flights" and a keyword search misses a page titled "low-cost airfare". Embeddings fix that.
 

@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #14
 TITLE:     Context engineering: the window is a budget, not a bucket
 PILLAR:    AI Engineering — for engineers building agents and RAG systems who keep adding context and getting worse answers
-HEADLINE:  A 200k window is not 200k of useful context
+LEVEL:     ADVANCED
+HEADLINE:  A 200k window isn't 200k useful context
 LAYOUT:    STAT
+STATUS:    draft
 VARIANT:   B (budget bar)
 ---
 The first instinct when a model gets something wrong is to give it more. More documents, more history, a bigger window. It usually gets worse.

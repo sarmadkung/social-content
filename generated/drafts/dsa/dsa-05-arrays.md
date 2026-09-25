@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #05
 TITLE:     Arrays: Why Index Access Is O(1) but Insert Is O(n)
 PILLAR:    DSA & Problem Solving — for students and juniors who use arrays daily
+LEVEL:     BEGINNER
 HEADLINE:  Reading is instant. Inserting shifts everything.
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 a[500000] is as fast as a[0].
 But adding one item at the front can touch every item in the array.

@@ -1,8 +1,10 @@
 SERIES:    SOFTWARE ENGINEERING #07
 TITLE:     REST API Design Basics: Resources, Verbs, Status Codes
 PILLAR:    Software Engineering — for students and junior developers designing their first APIs
+LEVEL:     INTERMEDIATE
 HEADLINE:  Nouns in the URL, verbs in the method
 LAYOUT:    ANATOMY
+STATUS:    draft
 ---
 POST /getOrders. GET /deleteUser?id=7. A 200 OK with "error" inside the body. All common. All confusing for whoever calls your API.
 

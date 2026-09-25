@@ -1,8 +1,10 @@
 SERIES:    DEV GROWTH #01
 TITLE:     How to Learn a New Technology Fast
 PILLAR:    Career & Developer Growth — for students and junior developers starting a new stack
+LEVEL:     BEGINNER
 HEADLINE:  Build first, read second
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Most people learn a new tool by watching a long course. A week later, they open a blank file and freeze.
 

@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #12
 TITLE:     Kadane's Algorithm (Maximum Subarray)
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs preparing for subarray interview questions
+LEVEL:     INTERMEDIATE
 HEADLINE:  Drop the past when it hurts
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Checking every subarray to find the largest sum is O(n²).
 Kadane's algorithm does it in one pass, with two variables.

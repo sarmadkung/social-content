@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #04
 TITLE:     Prompts vs System Prompts
 PILLAR:    AI Engineering — for developers building chat and assistant features
+LEVEL:     BEGINNER
 HEADLINE:  System prompt sets rules. Prompt asks.
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 Two messages go into most LLM calls. Many developers treat them the same. They are not.
 

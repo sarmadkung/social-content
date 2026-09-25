@@ -1,8 +1,10 @@
 SERIES:    DEV GROWTH #04
 TITLE:     How to Ask a Good Technical Question
 PILLAR:    Career & Developer Growth — for students and junior developers, and seniors who answer questions
+LEVEL:     BEGINNER
 HEADLINE:  A clear question gets a fast answer
 LAYOUT:    ANATOMY
+STATUS:    draft
 ---
 "It doesn't work, can someone help?" is the question that waits longest for an answer. Not because people are unkind. They cannot help without more facts.
 

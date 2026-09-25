@@ -59,33 +59,59 @@ Each post answers these questions, in this order. Skip a block only when it
 truly does not fit the topic. Use the plain-text label shown, because
 LinkedIn does not render markdown.
 
-  Hook          1-2 lines. A real problem or a surprising fact. No question
-                bait.
-  What is it?   One sentence definition + one everyday analogy.
-  Why do we need it?  The problem it solves. What goes wrong without it.
-  Key properties      3-5 short bullet lines (use "→" or "•").
+TEACHING ORDER RULE: problem → plain idea → technical name. The reader should
+understand the idea before they see the jargon. Never open with a definition.
+
+  Hook          1-3 lines. A concrete situation, ideally with numbers
+                ("1 million users. You know one user's ID. Find them now.")
+                or a surprising fact. No question bait.
+  What is it?   First the idea in plain words, walked through the hook's
+                situation. THEN name it: "This is called X." One-line
+                definition + one everyday analogy.
+  Why do we need it?  What goes wrong without it. Show before/after where
+                      possible (slow way vs fast way, broken vs fixed).
+  How does it work?   Steps, a tiny text diagram, a numeric walkthrough, or
+                      code (8 lines or fewer). Explain WHY it works, not
+                      only what it does.
+  Key properties      3-5 short "→" lines. DSA: complexity + the reason for it.
   Where is it used?   2-4 real places: products, systems, libraries.
   Spot it when…  DSA pattern posts only. 2-3 "→" lines of clue words from
                 a problem statement that point to this pattern.
-  When to use it / when not to   One line each.
-  Example / Steps     A tiny worked example or numbered steps. Code only if it
-                      is 8 lines or fewer and actually helps.
+  When to use it / when not to   One line each. "Not" teaches judgment:
+                name the tempting-but-wrong case.
+  Common mistake      One real mistake people make with this, and the fix.
+                      1-3 lines.
   Comparison          Optional. X vs Y in 2-4 lines, when a confusion exists.
   Takeaway            One line the reader can remember or say in an interview.
   Next                One line teasing the next post in the series.
   Hashtags            3-5.
 
+CONCRETE EXAMPLE RULE
+Every post has at least one of: tiny code, a numeric example, a text diagram
+(A → B → C), a before/after comparison. An analogy alone is not enough.
+
 FORMAT PER POST (output exactly this)
   SERIES:    <series label and number>
   TITLE:     <title>
   PILLAR:    <pillar> — for <who benefits most>
+  LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
   HEADLINE:  <image headline, 8 words or fewer>
   LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>
+  STATUS:    draft
   ---
   <post body, ready to paste>
+This is the one post format (also in skills/linkedin-content.skill.md).
+STATUS moves draft → approved → scheduled → published; build_queue.py skips
+published posts. Run python3 scripts/validate.py after writing.
+
+LEVEL guide
+  BEGINNER      the reader needs no earlier post except basics
+  INTERMEDIATE  builds on earlier posts in the series; trade-offs appear
+  ADVANCED      production detail, failure modes, or system-level design
+Within a pillar, levels should rise over the roadmap, not jump around.
 
 LENGTH
-1,200-2,200 characters for the body. Hard limit 3,000 (LinkedIn's cap).
+1,400-2,500 characters for the body. Hard limit 3,000 (LinkedIn's cap).
 If a topic needs more, split it into two posts or mark it CAROUSEL.
 
 ACCURACY
@@ -102,7 +128,7 @@ Already published or drafted, do not repeat:
   - SOFTWARE ENGINEERING #01 Ship the Boring Architecture First
   - AI ENGINEERING #01 Agents Are Software, Not Magic
   - BUILDING #01 Two Weeks, 23 Algorithms, One Repo
-Check published/linkedin.md and generated/ before writing.
+Check published/linkedin.md (the published log) and generated/ before writing.
 
 SELF-CHECK BEFORE RETURNING
   1. Could a second-year student follow the first half?
@@ -111,6 +137,9 @@ SELF-CHECK BEFORE RETURNING
   4. Is the body under 3,000 characters?
   5. Is the headline 8 words or fewer?
   6. No invented personal facts?
+  7. Does the reader meet the idea before the technical term?
+  8. Is there a concrete example (code, numbers, diagram, before/after)?
+  9. Is there a "when not to" and a common mistake?
 ```
 
 ## What changed from the original, and why
@@ -130,3 +159,8 @@ SELF-CHECK BEFORE RETURNING
    Big-O or a made-up story costs credibility. `[PERSONAL: ...]` markers keep
    your real experience in the post without the model inventing it.
 7. **Added a no-repeat list and a self-check** so later runs stay consistent.
+8. **Idea before jargon, plus a common mistake and a level tag** (added
+   2026-09-26). Juniors follow a post more easily when the problem and the plain
+   idea come before the technical name. The "Common mistake" and "when not to"
+   blocks teach judgment, not memorisation. `LEVEL` keeps each series getting
+   harder in a steady way.

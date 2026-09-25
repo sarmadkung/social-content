@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #11
 TITLE:     Prefix Sum
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs handling range queries
+LEVEL:     INTERMEDIATE
 HEADLINE:  Add once, answer any range instantly
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Summing a range of an array is O(n).
 Doing it for 10,000 different ranges is the slow part. Prefix sums make each one O(1).

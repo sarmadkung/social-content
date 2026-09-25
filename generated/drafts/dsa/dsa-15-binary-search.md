@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #15
 TITLE:     Binary Search (and "Binary Search on the Answer")
 PILLAR:    DSA & Problem Solving — for juniors learning it and mid-level devs who want the "on the answer" version
+LEVEL:     INTERMEDIATE
 HEADLINE:  Halve the space until one remains
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Finding one value in 1 billion sorted numbers takes at most 30 checks.
 The idea is easy. The off-by-one errors are not.

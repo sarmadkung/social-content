@@ -4,15 +4,15 @@ Identity is locked dark. Every variant shares these, and varies only layout:
 
 - Ground `#0A0C10` · panel `#11141B` · border `#1F2530`
 - Ink `#F2F5F9` / `#9BA6B7` / `#5E6977`
-- Accent per pillar — DSA `#FFB86B` · Software Engineering `#FF7A6B` · AI `#8AA4FF`
-- Green `#4ADE80` reserved for "correct / after / the answer", never a pillar
+- Accent per pillar — see "Pillar accents" below; all colours live in `templates/theme.css`
+- Correctness takes the card's own accent; green `#4ADE80` is the Software Engineering accent and the diff-mode `+`
 - Sans (SF Pro) headline only, mono (SF Mono) for every label and number
 - Footer lockup: name left, topic or complexity right, above a hairline
 - 1080x1080 logical, rendered at 2x, diagram-first (never a quote card)
 
 ## Variant A — Blueprint
 
-`src/variant-a/` · output `out/a-*.png`
+`templates/variant-a/` · output `visuals/renders/a-*.png`
 
 Stacked and centred. Full-bleed 60px line grid at 28%, accent wash in the top-left
 corner, accent rule before the series label. Title, then the diagram centred in the
@@ -23,7 +23,7 @@ Best for: comparisons, wide sequences, anything with two things to set beside ea
 
 ## Variant B — Blueprint, gridless
 
-`src/variant-b/` · output `out/b-*.png`
+`templates/variant-b/` · output `visuals/renders/b-*.png`
 
 Variant A with the background line grid removed. Identical layout, type, spacing and
 diagram treatment; only the 60px grid is gone. The corner accent wash stays, so the
@@ -32,11 +32,11 @@ canvas reads as plain dark rather than technical paper.
 Best for: images whose diagram already carries a lot of ruled structure — dense cell
 rows, bar charts, stacked blocks — where the grid behind it competes.
 
-(The earlier asymmetric split layout is archived at `src/_archived-split/`, unrendered.)
+(The earlier asymmetric split layout is archived at `templates/_archived-split/`, unrendered.)
 
 ## Variant C — Terminal
 
-`src/variant-c/` · output `out/c-*.png`
+`templates/variant-c/` · output `visuals/renders/c-*.png`
 
 Series label and title as usual, then an editor window fills the rest: chrome bar with
 three muted dots, a filename, and a pillar-coloured tag on the right. Inside, numbered
@@ -62,7 +62,7 @@ regression in a table.
 
 ## Variant D — Board
 
-`src/variant-d/` · output `out/d-*.png`
+`templates/variant-d/` · output `visuals/renders/d-*.png`
 
 Series label and title as usual, then two bands: a **structure** on top and **three icon
 points** underneath. No window, no grid — the objects sit on the bare canvas.
@@ -85,7 +85,7 @@ is "one picture plus three things to know".
 
 ## Pillar accents (v5.2)
 
-Five pillars, five hues, no sharing. Correctness is no longer a colour: the right
+Five pillars, five hues, no sharing. Defined once in `templates/theme.css`. Correctness is no longer a colour: the right
 answer takes the card's own accent (`--yes` resolves to `var(--accent)`), and the
 wrong one is struck in tertiary ink. Only diff mode keeps green — `--add` — for `+`.
 
@@ -102,7 +102,7 @@ wrong one is struck in tertiary ink. Only diff mode keeps green — `--add` — 
 A post card is not a copy of a template — it *links* to one:
 
 ```html
-<link rel="stylesheet" href="../../templates/variant-d/base.css">
+<link rel="stylesheet" href="../../templates/variant-d/base.css">  <!-- imports ../theme.css -->
 <style>:root{--accent:var(--arch)}</style>
 ```
 

@@ -1,8 +1,10 @@
 SERIES:    DEV GROWTH #03
 TITLE:     How to Debug Systematically
 PILLAR:    Career & Developer Growth — for students and junior developers, with a tool for mid-level
+LEVEL:     BEGINNER
 HEADLINE:  Debugging is a loop, not a guess
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 The slowest way to fix a bug is to change random things until it goes away. Even when it works, you do not know why.
 

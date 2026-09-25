@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #13
 TITLE:     Boyer–Moore Voting (Majority Element)
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs who reach for a hash map by default
+LEVEL:     INTERMEDIATE
 HEADLINE:  Opposite votes cancel. The majority survives.
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Last post, Kadane reset its running sum when it turned negative.
 Boyer–Moore uses the same reset trick to find a majority in O(1) memory.

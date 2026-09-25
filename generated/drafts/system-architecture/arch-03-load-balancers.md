@@ -1,8 +1,10 @@
 SERIES:    SYSTEM ARCHITECTURE #03
 TITLE:     Load Balancers: One Address, Many Servers
 PILLAR:    System Design & Architecture — for juniors who want the request path, mid-levels for interviews
+LEVEL:     BEGINNER
 HEADLINE:  One address in front, many servers behind
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 You added three servers. But users type one address. Who decides which server gets each request?
 

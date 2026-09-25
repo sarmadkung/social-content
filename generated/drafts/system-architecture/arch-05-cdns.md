@@ -1,8 +1,10 @@
 SERIES:    SYSTEM ARCHITECTURE #05
 TITLE:     CDNs: Moving Content Closer to Users
 PILLAR:    System Design & Architecture — for students and juniors, plus mid-levels for interviews
+LEVEL:     INTERMEDIATE
 HEADLINE:  Distance is latency. CDNs remove distance.
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Your server is in Virginia. A user in Karachi loads your site. Every image crosses the planet, and they wait.
 

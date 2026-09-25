@@ -1,8 +1,10 @@
 SERIES:    DEV GROWTH #02
 TITLE:     How to Read an Unfamiliar Codebase
 PILLAR:    Career & Developer Growth — for junior and mid-level developers joining a new team
+LEVEL:     BEGINNER
 HEADLINE:  Follow one request, not every file
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Opening a new codebase and reading files from top to bottom feels productive. It rarely is. You forget file three by the time you reach file thirty.
 

@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #07
 TITLE:     Structured Output: Getting JSON You Can Trust
 PILLAR:    AI Engineering — for developers connecting LLMs to real code
+LEVEL:     INTERMEDIATE
 HEADLINE:  Never trust JSON you did not validate
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 "Reply only in JSON." Most of the time, it does. Then one day it adds a friendly sentence first, and your parser crashes.
 

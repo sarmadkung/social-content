@@ -1,8 +1,10 @@
 SERIES:    SOFTWARE ENGINEERING #02
 TITLE:     Timeouts: The Setting Every Network Call Needs
 PILLAR:    Software Engineering — for students and junior developers writing their first backend calls
+LEVEL:     BEGINNER
 HEADLINE:  Every network call needs a timeout
 LAYOUT:    STATEMENT
+STATUS:    draft
 ---
 A slow service is more dangerous than a dead one.
 

@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #11
 TITLE:     Chunking Strategies for RAG
 PILLAR:    AI Engineering — for developers whose RAG finds the wrong text
+LEVEL:     INTERMEDIATE
 HEADLINE:  Retrieval only finds what you cut
 LAYOUT:    GRID
+STATUS:    draft
 ---
 Last post: finding the closest vectors fast. But a fast search over badly cut text still returns the wrong text.
 

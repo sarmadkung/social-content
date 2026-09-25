@@ -1,0 +1,17 @@
+/* Brand tokens — the single source for every variant.
+   Change a colour here and every template and post card follows.
+   Pillar accents are set per card with :root{--accent:var(--dsa|--swe|--arch|--ai|--grow)}. */
+:root{
+  /* surface */
+  --bg:#0A0C10;--panel:#11141B;--code:#0E1117;--chrome:#141821;--line:#1F2530;
+  /* ink */
+  --ink:#F2F5F9;--ink-2:#9BA6B7;--ink-3:#5E6977;
+  /* pillar accents — one per pillar, never shared */
+  --dsa:#FFB86B;--swe:#4ADE80;--arch:#C084FC;--ai:#8AA4FF;--grow:#F2555F;
+  /* correctness takes the card accent; only diff "+" keeps universal green */
+  --yes:var(--accent);--add:#4ADE80;
+  --accent:var(--dsa);
+  /* type */
+  --mono:"SF Mono",Menlo,monospace;
+  --sans:-apple-system,"SF Pro Display","Helvetica Neue",sans-serif;
+}

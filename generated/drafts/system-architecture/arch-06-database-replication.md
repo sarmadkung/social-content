@@ -1,8 +1,10 @@
 SERIES:    SYSTEM ARCHITECTURE #06
 TITLE:     Database Replication and Read Replicas
 PILLAR:    System Design & Architecture — for mid-levels preparing for interviews, seniors for the lag trade-off
+LEVEL:     INTERMEDIATE
 HEADLINE:  One database writes. Many databases read.
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Your app servers scale out easily. Your single database does not. It becomes the bottleneck.
 

@@ -1,8 +1,10 @@
 SERIES:    DEV GROWTH #06
 TITLE:     Using AI Coding Tools Without Losing Your Skills
 PILLAR:    Career & Developer Growth — for students and junior developers, and seniors who review AI-written code
+LEVEL:     INTERMEDIATE
 HEADLINE:  Use AI, but stay the author
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 AI can write a working function in seconds. The risk is not bad code. The risk is code you cannot explain, merged under your name.
 

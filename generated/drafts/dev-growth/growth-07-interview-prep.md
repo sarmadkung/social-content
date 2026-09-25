@@ -1,8 +1,10 @@
 SERIES:    DEV GROWTH #07
 TITLE:     How to prepare for coding interviews without grinding 500 problems
 PILLAR:    Dev Growth — for juniors and mid-levels preparing for interviews while holding down a full-time job
+LEVEL:     INTERMEDIATE
 HEADLINE:  Patterns, not problems
 LAYOUT:    FLOW
+STATUS:    draft
 VARIANT:   D (flow + points)
 ---
 Solving 500 problems and recognising 15 patterns are different skills. Interviews test the second one.

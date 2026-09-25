@@ -1,8 +1,10 @@
 SERIES:    SYSTEM ARCHITECTURE #02
 TITLE:     Vertical vs Horizontal Scaling
 PILLAR:    System Design & Architecture — for juniors and mid-levels preparing for interviews
+LEVEL:     BEGINNER
 HEADLINE:  Bigger machine, or more machines?
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 Traffic doubled. Your server is at 100% CPU. You have two ways out.
 

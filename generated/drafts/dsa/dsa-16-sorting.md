@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #16
 TITLE:     Sorting: stable, in-place, and the comparator that bites everyone
 PILLAR:    DSA & Problem Solving — for juniors who use sort() daily and mid-levels who get asked "which sort, and why"
+LEVEL:     INTERMEDIATE
 HEADLINE:  sort() does not sort numbers
 LAYOUT:    STATEMENT
+STATUS:    draft
 VARIANT:   C (source mode)
 ---
 [1, 10, 2].sort() gives you [1, 10, 2].

@@ -1,8 +1,10 @@
 SERIES:    SOFTWARE ENGINEERING #03
 TITLE:     Retries with Backoff (and Why Infinite Retries Cause Outages)
 PILLAR:    Software Engineering — for junior and mid-level developers calling other services
+LEVEL:     BEGINNER
 HEADLINE:  Retry slower each time, then stop
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 A retry can fix a small failure. Too many retries can turn it into an outage.
 

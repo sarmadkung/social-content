@@ -1,8 +1,10 @@
 SERIES:    SOFTWARE ENGINEERING #08
 TITLE:     REST vs GraphQL vs gRPC — three answers to different questions
 PILLAR:    Software Engineering — for juniors choosing their first API style and mid-levels defending the choice in review
-HEADLINE:  You are not choosing a protocol. You are choosing who absorbs the change.
+LEVEL:     INTERMEDIATE
+HEADLINE:  Choose who absorbs the change
 LAYOUT:    COMPARE
+STATUS:    draft
 VARIANT:   D (flow + points)
 ---
 Every API argument I have sat through was really an argument about coupling.

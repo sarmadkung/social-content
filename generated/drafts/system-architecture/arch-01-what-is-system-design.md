@@ -1,12 +1,14 @@
 SERIES:    SYSTEM ARCHITECTURE #01
 TITLE:     What System Design Actually Is
 PILLAR:    System Design & Architecture — for students and juniors who want the big picture
+LEVEL:     BEGINNER
 HEADLINE:  System design is choosing what can break
 LAYOUT:    ANATOMY
+STATUS:    draft
 ---
 Your code works on your laptop. Then 10,000 people use it at once, and it falls over.
 
-The code did not change. The load did. That gap is what system design is about.
+Often the code did not change. The load did, and it found the weak spot: a slow database, a lock, a limit you never hit alone. That gap is what system design is about.
 
 What is it?
 System design is deciding how the parts of a software system fit together: servers, databases, caches, queues, and the network between them.

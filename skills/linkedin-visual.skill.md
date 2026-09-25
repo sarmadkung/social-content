@@ -36,16 +36,11 @@ When asked for an image, return:
 
 ## 0. Request keywords
 
-Every request begins with one keyword that sets what to return. Honor it
-exactly — do not return more than asked, and do not return less.
-
-| Keyword | Return | Skills to apply |
-| --- | --- | --- |
-| `COPY` | Post text only. No image. | content skill only |
-| `VISUAL` | The image, or the HTML that renders it. No post text. | visual skill only |
-| `FULL` | Post text **and** the image, in that order. | both skills |
-
-If no keyword is given, assume `FULL`.
+The request keywords — `COPY`, `VISUAL`, `FULL` — are defined once, in
+`linkedin-content.skill.md` section 0. For this skill: `VISUAL` returns the image
+(the HTML/CSS that renders it, or the rendered PNG) and nothing else; `FULL`
+returns the post text first, then the image. There is no separate HTML keyword —
+HTML is how every image is made (section 0b).
 
 `VISUAL` still needs a headline — if the request has no post text to draw the
 headline from, ask for it rather than inventing one.
@@ -76,7 +71,7 @@ substitute an image model and do not describe the picture in words.
 
 **One identity, one variable, four variants.**
 
-Four pillars must not mean four designs. Four designs means no recognizable
+Five pillars must not mean five designs. Five designs means no recognizable
 design, and a reader scrolling a feed never builds recall. Section 2 is fixed
 forever. What changes per post is the accent colour and the variant — and the
 variant is chosen by the content's shape, never at random.
@@ -225,6 +220,9 @@ Two consequences worth stating, because they are easy to get wrong:
 
 ## 3. The one variable — pillar accent
 
+The hexes below live in one file, `templates/theme.css`; every variant imports it.
+Change a colour there, never in a variant's `base.css`.
+
 | Pillar (from the content skill) | Tag text | Accent |
 | --- | --- | --- |
 | Problem solving | `DSA SERIES` | `#FFB86B` amber |
@@ -302,23 +300,27 @@ Before returning any image, verify each:
 
 ## 7. Examples
 
+Illustrative only — these describe the template cards in `templates/variant-*/`,
+whose series labels read `· Example`. They are not posts in the queue; real posts
+live in `generated/drafts/` and their cards in `visuals/week-*/`.
+
 **Variant A, problem solving.** Series `DSA SERIES #03`. Headline "Binary search
 is not about *sorted arrays*", the last two words amber. Thirteen cells labelled
-1–13: the first six read NO in tertiary, the rest YES in green, cell 7 ringed in
-green with a tick reading "the flip — first YES is the answer". Takeaway:
+1–13: the first six read NO in tertiary, the rest YES in the amber accent, cell 7
+ringed in amber with a tick reading "the flip — first YES is the answer". Takeaway:
 nothing here is sorted — you are searching the answer space. Footer right:
 `O(n log R)`.
 
 **Variant C, terminal mode, AI engineering.** Series `AI ENGINEERING #04`.
 Headline "The prompt got better. Something else got *worse.*" Window titled
 `evals — zsh`, tag `120 CASES`. A `$ eval run --suite all --vs main` prompt, then
-a four-row table; two improved rows highlighted green, the regressed
-`tool-calling 20 61% -23` row marked in the indigo accent. Closing line
+a four-row table; the improved rows stay in plain ink, and the regressed
+`tool-calling 20 61% -23` row is marked in the indigo accent. Closing line
 `overall 86% (+2) — ship? no.`
 
 **Variant D, flow, software engineering.** Series `SOFTWARE ENGINEERING #03`.
 Headline "You optimised the code. The time was *never there.*" Four nodes —
-client 12 ms, CDN 8 ms, API 31 ms, postgres 240 ms — the last with the coral
-border and coral metric. Three points beneath: measure first, p99 not average,
+client 12 ms, CDN 8 ms, API 31 ms, postgres 240 ms — the last with the green
+accent border and accent metric. Three points beneath: measure first, p99 not average,
 usually an N+1. Footer right: `291 ms total`.
 

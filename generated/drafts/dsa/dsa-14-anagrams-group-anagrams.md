@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #14
 TITLE:     Anagrams and Group Anagrams (Frequency Counting)
 PILLAR:    DSA & Problem Solving — for students and juniors meeting counting problems in interviews
+LEVEL:     INTERMEDIATE
 HEADLINE:  Same letters, same key, same group
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 "listen" and "silent" use the same letters.
 Trying every rearrangement to prove it is O(k!). Counting letters is O(k).

@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #04
 TITLE:     Big-O in Plain English
 PILLAR:    DSA & Problem Solving — for students meeting Big-O and juniors who use it without trusting it
+LEVEL:     BEGINNER
 HEADLINE:  Big-O measures growth, not speed
 LAYOUT:    GRID
+STATUS:    draft
 ---
 Big-O does not tell you how fast your code runs.
 It tells you how the work grows when the input grows.

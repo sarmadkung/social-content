@@ -1,11 +1,13 @@
 SERIES:    DSA SERIES #08
 TITLE:     Every DSA Problem Has a Pattern — How to Spot It
 PILLAR:    DSA & Problem Solving — for students and juniors who solve many problems but freeze on new ones
+LEVEL:     INTERMEDIATE
 HEADLINE:  Read the problem for clues, not code
 LAYOUT:    GRID
+STATUS:    draft
 ---
 Solving 500 problems does not help if every new one feels new.
-There are only about 15 core patterns. Most interview problems are one of them wearing a new costume.
+Most interview problems reuse a small set of patterns — lists differ, but it is a few dozen at most. Each new problem is usually an old pattern wearing a new costume.
 
 What is a pattern?
 A pattern is a reusable way of solving a whole family of problems. Two Sum, "pair with target sum" and "3Sum" look different, but they are the same idea.

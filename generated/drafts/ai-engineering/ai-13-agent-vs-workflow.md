@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #13
 TITLE:     Agent vs Workflow: Which One Do You Need?
 PILLAR:    AI Engineering — for engineers designing LLM features and agents
+LEVEL:     ADVANCED
 HEADLINE:  Agent or workflow: who picks the next step?
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 Last post said: try the simplest option first. The same rule applies here. Many "agents" would be better as a plain workflow.
 

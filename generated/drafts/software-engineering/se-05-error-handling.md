@@ -1,8 +1,10 @@
 SERIES:    SOFTWARE ENGINEERING #05
 TITLE:     Error Handling: Fail Loudly, Recover Deliberately
 PILLAR:    Software Engineering — for students and junior developers moving to production code
+LEVEL:     INTERMEDIATE
 HEADLINE:  Fail loudly. Recover on purpose.
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 The worst bug is not the one that crashes. It is the one that fails silently and nobody notices for weeks.
 

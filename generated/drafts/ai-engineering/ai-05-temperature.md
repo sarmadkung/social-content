@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #05
 TITLE:     Temperature and Why Outputs Change
 PILLAR:    AI Engineering — for developers debugging inconsistent LLM output
+LEVEL:     BEGINNER
 HEADLINE:  Same prompt, different answer. Here's why.
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 You send the same prompt twice and get two different answers. That is not a bug. It is a setting.
 

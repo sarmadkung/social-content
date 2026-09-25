@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #09
 TITLE:     RAG: Retrieval-Augmented Generation, Plainly
 PILLAR:    AI Engineering — for developers building on private or changing data
+LEVEL:     INTERMEDIATE
 HEADLINE:  RAG hands the model the right page
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 A model only knows what it saw in training. It has never read your company handbook. RAG gives it the right page at question time.
 

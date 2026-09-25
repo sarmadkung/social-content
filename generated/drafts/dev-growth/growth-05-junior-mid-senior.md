@@ -1,8 +1,10 @@
 SERIES:    DEV GROWTH #05
 TITLE:     Junior vs Mid vs Senior: What Actually Changes
 PILLAR:    Career & Developer Growth — for students and junior developers, and mid-levels aiming for senior
+LEVEL:     INTERMEDIATE
 HEADLINE:  Seniority grows by scope, not years
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Years of experience do not make someone senior. Five years of the same work is one year, five times.
 

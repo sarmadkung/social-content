@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #09
 TITLE:     Two Pointers
 PILLAR:    DSA & Problem Solving — for students and juniors preparing for coding interviews
+LEVEL:     INTERMEDIATE
 HEADLINE:  Two pointers replace the nested loop
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 Checking every pair in an array is O(n²).
 If the array is sorted, you can do it in O(n) with no extra memory.
@@ -12,11 +14,11 @@ Two pointers means keeping two indexes into the same array and moving them by a 
 Think of people standing in a line, sorted by height. You need two whose heights add to 340 cm. Start with the shortest and the tallest. Too short together? Swap in the next shortest. Too tall? Swap in the next tallest.
 
 Why do we need it?
-The nested loop checks pairs that can never work. Two pointers skip them. Each step removes one item for good. So there are at most n steps.
+The nested loop checks every pair. Because the data is sorted, one comparison tells you which end can never be part of the answer, so that item is dropped for good. So there are at most n steps.
 
 Key properties
 → Time O(n), extra space O(1)
-→ Usually needs sorted data, or some order to exploit
+→ Opposite ends usually needs sorted data. Same direction often does not.
 → Opposite ends: pair sum, palindrome check, container with most water
 → Same direction: remove duplicates in place, merge two sorted lists
 
@@ -49,7 +51,7 @@ Not: the data is unsorted and you need original indexes. Use a hash map.
 
 Comparison: Two Sum, two ways
 Hash map: O(n) time, O(n) space, works on unsorted input.
-Two pointers: O(n) time, O(1) space, but needs sorted input. Sorting first adds O(n log n).
+Two pointers (opposite ends): O(n) time, O(1) space, but needs sorted input. Sorting first adds O(n log n).
 
 Takeaway: if a sorted array gives you a pair problem, try two pointers before a nested loop.
 

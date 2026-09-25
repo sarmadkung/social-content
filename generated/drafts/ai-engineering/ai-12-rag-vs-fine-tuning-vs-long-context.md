@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #12
 TITLE:     RAG vs Fine-Tuning vs Long Context
 PILLAR:    AI Engineering — for engineers choosing how to add knowledge to an LLM app
+LEVEL:     ADVANCED
 HEADLINE:  RAG for facts, fine-tuning for behaviour
 LAYOUT:    STATEMENT
+STATUS:    draft
 ---
 "Should we fine-tune the model on our docs?" Usually, no. There are three ways to get knowledge into an LLM app, and they solve different problems.
 

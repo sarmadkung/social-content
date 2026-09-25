@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #02
 TITLE:     What an LLM Actually Does
 PILLAR:    AI Engineering — for students and developers new to LLMs
+LEVEL:     BEGINNER
 HEADLINE:  An LLM predicts the next token
 LAYOUT:    FLOW
+STATUS:    draft
 ---
 An LLM does one thing, over and over: it guesses the next piece of text.
 
@@ -16,7 +18,7 @@ Think of the autocomplete on your phone keyboard. An LLM is that idea, trained a
 Why does this matter?
 Once you know this, many "strange" behaviours make sense:
 → It can sound sure and still be wrong. It picks likely text, not checked facts.
-→ It has no memory between requests. You send the whole conversation every time.
+→ The model itself keeps no memory between requests. Your app sends the history, or adds memory with summaries and stored notes.
 → Longer answers cost more and take longer. Each token is one more prediction.
 
 Key properties

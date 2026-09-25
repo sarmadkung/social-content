@@ -12,7 +12,13 @@ fundamentals, seniors who like a clean explanation.
 
 ## Teaching format
 Problem → Intuition → Pattern → Example → Solution → Complexity → Interview takeaway
-(wrapped in the What / Why / Where / Properties structure from the master prompt)
+(wrapped in the What / Why / How / Where structure from the master prompt)
+
+Every DSA post also has:
+- complexity, and the reason for it ("each step drops one item for good, so n steps")
+- a tiny walkthrough on a real input
+- the invariant or one-line proof when there is one
+- one common mistake (e.g. binary search: the range does not shrink → infinite loop)
 
 ## Pattern recognition (required on every pattern post)
 Every post that teaches a pattern has a "Spot it when the problem says…" block,
@@ -23,7 +29,8 @@ placed just before "When to use it / when not to":
     → "<another clue>"
     → <a structural clue, e.g. a yes/no test that flips once>
 
-2–3 lines. Clues are words or constraints a reader can find in a problem
+2–3 lines. Clues do not guarantee the pattern; they tell you to try it first.
+Clues are words or constraints a reader can find in a problem
 statement, not a restated definition. Where two patterns are easy to confuse
 (prefix sum vs sliding window vs Kadane), one clue says which to pick.
 

@@ -1,8 +1,10 @@
 SERIES:    AI ENGINEERING #03
 TITLE:     Tokens and Context Windows
 PILLAR:    AI Engineering — for developers building their first LLM feature
+LEVEL:     BEGINNER
 HEADLINE:  Tokens are the unit of everything
 LAYOUT:    ANATOMY
+STATUS:    draft
 ---
 Your LLM bill is not counted in words or requests. It is counted in tokens.
 

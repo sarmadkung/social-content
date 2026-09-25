@@ -1,8 +1,10 @@
 SERIES:    DSA SERIES #07
 TITLE:     Hash Set vs Hash Map: Which One and Why
 PILLAR:    DSA & Problem Solving — for students and juniors choosing between Set and Map
+LEVEL:     BEGINNER
 HEADLINE:  Set asks if. Map asks what.
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 Set and Map use the same engine inside.
 They answer different questions. Pick by the question.

@@ -1,8 +1,10 @@
 SERIES:    SYSTEM ARCHITECTURE #07
 TITLE:     Sharding: when one database stops being enough
 PILLAR:    System Design & Architecture — for mid-levels in design interviews and juniors who have only ever used one database
+LEVEL:     INTERMEDIATE
 HEADLINE:  Replication copies the data. Sharding splits it.
 LAYOUT:    FLOW
+STATUS:    draft
 VARIANT:   A (shapes)
 ---
 Read replicas fix read load. They do not fix a table too big for one machine, and they do nothing for write load — every replica still writes every row.

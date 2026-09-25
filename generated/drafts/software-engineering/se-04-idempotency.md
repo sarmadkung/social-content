@@ -1,8 +1,10 @@
 SERIES:    SOFTWARE ENGINEERING #04
 TITLE:     Idempotency: Making "Try Again" Safe
 PILLAR:    Software Engineering — for junior and mid-level developers building payments, orders or queues
+LEVEL:     INTERMEDIATE
 HEADLINE:  Make "try again" safe
 LAYOUT:    COMPARE
+STATUS:    draft
 ---
 Your payment call times out. Did the customer get charged? You don't know. If you retry, you might charge them twice.
 
