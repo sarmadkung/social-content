@@ -1,6 +1,6 @@
 # Pillar 7 — Pivot (Building Pivot in Public)
 
-Series label: `PIVOT #NN` · Visual accent: pink `#F472B6` · Tag: `PIVOT`
+Series label: `PIVOT #NN` · Visual accent: Pivot purple `#7C6BFF` · Tag: `PIVOT`
 
 ## Purpose
 
