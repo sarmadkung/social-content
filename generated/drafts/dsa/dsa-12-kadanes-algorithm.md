@@ -1,5 +1,5 @@
 SERIES:    DSA SERIES #12
-TITLE:     Kadane's Algorithm (Maximum Subarray)
+TITLE:     Kadane's Algorithm: Knowing What to Throw Away
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs preparing for subarray interview questions
 LEVEL:     INTERMEDIATE
 MODE:      TEACH

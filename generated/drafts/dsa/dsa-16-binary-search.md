@@ -1,5 +1,5 @@
 SERIES:    DSA SERIES #16
-TITLE:     Binary Search (and "Binary Search on the Answer")
+TITLE:     Binary Search: Halving Sorted Data, Then Halving the Answer
 PILLAR:    DSA & Problem Solving — for juniors learning it and mid-level devs who want the "on the answer" version
 LEVEL:     INTERMEDIATE
 MODE:      TEACH
@@ -63,6 +63,6 @@ Not: unsorted data you search once. Sorting first costs O(n log n).
 
 Takeaway: if a yes/no answer flips only once, you can binary search it.
 
-Next: Sorting — what every developer should know: stable, in-place, O(n log n).
+Next: Sorting — stable, in-place, and the comparator that bites everyone.
 
 #Algorithms #DataStructures #BinarySearch #CodingInterviews #ProblemSolving

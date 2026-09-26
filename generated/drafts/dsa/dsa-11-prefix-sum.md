@@ -1,5 +1,5 @@
 SERIES:    DSA SERIES #11
-TITLE:     Prefix Sum
+TITLE:     Prefix Sum: Pay Once, Answer Any Range in O(1)
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs handling range queries
 LEVEL:     INTERMEDIATE
 MODE:      TEACH
@@ -58,6 +58,6 @@ Not: the data changes often. Use a Fenwick tree or segment tree, with O(log n) u
 
 Takeaway: precompute the running total once. Every range becomes one subtraction.
 
-Next: Kadane's Algorithm — the largest subarray sum in one pass.
+Next: Kadane's Algorithm — knowing what to throw away.
 
 #Algorithms #DataStructures #PrefixSum #CodingInterviews #ProblemSolving
