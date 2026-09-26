@@ -49,6 +49,6 @@ Steps in a real incident
 
 Takeaway: metrics tell you something is wrong, traces tell you where, logs tell you why.
 
-Next: REST API design basics, resources, verbs and status codes.
+Next: good APIs are contracts, not just endpoints.
 
 #SoftwareEngineering #Observability #DevOps #BackendDevelopment

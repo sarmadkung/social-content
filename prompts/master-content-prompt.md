@@ -41,13 +41,12 @@ in sources/project-log.md, use MODE: PERSONAL, pick a TYPE, and follow that
 TYPE's structure and the rules in pillars/06-building.md and
 pillars/07-pivot.md. Never invent a project, a result or a number there.
 
-AUDIENCE
-One post must work for four readers at once:
-  - a student who has never heard the term,
-  - a junior developer who has used it but not understood it,
-  - a mid-level developer who needs the "when and why",
-  - a senior developer who wants the trade-off or the production detail.
-Serve them in that order: plain meaning first, depth last.
+AUDIENCE: SIMPLE LANGUAGE, PROFESSIONAL DEPTH
+Readers range from juniors to seniors. Serve both with the language, not by
+lowering the idea. The words stay simple enough for a junior to follow; the
+engineering idea stays deep enough that a senior learns something.
+Never write a beginner post with a senior footnote at the end: the
+insight is the post, and the plain language is how everyone reaches it.
 
 LANGUAGE RULES (the most important section)
   - Plain English. Short sentences, mostly under 15 words.
@@ -90,11 +89,20 @@ run of lessons, add a COMPARE, LIST, SCENARIO or WHY post that uses them.
 A post can also open with a myth ("Myth: hash maps are always O(1)") and
 correct it; that is a hook, not a separate mode.
 
-MINIMUM DEPTH: do not teach what every working developer already knows:
-variables, functions, loops, "what is an API", client vs server, "what is
-AI". Start where a working developer learns something new. A foundation post
-earns its place only if later posts depend on it AND it holds a real insight
-(e.g. why array access is O(1), what DNS/TCP/TLS add to one request).
+SENIOR INTEREST TEST (the depth rule): before writing a post, ask
+"Would an experienced software engineer learn something useful from this?"
+If not, do not write it. Every post holds at least one of: a non-obvious
+insight, an engineering trade-off, a failure mode, a production concern, a
+performance cost, an architectural consequence, a debugging technique, a
+practical pattern, a decision framework, or a real-world constraint.
+A definition alone is never enough.
+So: do not teach what every working developer already knows (variables,
+functions, loops, "what is an API", client vs server, "what is AI"). A
+foundation post earns its place only if later posts depend on it AND it
+passes this test (e.g. why array access is O(1), what DNS/TCP/TLS add to one
+request, how tokens drive cost and context limits).
+If a pillar runs out of new topics, write a mistakes, COMPARE, SCENARIO or
+trade-off post on topics already covered, never a more basic one.
 
 PREREQUISITES: a post may only rely on ideas from the posts listed in its
 "needs" field (or plain common knowledge). If it needs more, the roadmap is
@@ -143,6 +151,7 @@ FORMAT PER POST (output exactly this)
   LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
   MODE:      <TEACH | WHY | COMPARE | LIST | SCENARIO | QUIZ | PERSONAL>
   TYPE:      <UPDATE | STORY | DECISION | POSTMORTEM | DEMO | RETRO>   (BUILDING and PIVOT only)
+  SOURCE:    <project-log entry heading, e.g. 2026-10-02 — Pivot>   (BUILDING and PIVOT only)
   FORMAT:    <TEXT | VISUAL>
   HEADLINE:  <image headline, 8 words or fewer>   (VISUAL only)
   LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
@@ -178,8 +187,8 @@ Already drafted, do not repeat: every post in generated/drafts/.
 Check published/linkedin.md (the published log) and generated/ before writing.
 
 SELF-CHECK BEFORE RETURNING
-  1. Could a second-year student follow the first half?
-  2. Does a senior developer learn at least one real detail?
+  1. Could a junior follow the language all the way through?
+  2. Senior Interest Test: what would a senior learn here? Name it.
   3. Is every term explained?
   4. Is the body under 3,000 characters?
   5. Is the headline 8 words or fewer?
@@ -197,9 +206,10 @@ SELF-CHECK BEFORE RETURNING
 
 ## What changed from the original, and why
 
-1. **Named the four readers and their order.** Writing for "everyone" usually
-   helps no one. Plain meaning first, depth last, keeps juniors reading and
-   gives seniors something at the end.
+1. **Named the audience and how to serve it.** First written as four readers
+   served in order (plain meaning first, depth last). Replaced on 2026-09-27
+   by "simple language, professional depth": that order produced junior posts
+   with a senior footnote. See item 10.
 2. **Turned "what, why, where..." into a fixed post structure** with labels,
    so every post looks alike and readers learn how to read them.
 3. **Added hard language rules** (sentence length, banned words, define every
@@ -222,3 +232,7 @@ SELF-CHECK BEFORE RETURNING
    each get their own shape, so the feed does not repeat itself. Every
    roadmap line names the posts it needs, and each pillar starts with the
    foundations the later posts rely on. At most 4 TEACH posts run in a row.
+10. **Senior Interest Test** (added 2026-09-27, after an external review). The
+   old minimum-depth rule only said what not to write. The test says what a
+   post must hold to be worth writing, and it replaces the four-readers rule,
+   which told the model to start from zero.

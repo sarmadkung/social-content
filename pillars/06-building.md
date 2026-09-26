@@ -1,6 +1,6 @@
 # Pillar 6 — Building (Real Projects)
 
-Series label: `BUILDING #NN` · Visual accent: cyan `#22D3EE` · Tag: `BUILDING`
+Series label: `BUILDING #NN` · Visual accent: teal `#2DD4BF` · Tag: `BUILDING`
 
 ## Purpose
 
@@ -37,7 +37,9 @@ Every two weeks capture:
 - What we learned
 - What I would do differently
 
-Posts must be drafted from this source, not invented.
+Posts must be drafted from this source, not invented. Each post's `SOURCE:`
+line names the entry it came from (its heading, e.g. `2026-10-02 — Pivot`);
+`validate.py` rejects a post whose entry is missing.
 
 ## No Invented Facts
 
@@ -56,6 +58,7 @@ Every BUILDING post must contain at least 3 of:
 - Engineering trade-off
 - Failure or unexpected result
 - Implementation detail
+- What changed because of it (impact)
 - Measurable result
 - Generalizable lesson
 

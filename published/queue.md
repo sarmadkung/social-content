@@ -44,7 +44,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 19 Oct | DSA SERIES #04 | Strings Are Arrays Too | TEACH | 🖼 visual | draft | [dsa-04-strings.md](../generated/drafts/dsa/dsa-04-strings.md) |
+| Mon 19 Oct | DSA SERIES #04 | Why Building Strings in a Loop Can Quietly Become O(n²) | TEACH | 🖼 visual | draft | [dsa-04-string-building-cost.md](../generated/drafts/dsa/dsa-04-string-building-cost.md) |
 | Tue 20 Oct | AI ENGINEERING #04 | Prompts vs System Prompts | COMPARE | 🖼 visual | draft | [ai-04-prompts-vs-system-prompts.md](../generated/drafts/ai-engineering/ai-04-prompts-vs-system-prompts.md) |
 | Wed 21 Oct | SOFTWARE ENGINEERING #04 | Retries with Backoff (and Why Infinite Retries Cause Outages) | TEACH | 🖼 visual | draft | [se-04-retries-backoff.md](../generated/drafts/software-engineering/se-04-retries-backoff.md) |
 | Thu 22 Oct | SYSTEM ARCHITECTURE #04 | Back-of-the-Envelope Estimation: A Photo App in Five Minutes ✎ | SCENARIO | 🖼 visual | draft | [arch-04-back-of-the-envelope-estimation.md](../generated/drafts/system-architecture/arch-04-back-of-the-envelope-estimation.md) |
@@ -101,7 +101,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 23 Nov | DSA SERIES #09 | Two Pointers | TEACH | 🖼 visual | draft | [dsa-09-two-pointers.md](../generated/drafts/dsa/dsa-09-two-pointers.md) |
 | Tue 24 Nov | AI ENGINEERING #09 | Agents Are Software, Not Magic | WHY | 🖼 visual | draft | [ai-09-agents-are-software.md](../generated/drafts/ai-engineering/ai-09-agents-are-software.md) |
-| Wed 25 Nov | SOFTWARE ENGINEERING #09 | REST API Design Basics: Resources, Verbs, Status Codes | TEACH | 🖼 visual | draft | [se-09-rest-api-basics.md](../generated/drafts/software-engineering/se-09-rest-api-basics.md) |
+| Wed 25 Nov | SOFTWARE ENGINEERING #09 | Good APIs Are Contracts, Not Just Endpoints | TEACH | 🖼 visual | draft | [se-09-api-contracts.md](../generated/drafts/software-engineering/se-09-api-contracts.md) |
 | Thu 26 Nov | SYSTEM ARCHITECTURE #09 | Database Replication and Read Replicas ✎ | TEACH | 🖼 visual | draft | [arch-09-database-replication.md](../generated/drafts/system-architecture/arch-09-database-replication.md) |
 | Sat 28 Nov | building | — write: next post from sources/project-log.md — | | | | |
 | Sun 29 Nov | dev-growth | — write: #09 How to break a problem down before you code · TEACH — | | | | |

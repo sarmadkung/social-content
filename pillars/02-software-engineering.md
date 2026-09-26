@@ -27,7 +27,7 @@ master prompt. Never more than 4 TEACH posts in a row.
 - #08 Logging vs metrics vs traces (observability basics) · COMPARE · needs #07
 
 ### Backend and APIs
-- #09 REST API design basics (resources, verbs, status codes) · TEACH · needs #02
+- #09 Good APIs are contracts, not just endpoints · TEACH · needs #02, #06
 - #10 REST vs GraphQL vs gRPC · COMPARE · needs #09
 - #11 Pagination: offset vs cursor · COMPARE · needs #09
 - #12 Authentication vs Authorization · COMPARE · needs #02

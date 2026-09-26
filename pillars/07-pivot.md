@@ -48,15 +48,16 @@ When in doubt, keep it private or go anonymous.
 Raw notes go in `sources/project-log.md` under `Project: Pivot`. Mark each
 entry NAMED or ANON so the draft lands in the right pillar.
 
-Posts must be drafted from this source, not invented. Missing facts are
+Posts must be drafted from this source, not invented, and name their entry
+in a `SOURCE:` line (see BUILDING). Missing facts are
 written as `[PERSONAL: ...]`, never guessed (see BUILDING, No Invented Facts).
 
 ## Quality Bar
 
 Same as BUILDING: every post contains at least 3 of real problem or
 constraint, meaningful decision, alternative considered, engineering
-trade-off, failure or unexpected result, implementation detail, measurable
-result, generalizable lesson.
+trade-off, failure or unexpected result, implementation detail, what changed
+because of it, measurable result, generalizable lesson.
 
 A PIVOT post is not a product announcement or a changelog. The engineering
 story comes first; the feature is the setting.
