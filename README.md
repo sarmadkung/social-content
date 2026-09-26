@@ -4,7 +4,7 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 
 | Folder | What lives there |
 | --- | --- |
-| `pillars/` | One file per pillar: purpose, audience, ordered roadmap. Each line is `#NN Title · MODE · needs #..` — the post's content mode and the earlier posts it builds on |
+| `pillars/` | One file per pillar: purpose, audience, ordered roadmap. Each line is `#NN Title · MODE · needs #..` — the post's content mode and the earlier posts it builds on. Pillars 06 Building and 07 Pivot are story pillars with no roadmap |
 | `prompts/master-content-prompt.md` | The prompt every post is generated from |
 | `linkedin-skills-bundle.txt` | **Derived** — both skills in one paste-able file. Never edit; run `./build-bundle.sh` |
 | `generated/drafts/<pillar>/` | Every post, one file each. `MODE:` must match the roadmap; no roadmap number may be skipped. Its `STATUS:` line (draft → approved → scheduled → published) is the source of truth |
@@ -12,6 +12,7 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 | `published/queue.md` | **Generated** posting plan — run `python3 scripts/build_queue.py`, never edit |
 | `published/linkedin.md` | Hand-kept log of what went live. No script writes it |
 | `sources/inbox.md` | Capture daily ideas here |
+| `sources/project-log.md` | Raw notes every two weeks on real projects and Pivot — the only source for BUILDING and PIVOT posts |
 | `skills/` | The portable skill files — content, visual, and the index/template |
 | `templates/theme.css` | Every colour and font token — change brand colours here only |
 | `templates/variant-a…d/` | Layout CSS + example cards (series read `· Example`) for the four variants |
@@ -30,13 +31,14 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 5. Add a row to `published/linkedin.md` and set the post's `STATUS:` to `published`.
 6. Run `python3 scripts/build_queue.py` so it leaves the queue.
 
-## Weekly schedule (5 posts, one per pillar)
+## Weekly schedule (6 posts)
 | Day | Pillar |
 | --- | --- |
 | Mon | DSA |
 | Tue | AI Engineering |
 | Wed | Software Engineering |
 | Thu | System Architecture |
+| Sat | Building / Pivot — alternating weeks (each is bi-weekly) |
 | Sun | Dev Growth |
 
 Rebuild the queue after adding or publishing posts: `python3 scripts/build_queue.py`

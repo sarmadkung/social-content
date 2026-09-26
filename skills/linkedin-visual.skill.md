@@ -71,7 +71,7 @@ substitute an image model and do not describe the picture in words.
 
 **One identity, one variable, four variants.**
 
-Five pillars must not mean five designs. Five designs means no recognizable
+Seven pillars must not mean seven designs. Seven designs means no recognizable
 design, and a reader scrolling a feed never builds recall. Section 2 is fixed
 forever. What changes per post is the accent colour and the variant — and the
 variant is chosen by the content's shape, never at random.
@@ -230,8 +230,10 @@ Change a colour there, never in a variant's `base.css`.
 | System design | `SYSTEM ARCHITECTURE` | `#C084FC` violet |
 | AI engineering | `AI ENGINEERING` | `#8AA4FF` indigo |
 | Dev growth | `DEV GROWTH` | `#F2555F` crimson |
+| Building | `BUILDING` | `#2DD4BF` teal |
+| Pivot | `PIVOT` | `#F472B6` pink |
 
-One accent per pillar, five pillars, no sharing. If a sixth pillar ever appears it
+One accent per pillar, seven pillars, no sharing. If another pillar ever appears it
 gets its own hue — never a second pillar on an existing accent, which is what makes
 two different posts look like the same series.
 

@@ -16,6 +16,9 @@ ROADMAPS = {
     "system-architecture": "03-system-design.md",
     "ai-engineering": "04-ai-engineering.md",
     "dev-growth": "05-dev-growth.md",
+    # story pillars: no roadmap, posts follow real work (see pillars/06, 07)
+    "building": None,
+    "pivot": None,
 }
 PILLARS = {
     "dsa": ("DSA SERIES", "dsa", "--dsa"),
@@ -23,7 +26,10 @@ PILLARS = {
     "system-architecture": ("SYSTEM ARCHITECTURE", "arch", "--arch"),
     "ai-engineering": ("AI ENGINEERING", "ai", "--ai"),
     "dev-growth": ("DEV GROWTH", "growth", "--grow"),
+    "building": ("BUILDING", "build", "--build"),
+    "pivot": ("PIVOT", "pivot", "--pivot"),
 }
+STORY_TYPES = {"UPDATE", "STORY", "DECISION", "POSTMORTEM", "DEMO", "RETRO"}
 REQUIRED = ["SERIES", "TITLE", "PILLAR", "MODE", "FORMAT", "STATUS"]
 MODES = {"TEACH", "WHY", "COMPARE", "LIST", "SCENARIO", "QUIZ", "PERSONAL"}
 MAX_TEACH_RUN = 4             # mix rule: never more than 4 TEACH posts in a row
@@ -72,7 +78,10 @@ ROAD_LINE = re.compile(r"^- #(\d+) (.+?) · ([A-Z]+) · needs (.+)$")
 
 
 def read_roadmap(pillar):
-    """Roadmap lines '- #NN Title · MODE · needs #a, #b' -> {n: (mode, title)}."""
+    """Roadmap lines '- #NN Title · MODE · needs #a, #b' -> {n: (mode, title)}.
+    Story pillars have no roadmap and return None."""
+    if ROADMAPS[pillar] is None:
+        return None
     path = os.path.join(ROOT, "pillars", ROADMAPS[pillar])
     road, run = {}, 0
     for i, line in enumerate(open(path).read().splitlines(), 1):
@@ -123,7 +132,15 @@ def check_post(path, pillar, series_label, prefix, seen, road):
         if key in seen:
             err(path, f"duplicate {series} (also {rel(seen[key])})")
         seen[key] = path
-        if n not in road:
+        if road is None:
+            if fields.get("MODE") != "PERSONAL":
+                err(path, f"{label} posts use MODE: PERSONAL (got '{fields.get('MODE')}')")
+            if fields.get("TYPE") not in STORY_TYPES:
+                err(path, f"TYPE '{fields.get('TYPE')}' is not one of {sorted(STORY_TYPES)}")
+            # anonymous Pivot stories live in BUILDING; the name must not leak
+            if pillar == "building" and re.search(r"\bpivot\b", body, re.I):
+                warn(path, "mentions 'pivot' — if this is an anonymous Pivot story, remove it")
+        elif n not in road:
             err(path, f"{series} is not in the roadmap")
         elif fields.get("MODE") != road[n][0]:
             err(path, f"MODE '{fields.get('MODE')}' does not match the roadmap ({road[n][0]})")
@@ -188,9 +205,9 @@ def check_posts():
         # before something it builds on
         drafted = sorted(n for (_, n) in seen)
         for n in range(1, (drafted[-1] if drafted else 0) + 1):
-            if n not in drafted and n in road:
+            if n not in drafted and (road is None or n in road):
                 err(os.path.join(ROOT, "generated", "drafts", pillar),
-                    f"#{n:02d} '{road[n][1]}' has no draft, but later posts do")
+                    f"#{n:02d} {repr(road[n][1]) + ' ' if road else ''}has no draft, but later posts do")
     known = set(PILLARS) | {".DS_Store"}
     for d in glob.glob(os.path.join(ROOT, "generated", "drafts", "*")):
         if os.path.basename(d) not in known:
@@ -222,7 +239,7 @@ def check_visuals():
             err(os.path.join(ROOT, "skills", "linkedin-visual.skill.md"), f"no accent row for {label}")
         elif tm.group(1).upper() != sm.group(1).upper():
             err(theme_path, f"{var} is {tm.group(1)} but the visual skill says {sm.group(1)} for {label}")
-    hexes = re.findall(r"--(?:dsa|swe|arch|ai|grow):(#[0-9A-Fa-f]{6})", theme)
+    hexes = re.findall(r"--(?:dsa|swe|arch|ai|grow|build|pivot):(#[0-9A-Fa-f]{6})", theme)
     if len(hexes) != len(set(h.upper() for h in hexes)):
         err(theme_path, "two pillars share an accent colour")
     cards = glob.glob(os.path.join(ROOT, "templates", "variant-*", "*.html")) + \
@@ -239,7 +256,7 @@ def check_visuals():
         t = open(css).read()
         if '@import url("../theme.css")' not in t:
             err(css, "does not import ../theme.css")
-        if re.search(r"--(dsa|swe|arch|ai|grow):#", t):
+        if re.search(r"--(dsa|swe|arch|ai|grow|build|pivot):#", t):
             err(css, "redefines a pillar accent — colours belong in templates/theme.css")
 
 
