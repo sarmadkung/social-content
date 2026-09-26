@@ -2,6 +2,7 @@ SERIES:    SOFTWARE ENGINEERING #04
 TITLE:     Idempotency: Making "Try Again" Safe
 PILLAR:    Software Engineering — for junior and mid-level developers building payments, orders or queues
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Make "try again" safe
 LAYOUT:    COMPARE
 STATUS:    draft

@@ -2,6 +2,7 @@ SERIES:    SOFTWARE ENGINEERING #05
 TITLE:     Error Handling: Fail Loudly, Recover Deliberately
 PILLAR:    Software Engineering — for students and junior developers moving to production code
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Fail loudly. Recover on purpose.
 LAYOUT:    COMPARE
 STATUS:    draft

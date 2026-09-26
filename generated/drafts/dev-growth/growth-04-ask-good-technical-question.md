@@ -2,6 +2,7 @@ SERIES:    DEV GROWTH #04
 TITLE:     How to Ask a Good Technical Question
 PILLAR:    Career & Developer Growth — for students and junior developers, and seniors who answer questions
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  A clear question gets a fast answer
 LAYOUT:    ANATOMY
 STATUS:    draft

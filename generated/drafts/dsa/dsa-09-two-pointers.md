@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #09
 TITLE:     Two Pointers
 PILLAR:    DSA & Problem Solving — for students and juniors preparing for coding interviews
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Two pointers replace the nested loop
 LAYOUT:    FLOW
 STATUS:    draft

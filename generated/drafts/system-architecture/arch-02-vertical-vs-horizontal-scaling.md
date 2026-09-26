@@ -2,6 +2,7 @@ SERIES:    SYSTEM ARCHITECTURE #02
 TITLE:     Vertical vs Horizontal Scaling
 PILLAR:    System Design & Architecture — for juniors and mid-levels preparing for interviews
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Bigger machine, or more machines?
 LAYOUT:    COMPARE
 STATUS:    draft

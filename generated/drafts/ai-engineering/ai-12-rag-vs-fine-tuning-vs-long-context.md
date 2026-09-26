@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #12
 TITLE:     RAG vs Fine-Tuning vs Long Context
 PILLAR:    AI Engineering — for engineers choosing how to add knowledge to an LLM app
 LEVEL:     ADVANCED
+FORMAT:    VISUAL
 HEADLINE:  RAG for facts, fine-tuning for behaviour
 LAYOUT:    STATEMENT
 STATUS:    draft

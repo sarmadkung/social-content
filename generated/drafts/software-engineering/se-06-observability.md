@@ -2,6 +2,7 @@ SERIES:    SOFTWARE ENGINEERING #06
 TITLE:     Logging vs Metrics vs Traces (Observability Basics)
 PILLAR:    Software Engineering — for junior and mid-level developers running code in production
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Logs, metrics, traces: three different questions
 LAYOUT:    ANATOMY
 STATUS:    draft

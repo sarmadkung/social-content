@@ -41,9 +41,9 @@ Only use patterns already taught. Not part of the Monday queue — post as an
 extra (e.g. Saturday) when there is time. Drafts go in generated/quiz/dsa/.
 
 ## Roadmap (post in this order)
-Published: #01 Reclaiming DSA · #02 Hash Maps: The Pattern Behind Two Sum
-
 ### Foundations
+- #01 Reclaiming DSA: two weeks, 23 algorithms, one repo (series intro)
+- #02 Hash Maps: the pattern behind Two Sum
 - #03 Why a hash map lookup is O(1) — and when it isn't (hashing, collisions)
 - #04 Big-O in plain English (what it measures, what it ignores)
 - #05 Arrays: why index access is O(1) but insert is O(n)

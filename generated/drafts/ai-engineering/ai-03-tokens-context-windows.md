@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #03
 TITLE:     Tokens and Context Windows
 PILLAR:    AI Engineering — for developers building their first LLM feature
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Tokens are the unit of everything
 LAYOUT:    ANATOMY
 STATUS:    draft

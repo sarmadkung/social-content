@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #07
 TITLE:     Structured Output: Getting JSON You Can Trust
 PILLAR:    AI Engineering — for developers connecting LLMs to real code
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Never trust JSON you did not validate
 LAYOUT:    FLOW
 STATUS:    draft

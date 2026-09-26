@@ -95,12 +95,15 @@ FORMAT PER POST (output exactly this)
   TITLE:     <title>
   PILLAR:    <pillar> — for <who benefits most>
   LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
-  HEADLINE:  <image headline, 8 words or fewer>
-  LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>
+  FORMAT:    <TEXT | VISUAL>
+  HEADLINE:  <image headline, 8 words or fewer>   (VISUAL only)
+  LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
   STATUS:    draft
   ---
   <post body, ready to paste>
 This is the one post format (also in skills/linkedin-content.skill.md).
+FORMAT: VISUAL by default. TEXT only when the body is short (1,400 characters
+or fewer) and needs no picture to explain it (no HEADLINE/LAYOUT on TEXT posts).
 STATUS moves draft → approved → scheduled → published; build_queue.py skips
 published posts. Run python3 scripts/validate.py after writing.
 
@@ -123,11 +126,7 @@ ACCURACY
     what to add] so Muhammad can fill it in.
 
 AVOID REPEATING
-Already published or drafted, do not repeat:
-  - DSA #02 Hash Maps: The Pattern Behind Two Sum
-  - SOFTWARE ENGINEERING #01 Ship the Boring Architecture First
-  - AI ENGINEERING #01 Agents Are Software, Not Magic
-  - BUILDING #01 Two Weeks, 23 Algorithms, One Repo
+Already drafted, do not repeat: every post in generated/drafts/.
 Check published/linkedin.md (the published log) and generated/ before writing.
 
 SELF-CHECK BEFORE RETURNING

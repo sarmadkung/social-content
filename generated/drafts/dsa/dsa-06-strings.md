@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #06
 TITLE:     Strings Are Arrays Too
 PILLAR:    DSA & Problem Solving — for students and juniors solving string problems
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Strings are read-only arrays
 LAYOUT:    ANATOMY
 STATUS:    draft

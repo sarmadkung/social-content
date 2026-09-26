@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #02
 TITLE:     What an LLM Actually Does
 PILLAR:    AI Engineering — for students and developers new to LLMs
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  An LLM predicts the next token
 LAYOUT:    FLOW
 STATUS:    draft

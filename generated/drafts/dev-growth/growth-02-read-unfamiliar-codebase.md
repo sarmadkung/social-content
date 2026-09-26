@@ -2,6 +2,7 @@ SERIES:    DEV GROWTH #02
 TITLE:     How to Read an Unfamiliar Codebase
 PILLAR:    Career & Developer Growth — for junior and mid-level developers joining a new team
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Follow one request, not every file
 LAYOUT:    FLOW
 STATUS:    draft

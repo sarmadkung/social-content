@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #11
 TITLE:     Chunking Strategies for RAG
 PILLAR:    AI Engineering — for developers whose RAG finds the wrong text
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Retrieval only finds what you cut
 LAYOUT:    GRID
 STATUS:    draft

@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #08
 TITLE:     Tool Calling: How a Model Asks Your Code to Act
 PILLAR:    AI Engineering — for developers connecting LLMs to real systems
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  The model asks. Your code runs.
 LAYOUT:    FLOW
 STATUS:    draft

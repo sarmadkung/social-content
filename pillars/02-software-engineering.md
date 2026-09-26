@@ -11,9 +11,8 @@ Juniors becoming professional engineers, mid-levels taking ownership, seniors
 comparing trade-offs.
 
 ## Roadmap (post in this order)
-Published: #01 Ship the Boring Architecture First
-
 ### Engineering basics
+- #01 Ship the boring architecture first
 - #02 Timeouts: the setting every network call needs
 - #03 Retries with backoff (and why infinite retries cause outages)
 - #04 Idempotency: making "try again" safe

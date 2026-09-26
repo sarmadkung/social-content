@@ -50,14 +50,21 @@ SERIES:    <series label and number, e.g. DSA SERIES #04>
 TITLE:     <title>
 PILLAR:    <pillar> — for <who benefits most>
 LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
-HEADLINE:  <image headline, 8 words or fewer>
-LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>
+FORMAT:    <TEXT | VISUAL>   (TEXT = words only; VISUAL = words + image)
+HEADLINE:  <image headline, 8 words or fewer>          (VISUAL only)
+LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
 STATUS:    <draft | approved | scheduled | published>
 ---
 <post body, ready to paste — no markdown headers, short paragraphs>
 ```
 
 New posts start as `STATUS: draft`. Only the text below `---` goes into LinkedIn.
+
+**Choosing FORMAT:** `VISUAL` is the default. A post is `TEXT` only when both
+are true: it is short (body 1,400 characters or fewer) and the words explain it
+fully, so an image would only repeat them. Anything longer, or anything with a
+flow, comparison, structure or idea a picture explains better, is `VISUAL`.
+`TEXT` posts leave out `HEADLINE:` and `LAYOUT:`.
 
 **Teaching order for every educational post:** problem → plain idea → technical
 name. Open with a concrete situation (numbers help), explain the idea in plain

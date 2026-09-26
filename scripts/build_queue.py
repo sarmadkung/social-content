@@ -57,23 +57,24 @@ def main():
            "Change a post's STATUS: line instead, then re-run the script.",
            "The record of what went live is `published/linkedin.md`.", "",
            "Schedule: Mon DSA · Tue AI Engineering · Wed Software Engineering · Thu System Architecture · Sun Dev Growth",
-           "Before posting: fill or delete any [PERSONAL: ...] line, then make the image from HEADLINE + LAYOUT."]
+           "Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an image made from HEADLINE + LAYOUT; ✍ posts go out as text only."]
     day, week = start, 0
     while any(queue.values()):
         if day.weekday() == 0:
             week += 1
             out += ["", f"## Week {week} — from {day:%a %d %b %Y}", "",
-                    "| Date | Series | Title | Status | File |", "| --- | --- | --- | --- | --- |"]
+                    "| Date | Series | Title | Format | Status | File |", "| --- | --- | --- | --- | --- | --- |"]
         pillar = SCHEDULE.get(day.weekday())
         if pillar:
             if queue[pillar]:
                 f, text, status = queue[pillar].pop(0)
                 mark = " ✎" if "[PERSONAL" in text else ""
                 rel = os.path.relpath(f, os.path.dirname(QUEUE))
+                fmt = "🖼 visual" if field(text, "FORMAT") == "VISUAL" else "✍ text"
                 out.append(f"| {day:%a %d %b} | {field(text, 'SERIES')} | {field(text, 'TITLE')}{mark} "
-                           f"| {status} | [{os.path.basename(f)}]({rel}) |")
+                           f"| {fmt} | {status} | [{os.path.basename(f)}]({rel}) |")
             else:
-                out.append(f"| {day:%a %d %b} | {pillar} | — write next post — | | |")
+                out.append(f"| {day:%a %d %b} | {pillar} | — write next post — | | | |")
         day += datetime.timedelta(days=1)
 
     out += ["", "✎ = has a [PERSONAL: ...] line to fill in or delete."]

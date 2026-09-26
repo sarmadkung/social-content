@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #14
 TITLE:     Anagrams and Group Anagrams (Frequency Counting)
 PILLAR:    DSA & Problem Solving — for students and juniors meeting counting problems in interviews
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Same letters, same key, same group
 LAYOUT:    FLOW
 STATUS:    draft

@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #10
 TITLE:     Sliding Window (Fixed and Variable Size)
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs working on subarray and substring problems
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Don't recompute. Slide the window.
 LAYOUT:    COMPARE
 STATUS:    draft

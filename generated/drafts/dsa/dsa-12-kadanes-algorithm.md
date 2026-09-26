@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #12
 TITLE:     Kadane's Algorithm (Maximum Subarray)
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs preparing for subarray interview questions
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Drop the past when it hurts
 LAYOUT:    FLOW
 STATUS:    draft

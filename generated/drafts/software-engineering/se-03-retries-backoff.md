@@ -2,6 +2,7 @@ SERIES:    SOFTWARE ENGINEERING #03
 TITLE:     Retries with Backoff (and Why Infinite Retries Cause Outages)
 PILLAR:    Software Engineering — for junior and mid-level developers calling other services
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Retry slower each time, then stop
 LAYOUT:    FLOW
 STATUS:    draft

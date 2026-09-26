@@ -2,6 +2,7 @@ SERIES:    DEV GROWTH #06
 TITLE:     Using AI Coding Tools Without Losing Your Skills
 PILLAR:    Career & Developer Growth — for students and junior developers, and seniors who review AI-written code
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Use AI, but stay the author
 LAYOUT:    FLOW
 STATUS:    draft

@@ -2,6 +2,7 @@ SERIES:    SOFTWARE ENGINEERING #08
 TITLE:     REST vs GraphQL vs gRPC — three answers to different questions
 PILLAR:    Software Engineering — for juniors choosing their first API style and mid-levels defending the choice in review
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Choose who absorbs the change
 LAYOUT:    COMPARE
 STATUS:    draft

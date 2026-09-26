@@ -2,6 +2,7 @@ SERIES:    SOFTWARE ENGINEERING #07
 TITLE:     REST API Design Basics: Resources, Verbs, Status Codes
 PILLAR:    Software Engineering — for students and junior developers designing their first APIs
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Nouns in the URL, verbs in the method
 LAYOUT:    ANATOMY
 STATUS:    draft

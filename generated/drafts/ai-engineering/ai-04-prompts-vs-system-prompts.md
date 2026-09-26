@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #04
 TITLE:     Prompts vs System Prompts
 PILLAR:    AI Engineering — for developers building chat and assistant features
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  System prompt sets rules. Prompt asks.
 LAYOUT:    COMPARE
 STATUS:    draft

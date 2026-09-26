@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #11
 TITLE:     Prefix Sum
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs handling range queries
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Add once, answer any range instantly
 LAYOUT:    FLOW
 STATUS:    draft

@@ -17,7 +17,9 @@ PILLARS = {
     "ai-engineering": ("AI ENGINEERING", "ai", "--ai"),
     "dev-growth": ("DEV GROWTH", "growth", "--grow"),
 }
-REQUIRED = ["SERIES", "TITLE", "PILLAR", "HEADLINE", "LAYOUT", "STATUS"]
+REQUIRED = ["SERIES", "TITLE", "PILLAR", "FORMAT", "STATUS"]
+FORMATS = {"TEXT", "VISUAL"}      # TEXT = post the words only; VISUAL = words + image
+VISUAL_ONLY = ["HEADLINE", "LAYOUT"]
 LAYOUTS = {"STATEMENT", "GRID", "ANATOMY", "FLOW", "COMPARE", "STAT", "CAROUSEL"}
 STATUSES = {"draft", "approved", "scheduled", "published"}
 LEVELS = {"BEGINNER", "INTERMEDIATE", "ADVANCED"}
@@ -25,6 +27,7 @@ BANNED = ["delve", "leverage", "robust", "seamless", "game-changer", "game chang
           "fast-paced world", "unlock"]
 BODY_HARD_MAX = 3000          # LinkedIn's cap
 BODY_TARGET = (1400, 2500)    # master prompt target range
+TEXT_MAX = 1400               # TEXT posts must be short; longer posts get a visual
 FIRST_DSA_PATTERN_POST = 8    # DSA #08 onward teach patterns and need "Spot it when"
 
 errors, warnings = [], []
@@ -86,6 +89,14 @@ def check_post(path, pillar, series_label, prefix, seen):
 
 
 def check_common(path, fields, body, quiz=False):
+    fmt = fields.get("FORMAT", "")
+    if fmt and fmt not in FORMATS:
+        err(path, f"FORMAT '{fmt}' is not one of {sorted(FORMATS)}")
+    for f in VISUAL_ONLY:
+        if fmt == "VISUAL" and not fields.get(f):
+            err(path, f"VISUAL post is missing {f}:")
+        if fmt == "TEXT" and f in fields:
+            err(path, f"TEXT post has {f}: — remove it, or set FORMAT: VISUAL")
     headline = fields.get("HEADLINE", "")
     if headline and len(headline.split()) > 8:
         err(path, f"HEADLINE has {len(headline.split())} words (max 8): '{headline}'")
@@ -103,6 +114,9 @@ def check_common(path, fields, body, quiz=False):
     n = len(body)
     if n > BODY_HARD_MAX:
         err(path, f"body is {n} characters (LinkedIn max {BODY_HARD_MAX})")
+    elif fmt == "TEXT":
+        if n > TEXT_MAX:
+            err(path, f"TEXT post is {n} characters (max {TEXT_MAX}) — shorten it or make it VISUAL")
     elif not quiz and not BODY_TARGET[0] <= n <= BODY_TARGET[1]:
         warn(path, f"body is {n} characters (target {BODY_TARGET[0]}–{BODY_TARGET[1]})")
     for i, line in enumerate(body.splitlines(), 1):

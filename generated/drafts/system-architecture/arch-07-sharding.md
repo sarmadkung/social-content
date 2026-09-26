@@ -2,6 +2,7 @@ SERIES:    SYSTEM ARCHITECTURE #07
 TITLE:     Sharding: when one database stops being enough
 PILLAR:    System Design & Architecture — for mid-levels in design interviews and juniors who have only ever used one database
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Replication copies the data. Sharding splits it.
 LAYOUT:    FLOW
 STATUS:    draft

@@ -8,7 +8,3 @@ When a post goes live:
 
 | Date | Series | Title | Link | Notes |
 | --- | --- | --- | --- | --- |
-| before 2026-09-25 | BUILDING #01 | Two Weeks, 23 Algorithms, One Repo | | posted before this system |
-| before 2026-09-25 | DSA SERIES #02 | Hash Maps: The Pattern Behind Two Sum | | posted before this system |
-| before 2026-09-25 | SOFTWARE ENGINEERING #01 | Ship the Boring Architecture First | | posted before this system |
-| before 2026-09-25 | AI ENGINEERING #01 | Agents Are Software, Not Magic | | posted before this system |

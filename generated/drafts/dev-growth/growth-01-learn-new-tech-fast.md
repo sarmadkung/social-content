@@ -2,6 +2,7 @@ SERIES:    DEV GROWTH #01
 TITLE:     How to Learn a New Technology Fast
 PILLAR:    Career & Developer Growth — for students and junior developers starting a new stack
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Build first, read second
 LAYOUT:    FLOW
 STATUS:    draft

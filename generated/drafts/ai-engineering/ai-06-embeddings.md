@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #06
 TITLE:     Embeddings: Turning Text into Numbers
 PILLAR:    AI Engineering — for developers building search and RAG
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Embeddings turn meaning into numbers
 LAYOUT:    ANATOMY
 STATUS:    draft

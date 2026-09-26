@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #08
 TITLE:     Every DSA Problem Has a Pattern — How to Spot It
 PILLAR:    DSA & Problem Solving — for students and juniors who solve many problems but freeze on new ones
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Read the problem for clues, not code
 LAYOUT:    GRID
 STATUS:    draft

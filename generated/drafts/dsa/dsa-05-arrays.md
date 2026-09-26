@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #05
 TITLE:     Arrays: Why Index Access Is O(1) but Insert Is O(n)
 PILLAR:    DSA & Problem Solving — for students and juniors who use arrays daily
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Reading is instant. Inserting shifts everything.
 LAYOUT:    COMPARE
 STATUS:    draft

@@ -2,6 +2,7 @@ SERIES:    DEV GROWTH #03
 TITLE:     How to Debug Systematically
 PILLAR:    Career & Developer Growth — for students and junior developers, with a tool for mid-level
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Debugging is a loop, not a guess
 LAYOUT:    FLOW
 STATUS:    draft

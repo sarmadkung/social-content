@@ -2,6 +2,7 @@ SERIES:    DEV GROWTH #05
 TITLE:     Junior vs Mid vs Senior: What Actually Changes
 PILLAR:    Career & Developer Growth — for students and junior developers, and mid-levels aiming for senior
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Seniority grows by scope, not years
 LAYOUT:    FLOW
 STATUS:    draft

@@ -2,6 +2,7 @@ SERIES:    SYSTEM ARCHITECTURE #03
 TITLE:     Load Balancers: One Address, Many Servers
 PILLAR:    System Design & Architecture — for juniors who want the request path, mid-levels for interviews
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  One address in front, many servers behind
 LAYOUT:    FLOW
 STATUS:    draft

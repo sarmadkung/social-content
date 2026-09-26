@@ -11,9 +11,8 @@ Developers moving into AI engineering, engineers adding LLMs to products,
 seniors thinking about architecture, cost and reliability.
 
 ## Roadmap (post in this order)
-Published: #01 Agents Are Software, Not Magic
-
 ### Foundations
+- #01 Agents are software, not magic
 - #02 What an LLM actually does (next-token prediction, plainly)
 - #03 Tokens and context windows
 - #04 Prompts vs system prompts

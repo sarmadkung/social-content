@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #10
 TITLE:     Vector Databases and Similarity Search
 PILLAR:    AI Engineering — for developers scaling search and RAG
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Find similar without checking everything
 LAYOUT:    COMPARE
 STATUS:    draft

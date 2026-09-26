@@ -2,6 +2,7 @@ SERIES:    AI ENGINEERING #14
 TITLE:     Context engineering: the window is a budget, not a bucket
 PILLAR:    AI Engineering — for engineers building agents and RAG systems who keep adding context and getting worse answers
 LEVEL:     ADVANCED
+FORMAT:    VISUAL
 HEADLINE:  A 200k window isn't 200k useful context
 LAYOUT:    STAT
 STATUS:    draft

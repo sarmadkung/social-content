@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #15
 TITLE:     Binary Search (and "Binary Search on the Answer")
 PILLAR:    DSA & Problem Solving — for juniors learning it and mid-level devs who want the "on the answer" version
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Halve the space until one remains
 LAYOUT:    FLOW
 STATUS:    draft

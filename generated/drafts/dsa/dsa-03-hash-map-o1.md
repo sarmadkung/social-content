@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #03
 TITLE:     Why a Hash Map Lookup Is O(1) — and When It Isn't
 PILLAR:    DSA & Problem Solving — for students and juniors who use Map daily but never looked inside
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  Hash the key, jump to the bucket
 LAYOUT:    FLOW
 STATUS:    draft

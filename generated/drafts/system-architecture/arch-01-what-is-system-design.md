@@ -2,6 +2,7 @@ SERIES:    SYSTEM ARCHITECTURE #01
 TITLE:     What System Design Actually Is
 PILLAR:    System Design & Architecture — for students and juniors who want the big picture
 LEVEL:     BEGINNER
+FORMAT:    VISUAL
 HEADLINE:  System design is choosing what can break
 LAYOUT:    ANATOMY
 STATUS:    draft

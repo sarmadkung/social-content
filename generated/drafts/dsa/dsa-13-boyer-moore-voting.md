@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #13
 TITLE:     Boyer–Moore Voting (Majority Element)
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs who reach for a hash map by default
 LEVEL:     INTERMEDIATE
+FORMAT:    VISUAL
 HEADLINE:  Opposite votes cancel. The majority survives.
 LAYOUT:    FLOW
 STATUS:    draft
