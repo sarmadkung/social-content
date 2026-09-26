@@ -46,61 +46,60 @@ master prompt. Never more than 4 TEACH posts in a row.
 
 ### Foundations
 - #01 Reclaiming DSA: two weeks, 23 algorithms, one repo · PERSONAL · needs —
-- #02 How we measure an algorithm: time and space complexity · TEACH · needs —
-- #03 Big-O in plain English (what it measures, what it ignores) · TEACH · needs #02
-- #04 Arrays: why index access is O(1) but insert is O(n) · WHY · needs #03
-- #05 Strings are arrays too (immutability, building strings efficiently) · TEACH · needs #04
-- #06 Why a hash map lookup is O(1) — and when it isn't · WHY · needs #03, #04
-- #07 Hash Set vs Hash Map: which one and why · COMPARE · needs #06
-- #08 Hash maps: the pattern behind Two Sum · TEACH · needs #06
+- #02 Big-O in plain English (what it measures, what it ignores) · TEACH · needs —
+- #03 Arrays: why index access is O(1) but insert is O(n) · WHY · needs #02
+- #04 Strings are arrays too (immutability, building strings efficiently) · TEACH · needs #03
+- #05 Why a hash map lookup is O(1) — and when it isn't · WHY · needs #02, #03
+- #06 Hash Set vs Hash Map: which one and why · COMPARE · needs #05
+- #07 Hash maps: the pattern behind Two Sum · TEACH · needs #05
 
 ### Patterns on arrays and strings
-- #09 Every DSA problem has a pattern — how to spot it · LIST · needs #08
-- #10 Two Pointers · TEACH · needs #04, #09
-- #11 Sliding Window (fixed and variable size) · TEACH · needs #10
-- #12 Prefix Sum · TEACH · needs #04
-- #13 Kadane's Algorithm (max subarray) · TEACH · needs #12
-- #14 Two pointers vs sliding window vs prefix sum vs Kadane: which one? · COMPARE · needs #10, #11, #12, #13
-- #15 Boyer–Moore Voting (majority element) · TEACH · needs #06
-- #16 Anagrams and Group Anagrams (frequency counting) · TEACH · needs #05, #06
-- #17 Binary Search (and "binary search on the answer") · TEACH · needs #03, #04
-- #18 Sorting: stable, in-place, O(n log n) · TEACH · needs #03
-- #19 7 array and string problems, and the pattern that solves each · LIST · needs #09–#18
+- #08 Every DSA problem has a pattern — how to spot it · LIST · needs #07
+- #09 Two Pointers · TEACH · needs #03, #08
+- #10 Sliding Window (fixed and variable size) · TEACH · needs #09
+- #11 Prefix Sum · TEACH · needs #03
+- #12 Kadane's Algorithm (max subarray) · TEACH · needs #11
+- #13 Two pointers vs sliding window vs prefix sum vs Kadane: which one? · COMPARE · needs #09, #10, #11, #12
+- #14 Boyer–Moore Voting (majority element) · TEACH · needs #05
+- #15 Anagrams and Group Anagrams (frequency counting) · TEACH · needs #04, #05
+- #16 Binary Search (and "binary search on the answer") · TEACH · needs #02, #03
+- #17 Sorting: stable, in-place, O(n log n) · TEACH · needs #02
+- #18 7 array and string problems, and the pattern that solves each · LIST · needs #08–#17
 
 ### Linear structures
-- #20 Linked Lists (and when you would actually use one) · TEACH · needs #04
-- #21 Fast and Slow Pointers (cycle detection) · TEACH · needs #10, #20
-- #22 Stacks (valid parentheses, undo) · TEACH · needs #04
-- #23 Queues and Deques (BFS, sliding window max) · TEACH · needs #22
-- #24 Stack vs queue vs deque: which one? · COMPARE · needs #22, #23
-- #25 Monotonic Stack (next greater element) · TEACH · needs #22
+- #19 Linked Lists (and when you would actually use one) · TEACH · needs #03
+- #20 Fast and Slow Pointers (cycle detection) · TEACH · needs #09, #19
+- #21 Stacks (valid parentheses, undo) · TEACH · needs #03
+- #22 Queues and Deques (BFS, sliding window max) · TEACH · needs #21
+- #23 Stack vs queue vs deque: which one? · COMPARE · needs #21, #22
+- #24 Monotonic Stack (next greater element) · TEACH · needs #21
 
 ### Trees and graphs
-- #26 Trees and Binary Trees · TEACH · needs #20
-- #27 Tree traversals: DFS vs BFS · COMPARE · needs #22, #23, #26
-- #28 Binary Search Trees · TEACH · needs #17, #26
-- #29 Heaps and Priority Queues (top-K) · TEACH · needs #26
-- #30 Graphs: representation (list vs matrix) · TEACH · needs #04, #06
-- #31 Graph BFS and DFS · TEACH · needs #27, #30
-- #32 5 problems that are secretly graphs · LIST · needs #30, #31
-- #33 Topological Sort (dependency order) · TEACH · needs #31
-- #34 Union-Find · TEACH · needs #30
-- #35 Dijkstra (shortest path) · TEACH · needs #29, #31
-- #36 Tries (autocomplete) · TEACH · needs #26
-- #37 Which graph algorithm? Routes, order, groups, prefixes · COMPARE · needs #33, #34, #35, #36
+- #25 Trees and Binary Trees · TEACH · needs #19
+- #26 Tree traversals: DFS vs BFS · COMPARE · needs #21, #22, #25
+- #27 Binary Search Trees · TEACH · needs #16, #25
+- #28 Heaps and Priority Queues (top-K) · TEACH · needs #25
+- #29 Graphs: representation (list vs matrix) · TEACH · needs #03, #05
+- #30 Graph BFS and DFS · TEACH · needs #26, #29
+- #31 5 problems that are secretly graphs · LIST · needs #29, #30
+- #32 Topological Sort (dependency order) · TEACH · needs #30
+- #33 Union-Find · TEACH · needs #29
+- #34 Dijkstra (shortest path) · TEACH · needs #28, #30
+- #35 Tries (autocomplete) · TEACH · needs #25
+- #36 Which graph algorithm? Routes, order, groups, prefixes · COMPARE · needs #32, #33, #34, #35
 
 ### Advanced techniques
-- #38 Recursion, explained without the magic · TEACH · needs #22
-- #39 Backtracking · TEACH · needs #38
-- #40 Greedy algorithms (and when greedy is wrong) · TEACH · needs #18
-- #41 Dynamic Programming: the idea · TEACH · needs #38
-- #42 Greedy vs DP: how to tell which one a problem needs · COMPARE · needs #40, #41
-- #43 DP: memoization vs tabulation · COMPARE · needs #41
-- #44 Bit manipulation basics · TEACH · needs #03
+- #37 Recursion, explained without the magic · TEACH · needs #21
+- #38 Backtracking · TEACH · needs #37
+- #39 Greedy algorithms (and when greedy is wrong) · TEACH · needs #17
+- #40 Dynamic Programming: the idea · TEACH · needs #37
+- #41 Greedy vs DP: how to tell which one a problem needs · COMPARE · needs #39, #40
+- #42 DP: memoization vs tabulation · COMPARE · needs #40
+- #43 Bit manipulation basics · TEACH · needs #02
 
 ### Wrap-up
-- #45 The pattern cheat-sheet: clue words → pattern → example problem (CAROUSEL, recaps #09) · LIST · needs #09–#44
-- #46 How I practise DSA (a repeatable routine) · PERSONAL · needs —
+- #44 The pattern cheat-sheet: clue words → pattern → example problem (CAROUSEL, recaps #08) · LIST · needs #08–#43
+- #45 How I practise DSA (a repeatable routine) · PERSONAL · needs —
 
 ## Content opportunities
 Explain a concept · Brute force vs optimised · A mistake I made · Pattern in a

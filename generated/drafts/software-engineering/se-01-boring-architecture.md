@@ -32,6 +32,6 @@ The clever architecture still gets built. It just gets built on evidence — a r
 
 Earn the complexity. Don't front-load it.
 
-Next: client and server, what happens when your app calls an API.
+Next: one HTTP request, step by step — where the time actually goes.
 
 #SoftwareEngineering #SystemDesign #BackendDevelopment #Architecture #Reliability

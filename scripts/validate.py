@@ -37,7 +37,7 @@ BANNED = ["delve", "leverage", "robust", "seamless", "game-changer", "game chang
 BODY_HARD_MAX = 3000          # LinkedIn's cap
 BODY_TARGET = (1400, 2500)    # master prompt target range
 TEXT_MAX = 1400               # TEXT posts must be short; longer posts get a visual
-FIRST_DSA_PATTERN_POST = 10   # DSA TEACH posts from #10 (Two Pointers) on need "Spot it when"
+FIRST_DSA_PATTERN_POST = 9    # DSA TEACH posts from #09 (Two Pointers) on need "Spot it when"
 
 errors, warnings = [], []
 

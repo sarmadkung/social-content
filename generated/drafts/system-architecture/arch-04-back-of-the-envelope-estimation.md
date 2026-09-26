@@ -55,6 +55,6 @@ Designing for the average. At 3× peak, a system sized for 2,000 a second falls 
 
 Takeaway: Five minutes of rough maths tells you what to design for, and what you can ignore.
 
-Next: the simplest system that works: client, server, database.
+Next: vertical vs horizontal scaling, the first choice when traffic grows.
 
 #SystemDesign #SoftwareArchitecture #SystemDesignInterview #Scalability

@@ -60,6 +60,10 @@ reader; PERSONAL is the author's own experience. Each mode's structure lives
 in `prompts/master-content-prompt.md`. Never more than 4 TEACH posts in a row
 within a pillar, and a post only relies on the posts in its `needs` list.
 
+**Minimum depth:** skip anything every working developer already knows
+(variables, functions, loops, client vs server, "what is AI"). A foundation
+post must hold a real insight, not a definition.
+
 **Choosing FORMAT:** `VISUAL` is the default. A post is `TEXT` only when both
 are true: it is short (body 1,400 characters or fewer) and the words explain it
 fully, so an image would only repeat them. Anything longer, or anything with a
@@ -300,11 +304,11 @@ system architecture + modern AI engineering.**
 Use recognizable series labels:
 
 ```
-DSA SERIES #08            Hash Maps: The Pattern Behind Two Sum
+DSA SERIES #07            Hash Maps: The Pattern Behind Two Sum
 DSA QUIZ #01              Which Pattern Is This?
 SOFTWARE ENGINEERING #01  Ship the Boring Architecture First
 SYSTEM ARCHITECTURE #01   What System Design Actually Is
-AI ENGINEERING #10        Agents Are Software, Not Magic
+AI ENGINEERING #09        Agents Are Software, Not Magic
 DEV GROWTH #01            Junior vs Mid vs Senior: What Actually Changes
 ```
 

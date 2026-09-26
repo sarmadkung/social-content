@@ -29,6 +29,6 @@ Write the fuzz test. Your tests agree with your assumptions.
 
 This series is where I'll share it, one pattern a week.
 
-Next: how we measure an algorithm — time and space complexity.
+Next: Big-O in plain English — what it measures, and what it ignores.
 
 #DataStructures #Algorithms #BuildInPublic #LearningInPublic #SoftwareEngineering

@@ -84,6 +84,12 @@ run of lessons, add a COMPARE, LIST, SCENARIO or WHY post that uses them.
 A post can also open with a myth ("Myth: hash maps are always O(1)") and
 correct it; that is a hook, not a separate mode.
 
+MINIMUM DEPTH: do not teach what every working developer already knows:
+variables, functions, loops, "what is an API", client vs server, "what is
+AI". Start where a working developer learns something new. A foundation post
+earns its place only if later posts depend on it AND it holds a real insight
+(e.g. why array access is O(1), what DNS/TCP/TLS add to one request).
+
 PREREQUISITES: a post may only rely on ideas from the posts listed in its
 "needs" field (or plain common knowledge). If it needs more, the roadmap is
 wrong: fix the roadmap first.
