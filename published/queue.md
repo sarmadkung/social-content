@@ -15,7 +15,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Tue 29 Sep | AI ENGINEERING #01 | Training vs Inference: Where a Model Learns, Where You Use It | TEACH | 🖼 visual | draft | [ai-01-training-vs-inference.md](../generated/drafts/ai-engineering/ai-01-training-vs-inference.md) |
 | Wed 30 Sep | SOFTWARE ENGINEERING #01 | Ship the Boring Architecture First | WHY | ✍ text | draft | [se-01-boring-architecture.md](../generated/drafts/software-engineering/se-01-boring-architecture.md) |
 | Thu 01 Oct | SYSTEM ARCHITECTURE #01 | What System Design Actually Is ✎ | TEACH | 🖼 visual | draft | [arch-01-what-is-system-design.md](../generated/drafts/system-architecture/arch-01-what-is-system-design.md) |
-| Sat 03 Oct | building | — write: next post from sources/project-log.md — | | | | |
+| Sat 03 Oct | BUILDING | — write: next post from sources/project-log.md — | | | | |
 | Sun 04 Oct | DEV GROWTH #01 | Junior vs Mid vs Senior: What Actually Changes ✎ | COMPARE | 🖼 visual | draft | [growth-01-junior-mid-senior.md](../generated/drafts/dev-growth/growth-01-junior-mid-senior.md) |
 
 ## Week 2 — from Mon 05 Oct 2026
@@ -26,7 +26,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Tue 06 Oct | AI ENGINEERING #02 | What an LLM Actually Does ✎ | TEACH | 🖼 visual | draft | [ai-02-what-an-llm-does.md](../generated/drafts/ai-engineering/ai-02-what-an-llm-does.md) |
 | Wed 07 Oct | SOFTWARE ENGINEERING #02 | One HTTP Request, Step by Step (DNS, Connection, Request, Response) | TEACH | 🖼 visual | draft | [se-02-http-request-step-by-step.md](../generated/drafts/software-engineering/se-02-http-request-step-by-step.md) |
 | Thu 08 Oct | SYSTEM ARCHITECTURE #02 | Requirements First: Functional vs Non-Functional ✎ | TEACH | 🖼 visual | draft | [arch-02-functional-vs-non-functional-requirements.md](../generated/drafts/system-architecture/arch-02-functional-vs-non-functional-requirements.md) |
-| Sat 10 Oct | pivot | — write: next post from sources/project-log.md — | | | | |
+| Sat 10 Oct | PIVOT | — write: next post from sources/project-log.md — | | | | |
 | Sun 11 Oct | DEV GROWTH #02 | How to Learn a New Technology Fast ✎ | TEACH | 🖼 visual | draft | [growth-02-learn-new-tech-fast.md](../generated/drafts/dev-growth/growth-02-learn-new-tech-fast.md) |
 
 ## Week 3 — from Mon 12 Oct 2026
@@ -37,7 +37,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Tue 13 Oct | AI ENGINEERING #03 | Tokens and Context Windows | TEACH | 🖼 visual | draft | [ai-03-tokens-context-windows.md](../generated/drafts/ai-engineering/ai-03-tokens-context-windows.md) |
 | Wed 14 Oct | SOFTWARE ENGINEERING #03 | Timeouts: The Setting Every Network Call Needs ✎ | TEACH | 🖼 visual | draft | [se-03-timeouts.md](../generated/drafts/software-engineering/se-03-timeouts.md) |
 | Thu 15 Oct | SYSTEM ARCHITECTURE #03 | Latency, Throughput and Availability: The Three Numbers ✎ | TEACH | 🖼 visual | draft | [arch-03-latency-throughput-availability.md](../generated/drafts/system-architecture/arch-03-latency-throughput-availability.md) |
-| Sat 17 Oct | building | — write: next post from sources/project-log.md — | | | | |
+| Sat 17 Oct | BUILDING | — write: next post from sources/project-log.md — | | | | |
 | Sun 18 Oct | DEV GROWTH #03 | How to Read an Unfamiliar Codebase ✎ | TEACH | 🖼 visual | draft | [growth-03-read-unfamiliar-codebase.md](../generated/drafts/dev-growth/growth-03-read-unfamiliar-codebase.md) |
 
 ## Week 4 — from Mon 19 Oct 2026
@@ -48,7 +48,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Tue 20 Oct | AI ENGINEERING #04 | Prompts vs System Prompts | COMPARE | 🖼 visual | draft | [ai-04-prompts-vs-system-prompts.md](../generated/drafts/ai-engineering/ai-04-prompts-vs-system-prompts.md) |
 | Wed 21 Oct | SOFTWARE ENGINEERING #04 | Retries with Backoff (and Why Infinite Retries Cause Outages) | TEACH | 🖼 visual | draft | [se-04-retries-backoff.md](../generated/drafts/software-engineering/se-04-retries-backoff.md) |
 | Thu 22 Oct | SYSTEM ARCHITECTURE #04 | Back-of-the-Envelope Estimation: A Photo App in Five Minutes ✎ | SCENARIO | 🖼 visual | draft | [arch-04-back-of-the-envelope-estimation.md](../generated/drafts/system-architecture/arch-04-back-of-the-envelope-estimation.md) |
-| Sat 24 Oct | pivot | — write: next post from sources/project-log.md — | | | | |
+| Sat 24 Oct | PIVOT | — write: next post from sources/project-log.md — | | | | |
 | Sun 25 Oct | DEV GROWTH #04 | How to Debug Systematically ✎ | TEACH | 🖼 visual | draft | [growth-04-debug-systematically.md](../generated/drafts/dev-growth/growth-04-debug-systematically.md) |
 
 ## Week 5 — from Mon 26 Oct 2026
@@ -59,7 +59,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Tue 27 Oct | AI ENGINEERING #05 | Temperature and Why Outputs Change ✎ | WHY | 🖼 visual | draft | [ai-05-temperature.md](../generated/drafts/ai-engineering/ai-05-temperature.md) |
 | Wed 28 Oct | SOFTWARE ENGINEERING #05 | A Payment Request Times Out. What Should Your Code Do? ✎ | SCENARIO | 🖼 visual | draft | [se-05-payment-timeout-scenario.md](../generated/drafts/software-engineering/se-05-payment-timeout-scenario.md) |
 | Thu 29 Oct | SYSTEM ARCHITECTURE #05 | Vertical vs Horizontal Scaling ✎ | COMPARE | 🖼 visual | draft | [arch-05-vertical-vs-horizontal-scaling.md](../generated/drafts/system-architecture/arch-05-vertical-vs-horizontal-scaling.md) |
-| Sat 31 Oct | building | — write: next post from sources/project-log.md — | | | | |
+| Sat 31 Oct | BUILDING | — write: next post from sources/project-log.md — | | | | |
 | Sun 01 Nov | DEV GROWTH #05 | How to Ask a Good Technical Question ✎ | TEACH | 🖼 visual | draft | [growth-05-ask-good-technical-question.md](../generated/drafts/dev-growth/growth-05-ask-good-technical-question.md) |
 
 ## Week 6 — from Mon 02 Nov 2026
@@ -70,7 +70,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Tue 03 Nov | AI ENGINEERING #06 | Embeddings: Turning Text into Numbers | TEACH | 🖼 visual | draft | [ai-06-embeddings.md](../generated/drafts/ai-engineering/ai-06-embeddings.md) |
 | Wed 04 Nov | SOFTWARE ENGINEERING #06 | Idempotency: Making "Try Again" Safe ✎ | TEACH | 🖼 visual | draft | [se-06-idempotency.md](../generated/drafts/software-engineering/se-06-idempotency.md) |
 | Thu 05 Nov | SYSTEM ARCHITECTURE #06 | Load Balancers: One Address, Many Servers ✎ | TEACH | 🖼 visual | draft | [arch-06-load-balancers.md](../generated/drafts/system-architecture/arch-06-load-balancers.md) |
-| Sat 07 Nov | pivot | — write: next post from sources/project-log.md — | | | | |
+| Sat 07 Nov | PIVOT | — write: next post from sources/project-log.md — | | | | |
 | Sun 08 Nov | DEV GROWTH #06 | Why Fundamentals Still Matter When AI Writes Code ✎ | WHY | 🖼 visual | draft | [growth-06-why-fundamentals-still-matter.md](../generated/drafts/dev-growth/growth-06-why-fundamentals-still-matter.md) |
 
 ## Week 7 — from Mon 09 Nov 2026
@@ -81,7 +81,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Tue 10 Nov | AI ENGINEERING #07 | Structured Output: Getting JSON You Can Trust | TEACH | 🖼 visual | draft | [ai-07-structured-output.md](../generated/drafts/ai-engineering/ai-07-structured-output.md) |
 | Wed 11 Nov | SOFTWARE ENGINEERING #07 | Error Handling: Fail Loudly, Recover Deliberately | TEACH | 🖼 visual | draft | [se-07-error-handling.md](../generated/drafts/software-engineering/se-07-error-handling.md) |
 | Thu 12 Nov | SYSTEM ARCHITECTURE #07 | Caching: Where to Cache, and When to Forget ✎ | TEACH | 🖼 visual | draft | [arch-07-caching.md](../generated/drafts/system-architecture/arch-07-caching.md) |
-| Sat 14 Nov | building | — write: next post from sources/project-log.md — | | | | |
+| Sat 14 Nov | BUILDING | — write: next post from sources/project-log.md — | | | | |
 | Sun 15 Nov | DEV GROWTH #07 | Using AI Coding Tools Without Losing Your Skills ✎ | TEACH | 🖼 visual | draft | [growth-07-ai-tools-keep-skills.md](../generated/drafts/dev-growth/growth-07-ai-tools-keep-skills.md) |
 
 ## Week 8 — from Mon 16 Nov 2026
@@ -92,52 +92,52 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Tue 17 Nov | AI ENGINEERING #08 | Tool Calling: How a Model Asks Your Code to Act | TEACH | 🖼 visual | draft | [ai-08-tool-calling.md](../generated/drafts/ai-engineering/ai-08-tool-calling.md) |
 | Wed 18 Nov | SOFTWARE ENGINEERING #08 | Logging vs Metrics vs Traces (Observability Basics) ✎ | COMPARE | 🖼 visual | draft | [se-08-observability.md](../generated/drafts/software-engineering/se-08-observability.md) |
 | Thu 19 Nov | SYSTEM ARCHITECTURE #08 | CDNs: Moving Content Closer to Users ✎ | TEACH | 🖼 visual | draft | [arch-08-cdns.md](../generated/drafts/system-architecture/arch-08-cdns.md) |
-| Sat 21 Nov | pivot | — write: next post from sources/project-log.md — | | | | |
+| Sat 21 Nov | PIVOT | — write: next post from sources/project-log.md — | | | | |
 | Sun 22 Nov | DEV GROWTH #08 | How to prepare for coding interviews without grinding 500 problems | TEACH | 🖼 visual | draft | [growth-08-interview-prep.md](../generated/drafts/dev-growth/growth-08-interview-prep.md) |
 
 ## Week 9 — from Mon 23 Nov 2026
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 23 Nov | DSA SERIES #09 | Two Pointers | TEACH | 🖼 visual | draft | [dsa-09-two-pointers.md](../generated/drafts/dsa/dsa-09-two-pointers.md) |
+| Mon 23 Nov | DSA SERIES #09 | Two Pointers: How One Pass Replaces a Nested Loop | TEACH | 🖼 visual | draft | [dsa-09-two-pointers.md](../generated/drafts/dsa/dsa-09-two-pointers.md) |
 | Tue 24 Nov | AI ENGINEERING #09 | Agents Are Software, Not Magic | WHY | 🖼 visual | draft | [ai-09-agents-are-software.md](../generated/drafts/ai-engineering/ai-09-agents-are-software.md) |
 | Wed 25 Nov | SOFTWARE ENGINEERING #09 | Good APIs Are Contracts, Not Just Endpoints | TEACH | 🖼 visual | draft | [se-09-api-contracts.md](../generated/drafts/software-engineering/se-09-api-contracts.md) |
 | Thu 26 Nov | SYSTEM ARCHITECTURE #09 | Database Replication and Read Replicas ✎ | TEACH | 🖼 visual | draft | [arch-09-database-replication.md](../generated/drafts/system-architecture/arch-09-database-replication.md) |
-| Sat 28 Nov | building | — write: next post from sources/project-log.md — | | | | |
-| Sun 29 Nov | dev-growth | — write: #09 How to break a problem down before you code · TEACH — | | | | |
+| Sat 28 Nov | BUILDING | — write: next post from sources/project-log.md — | | | | |
+| Sun 29 Nov | DEV GROWTH | — write: #09 How to break a problem down before you code · TEACH — | | | | |
 
 ## Week 10 — from Mon 30 Nov 2026
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 30 Nov | DSA SERIES #10 | Sliding Window (Fixed and Variable Size) | TEACH | 🖼 visual | draft | [dsa-10-sliding-window.md](../generated/drafts/dsa/dsa-10-sliding-window.md) |
+| Mon 30 Nov | DSA SERIES #10 | Sliding Window: Stop Recomputing Overlapping Ranges | TEACH | 🖼 visual | draft | [dsa-10-sliding-window.md](../generated/drafts/dsa/dsa-10-sliding-window.md) |
 | Tue 01 Dec | AI ENGINEERING #10 | RAG: Retrieval-Augmented Generation, Plainly ✎ | TEACH | 🖼 visual | draft | [ai-10-rag.md](../generated/drafts/ai-engineering/ai-10-rag.md) |
 | Wed 02 Dec | SOFTWARE ENGINEERING #10 | REST vs GraphQL vs gRPC — three answers to different questions | COMPARE | 🖼 visual | draft | [se-10-rest-graphql-grpc.md](../generated/drafts/software-engineering/se-10-rest-graphql-grpc.md) |
 | Thu 03 Dec | SYSTEM ARCHITECTURE #10 | Your Database Is at 90% CPU. What Do You Try First? ✎ | SCENARIO | 🖼 visual | draft | [arch-10-database-at-90-percent-cpu.md](../generated/drafts/system-architecture/arch-10-database-at-90-percent-cpu.md) |
-| Sat 05 Dec | pivot | — write: next post from sources/project-log.md — | | | | |
-| Sun 06 Dec | dev-growth | — write: #10 Estimating work honestly · TEACH — | | | | |
+| Sat 05 Dec | PIVOT | — write: next post from sources/project-log.md — | | | | |
+| Sun 06 Dec | DEV GROWTH | — write: #10 Estimating work honestly · TEACH — | | | | |
 
 ## Week 11 — from Mon 07 Dec 2026
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 07 Dec | DSA SERIES #11 | Prefix Sum | TEACH | 🖼 visual | draft | [dsa-11-prefix-sum.md](../generated/drafts/dsa/dsa-11-prefix-sum.md) |
+| Mon 07 Dec | DSA SERIES #11 | Prefix Sum: Pay Once, Answer Any Range in O(1) | TEACH | 🖼 visual | draft | [dsa-11-prefix-sum.md](../generated/drafts/dsa/dsa-11-prefix-sum.md) |
 | Tue 08 Dec | AI ENGINEERING #11 | Vector Databases and Similarity Search | TEACH | 🖼 visual | draft | [ai-11-vector-databases.md](../generated/drafts/ai-engineering/ai-11-vector-databases.md) |
-| Wed 09 Dec | software-engineering | — write: #11 Pagination: offset vs cursor · COMPARE — | | | | |
+| Wed 09 Dec | SOFTWARE ENGINEERING | — write: #11 Pagination: offset vs cursor · COMPARE — | | | | |
 | Thu 10 Dec | SYSTEM ARCHITECTURE #11 | Sharding: when one database stops being enough | TEACH | 🖼 visual | draft | [arch-11-sharding.md](../generated/drafts/system-architecture/arch-11-sharding.md) |
-| Sat 12 Dec | building | — write: next post from sources/project-log.md — | | | | |
-| Sun 13 Dec | dev-growth | — write: #11 5 questions to ask before you start any task · LIST — | | | | |
+| Sat 12 Dec | BUILDING | — write: next post from sources/project-log.md — | | | | |
+| Sun 13 Dec | DEV GROWTH | — write: #11 5 questions to ask before you start any task · LIST — | | | | |
 
 ## Week 12 — from Mon 14 Dec 2026
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 14 Dec | DSA SERIES #12 | Kadane's Algorithm (Maximum Subarray) | TEACH | 🖼 visual | draft | [dsa-12-kadanes-algorithm.md](../generated/drafts/dsa/dsa-12-kadanes-algorithm.md) |
+| Mon 14 Dec | DSA SERIES #12 | Kadane's Algorithm: Knowing What to Throw Away | TEACH | 🖼 visual | draft | [dsa-12-kadanes-algorithm.md](../generated/drafts/dsa/dsa-12-kadanes-algorithm.md) |
 | Tue 15 Dec | AI ENGINEERING #12 | Chunking Strategies for RAG | TEACH | 🖼 visual | draft | [ai-12-chunking.md](../generated/drafts/ai-engineering/ai-12-chunking.md) |
-| Wed 16 Dec | software-engineering | — write: #12 Authentication vs Authorization · COMPARE — | | | | |
-| Thu 17 Dec | system-architecture | — write: #12 Message queues and async processing · TEACH — | | | | |
-| Sat 19 Dec | pivot | — write: next post from sources/project-log.md — | | | | |
-| Sun 20 Dec | dev-growth | — write: #12 Writing a pull request people want to review · TEACH — | | | | |
+| Wed 16 Dec | SOFTWARE ENGINEERING | — write: #12 Authentication vs Authorization · COMPARE — | | | | |
+| Thu 17 Dec | SYSTEM ARCHITECTURE | — write: #12 Message queues and async processing · TEACH — | | | | |
+| Sat 19 Dec | PIVOT | — write: next post from sources/project-log.md — | | | | |
+| Sun 20 Dec | DEV GROWTH | — write: #12 Writing a pull request people want to review · TEACH — | | | | |
 
 ## Week 13 — from Mon 21 Dec 2026
 
@@ -145,43 +145,43 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 21 Dec | DSA SERIES #13 | Two Pointers vs Sliding Window vs Prefix Sum vs Kadane: Which One? | COMPARE | 🖼 visual | draft | [dsa-13-array-patterns-which-one.md](../generated/drafts/dsa/dsa-13-array-patterns-which-one.md) |
 | Tue 22 Dec | AI ENGINEERING #13 | RAG vs Fine-Tuning vs Long Context | COMPARE | 🖼 visual | draft | [ai-13-rag-vs-fine-tuning-vs-long-context.md](../generated/drafts/ai-engineering/ai-13-rag-vs-fine-tuning-vs-long-context.md) |
-| Wed 23 Dec | software-engineering | — write: #13 WebSockets vs polling vs Server-Sent Events · COMPARE — | | | | |
-| Thu 24 Dec | system-architecture | — write: #13 Pub/Sub and event-driven architecture · TEACH — | | | | |
-| Sat 26 Dec | building | — write: next post from sources/project-log.md — | | | | |
-| Sun 27 Dec | dev-growth | — write: #13 Giving and receiving code review · TEACH — | | | | |
+| Wed 23 Dec | SOFTWARE ENGINEERING | — write: #13 WebSockets vs polling vs Server-Sent Events · COMPARE — | | | | |
+| Thu 24 Dec | SYSTEM ARCHITECTURE | — write: #13 Pub/Sub and event-driven architecture · TEACH — | | | | |
+| Sat 26 Dec | BUILDING | — write: next post from sources/project-log.md — | | | | |
+| Sun 27 Dec | DEV GROWTH | — write: #13 Giving and receiving code review · TEACH — | | | | |
 
 ## Week 14 — from Mon 28 Dec 2026
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 28 Dec | DSA SERIES #14 | Boyer–Moore Voting (Majority Element) | TEACH | 🖼 visual | draft | [dsa-14-boyer-moore-voting.md](../generated/drafts/dsa/dsa-14-boyer-moore-voting.md) |
+| Mon 28 Dec | DSA SERIES #14 | Boyer–Moore Voting: Finding the Majority With O(1) Memory | TEACH | 🖼 visual | draft | [dsa-14-boyer-moore-voting.md](../generated/drafts/dsa/dsa-14-boyer-moore-voting.md) |
 | Tue 29 Dec | AI ENGINEERING #14 | Agent vs Workflow: Which One Do You Need? ✎ | COMPARE | 🖼 visual | draft | [ai-14-agent-vs-workflow.md](../generated/drafts/ai-engineering/ai-14-agent-vs-workflow.md) |
-| Wed 30 Dec | software-engineering | — write: #14 Rate limiting · TEACH — | | | | |
-| Thu 31 Dec | system-architecture | — write: #14 CAP theorem in plain English · TEACH — | | | | |
-| Sat 02 Jan | pivot | — write: next post from sources/project-log.md — | | | | |
-| Sun 03 Jan | dev-growth | — write: #14 Writing a design doc · TEACH — | | | | |
+| Wed 30 Dec | SOFTWARE ENGINEERING | — write: #14 Rate limiting · TEACH — | | | | |
+| Thu 31 Dec | SYSTEM ARCHITECTURE | — write: #14 CAP theorem in plain English · TEACH — | | | | |
+| Sat 02 Jan | PIVOT | — write: next post from sources/project-log.md — | | | | |
+| Sun 03 Jan | DEV GROWTH | — write: #14 Writing a design doc · TEACH — | | | | |
 
 ## Week 15 — from Mon 04 Jan 2027
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 04 Jan | DSA SERIES #15 | Anagrams and Group Anagrams (Frequency Counting) | TEACH | 🖼 visual | draft | [dsa-15-anagrams-group-anagrams.md](../generated/drafts/dsa/dsa-15-anagrams-group-anagrams.md) |
+| Mon 04 Jan | DSA SERIES #15 | Group Anagrams: Let the Right Key Do the Grouping | TEACH | 🖼 visual | draft | [dsa-15-anagrams-group-anagrams.md](../generated/drafts/dsa/dsa-15-anagrams-group-anagrams.md) |
 | Tue 05 Jan | AI ENGINEERING #15 | Context engineering: the window is a budget, not a bucket | TEACH | 🖼 visual | draft | [ai-15-context-engineering.md](../generated/drafts/ai-engineering/ai-15-context-engineering.md) |
-| Wed 06 Jan | software-engineering | — write: #15 7 things I check before shipping an API · LIST — | | | | |
-| Thu 07 Jan | system-architecture | — write: #15 Consistency models: strong vs eventual · COMPARE — | | | | |
-| Sat 09 Jan | building | — write: next post from sources/project-log.md — | | | | |
-| Sun 10 Jan | dev-growth | — write: #15 Explaining technical ideas to non-engineers · TEACH — | | | | |
+| Wed 06 Jan | SOFTWARE ENGINEERING | — write: #15 7 things I check before shipping an API · LIST — | | | | |
+| Thu 07 Jan | SYSTEM ARCHITECTURE | — write: #15 Consistency models: strong vs eventual · COMPARE — | | | | |
+| Sat 09 Jan | BUILDING | — write: next post from sources/project-log.md — | | | | |
+| Sun 10 Jan | DEV GROWTH | — write: #15 Explaining technical ideas to non-engineers · TEACH — | | | | |
 
 ## Week 16 — from Mon 11 Jan 2027
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 11 Jan | DSA SERIES #16 | Binary Search (and "Binary Search on the Answer") ✎ | TEACH | 🖼 visual | draft | [dsa-16-binary-search.md](../generated/drafts/dsa/dsa-16-binary-search.md) |
-| Tue 12 Jan | ai-engineering | — write: #16 AI memory: short-term vs long-term · COMPARE — | | | | |
-| Wed 13 Jan | software-engineering | — write: #16 SQL vs NoSQL: how to actually choose · COMPARE — | | | | |
-| Thu 14 Jan | system-architecture | — write: #16 Monolith vs microservices · COMPARE — | | | | |
-| Sat 16 Jan | pivot | — write: next post from sources/project-log.md — | | | | |
-| Sun 17 Jan | dev-growth | — write: #16 What I'd tell my junior self · PERSONAL — | | | | |
+| Mon 11 Jan | DSA SERIES #16 | Binary Search: Halving Sorted Data, Then Halving the Answer ✎ | TEACH | 🖼 visual | draft | [dsa-16-binary-search.md](../generated/drafts/dsa/dsa-16-binary-search.md) |
+| Tue 12 Jan | AI ENGINEERING | — write: #16 AI memory: short-term vs long-term · COMPARE — | | | | |
+| Wed 13 Jan | SOFTWARE ENGINEERING | — write: #16 SQL vs NoSQL: how to actually choose · COMPARE — | | | | |
+| Thu 14 Jan | SYSTEM ARCHITECTURE | — write: #16 Monolith vs microservices · COMPARE — | | | | |
+| Sat 16 Jan | PIVOT | — write: next post from sources/project-log.md — | | | | |
+| Sun 17 Jan | DEV GROWTH | — write: #16 What I'd tell my junior self · PERSONAL — | | | | |
 
 ## Week 17 — from Mon 18 Jan 2027
 

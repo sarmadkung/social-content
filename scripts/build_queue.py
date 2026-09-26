@@ -22,6 +22,10 @@ QUEUE = os.path.join(ROOT, "published", "queue.md")
 SCHEDULE = {0: "dsa", 1: "ai-engineering", 2: "software-engineering",
             3: "system-architecture", 5: ("building", "pivot"), 6: "dev-growth"}
 QUEUED = {"draft", "approved", "scheduled"}
+# pillar folder -> series label, so empty slots read like filled ones
+LABELS = {"dsa": "DSA SERIES", "software-engineering": "SOFTWARE ENGINEERING",
+          "system-architecture": "SYSTEM ARCHITECTURE", "ai-engineering": "AI ENGINEERING",
+          "dev-growth": "DEV GROWTH", "building": "BUILDING", "pivot": "PIVOT"}
 ROADMAPS = {"dsa": "01-dsa-problem-solving.md", "software-engineering": "02-software-engineering.md",
             "system-architecture": "03-system-design.md", "ai-engineering": "04-ai-engineering.md",
             "dev-growth": "05-dev-growth.md",
@@ -101,7 +105,7 @@ def main():
                     nxt = "next post from sources/project-log.md"
                 else:
                     nxt = upcoming[pillar].pop(0) if upcoming[pillar] else "roadmap finished"
-                out.append(f"| {day:%a %d %b} | {pillar} | — write: {nxt} — | | | | |")
+                out.append(f"| {day:%a %d %b} | {LABELS[pillar]} | — write: {nxt} — | | | | |")
         day += datetime.timedelta(days=1)
 
     out += ["", "✎ = has a [PERSONAL: ...] line to fill in or delete."]

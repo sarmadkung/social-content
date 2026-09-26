@@ -164,8 +164,9 @@ or fewer) and needs no picture to explain it (no HEADLINE/LAYOUT on TEXT posts).
 STATUS moves draft → approved → scheduled → published; build_queue.py skips
 published posts. Run python3 scripts/validate.py after writing.
 
-LEVEL guide
-  BEGINNER      the reader needs no earlier post except basics
+LEVEL guide (how much the reader must already know, never how deep the post is:
+every level passes the Senior Interest Test)
+  BEGINNER      few prerequisites: needs no earlier post except basics
   INTERMEDIATE  builds on earlier posts in the series; trade-offs appear
   ADVANCED      production detail, failure modes, or system-level design
 Within a pillar, levels should rise over the roadmap, not jump around.

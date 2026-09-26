@@ -51,6 +51,6 @@ The senior detail: Kadane is prefix sum in disguise. The best subarray is the bi
 
 Takeaway: ask what you must remember as you walk. Two ends, a range, every total, or the best run so far.
 
-Next: Boyer–Moore Voting — find the majority element with O(1) memory.
+Next: Boyer–Moore Voting — finding the majority with O(1) memory.
 
 #Algorithms #DataStructures #CodingInterviews #ProblemSolving #PatternRecognition

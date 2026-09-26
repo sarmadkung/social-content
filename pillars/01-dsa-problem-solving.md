@@ -55,15 +55,15 @@ master prompt. Never more than 4 TEACH posts in a row.
 
 ### Patterns on arrays and strings
 - #08 Every DSA problem has a pattern — how to spot it · LIST · needs #07
-- #09 Two Pointers · TEACH · needs #03, #08
-- #10 Sliding Window (fixed and variable size) · TEACH · needs #09
-- #11 Prefix Sum · TEACH · needs #03
-- #12 Kadane's Algorithm (max subarray) · TEACH · needs #11
+- #09 Two Pointers: How One Pass Replaces a Nested Loop · TEACH · needs #03, #08
+- #10 Sliding Window: Stop Recomputing Overlapping Ranges · TEACH · needs #09
+- #11 Prefix Sum: Pay Once, Answer Any Range in O(1) · TEACH · needs #03
+- #12 Kadane's Algorithm: Knowing What to Throw Away · TEACH · needs #11
 - #13 Two pointers vs sliding window vs prefix sum vs Kadane: which one? · COMPARE · needs #09, #10, #11, #12
-- #14 Boyer–Moore Voting (majority element) · TEACH · needs #05
-- #15 Anagrams and Group Anagrams (frequency counting) · TEACH · needs #04, #05
-- #16 Binary Search (and "binary search on the answer") · TEACH · needs #02, #03
-- #17 Sorting: stable, in-place, O(n log n) · TEACH · needs #02
+- #14 Boyer–Moore Voting: Finding the Majority With O(1) Memory · TEACH · needs #05
+- #15 Group Anagrams: Let the Right Key Do the Grouping · TEACH · needs #04, #05
+- #16 Binary Search: Halving Sorted Data, Then Halving the Answer · TEACH · needs #02, #03
+- #17 Sorting: stable, in-place, and the comparator that bites everyone · TEACH · needs #02
 - #18 7 array and string problems, and the pattern that solves each · LIST · needs #08–#17
 
 ### Linear structures

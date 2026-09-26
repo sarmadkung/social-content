@@ -1,5 +1,5 @@
 SERIES:    DSA SERIES #09
-TITLE:     Two Pointers
+TITLE:     Two Pointers: How One Pass Replaces a Nested Loop
 PILLAR:    DSA & Problem Solving — for students and juniors preparing for coding interviews
 LEVEL:     INTERMEDIATE
 MODE:      TEACH
@@ -57,6 +57,6 @@ Two pointers (opposite ends): O(n) time, O(1) space, but needs sorted input. Sor
 
 Takeaway: if a sorted array gives you a pair problem, try two pointers before a nested loop.
 
-Next: Sliding Window — the same idea, moving over ranges instead of pairs.
+Next: Sliding Window — stop recomputing overlapping ranges.
 
 #Algorithms #DataStructures #TwoPointers #CodingInterviews #ProblemSolving

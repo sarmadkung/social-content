@@ -1,5 +1,5 @@
 SERIES:    DSA SERIES #15
-TITLE:     Anagrams and Group Anagrams (Frequency Counting)
+TITLE:     Group Anagrams: Let the Right Key Do the Grouping
 PILLAR:    DSA & Problem Solving — for students and juniors meeting counting problems in interviews
 LEVEL:     INTERMEDIATE
 MODE:      TEACH
@@ -56,6 +56,6 @@ Not: order matters. That is string matching.
 
 Takeaway: turn "same items in any order" into one key. Then a hash map does the grouping.
 
-Next: Binary Search — sorted data lets you throw away half every step.
+Next: Binary Search — halving sorted data, then halving the answer.
 
 #Algorithms #DataStructures #HashMap #CodingInterviews #ProblemSolving

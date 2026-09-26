@@ -1,5 +1,5 @@
 SERIES:    DSA SERIES #14
-TITLE:     Boyer–Moore Voting (Majority Element)
+TITLE:     Boyer–Moore Voting: Finding the Majority With O(1) Memory
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs who reach for a hash map by default
 LEVEL:     INTERMEDIATE
 MODE:      TEACH
@@ -60,6 +60,6 @@ Name check: same authors as the Boyer–Moore string search, but a different alg
 
 Takeaway: when opposite votes cancel, the majority is the one left standing.
 
-Next: Anagrams and Group Anagrams — counting letters with a hash map.
+Next: Group Anagrams — let the right key do the grouping.
 
 #Algorithms #DataStructures #CodingInterviews #ProblemSolving #SoftwareEngineering

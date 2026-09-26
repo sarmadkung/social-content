@@ -1,5 +1,5 @@
 SERIES:    DSA SERIES #10
-TITLE:     Sliding Window (Fixed and Variable Size)
+TITLE:     Sliding Window: Stop Recomputing Overlapping Ranges
 PILLAR:    DSA & Problem Solving — for juniors and mid-level devs working on subarray and substring problems
 LEVEL:     INTERMEDIATE
 MODE:      TEACH
@@ -61,6 +61,6 @@ The senior detail: that negative-number case is a common interview trap. The fix
 
 Takeaway: if you are re-adding the same numbers, slide the window instead.
 
-Next: Prefix Sum — answer any range-sum question in O(1).
+Next: Prefix Sum — pay once, answer any range in O(1).
 
 #Algorithms #DataStructures #SlidingWindow #CodingInterviews #ProblemSolving

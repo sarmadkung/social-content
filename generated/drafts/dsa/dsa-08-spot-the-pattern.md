@@ -47,6 +47,6 @@ Takeaway: do not ask "have I seen this problem?" Ask "what is this problem askin
 
 From now on, every pattern post in this series includes a "Spot it when…" list.
 
-Next: Two Pointers — solving pair problems in O(n) with O(1) extra space.
+Next: Two Pointers — how one pass replaces a nested loop.
 
 #Algorithms #DataStructures #ProblemSolving #CodingInterviews #PatternRecognition
