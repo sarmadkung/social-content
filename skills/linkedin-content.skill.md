@@ -43,6 +43,7 @@ PILLAR:    <pillar> — for <who benefits most>
 LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
 MODE:      <TEACH | WHY | COMPARE | LIST | SCENARIO | QUIZ | PERSONAL>
 TYPE:      <UPDATE | STORY | DECISION | POSTMORTEM | DEMO | RETRO>   (BUILDING and PIVOT only)
+SOURCE:    <project-log entry heading, e.g. 2026-10-02 — Pivot>   (BUILDING and PIVOT only)
 FORMAT:    <TEXT | VISUAL>   (TEXT = words only; VISUAL = words + image)
 HEADLINE:  <image headline, 8 words or fewer>          (VISUAL only)
 LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
@@ -61,9 +62,15 @@ reader; PERSONAL is the author's own experience. Each mode's structure lives
 in `prompts/master-content-prompt.md`. Never more than 4 TEACH posts in a row
 within a pillar, and a post only relies on the posts in its `needs` list.
 
-**Minimum depth:** skip anything every working developer already knows
-(variables, functions, loops, client vs server, "what is AI"). A foundation
-post must hold a real insight, not a definition.
+**Senior Interest Test:** before writing, ask "Would an experienced software
+engineer learn something useful from this?" If not, do not write it. Every post
+holds at least one of: a non-obvious insight, a trade-off, a failure mode, a
+production concern, a performance cost, an architectural consequence, a
+debugging technique, a practical pattern, a decision framework, or a real-world
+constraint. A definition alone is never enough, so skip anything every working
+developer already knows (variables, functions, loops, client vs server, "what
+is AI"). Simple language, professional depth: juniors follow the words, seniors
+learn from the idea. Never a beginner post with a senior footnote.
 
 **Choosing FORMAT:** `VISUAL` is the default. A post is `TEXT` only when both
 are true: it is short (body 1,400 characters or fewer) and the words explain it
@@ -168,7 +175,8 @@ architects; engineering leaders; technical founders; developers interested in
 architecture, scalable systems, and AI engineering.
 
 Stay accessible to juniors without becoming simplistic for experienced
-engineers.
+engineers: simple language, professional depth (see the Senior Interest Test
+above).
 
 ## 4. Seven content pillars
 

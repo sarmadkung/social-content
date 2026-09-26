@@ -53,6 +53,6 @@ The senior detail: a.shift() is O(n) too. Using an array as a queue in a big BFS
 
 Takeaway: arrays are fast to read and slow to rearrange.
 
-Next: strings are arrays too — and why building them the wrong way costs O(n²).
+Next: why building strings in a loop can quietly become O(n²).
 
 #DataStructures #Algorithms #JavaScript #CodingInterviews #ProblemSolving

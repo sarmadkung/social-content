@@ -8,7 +8,7 @@
   --ink:#F2F5F9;--ink-2:#9BA6B7;--ink-3:#5E6977;
   /* pillar accents — one per pillar, never shared */
   --dsa:#FFB86B;--swe:#4ADE80;--arch:#C084FC;--ai:#8AA4FF;--grow:#F2555F;
-  --build:#22D3EE;--pivot:#7C6BFF;
+  --build:#2DD4BF;--pivot:#7C6BFF;
   /* correctness takes the card accent; only diff "+" keeps universal green */
   --yes:var(--accent);--add:#4ADE80;
   --accent:var(--dsa);

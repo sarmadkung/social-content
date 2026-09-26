@@ -10,7 +10,9 @@ missing becomes a `[PERSONAL: ...]` marker instead of being made up.
   Personal and client projects are always BUILDING.
 - Mark anything private with `(private)` so it never reaches a draft.
 
-Newest entry on top. Copy the template below.
+Newest entry on top. Copy the template below. A post's `SOURCE:` line is the
+entry heading without the `## `, e.g. `2026-10-02 — Pivot`; keep headings
+unique (add a suffix if two entries share a date and project).
 
 ---
 

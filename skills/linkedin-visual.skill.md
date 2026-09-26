@@ -230,14 +230,14 @@ Change a colour there, never in a variant's `base.css`.
 | System design | `SYSTEM ARCHITECTURE` | `#C084FC` violet |
 | AI engineering | `AI ENGINEERING` | `#8AA4FF` indigo |
 | Dev growth | `DEV GROWTH` | `#F2555F` crimson |
-| Building | `BUILDING` | `#22D3EE` cyan |
+| Building | `BUILDING` | `#2DD4BF` teal |
 | Pivot | `PIVOT` | `#7C6BFF` Pivot purple |
 
 Pivot's accent is Pivot's own brand primary (`primary` in Pivot's
 `apps/expo/src/theme/color.ts`). If Pivot's brand colour changes, change it
-here and in `templates/theme.css` to match. Building uses cyan because it sits
-in the widest free gap on the colour wheel, clear of Software engineering's
-green and AI engineering's indigo.
+here and in `templates/theme.css` to match. Building uses teal: real-world building,
+set apart from Pivot's purple. It sits near Software engineering's green;
+the series label is what tells the two apart.
 
 One accent per pillar, seven pillars, no sharing. If another pillar ever appears it
 gets its own hue — never a second pillar on an existing accent, which is what makes

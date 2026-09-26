@@ -30,6 +30,8 @@ PILLARS = {
     "pivot": ("PIVOT", "pivot", "--pivot"),
 }
 STORY_TYPES = {"UPDATE", "STORY", "DECISION", "POSTMORTEM", "DEMO", "RETRO"}
+PROJECT_LOG = os.path.join(ROOT, "sources", "project-log.md")
+READY = {"approved", "scheduled", "published"}   # past draft: no [PERSONAL: ...] left
 REQUIRED = ["SERIES", "TITLE", "PILLAR", "MODE", "FORMAT", "STATUS"]
 MODES = {"TEACH", "WHY", "COMPARE", "LIST", "SCENARIO", "QUIZ", "PERSONAL"}
 MAX_TEACH_RUN = 4             # mix rule: never more than 4 TEACH posts in a row
@@ -137,6 +139,12 @@ def check_post(path, pillar, series_label, prefix, seen, road):
                 err(path, f"{label} posts use MODE: PERSONAL (got '{fields.get('MODE')}')")
             if fields.get("TYPE") not in STORY_TYPES:
                 err(path, f"TYPE '{fields.get('TYPE')}' is not one of {sorted(STORY_TYPES)}")
+            # story posts come from the project log, never from nowhere
+            src = fields.get("SOURCE", "")
+            if not re.match(r"^\d{4}-\d{2}-\d{2} — .+", src):
+                err(path, "SOURCE: must name a project-log entry, e.g. '2026-10-02 — Pivot'")
+            elif f"## {src}" not in open(PROJECT_LOG).read():
+                err(path, f"SOURCE '{src}' has no matching '## {src}' entry in sources/project-log.md")
             # anonymous Pivot stories live in BUILDING; the name must not leak
             if pillar == "building" and re.search(r"\bpivot\b", body, re.I):
                 warn(path, "mentions 'pivot' — if this is an anonymous Pivot story, remove it")
@@ -171,6 +179,8 @@ def check_common(path, fields, body, quiz=False):
     status = fields.get("STATUS", "")
     if status and status not in STATUSES:
         err(path, f"STATUS '{status}' is not one of {sorted(STATUSES)}")
+    if status in READY and "[PERSONAL" in body:
+        err(path, f"STATUS is {status} but the body still has a [PERSONAL: ...] marker — fill or delete it")
     level = fields.get("LEVEL")
     if level is None:
         warn(path, "no LEVEL: line")
