@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #07
 TITLE:     Hash Set vs Hash Map: Which One and Why
 PILLAR:    DSA & Problem Solving — for students and juniors choosing between Set and Map
 LEVEL:     BEGINNER
+MODE:      COMPARE
 FORMAT:    VISUAL
 HEADLINE:  Set asks if. Map asks what.
 LAYOUT:    COMPARE
@@ -11,7 +12,7 @@ Set and Map use the same engine inside.
 They answer different questions. Pick by the question.
 
 What is it?
-A hash set stores unique keys only. A hash map stores keys, each with a value attached. Both use the hashing from post #03.
+A hash set stores unique keys only. A hash map stores keys, each with a value attached. Both use the hashing from post #06.
 Think of a party. The guest list at the door is a set: "are you on it?" Your phone contacts are a map: name → number.
 
 Why do we need both?
@@ -52,6 +53,6 @@ The senior detail: a set is a map that ignores the value. Java's HashSet is lite
 
 Takeaway: need "if"? Use a set. Need "what"? Use a map.
 
-Next: every DSA problem has a pattern — how to spot which one before you write code.
+Next: hash maps — the pattern behind Two Sum.
 
 #DataStructures #Algorithms #JavaScript #CodingInterviews #ProblemSolving

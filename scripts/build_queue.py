@@ -21,6 +21,15 @@ QUEUE = os.path.join(ROOT, "published", "queue.md")
 SCHEDULE = {0: "dsa", 1: "ai-engineering", 2: "software-engineering",
             3: "system-architecture", 6: "dev-growth"}
 QUEUED = {"draft", "approved", "scheduled"}
+ROADMAPS = {"dsa": "01-dsa-problem-solving.md", "software-engineering": "02-software-engineering.md",
+            "system-architecture": "03-system-design.md", "ai-engineering": "04-ai-engineering.md",
+            "dev-growth": "05-dev-growth.md"}
+
+
+def roadmap(pillar):
+    """{n: 'Title · MODE'} from the pillar's roadmap lines."""
+    text = open(os.path.join(ROOT, "pillars", ROADMAPS[pillar])).read()
+    return {int(n): f"{t} · {m}" for n, t, m in re.findall(r"^- #(\d+) (.+?) · ([A-Z]+) · needs", text, re.M)}
 
 
 def field(text, name):
@@ -40,10 +49,14 @@ def main():
         today = datetime.date.today()
         start = today + datetime.timedelta(days=(7 - today.weekday()) % 7)
 
-    queue, skipped = {}, 0
+    queue, skipped, upcoming = {}, 0, {}
     for pillar in set(SCHEDULE.values()):
         posts = []
-        for f in sorted(glob.glob(os.path.join(DRAFTS, pillar, "*.md")), key=num):
+        files = sorted(glob.glob(os.path.join(DRAFTS, pillar, "*.md")), key=num)
+        last = num(files[-1]) if files else 0
+        road = roadmap(pillar)
+        upcoming[pillar] = [f"#{n:02d} {road[n]}" for n in sorted(road) if n > last]
+        for f in files:
             text = open(f).read()
             status = (field(text, "STATUS") or "draft").lower()
             if status not in QUEUED:
@@ -59,11 +72,11 @@ def main():
            "Schedule: Mon DSA · Tue AI Engineering · Wed Software Engineering · Thu System Architecture · Sun Dev Growth",
            "Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an image made from HEADLINE + LAYOUT; ✍ posts go out as text only."]
     day, week = start, 0
-    while any(queue.values()):
+    while any(queue.values()):  # after the last draft, open slots name the next roadmap post
         if day.weekday() == 0:
             week += 1
             out += ["", f"## Week {week} — from {day:%a %d %b %Y}", "",
-                    "| Date | Series | Title | Format | Status | File |", "| --- | --- | --- | --- | --- | --- |"]
+                    "| Date | Series | Title | Mode | Format | Status | File |", "| --- | --- | --- | --- | --- | --- | --- |"]
         pillar = SCHEDULE.get(day.weekday())
         if pillar:
             if queue[pillar]:
@@ -72,9 +85,10 @@ def main():
                 rel = os.path.relpath(f, os.path.dirname(QUEUE))
                 fmt = "🖼 visual" if field(text, "FORMAT") == "VISUAL" else "✍ text"
                 out.append(f"| {day:%a %d %b} | {field(text, 'SERIES')} | {field(text, 'TITLE')}{mark} "
-                           f"| {fmt} | {status} | [{os.path.basename(f)}]({rel}) |")
+                           f"| {field(text, 'MODE')} | {fmt} | {status} | [{os.path.basename(f)}]({rel}) |")
             else:
-                out.append(f"| {day:%a %d %b} | {pillar} | — write next post — | | | |")
+                nxt = upcoming[pillar].pop(0) if upcoming[pillar] else "roadmap finished"
+                out.append(f"| {day:%a %d %b} | {pillar} | — write: {nxt} — | | | | |")
         day += datetime.timedelta(days=1)
 
     out += ["", "✎ = has a [PERSONAL: ...] line to fill in or delete."]

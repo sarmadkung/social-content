@@ -2,6 +2,7 @@ SERIES:    SYSTEM ARCHITECTURE #01
 TITLE:     What System Design Actually Is
 PILLAR:    System Design & Architecture — for students and juniors who want the big picture
 LEVEL:     BEGINNER
+MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  System design is choosing what can break
 LAYOUT:    ANATOMY
@@ -48,6 +49,6 @@ Takeaway: System design is not about knowing tools. It is about choosing which t
 
 This series covers one building block per post, in order.
 
-Next: vertical vs horizontal scaling, the first choice when traffic grows.
+Next: requirements first, what a system must do versus how well it must do it.
 
 #SystemDesign #SoftwareArchitecture #SoftwareEngineering #BackendDevelopment

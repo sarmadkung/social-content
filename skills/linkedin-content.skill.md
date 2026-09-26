@@ -41,6 +41,7 @@ SERIES:    <series label and number, e.g. DSA SERIES #04>
 TITLE:     <title>
 PILLAR:    <pillar> — for <who benefits most>
 LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
+MODE:      <TEACH | WHY | COMPARE | LIST | SCENARIO | QUIZ | PERSONAL>
 FORMAT:    <TEXT | VISUAL>   (TEXT = words only; VISUAL = words + image)
 HEADLINE:  <image headline, 8 words or fewer>          (VISUAL only)
 LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
@@ -50,6 +51,14 @@ STATUS:    <draft | approved | scheduled | published>
 ```
 
 New posts start as `STATUS: draft`. Only the text below `---` goes into LinkedIn.
+
+**Choosing MODE:** the roadmap line in `pillars/` gives each post its mode
+(`#NN Title · MODE · needs #..`). TEACH explains what X is; WHY explains a
+reason; COMPARE weighs options; LIST is a specific top-N, mistakes or
+checklist post; SCENARIO walks through a realistic situation; QUIZ asks the
+reader; PERSONAL is the author's own experience. Each mode's structure lives
+in `prompts/master-content-prompt.md`. Never more than 4 TEACH posts in a row
+within a pillar, and a post only relies on the posts in its `needs` list.
 
 **Choosing FORMAT:** `VISUAL` is the default. A post is `TEXT` only when both
 are true: it is short (body 1,400 characters or fewer) and the words explain it
@@ -291,12 +300,12 @@ system architecture + modern AI engineering.**
 Use recognizable series labels:
 
 ```
-DSA SERIES #02            Hash Maps: The Pattern Behind Two Sum
+DSA SERIES #08            Hash Maps: The Pattern Behind Two Sum
 DSA QUIZ #01              Which Pattern Is This?
 SOFTWARE ENGINEERING #01  Ship the Boring Architecture First
 SYSTEM ARCHITECTURE #01   What System Design Actually Is
-AI ENGINEERING #01        Agents Are Software, Not Magic
-DEV GROWTH #01            How to Learn a New Technology Fast
+AI ENGINEERING #10        Agents Are Software, Not Magic
+DEV GROWTH #01            Junior vs Mid vs Senior: What Actually Changes
 ```
 
 Series are different perspectives on the same engineering identity — not

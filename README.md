@@ -4,10 +4,10 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 
 | Folder | What lives there |
 | --- | --- |
-| `pillars/` | One file per pillar: purpose, audience, ordered topic roadmap |
+| `pillars/` | One file per pillar: purpose, audience, ordered roadmap. Each line is `#NN Title · MODE · needs #..` — the post's content mode and the earlier posts it builds on |
 | `prompts/master-content-prompt.md` | The prompt every post is generated from |
 | `linkedin-skills-bundle.txt` | **Derived** — both skills in one paste-able file. Never edit; run `./build-bundle.sh` |
-| `generated/drafts/<pillar>/` | Every post, one file each. Its `STATUS:` line (draft → approved → scheduled → published) is the source of truth |
+| `generated/drafts/<pillar>/` | Every post, one file each. `MODE:` must match the roadmap; no roadmap number may be skipped. Its `STATUS:` line (draft → approved → scheduled → published) is the source of truth |
 | `generated/quiz/` | Bonus `DSA QUIZ` posts |
 | `published/queue.md` | **Generated** posting plan — run `python3 scripts/build_queue.py`, never edit |
 | `published/linkedin.md` | Hand-kept log of what went live. No script writes it |

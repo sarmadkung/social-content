@@ -10,6 +10,13 @@ import glob, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # pillar folder -> (series label, filename prefix, theme.css accent var)
+ROADMAPS = {
+    "dsa": "01-dsa-problem-solving.md",
+    "software-engineering": "02-software-engineering.md",
+    "system-architecture": "03-system-design.md",
+    "ai-engineering": "04-ai-engineering.md",
+    "dev-growth": "05-dev-growth.md",
+}
 PILLARS = {
     "dsa": ("DSA SERIES", "dsa", "--dsa"),
     "software-engineering": ("SOFTWARE ENGINEERING", "se", "--swe"),
@@ -17,7 +24,9 @@ PILLARS = {
     "ai-engineering": ("AI ENGINEERING", "ai", "--ai"),
     "dev-growth": ("DEV GROWTH", "growth", "--grow"),
 }
-REQUIRED = ["SERIES", "TITLE", "PILLAR", "FORMAT", "STATUS"]
+REQUIRED = ["SERIES", "TITLE", "PILLAR", "MODE", "FORMAT", "STATUS"]
+MODES = {"TEACH", "WHY", "COMPARE", "LIST", "SCENARIO", "QUIZ", "PERSONAL"}
+MAX_TEACH_RUN = 4             # mix rule: never more than 4 TEACH posts in a row
 FORMATS = {"TEXT", "VISUAL"}      # TEXT = post the words only; VISUAL = words + image
 VISUAL_ONLY = ["HEADLINE", "LAYOUT"]
 LAYOUTS = {"STATEMENT", "GRID", "ANATOMY", "FLOW", "COMPARE", "STAT", "CAROUSEL"}
@@ -28,7 +37,7 @@ BANNED = ["delve", "leverage", "robust", "seamless", "game-changer", "game chang
 BODY_HARD_MAX = 3000          # LinkedIn's cap
 BODY_TARGET = (1400, 2500)    # master prompt target range
 TEXT_MAX = 1400               # TEXT posts must be short; longer posts get a visual
-FIRST_DSA_PATTERN_POST = 8    # DSA #08 onward teach patterns and need "Spot it when"
+FIRST_DSA_PATTERN_POST = 10   # DSA TEACH posts from #10 (Two Pointers) on need "Spot it when"
 
 errors, warnings = [], []
 
@@ -59,7 +68,38 @@ def parse(path):
     return fields, body.strip("\n")
 
 
-def check_post(path, pillar, series_label, prefix, seen):
+ROAD_LINE = re.compile(r"^- #(\d+) (.+?) · ([A-Z]+) · needs (.+)$")
+
+
+def read_roadmap(pillar):
+    """Roadmap lines '- #NN Title · MODE · needs #a, #b' -> {n: (mode, title)}."""
+    path = os.path.join(ROOT, "pillars", ROADMAPS[pillar])
+    road, run = {}, 0
+    for i, line in enumerate(open(path).read().splitlines(), 1):
+        if not re.match(r"^- #\d+ ", line):
+            continue
+        m = ROAD_LINE.match(line)
+        if not m:
+            err(path, f"line {i} is not '- #NN Title · MODE · needs ...'")
+            continue
+        n, title, mode, needs = int(m.group(1)), m.group(2), m.group(3), m.group(4)
+        if mode not in MODES:
+            err(path, f"#{n:02d} MODE '{mode}' is not one of {sorted(MODES)}")
+        if n in road:
+            err(path, f"#{n:02d} appears twice")
+        if n != len(road) + 1:
+            err(path, f"#{n:02d} is out of order (expected #{len(road) + 1:02d})")
+        for a, b in re.findall(r"#(\d+)(?:–#(\d+))?", needs):
+            if int(b or a) >= n:
+                err(path, f"#{n:02d} needs #{int(b or a):02d}, which comes later or is itself")
+        run = run + 1 if mode == "TEACH" else 0
+        if run > MAX_TEACH_RUN:
+            err(path, f"#{n:02d} is the {run}th TEACH post in a row (max {MAX_TEACH_RUN})")
+        road[n] = (mode, title)
+    return road
+
+
+def check_post(path, pillar, series_label, prefix, seen, road):
     fields, body = parse(path)
     if fields is None:
         return
@@ -83,12 +123,20 @@ def check_post(path, pillar, series_label, prefix, seen):
         if key in seen:
             err(path, f"duplicate {series} (also {rel(seen[key])})")
         seen[key] = path
-        if pillar == "dsa" and n >= FIRST_DSA_PATTERN_POST and "Spot it when" not in body:
+        if n not in road:
+            err(path, f"{series} is not in the roadmap")
+        elif fields.get("MODE") != road[n][0]:
+            err(path, f"MODE '{fields.get('MODE')}' does not match the roadmap ({road[n][0]})")
+        if pillar == "dsa" and n >= FIRST_DSA_PATTERN_POST and fields.get("MODE") == "TEACH" \
+                and "Spot it when" not in body:
             err(path, "DSA pattern post is missing the 'Spot it when…' block")
     check_common(path, fields, body)
 
 
 def check_common(path, fields, body, quiz=False):
+    mode = fields.get("MODE", "")
+    if mode and mode not in MODES:
+        err(path, f"MODE '{mode}' is not one of {sorted(MODES)}")
     fmt = fields.get("FORMAT", "")
     if fmt and fmt not in FORMATS:
         err(path, f"FORMAT '{fmt}' is not one of {sorted(FORMATS)}")
@@ -126,16 +174,23 @@ def check_common(path, fields, body, quiz=False):
             err(path, f"body line {i} uses **bold** markdown")
     low = body.lower()
     for w in BANNED:
-        if re.search(rf"\b{re.escape(w)}\b", low):
+        if re.search(rf"\b{re.escape(w)}(s|d|ed|ing)?\b", low):
             err(path, f"banned word '{w}'")
 
 
 def check_posts():
     for pillar, (label, prefix, _) in PILLARS.items():
-        seen = {}
+        seen, road = {}, read_roadmap(pillar)
         files = sorted(glob.glob(os.path.join(ROOT, "generated", "drafts", pillar, "*.md")))
         for f in files:
-            check_post(f, pillar, label, prefix, seen)
+            check_post(f, pillar, label, prefix, seen, road)
+        # the queue posts drafts in number order, so a hole means a post goes out
+        # before something it builds on
+        drafted = sorted(n for (_, n) in seen)
+        for n in range(1, (drafted[-1] if drafted else 0) + 1):
+            if n not in drafted and n in road:
+                err(os.path.join(ROOT, "generated", "drafts", pillar),
+                    f"#{n:02d} '{road[n][1]}' has no draft, but later posts do")
     known = set(PILLARS) | {".DS_Store"}
     for d in glob.glob(os.path.join(ROOT, "generated", "drafts", "*")):
         if os.path.basename(d) not in known:

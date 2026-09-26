@@ -2,6 +2,7 @@ SERIES:    DSA SERIES #01
 TITLE:     Reclaiming DSA: Two Weeks, 23 Algorithms, One Repo
 PILLAR:    DSA & Problem Solving — for developers rebuilding their fundamentals
 LEVEL:     BEGINNER
+MODE:      PERSONAL
 FORMAT:    VISUAL
 HEADLINE:  Two weeks, 23 algorithms
 LAYOUT:    STAT
@@ -28,6 +29,6 @@ Write the fuzz test. Your tests agree with your assumptions.
 
 This series is where I'll share it, one pattern a week.
 
-Next: hash maps — the pattern behind Two Sum.
+Next: how we measure an algorithm — time and space complexity.
 
 #DataStructures #Algorithms #BuildInPublic #LearningInPublic #SoftwareEngineering

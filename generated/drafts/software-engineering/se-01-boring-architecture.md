@@ -2,6 +2,7 @@ SERIES:    SOFTWARE ENGINEERING #01
 TITLE:     Ship the Boring Architecture First
 PILLAR:    Software Engineering — for mid-level engineers starting to own system decisions
 LEVEL:     BEGINNER
+MODE:      WHY
 FORMAT:    TEXT
 STATUS:    draft
 ---
@@ -31,6 +32,6 @@ The clever architecture still gets built. It just gets built on evidence — a r
 
 Earn the complexity. Don't front-load it.
 
-Next: timeouts — the setting every network call needs.
+Next: client and server, what happens when your app calls an API.
 
 #SoftwareEngineering #SystemDesign #BackendDevelopment #Architecture #Reliability

@@ -54,10 +54,44 @@ LANGUAGE RULES (the most important section)
   - Readers may speak English as a second language. If a simpler word
     exists, use it.
 
-POST STRUCTURE
-Each post answers these questions, in this order. Skip a block only when it
-truly does not fit the topic. Use the plain-text label shown, because
-LinkedIn does not render markdown.
+CONTENT MODE
+Every post has one MODE. The roadmap line gives it ("#NN Title · MODE ·
+needs ..."). Each mode has its own structure, so posts do not all read alike.
+Use plain-text labels, because LinkedIn does not render markdown.
+
+  TEACH     What X is and how it works. Uses the full structure below.
+  WHY       Why engineers do X, or why X behaves the way it does.
+            Hook → the plain question → the reason (step by step) → proof
+            or example → what goes wrong if you ignore it → takeaway.
+  COMPARE   X vs Y (vs Z). Hook → the shared problem → each option in 2-3
+            lines → trade-off table or "→" lines → when to pick each →
+            common wrong choice → takeaway.
+  LIST      Top-N, mistakes, checklist or best practices. Hook → why this
+            list matters → 5-7 numbered items, one line each (+ one line of
+            why) → the most overlooked item → takeaway. Be specific:
+            "7 things I check before shipping an API", not "10 best practices".
+            Mistake items use: mistake → why it happens → what to do instead.
+  SCENARIO  A realistic situation. Hook states the situation with numbers →
+            "what would you do?" → the options in the order you try them,
+            each with its reason → what you would NOT do first → takeaway.
+  QUIZ      One problem → "which pattern / what breaks / what would you
+            pick?" → answer and reasoning go in the first comment.
+  PERSONAL  A real experience. Only the author's own facts; mark anything
+            unknown as [PERSONAL: ...]. Situation → what happened → lesson.
+
+MIX RULE: within a pillar, never more than 4 TEACH posts in a row. After a
+run of lessons, add a COMPARE, LIST, SCENARIO or WHY post that uses them.
+A post can also open with a myth ("Myth: hash maps are always O(1)") and
+correct it; that is a hook, not a separate mode.
+
+PREREQUISITES: a post may only rely on ideas from the posts listed in its
+"needs" field (or plain common knowledge). If it needs more, the roadmap is
+wrong: fix the roadmap first.
+
+TEACH STRUCTURE
+Each TEACH post answers these questions, in this order. Skip a block only
+when it truly does not fit the topic. Other modes borrow blocks from here
+where useful (Common mistake, Takeaway, Next, Hashtags are always welcome).
 
 TEACHING ORDER RULE: problem → plain idea → technical name. The reader should
 understand the idea before they see the jargon. Never open with a definition.
@@ -95,6 +129,7 @@ FORMAT PER POST (output exactly this)
   TITLE:     <title>
   PILLAR:    <pillar> — for <who benefits most>
   LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
+  MODE:      <TEACH | WHY | COMPARE | LIST | SCENARIO | QUIZ | PERSONAL>
   FORMAT:    <TEXT | VISUAL>
   HEADLINE:  <image headline, 8 words or fewer>   (VISUAL only)
   LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
@@ -138,7 +173,10 @@ SELF-CHECK BEFORE RETURNING
   6. No invented personal facts?
   7. Does the reader meet the idea before the technical term?
   8. Is there a concrete example (code, numbers, diagram, before/after)?
-  9. Is there a "when not to" and a common mistake?
+  9. Is there a "when not to" and a common mistake? (TEACH and COMPARE)
+ 10. Does the post follow its MODE's structure?
+ 11. Does it use only ideas from the posts in its "needs" field?
+ 12. Does the "Next:" line name the next post in the roadmap?
 ```
 
 ## What changed from the original, and why
@@ -163,3 +201,8 @@ SELF-CHECK BEFORE RETURNING
    idea come before the technical name. The "Common mistake" and "when not to"
    blocks teach judgment, not memorisation. `LEVEL` keeps each series getting
    harder in a steady way.
+9. **Content modes, prerequisites and a mix rule** (added 2026-09-26). Not
+   every post is a lesson: COMPARE, WHY, LIST, SCENARIO, QUIZ and PERSONAL
+   each get their own shape, so the feed does not repeat itself. Every
+   roadmap line names the posts it needs, and each pillar starts with the
+   foundations the later posts rely on. At most 4 TEACH posts run in a row.
