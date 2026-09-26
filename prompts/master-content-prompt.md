@@ -32,8 +32,14 @@ these pillars:
   3. System Design & Architecture series label: SYSTEM ARCHITECTURE #NN
   4. AI Engineering               series label: AI ENGINEERING #NN
   5. Career & Developer Growth    series label: DEV GROWTH #NN
-Follow the ordered topic roadmap in pillars/<pillar>.md. Post topics in that
-order so each post builds on the previous one.
+  6. Building (real projects)     series label: BUILDING #NN
+  7. Pivot (building Pivot)       series label: PIVOT #NN
+For pillars 1-5, follow the ordered topic roadmap in pillars/<pillar>.md.
+Post topics in that order so each post builds on the previous one.
+Pillars 6-7 are story pillars with no roadmap: draft only from real entries
+in sources/project-log.md, use MODE: PERSONAL, pick a TYPE, and follow that
+TYPE's structure and the rules in pillars/06-building.md and
+pillars/07-pivot.md. Never invent a project, a result or a number there.
 
 AUDIENCE
 One post must work for four readers at once:
@@ -136,6 +142,7 @@ FORMAT PER POST (output exactly this)
   PILLAR:    <pillar> — for <who benefits most>
   LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
   MODE:      <TEACH | WHY | COMPARE | LIST | SCENARIO | QUIZ | PERSONAL>
+  TYPE:      <UPDATE | STORY | DECISION | POSTMORTEM | DEMO | RETRO>   (BUILDING and PIVOT only)
   FORMAT:    <TEXT | VISUAL>
   HEADLINE:  <image headline, 8 words or fewer>   (VISUAL only)
   LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
@@ -183,6 +190,9 @@ SELF-CHECK BEFORE RETURNING
  10. Does the post follow its MODE's structure?
  11. Does it use only ideas from the posts in its "needs" field?
  12. Does the "Next:" line name the next post in the roadmap?
+ 13. BUILDING / PIVOT: is every fact from the project log, with gaps marked
+     [PERSONAL: ...]? No client or private Pivot detail? An anonymous Pivot
+     story never names Pivot?
 ```
 
 ## What changed from the original, and why

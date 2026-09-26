@@ -1,8 +1,8 @@
 
 ---
 name: linkedin-content
-description: Use when writing, planning, or reviewing LinkedIn content for Muhammad Sarmad — enforces positioning, the five content pillars, series labels, and tone.
-version: 1.5
+description: Use when writing, planning, or reviewing LinkedIn content for Muhammad Sarmad — enforces positioning, the seven content pillars, series labels, and tone.
+version: 1.6
 owner: Muhammad Sarmad
 works-with: any (Claude, ChatGPT, Gemini, local)
 ---
@@ -42,6 +42,7 @@ TITLE:     <title>
 PILLAR:    <pillar> — for <who benefits most>
 LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
 MODE:      <TEACH | WHY | COMPARE | LIST | SCENARIO | QUIZ | PERSONAL>
+TYPE:      <UPDATE | STORY | DECISION | POSTMORTEM | DEMO | RETRO>   (BUILDING and PIVOT only)
 FORMAT:    <TEXT | VISUAL>   (TEXT = words only; VISUAL = words + image)
 HEADLINE:  <image headline, 8 words or fewer>          (VISUAL only)
 LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
@@ -169,10 +170,12 @@ architecture, scalable systems, and AI engineering.
 Stay accessible to juniors without becoming simplistic for experienced
 engineers.
 
-## 4. Five content pillars
+## 4. Seven content pillars
 
-Do not create a separate pillar for every technology. There are exactly five,
-in this order, each with its own series label and visual accent:
+Do not create a separate pillar for every technology. There are exactly seven,
+in this order, each with its own series label and visual accent. Pillars 1–5
+teach from an ordered roadmap. Pillars 6–7 are story pillars: no roadmap,
+every post comes from real work logged in `sources/project-log.md`.
 
 | # | Pillar | Series label | Roadmap |
 | --- | --- | --- | --- |
@@ -181,8 +184,10 @@ in this order, each with its own series label and visual accent:
 | 3 | System design | `SYSTEM ARCHITECTURE #NN` | `pillars/03-system-design.md` |
 | 4 | AI engineering | `AI ENGINEERING #NN` | `pillars/04-ai-engineering.md` |
 | 5 | Dev growth | `DEV GROWTH #NN` | `pillars/05-dev-growth.md` |
+| 6 | Building | `BUILDING #NN` | `pillars/06-building.md` (no roadmap) |
+| 7 | Pivot | `PIVOT #NN` | `pillars/07-pivot.md` (no roadmap) |
 
-A sixth pillar needs a deliberate decision, its own roadmap file and its own
+Another pillar needs a deliberate decision, its own roadmap file and its own
 accent — never a quiet addition.
 
 ### Pillar 1 — Problem solving
@@ -281,6 +286,25 @@ estimation, and working well with AI tools. Every post is concrete numbered
 steps or a clear comparison — never generic motivation — and draws on real
 experience through `[PERSONAL: ...]` markers rather than invented stories.
 
+### Pillar 6 — Building
+
+Real engineering work on personal and client projects, plus Pivot stories told
+anonymously: shipped work, decisions, failures, trade-offs and results. Every
+post has `MODE: PERSONAL` and a `TYPE:` (UPDATE, STORY, DECISION, POSTMORTEM,
+DEMO, RETRO), each with its own structure in `pillars/06-building.md`. Draft
+only from `sources/project-log.md`; any missing fact is a `[PERSONAL: ...]`
+marker, never a guess. No client names, data or screenshots without
+permission. Not a project diary, not a status report.
+
+### Pillar 7 — Pivot
+
+The story of building Pivot, under its real name. Same types and quality bar
+as Building; voice defaults to "we". Only what is public or agreed: no
+unreleased features, internal code, business metrics or security details.
+A Pivot story that must stay anonymous goes to Building instead, with the
+name and anything identifying removed — never told both ways. Rules in
+`pillars/07-pivot.md`.
+
 ## 5. Connecting the pillars
 
 The pillars should not feel disconnected. Look for intersections:
@@ -310,6 +334,8 @@ SOFTWARE ENGINEERING #01  Ship the Boring Architecture First
 SYSTEM ARCHITECTURE #01   What System Design Actually Is
 AI ENGINEERING #09        Agents Are Software, Not Magic
 DEV GROWTH #01            Junior vs Mid vs Senior: What Actually Changes
+BUILDING #01              <a real project story, from the project log>
+PIVOT #01                 <a real Pivot story, from the project log>
 ```
 
 Series are different perspectives on the same engineering identity — not

@@ -85,7 +85,7 @@ is "one picture plus three things to know".
 
 ## Pillar accents (v5.2)
 
-Five pillars, five hues, no sharing. Defined once in `templates/theme.css`. Correctness is no longer a colour: the right
+Seven pillars, seven hues, no sharing. Defined once in `templates/theme.css`. Correctness is no longer a colour: the right
 answer takes the card's own accent (`--yes` resolves to `var(--accent)`), and the
 wrong one is struck in tertiary ink. Only diff mode keeps green — `--add` — for `+`.
 
@@ -96,6 +96,8 @@ wrong one is struck in tertiary ink. Only diff mode keeps green — `--add` — 
 | System design | `#C084FC` violet | `--arch` |
 | AI engineering | `#8AA4FF` indigo | `--ai` |
 | Dev growth | `#F2555F` crimson | `--grow` |
+| Building | `#22D3EE` cyan | `--build` |
+| Pivot | `#7C6BFF` Pivot purple | `--pivot` |
 
 ## Writing a post card
 
