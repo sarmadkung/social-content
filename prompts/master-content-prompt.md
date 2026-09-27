@@ -33,13 +33,17 @@ these pillars:
   4. AI Engineering               series label: AI ENGINEERING #NN
   5. Career & Developer Growth    series label: DEV GROWTH #NN
   6. Building (real projects)     series label: BUILDING #NN
-  7. Pivot (building Pivot)       series label: PIVOT #NN
+  7. For Business                series label: FOR BUSINESS #NN or SOLUTIONS #NN
 For pillars 1-5, follow the ordered topic roadmap in pillars/<pillar>.md.
 Post topics in that order so each post builds on the previous one.
-Pillars 6-7 are story pillars with no roadmap: draft only from real entries
-in sources/project-log.md, use MODE: PERSONAL, pick a TYPE, and follow that
-TYPE's structure and the rules in pillars/06-building.md and
-pillars/07-pivot.md. Never invent a project, a result or a number there.
+Pillar 6 (Building) has no roadmap: draft only from real entries in
+sources/project-log.md, use MODE: PERSONAL, pick a TYPE, and follow the rules
+in pillars/06-building.md. Pivot is a client's product: never name it.
+Pillar 7 (For Business) has no roadmap: PRODUCT posts come only from my own
+apps in sources/apps.md; BLUEPRINT posts describe a system as a concept and
+never claim it was built. Every post ends with one call to action ("message
+me" or "contact us"). Rules in pillars/07-business.md.
+Never invent a project, a result or a number in pillars 6-7.
 
 AUDIENCE: SIMPLE LANGUAGE, PROFESSIONAL DEPTH
 Readers range from juniors to seniors. Serve both with the language, not by
@@ -150,8 +154,9 @@ FORMAT PER POST (output exactly this)
   PILLAR:    <pillar> — for <who benefits most>
   LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
   MODE:      <TEACH | WHY | COMPARE | LIST | SCENARIO | QUIZ | PERSONAL>
-  TYPE:      <UPDATE | STORY | DECISION | POSTMORTEM | DEMO | RETRO>   (BUILDING and PIVOT only)
-  SOURCE:    <project-log entry heading, e.g. 2026-10-02 — Pivot>   (BUILDING and PIVOT only)
+  TYPE:      <UPDATE | STORY | DECISION | POSTMORTEM | DEMO | RETRO>   (BUILDING)
+             <PRODUCT | BLUEPRINT>   (FOR BUSINESS)
+  SOURCE:    <project-log entry heading>   (BUILDING) · <app heading in sources/apps.md>   (PRODUCT)
   FORMAT:    <TEXT | VISUAL>
   HEADLINE:  <image headline, 8 words or fewer>   (VISUAL only)
   LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
@@ -223,9 +228,10 @@ SELF-CHECK BEFORE RETURNING
  10. Does the post follow its MODE's structure?
  11. Does it use only ideas from the posts in its "needs" field?
  12. Does the "Next:" line name the next post in the roadmap?
- 13. BUILDING / PIVOT: is every fact from the project log, with gaps marked
-     [PERSONAL: ...]? No client or private Pivot detail? An anonymous Pivot
-     story never names Pivot?
+ 13. BUILDING: is every fact from the project log, with gaps marked
+     [PERSONAL: ...]? No client detail, and Pivot never named?
+ 14. FOR BUSINESS: one call to action? A BLUEPRINT never claims it was built
+     or delivered? A PRODUCT is my own app, with real features only?
 ```
 
 ## What changed from the original, and why

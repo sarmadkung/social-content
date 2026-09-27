@@ -16,9 +16,9 @@ ROADMAPS = {
     "system-architecture": "03-system-design.md",
     "ai-engineering": "04-ai-engineering.md",
     "dev-growth": "05-dev-growth.md",
-    # story pillars: no roadmap, posts follow real work (see pillars/06, 07)
+    # no roadmap: BUILDING follows real work, FOR BUSINESS follows apps and ideas
     "building": None,
-    "pivot": None,
+    "business": None,
 }
 PILLARS = {
     "dsa": ("DSA SERIES", "dsa", "--dsa"),
@@ -27,8 +27,13 @@ PILLARS = {
     "ai-engineering": ("AI ENGINEERING", "ai", "--ai"),
     "dev-growth": ("DEV GROWTH", "growth", "--grow"),
     "building": ("BUILDING", "build", "--build"),
-    "pivot": ("PIVOT", "pivot", "--pivot"),
+    "business": (("FOR BUSINESS", "SOLUTIONS"), "biz", "--biz"),   # either label, one sequence
 }
+BUSINESS_TYPES = {"PRODUCT": {"PERSONAL"}, "BLUEPRINT": {"TEACH", "SCENARIO"}}
+APPS = os.path.join(ROOT, "sources", "apps.md")
+CTA = re.compile(r"message me|contact us", re.I)
+# a BLUEPRINT describes a concept; these phrases claim it was built or sold
+CLAIMS = ["i built", "we built", "we delivered", "i delivered", "our client", "we helped", "i helped"]
 STORY_TYPES = {"UPDATE", "STORY", "DECISION", "POSTMORTEM", "DEMO", "RETRO"}
 PROJECT_LOG = os.path.join(ROOT, "sources", "project-log.md")
 READY = {"approved", "scheduled", "published"}   # past draft: no [PERSONAL: ...] left
@@ -127,18 +132,21 @@ def check_post(path, pillar, series_label, prefix, seen, road):
         err(path, f"SERIES '{series}' is not '<LABEL> #NN'")
     else:
         label, n = m.group(1), int(m.group(2))
-        if label != series_label:
-            err(path, f"SERIES label '{label}' does not match pillar folder (expected '{series_label}')")
+        labels = series_label if isinstance(series_label, tuple) else (series_label,)
+        if label not in labels:
+            err(path, f"SERIES label '{label}' does not match pillar folder (expected {' or '.join(labels)})")
         fm = re.match(rf"^{prefix}-(\d+)-", os.path.basename(path))
         if not fm:
             err(path, f"filename should start with '{prefix}-NN-'")
         elif int(fm.group(1)) != n:
             err(path, f"filename number {fm.group(1)} does not match SERIES #{n:02d}")
-        key = (label, n)
+        key = n   # per pillar; FOR BUSINESS and SOLUTIONS share one sequence
         if key in seen:
             err(path, f"duplicate {series} (also {rel(seen[key])})")
         seen[key] = path
-        if road is None:
+        if pillar == "business":
+            check_business(path, fields, body)
+        elif road is None:
             if fields.get("MODE") != "PERSONAL":
                 err(path, f"{label} posts use MODE: PERSONAL (got '{fields.get('MODE')}')")
             if fields.get("TYPE") not in STORY_TYPES:
@@ -149,9 +157,9 @@ def check_post(path, pillar, series_label, prefix, seen, road):
                 err(path, "SOURCE: must name a project-log entry, e.g. '2026-10-02 — Pivot'")
             elif f"## {src}" not in open(PROJECT_LOG).read():
                 err(path, f"SOURCE '{src}' has no matching '## {src}' entry in sources/project-log.md")
-            # anonymous Pivot stories live in BUILDING; the name must not leak
-            if pillar == "building" and re.search(r"\bpivot\b", body, re.I):
-                warn(path, "mentions 'pivot' — if this is an anonymous Pivot story, remove it")
+            # Pivot is a client product: its name must never reach a post
+            if re.search(r"\bpivot\b", body, re.I):
+                warn(path, "mentions 'pivot' — Pivot is a client product and is never named")
         elif n not in road:
             err(path, f"{series} is not in the roadmap")
         elif fields.get("MODE") != road[n][0]:
@@ -160,6 +168,32 @@ def check_post(path, pillar, series_label, prefix, seen, road):
                 and "Spot it when" not in body:
             err(path, "DSA pattern post is missing the 'Spot it when…' block")
     check_common(path, fields, body)
+
+
+def check_business(path, fields, body):
+    kind, mode = fields.get("TYPE"), fields.get("MODE")
+    if kind not in BUSINESS_TYPES:
+        err(path, f"TYPE '{kind}' is not one of {sorted(BUSINESS_TYPES)}")
+        return
+    if mode not in BUSINESS_TYPES[kind]:
+        err(path, f"{kind} posts use MODE {' or '.join(sorted(BUSINESS_TYPES[kind]))} (got '{mode}')")
+    if not CTA.search(body):
+        err(path, "needs one call to action: 'message me' or 'contact us'")
+    elif len(CTA.findall(body)) > 1:
+        warn(path, "has more than one call to action — keep one")
+    if re.search(r"\bpivot\b", body, re.I):
+        warn(path, "mentions 'pivot' — Pivot is a client product and is never named")
+    if kind == "PRODUCT":
+        src = fields.get("SOURCE", "")
+        if not src:
+            err(path, "PRODUCT posts need SOURCE: <app heading in sources/apps.md>")
+        elif f"## {src}\n" not in open(APPS).read() + "\n":
+            err(path, f"SOURCE '{src}' has no '## {src}' entry in sources/apps.md")
+    else:
+        low = body.lower()
+        for c in CLAIMS:
+            if re.search(rf"\b{c}\b", low):
+                err(path, f"BLUEPRINT says '{c}' — a blueprint never claims it was built or delivered")
 
 
 def check_common(path, fields, body, quiz=False):
@@ -250,7 +284,7 @@ def check_posts():
         if files and carousels / len(files) > MAX_CAROUSEL_SHARE:
             warn(os.path.join(ROOT, "generated", "drafts", pillar),
                  f"{carousels} of {len(files)} posts are carousels — keep them for real sequences")
-        drafted = sorted(n for (_, n) in seen)
+        drafted = sorted(seen)
         for n in range(1, (drafted[-1] if drafted else 0) + 1):
             if n not in drafted and (road is None or n in road):
                 err(os.path.join(ROOT, "generated", "drafts", pillar),
@@ -278,15 +312,16 @@ def check_visuals():
     # theme accents must match the visual skill's accent table
     skill = open(os.path.join(ROOT, "skills", "linkedin-visual.skill.md")).read()
     for pillar, (label, _, var) in PILLARS.items():
+        label = label[0] if isinstance(label, tuple) else label
         tm = re.search(rf"{var}:(#[0-9A-Fa-f]{{6}})", theme)
-        sm = re.search(rf"`{label}`\s*\|\s*`(#[0-9A-Fa-f]{{6}})`", skill)
+        sm = re.search(rf"`{label}`(?:\s*/\s*`[^`]+`)*\s*\|\s*`(#[0-9A-Fa-f]{{6}})`", skill)
         if not tm:
             err(theme_path, f"{var} is not defined")
         elif not sm:
             err(os.path.join(ROOT, "skills", "linkedin-visual.skill.md"), f"no accent row for {label}")
         elif tm.group(1).upper() != sm.group(1).upper():
             err(theme_path, f"{var} is {tm.group(1)} but the visual skill says {sm.group(1)} for {label}")
-    hexes = re.findall(r"--(?:dsa|swe|arch|ai|grow|build|pivot):(#[0-9A-Fa-f]{6})", theme)
+    hexes = re.findall(r"--(?:dsa|swe|arch|ai|grow|build|biz):(#[0-9A-Fa-f]{6})", theme)
     if len(hexes) != len(set(h.upper() for h in hexes)):
         err(theme_path, "two pillars share an accent colour")
     cards = glob.glob(os.path.join(ROOT, "templates", "variant-*", "*.html")) + \
@@ -303,7 +338,7 @@ def check_visuals():
         t = open(css).read()
         if '@import url("../theme.css")' not in t:
             err(css, "does not import ../theme.css")
-        if re.search(r"--(dsa|swe|arch|ai|grow|build|pivot):#", t):
+        if re.search(r"--(dsa|swe|arch|ai|grow|build|biz):#", t):
             err(css, "redefines a pillar accent — colours belong in templates/theme.css")
 
 

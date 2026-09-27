@@ -97,7 +97,7 @@ wrong one is struck in tertiary ink. Only diff mode keeps green — `--add` — 
 | AI engineering | `#8AA4FF` indigo | `--ai` |
 | Dev growth | `#F2555F` crimson | `--grow` |
 | Building | `#2DD4BF` teal | `--build` |
-| Pivot | `#7C6BFF` Pivot purple | `--pivot` |
+| For business | `#A3E635` lime | `--biz` |
 
 ## Writing a post card
 

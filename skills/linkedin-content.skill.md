@@ -42,8 +42,9 @@ TITLE:     <title>
 PILLAR:    <pillar> — for <who benefits most>
 LEVEL:     <BEGINNER | INTERMEDIATE | ADVANCED>
 MODE:      <TEACH | WHY | COMPARE | LIST | SCENARIO | QUIZ | PERSONAL>
-TYPE:      <UPDATE | STORY | DECISION | POSTMORTEM | DEMO | RETRO>   (BUILDING and PIVOT only)
-SOURCE:    <project-log entry heading, e.g. 2026-10-02 — Pivot>   (BUILDING and PIVOT only)
+TYPE:      <UPDATE | STORY | DECISION | POSTMORTEM | DEMO | RETRO>   (BUILDING)
+           <PRODUCT | BLUEPRINT>   (FOR BUSINESS)
+SOURCE:    <project-log entry heading>   (BUILDING) · <app heading in sources/apps.md>   (PRODUCT)
 FORMAT:    <TEXT | VISUAL>   (TEXT = words only; VISUAL = words + image)
 HEADLINE:  <image headline, 8 words or fewer>          (VISUAL only)
 LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
@@ -190,8 +191,9 @@ above).
 
 Do not create a separate pillar for every technology. There are exactly seven,
 in this order, each with its own series label and visual accent. Pillars 1–5
-teach from an ordered roadmap. Pillars 6–7 are story pillars: no roadmap,
-every post comes from real work logged in `sources/project-log.md`.
+teach from an ordered roadmap. Pillars 6–7 have no roadmap: Building comes from
+real work in `sources/project-log.md`; For Business comes from my own apps in
+`sources/apps.md` or from a system idea.
 
 | # | Pillar | Series label | Roadmap |
 | --- | --- | --- | --- |
@@ -201,7 +203,7 @@ every post comes from real work logged in `sources/project-log.md`.
 | 4 | AI engineering | `AI ENGINEERING #NN` | `pillars/04-ai-engineering.md` |
 | 5 | Dev growth | `DEV GROWTH #NN` | `pillars/05-dev-growth.md` |
 | 6 | Building | `BUILDING #NN` | `pillars/06-building.md` (no roadmap) |
-| 7 | Pivot | `PIVOT #NN` | `pillars/07-pivot.md` (no roadmap) |
+| 7 | For business | `FOR BUSINESS #NN` or `SOLUTIONS #NN` | `pillars/07-business.md` (no roadmap) |
 
 Another pillar needs a deliberate decision, its own roadmap file and its own
 accent — never a quiet addition.
@@ -304,22 +306,25 @@ experience through `[PERSONAL: ...]` markers rather than invented stories.
 
 ### Pillar 6 — Building
 
-Real engineering work on personal and client projects, plus Pivot stories told
-anonymously: shipped work, decisions, failures, trade-offs and results. Every
+Real engineering work on personal and client projects, including Pivot, which
+is a client's product and is never named: shipped work, decisions, failures, trade-offs and results. Every
 post has `MODE: PERSONAL` and a `TYPE:` (UPDATE, STORY, DECISION, POSTMORTEM,
 DEMO, RETRO), each with its own structure in `pillars/06-building.md`. Draft
 only from `sources/project-log.md`; any missing fact is a `[PERSONAL: ...]`
 marker, never a guess. No client names, data or screenshots without
 permission. Not a project diary, not a status report.
 
-### Pillar 7 — Pivot
+### Pillar 7 — For business
 
-The story of building Pivot, under its real name. Same types and quality bar
-as Building; voice defaults to "we". Only what is public or agreed: no
-unreleased features, internal code, business metrics or security details.
-A Pivot story that must stay anonymous goes to Building instead, with the
-name and anything identifying removed — never told both ways. Rules in
-`pillars/07-pivot.md`.
+For business owners, not engineers: what software and AI systems can do for
+them, ending in one call to action ("message me" or "contact us"). Two
+`TYPE:`s. PRODUCT: an app I own, from `sources/apps.md`, real features only,
+`MODE: PERSONAL`. BLUEPRINT: a system described as a concept, `MODE: TEACH` or
+`SCENARIO`; it never says or implies it was built or delivered ("I built",
+"our client"), and never invents results. Label each post `FOR BUSINESS` or
+`SOLUTIONS`, sharing one number sequence. Client apps, including Pivot, are
+never PRODUCT posts. Every post still teaches something; no pure advertising.
+Rules and structures in `pillars/07-business.md`.
 
 ## 5. Connecting the pillars
 
@@ -351,7 +356,7 @@ SYSTEM ARCHITECTURE #01   What System Design Actually Is
 AI ENGINEERING #09        Agents Are Software, Not Magic
 DEV GROWTH #01            Junior vs Mid vs Senior: What Actually Changes
 BUILDING #01              <a real project story, from the project log>
-PIVOT #01                 <a real Pivot story, from the project log>
+SOLUTIONS #01             <a system blueprint, with one call to action>
 ```
 
 Series are different perspectives on the same engineering identity — not

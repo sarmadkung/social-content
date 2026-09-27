@@ -13,9 +13,9 @@ working with trade-offs, and learning from real projects.
 Every post must originate from real project work, real observations,
 or real decisions. Never manufacture a project story to fit a topic.
 
-Scope: personal and client projects, plus anonymous Pivot stories. Named
-Pivot stories go to the PIVOT pillar (`pillars/07-pivot.md`), which also
-sets the rules for keeping an anonymous Pivot story anonymous.
+Scope: personal and client projects, including Pivot. Pivot is a client's
+product, so it is always anonymous here (see "Pivot and other client
+products" below).
 
 ## Audience
 
@@ -38,7 +38,8 @@ Every two weeks capture:
 - What I would do differently
 
 Posts must be drafted from this source, not invented. Each post's `SOURCE:`
-line names the entry it came from (its heading, e.g. `2026-10-02 — Pivot`);
+line names the entry it came from (its heading, e.g. `2026-10-02 — Pivot`,
+which never appears in the post itself);
 `validate.py` rejects a post whose entry is missing.
 
 ## No Invented Facts
@@ -122,6 +123,22 @@ The engineering lesson should emerge from the real project context.
 - Never expose information that could identify the client or reveal confidential business information.
 - When in doubt, anonymize more.
 
+## Pivot and other client products
+
+Pivot is a client's product. Never name it, and never use its brand colour,
+logo or screenshots. Describe it by category ("a real-time collaboration
+product I work on").
+
+Also keep out, for Pivot and any client product:
+- Feature names, unreleased features and the roadmap
+- Internal code, repo structure and internal service names
+- Business metrics: users, revenue, growth, costs
+- Customer names or data
+- Security details: how auth, permissions or infrastructure could be attacked
+
+Never tell the same story twice in a way that links it back to the client.
+`validate.py` warns when a BUILDING post mentions "pivot".
+
 ## Voice
 
 Default: "I"
@@ -132,8 +149,9 @@ Do not claim sole ownership of team work.
 
 ## Cadence
 
-One bi-weekly BUILDING post every two weeks, on the Saturday slot. It
-alternates with PIVOT: BUILDING one Saturday, PIVOT the next.
+One BUILDING post a week, on the Saturday slot. The bi-weekly update fills
+every other Saturday; the weeks between take a story, decision, postmortem,
+demo or retro when there is real material.
 
 Additional BUILDING posts only when there is meaningful material.
 
