@@ -231,13 +231,12 @@ Change a colour there, never in a variant's `base.css`.
 | AI engineering | `AI ENGINEERING` | `#8AA4FF` indigo |
 | Dev growth | `DEV GROWTH` | `#F2555F` crimson |
 | Building | `BUILDING` | `#2DD4BF` teal |
-| Pivot | `PIVOT` | `#7C6BFF` Pivot purple |
+| For business | `FOR BUSINESS` / `SOLUTIONS` | `#A3E635` lime |
 
-Pivot's accent is Pivot's own brand primary (`primary` in Pivot's
-`apps/expo/src/theme/color.ts`). If Pivot's brand colour changes, change it
-here and in `templates/theme.css` to match. Building uses teal: real-world building,
-set apart from Pivot's purple. It sits near Software engineering's green;
-the series label is what tells the two apart.
+Building uses teal for real-world building. It sits near Software
+engineering's green; the series label is what tells the two apart. For
+business uses lime, the widest free gap on the wheel (between amber and
+green). Never use a client's brand colour for any pillar.
 
 One accent per pillar, seven pillars, no sharing. If another pillar ever appears it
 gets its own hue — never a second pillar on an existing accent, which is what makes
