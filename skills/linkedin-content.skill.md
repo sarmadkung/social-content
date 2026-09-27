@@ -47,6 +47,7 @@ SOURCE:    <project-log entry heading, e.g. 2026-10-02 — Pivot>   (BUILDING an
 FORMAT:    <TEXT | VISUAL>   (TEXT = words only; VISUAL = words + image)
 HEADLINE:  <image headline, 8 words or fewer>          (VISUAL only)
 LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
+SLIDES:    <one line per slide: NN · LAYOUT · headline · what it draws>   (CAROUSEL only)
 STATUS:    <draft | approved | scheduled | published>
 ---
 <post body, ready to paste — no markdown headers, short paragraphs>
@@ -77,6 +78,13 @@ are true: it is short (body 1,400 characters or fewer) and the words explain it
 fully, so an image would only repeat them. Anything longer, or anything with a
 flow, comparison, structure or idea a picture explains better, is `VISUAL`.
 `TEXT` posts leave out `HEADLINE:` and `LAYOUT:`.
+
+**Choosing CAROUSEL:** only when it is really needed. `LAYOUT: CAROUSEL` needs
+all three: the idea is an ordered sequence; it has 4+ stages that each need
+their own picture (numbers, code or a diagram, not a one-line label); and one
+image would be unreadable or lose the order. Otherwise one image. A carousel is
+the cover (HEADLINE) + one slide per stage + an END slide, 6–10 slides, listed
+in a `SLIDES:` block (full rule in `prompts/master-content-prompt.md`).
 
 **Teaching order for every educational post:** problem → plain idea → technical
 name. Open with a concrete situation (numbers help), explain the idea in plain

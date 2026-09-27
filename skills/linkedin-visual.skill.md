@@ -280,8 +280,11 @@ Never use the accent as a gradient, and never give one card two accents.
 
 ## 5. Carousel rules
 
-1. 6–10 slides. Below 6 it should have been a single image; above 10 it is an
-   article.
+0. Only when really needed: an ordered sequence of 4+ stages that each need
+   their own picture, which one image cannot show readably. The content skill
+   decides this; the post's `SLIDES:` block lists every slide.
+1. 6–10 slides: cover + one slide per stage + a final slide. Below 6 it should
+   have been a single image; above 10 it is an article.
 2. Slide 1 is the cover: series label, headline, name lockup, nothing else.
 3. Slides 2..n−1 each carry exactly one point, with the point as a 56px
    headline at top and supporting detail below.
@@ -289,6 +292,9 @@ Never use the accent as a gradient, and never give one card two accents.
 5. Slide numbers in tertiary ink, bottom-right, `03 / 08` format.
 6. Final slide is a single question or takeaway plus the name lockup. No
    "follow me" graphics, no like-and-share instructions.
+7. Export: one 1080 × 1350 PNG per slide. LinkedIn gets them as one PDF
+   document (image posts show as a grid, not a swipe); Instagram gets the
+   PNGs as a carousel. Same files, both platforms.
 
 ## 6. Review checklist
 

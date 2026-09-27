@@ -5,7 +5,15 @@ LEVEL:     INTERMEDIATE
 MODE:      SCENARIO
 FORMAT:    VISUAL
 HEADLINE:  Timed out does not mean failed
-LAYOUT:    FLOW
+LAYOUT:    CAROUSEL
+SLIDES:
+  02 · GRID · Three stories behind one timeout · never arrived / arrived and failed / charged but the reply was lost, all look the same from your side
+  03 · COMPARE · A blind retry charges twice · Pay $49 → timeout → retry → $98, the retry struck through
+  04 · FLOW · Step 1: mark it pending · order status "pending", screen text "We are confirming your payment"
+  05 · FLOW · Step 2: ask before you act · look up by order ID → "charged" = mark paid, "not found" = safe to try again
+  06 · FLOW · Step 3: no answer? Check later · queued check with backoff, and the provider's webhook arriving
+  07 · STAT · 10 customers a day stuck here · 10,000 payments a day × 0.1% timeouts = 10
+  08 · END · Timeout means "I don't know." Find out first.
 STATUS:    draft
 ---
 A customer taps "Pay $49". Your server calls the payment provider with a 5-second timeout. 5 seconds pass. No answer.

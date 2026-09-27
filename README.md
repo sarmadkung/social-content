@@ -26,7 +26,7 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 ## Daily flow
 1. Open `published/queue.md` and take today's post.
 2. Fill or delete any `[PERSONAL: ...]` line.
-3. If the post is `FORMAT: VISUAL`, make the image from the HEADLINE + LAYOUT lines (visual skill). `FORMAT: TEXT` posts go out as words only.
+3. If the post is `FORMAT: VISUAL`, make the image from the HEADLINE + LAYOUT lines (visual skill). If `LAYOUT: CAROUSEL`, make one slide per `SLIDES:` line and post a PDF on LinkedIn, the images on Instagram. `FORMAT: TEXT` posts go out as words only.
 4. Post it.
 5. Add a row to `published/linkedin.md` and set the post's `STATUS:` to `published`.
 6. Run `python3 scripts/build_queue.py` so it leaves the queue.

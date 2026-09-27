@@ -38,6 +38,9 @@ MAX_TEACH_RUN = 4             # mix rule: never more than 4 TEACH posts in a row
 FORMATS = {"TEXT", "VISUAL"}      # TEXT = post the words only; VISUAL = words + image
 VISUAL_ONLY = ["HEADLINE", "LAYOUT"]
 LAYOUTS = {"STATEMENT", "GRID", "ANATOMY", "FLOW", "COMPARE", "STAT", "CAROUSEL"}
+SLIDE_LINE = re.compile(r"^\s+(\d{2}) · ([A-Z]+) · (.+?)(?: · (.+))?$")
+CAROUSEL_SLIDES = (6, 10)     # cover + one per stage + END
+MAX_CAROUSEL_SHARE = 0.25     # carousels are for real sequences only
 STATUSES = {"draft", "approved", "scheduled", "published"}
 LEVELS = {"BEGINNER", "INTERMEDIATE", "ADVANCED"}
 BANNED = ["delve", "leverage", "robust", "seamless", "game-changer", "game changer",
@@ -73,6 +76,7 @@ def parse(path):
         m = re.match(r"^([A-Z][A-Z ]*?):\s*(.*)$", line)
         if m:
             fields[m.group(1)] = m.group(2).strip()
+    fields["_SLIDES"] = [SLIDE_LINE.match(l) for l in head.splitlines() if re.match(r"^\s+\d{2} · ", l)]
     return fields, body.strip("\n")
 
 
@@ -176,6 +180,7 @@ def check_common(path, fields, body, quiz=False):
     layout = fields.get("LAYOUT", "")
     if layout and layout not in LAYOUTS:
         err(path, f"LAYOUT '{layout}' is not one of {sorted(LAYOUTS)}")
+    check_slides(path, fields, layout)
     status = fields.get("STATUS", "")
     if status and status not in STATUSES:
         err(path, f"STATUS '{status}' is not one of {sorted(STATUSES)}")
@@ -205,6 +210,34 @@ def check_common(path, fields, body, quiz=False):
             err(path, f"banned word '{w}'")
 
 
+def check_slides(path, fields, layout):
+    slides = fields["_SLIDES"]
+    if layout != "CAROUSEL":
+        if "SLIDES" in fields or slides:
+            err(path, "has SLIDES: but LAYOUT is not CAROUSEL")
+        return
+    if not slides:
+        err(path, "CAROUSEL post is missing its SLIDES: block")
+        return
+    if None in slides:
+        err(path, "a SLIDES line is not '  NN · LAYOUT · headline · what it draws'")
+        return
+    total = len(slides) + 1   # + the cover, which is HEADLINE
+    if not CAROUSEL_SLIDES[0] <= total <= CAROUSEL_SLIDES[1]:
+        err(path, f"carousel has {total} slides (need {CAROUSEL_SLIDES[0]}–{CAROUSEL_SLIDES[1]} incl. cover)")
+    for i, m in enumerate(slides, 2):
+        n, lay, headline = int(m.group(1)), m.group(2), m.group(3)
+        if n != i:
+            err(path, f"slide {m.group(1)} is out of order (expected {i:02d})")
+        last = i == len(slides) + 1
+        if last and lay != "END":
+            err(path, f"last slide {n:02d} should be END")
+        elif not last and lay not in LAYOUTS - {"CAROUSEL"}:
+            err(path, f"slide {n:02d} layout '{lay}' is not a single-image layout")
+        if len(headline.split()) > 8:
+            err(path, f"slide {n:02d} headline has {len(headline.split())} words (max 8)")
+
+
 def check_posts():
     for pillar, (label, prefix, _) in PILLARS.items():
         seen, road = {}, read_roadmap(pillar)
@@ -213,6 +246,10 @@ def check_posts():
             check_post(f, pillar, label, prefix, seen, road)
         # the queue posts drafts in number order, so a hole means a post goes out
         # before something it builds on
+        carousels = sum("LAYOUT:    CAROUSEL" in open(f).read() for f in files)
+        if files and carousels / len(files) > MAX_CAROUSEL_SHARE:
+            warn(os.path.join(ROOT, "generated", "drafts", pillar),
+                 f"{carousels} of {len(files)} posts are carousels — keep them for real sequences")
         drafted = sorted(n for (_, n) in seen)
         for n in range(1, (drafted[-1] if drafted else 0) + 1):
             if n not in drafted and (road is None or n in road):

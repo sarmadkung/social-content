@@ -5,7 +5,15 @@ LEVEL:     BEGINNER
 MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  What happens inside one API call
-LAYOUT:    FLOW
+LAYOUT:    CAROUSEL
+SLIDES:
+  02 · FLOW · The arrow hides five steps · fetch() → DNS → TCP → TLS → request → response, five numbered boxes in one row
+  03 · ANATOMY · DNS turns a name into a number · api.example.com → 203.0.113.7, with a "cached" tag on the repeat lookup
+  04 · FLOW · TCP costs one round trip · client ⇄ server arrows, one round trip labelled 50 ms
+  05 · COMPARE · TLS: one round trip, or two · TLS 1.3 = 1 round trip vs TLS 1.2 = 2, certificate check marked
+  06 · ANATOMY · The request and the response · the GET text and the 200 OK text, method, path, headers and status labelled
+  07 · STAT · New call 150 ms, reused 50 ms · timing bars: TCP 50 + TLS 50 + request 50 vs a reused connection at 50
+  08 · END · Five steps, and any of them can stall
 STATUS:    draft
 ---
 You call fetch("https://api.example.com/weather"). A moment later you have JSON. Five things happened in between.

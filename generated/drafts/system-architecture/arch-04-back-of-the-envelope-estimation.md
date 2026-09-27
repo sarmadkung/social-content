@@ -5,7 +5,15 @@ LEVEL:     INTERMEDIATE
 MODE:      SCENARIO
 FORMAT:    VISUAL
 HEADLINE:  Five minutes of maths before any design
-LAYOUT:    FLOW
+LAYOUT:    CAROUSEL
+SLIDES:
+  02 · GRID · Step 1: write down assumptions · 10M daily users · 20 views each · 1 in 10 uploads · 2 MB a photo
+  03 · STAT · Step 2: 200M views a day · 10M × 20 = 200M views, 10M × 1/10 = 1M uploads
+  04 · STAT · Step 3: divide by 100,000, not 86,400 · 200M ÷ 100,000 = 2,000 views/s, 1M ÷ 100,000 = 10 uploads/s
+  05 · STAT · Step 4: design for the 3× peak · daily traffic curve with an evening spike: 6,000 views/s, 30 uploads/s
+  06 · STAT · Step 5: 730 TB of photos a year · 2 TB a day × 365 for photos vs 1 GB a day of metadata
+  07 · GRID · What the numbers decide · 200 reads per upload → fast reads · photos → object storage · metadata → one database · 30 writes/s → no sharding yet
+  08 · END · Rough maths shows what to ignore
 STATUS:    draft
 ---
 You are asked to design a photo-sharing app. 10 million people use it every day. Before drawing a single box: how big is this?
