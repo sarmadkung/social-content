@@ -155,6 +155,7 @@ FORMAT PER POST (output exactly this)
   FORMAT:    <TEXT | VISUAL>
   HEADLINE:  <image headline, 8 words or fewer>   (VISUAL only)
   LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
+  SLIDES:    <slide list, one per line>   (CAROUSEL only; see CAROUSEL below)
   STATUS:    draft
   ---
   <post body, ready to paste>
@@ -163,6 +164,27 @@ FORMAT: VISUAL by default. TEXT only when the body is short (1,400 characters
 or fewer) and needs no picture to explain it (no HEADLINE/LAYOUT on TEXT posts).
 STATUS moves draft → approved → scheduled → published; build_queue.py skips
 published posts. Run python3 scripts/validate.py after writing.
+
+CAROUSEL (several slides for one post) — only when it is really needed.
+Use LAYOUT: CAROUSEL only when all three are true:
+  1. The idea is an ordered sequence: steps, stages, states over time, or
+     options tried in order.
+  2. It has 4 or more stages, and each stage needs its own picture (its own
+     numbers, code or diagram), not just a one-line label.
+  3. Put in one image, the text would get too small to read, or the order
+     would be lost.
+Otherwise use one image. One-line steps fit one FLOW or GRID image; a short
+trace fits one image as stacked rows. When in doubt, one image.
+A carousel is: cover (slide 01, the HEADLINE) + one slide per stage + an END
+slide, 6-10 slides in total. One idea per slide. Every slide's headline is 8
+words or fewer. The post text must still make sense without the slides.
+List the slides in the header, after LAYOUT:
+  SLIDES:
+    02 · <LAYOUT> · <slide headline> · <what the slide draws>
+    ...
+    NN · END · <takeaway>
+Slide layouts are STATEMENT, GRID, ANATOMY, FLOW, COMPARE or STAT.
+Post it on LinkedIn as a PDF document (swipeable) and on Instagram as images.
 
 LEVEL guide (how much the reader must already know, never how deep the post is:
 every level passes the Senior Interest Test)
@@ -173,7 +195,8 @@ Within a pillar, levels should rise over the roadmap, not jump around.
 
 LENGTH
 1,400-2,500 characters for the body. Hard limit 3,000 (LinkedIn's cap).
-If a topic needs more, split it into two posts or mark it CAROUSEL.
+If a topic needs more, split it into two posts. CAROUSEL is not a way to
+fit more words: it is only for sequences that pass the CAROUSEL rule.
 
 ACCURACY
   - Every claim must be technically correct. State Big-O precisely,

@@ -5,7 +5,16 @@ LEVEL:     INTERMEDIATE
 MODE:      SCENARIO
 FORMAT:    VISUAL
 HEADLINE:  Fix the query before the architecture
-LAYOUT:    FLOW
+LAYOUT:    CAROUSEL
+SLIDES:
+  02 · STAT · App at 30%, database at 90% · app server CPU bars low, the one database bar high, "launch next week"
+  03 · ANATOMY · Step 0: measure, don't guess · pg_stat_statements output with the top query by total time marked
+  04 · COMPARE · 1. Add the missing index · scan 5 million rows vs jump straight to one user's rows via an index on user_id
+  05 · FLOW · 2. Cache hot reads · 1,000 reads a minute → Redis with a TTL → a few reach the database; cost: stale data
+  06 · FLOW · 3. Read replicas for uncachable reads · primary → replicas for reads; cost: lag, and no help for writes
+  07 · COMPARE · 4. Scale up, 5. then shard · bigger machine: no code change vs sharding: weeks of work, permanent complexity
+  08 · COMPARE · Not first: shard or add app servers · more app servers, all hitting the same one database
+  09 · END · Often it is just one query
 STATUS:    draft
 ---
 Your app is slow at peak. The app servers behind the load balancer sit at 30% CPU. The single database sits at 90%. A big launch is next week.

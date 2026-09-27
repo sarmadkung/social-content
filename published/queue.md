@@ -5,7 +5,7 @@ Change a post's STATUS: line instead, then re-run the script.
 The record of what went live is `published/linkedin.md`.
 
 Schedule: Mon DSA · Tue AI Engineering · Wed Software Engineering · Thu System Architecture · Sat Building / Pivot (alternating) · Sun Dev Growth
-Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an image made from HEADLINE + LAYOUT; ✍ posts go out as text only.
+Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an image made from HEADLINE + LAYOUT; 🎞 posts need one slide per SLIDES line (PDF for LinkedIn, images for Instagram); ✍ posts go out as text only.
 
 ## Week 1 — from Mon 28 Sep 2026
 
@@ -24,7 +24,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 05 Oct | DSA SERIES #02 | Big-O in Plain English ✎ | TEACH | 🖼 visual | draft | [dsa-02-big-o-plain-english.md](../generated/drafts/dsa/dsa-02-big-o-plain-english.md) |
 | Tue 06 Oct | AI ENGINEERING #02 | What an LLM Actually Does ✎ | TEACH | 🖼 visual | draft | [ai-02-what-an-llm-does.md](../generated/drafts/ai-engineering/ai-02-what-an-llm-does.md) |
-| Wed 07 Oct | SOFTWARE ENGINEERING #02 | One HTTP Request, Step by Step (DNS, Connection, Request, Response) | TEACH | 🖼 visual | draft | [se-02-http-request-step-by-step.md](../generated/drafts/software-engineering/se-02-http-request-step-by-step.md) |
+| Wed 07 Oct | SOFTWARE ENGINEERING #02 | One HTTP Request, Step by Step (DNS, Connection, Request, Response) | TEACH | 🎞 carousel (8 slides) | draft | [se-02-http-request-step-by-step.md](../generated/drafts/software-engineering/se-02-http-request-step-by-step.md) |
 | Thu 08 Oct | SYSTEM ARCHITECTURE #02 | Requirements First: Functional vs Non-Functional ✎ | TEACH | 🖼 visual | draft | [arch-02-functional-vs-non-functional-requirements.md](../generated/drafts/system-architecture/arch-02-functional-vs-non-functional-requirements.md) |
 | Sat 10 Oct | PIVOT | — write: next post from sources/project-log.md — | | | | |
 | Sun 11 Oct | DEV GROWTH #02 | How to Learn a New Technology Fast ✎ | TEACH | 🖼 visual | draft | [growth-02-learn-new-tech-fast.md](../generated/drafts/dev-growth/growth-02-learn-new-tech-fast.md) |
@@ -47,7 +47,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Mon 19 Oct | DSA SERIES #04 | Why Building Strings in a Loop Can Quietly Become O(n²) | TEACH | 🖼 visual | draft | [dsa-04-string-building-cost.md](../generated/drafts/dsa/dsa-04-string-building-cost.md) |
 | Tue 20 Oct | AI ENGINEERING #04 | Prompts vs System Prompts | COMPARE | 🖼 visual | draft | [ai-04-prompts-vs-system-prompts.md](../generated/drafts/ai-engineering/ai-04-prompts-vs-system-prompts.md) |
 | Wed 21 Oct | SOFTWARE ENGINEERING #04 | Retries with Backoff (and Why Infinite Retries Cause Outages) | TEACH | 🖼 visual | draft | [se-04-retries-backoff.md](../generated/drafts/software-engineering/se-04-retries-backoff.md) |
-| Thu 22 Oct | SYSTEM ARCHITECTURE #04 | Back-of-the-Envelope Estimation: A Photo App in Five Minutes ✎ | SCENARIO | 🖼 visual | draft | [arch-04-back-of-the-envelope-estimation.md](../generated/drafts/system-architecture/arch-04-back-of-the-envelope-estimation.md) |
+| Thu 22 Oct | SYSTEM ARCHITECTURE #04 | Back-of-the-Envelope Estimation: A Photo App in Five Minutes ✎ | SCENARIO | 🎞 carousel (8 slides) | draft | [arch-04-back-of-the-envelope-estimation.md](../generated/drafts/system-architecture/arch-04-back-of-the-envelope-estimation.md) |
 | Sat 24 Oct | PIVOT | — write: next post from sources/project-log.md — | | | | |
 | Sun 25 Oct | DEV GROWTH #04 | How to Debug Systematically ✎ | TEACH | 🖼 visual | draft | [growth-04-debug-systematically.md](../generated/drafts/dev-growth/growth-04-debug-systematically.md) |
 
@@ -57,7 +57,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 26 Oct | DSA SERIES #05 | Why a Hash Map Lookup Is O(1) — and When It Isn't | WHY | 🖼 visual | draft | [dsa-05-hash-map-o1.md](../generated/drafts/dsa/dsa-05-hash-map-o1.md) |
 | Tue 27 Oct | AI ENGINEERING #05 | Temperature and Why Outputs Change ✎ | WHY | 🖼 visual | draft | [ai-05-temperature.md](../generated/drafts/ai-engineering/ai-05-temperature.md) |
-| Wed 28 Oct | SOFTWARE ENGINEERING #05 | A Payment Request Times Out. What Should Your Code Do? ✎ | SCENARIO | 🖼 visual | draft | [se-05-payment-timeout-scenario.md](../generated/drafts/software-engineering/se-05-payment-timeout-scenario.md) |
+| Wed 28 Oct | SOFTWARE ENGINEERING #05 | A Payment Request Times Out. What Should Your Code Do? ✎ | SCENARIO | 🎞 carousel (8 slides) | draft | [se-05-payment-timeout-scenario.md](../generated/drafts/software-engineering/se-05-payment-timeout-scenario.md) |
 | Thu 29 Oct | SYSTEM ARCHITECTURE #05 | Vertical vs Horizontal Scaling ✎ | COMPARE | 🖼 visual | draft | [arch-05-vertical-vs-horizontal-scaling.md](../generated/drafts/system-architecture/arch-05-vertical-vs-horizontal-scaling.md) |
 | Sat 31 Oct | BUILDING | — write: next post from sources/project-log.md — | | | | |
 | Sun 01 Nov | DEV GROWTH #05 | How to Ask a Good Technical Question ✎ | TEACH | 🖼 visual | draft | [growth-05-ask-good-technical-question.md](../generated/drafts/dev-growth/growth-05-ask-good-technical-question.md) |
@@ -113,7 +113,7 @@ Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an imag
 | Mon 30 Nov | DSA SERIES #10 | Sliding Window: Stop Recomputing Overlapping Ranges | TEACH | 🖼 visual | draft | [dsa-10-sliding-window.md](../generated/drafts/dsa/dsa-10-sliding-window.md) |
 | Tue 01 Dec | AI ENGINEERING #10 | RAG: Retrieval-Augmented Generation, Plainly ✎ | TEACH | 🖼 visual | draft | [ai-10-rag.md](../generated/drafts/ai-engineering/ai-10-rag.md) |
 | Wed 02 Dec | SOFTWARE ENGINEERING #10 | REST vs GraphQL vs gRPC — three answers to different questions | COMPARE | 🖼 visual | draft | [se-10-rest-graphql-grpc.md](../generated/drafts/software-engineering/se-10-rest-graphql-grpc.md) |
-| Thu 03 Dec | SYSTEM ARCHITECTURE #10 | Your Database Is at 90% CPU. What Do You Try First? ✎ | SCENARIO | 🖼 visual | draft | [arch-10-database-at-90-percent-cpu.md](../generated/drafts/system-architecture/arch-10-database-at-90-percent-cpu.md) |
+| Thu 03 Dec | SYSTEM ARCHITECTURE #10 | Your Database Is at 90% CPU. What Do You Try First? ✎ | SCENARIO | 🎞 carousel (9 slides) | draft | [arch-10-database-at-90-percent-cpu.md](../generated/drafts/system-architecture/arch-10-database-at-90-percent-cpu.md) |
 | Sat 05 Dec | PIVOT | — write: next post from sources/project-log.md — | | | | |
 | Sun 06 Dec | DEV GROWTH | — write: #10 Estimating work honestly · TEACH — | | | | |
 

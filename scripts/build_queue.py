@@ -82,7 +82,7 @@ def main():
            "Change a post's STATUS: line instead, then re-run the script.",
            "The record of what went live is `published/linkedin.md`.", "",
            "Schedule: Mon DSA · Tue AI Engineering · Wed Software Engineering · Thu System Architecture · Sat Building / Pivot (alternating) · Sun Dev Growth",
-           "Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an image made from HEADLINE + LAYOUT; ✍ posts go out as text only."]
+           "Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an image made from HEADLINE + LAYOUT; 🎞 posts need one slide per SLIDES line (PDF for LinkedIn, images for Instagram); ✍ posts go out as text only."]
     day, week = start, 0
     while any(queue.values()):  # after the last draft, open slots name the next roadmap post
         if day.weekday() == 0:
@@ -98,6 +98,9 @@ def main():
                 mark = " ✎" if "[PERSONAL" in text else ""
                 rel = os.path.relpath(f, os.path.dirname(QUEUE))
                 fmt = "🖼 visual" if field(text, "FORMAT") == "VISUAL" else "✍ text"
+                if field(text, "LAYOUT") == "CAROUSEL":
+                    n = len(re.findall(r"^\s+\d{2} · ", text.split("\n---\n")[0], re.M)) + 1
+                    fmt = f"🎞 carousel ({n} slides)"
                 out.append(f"| {day:%a %d %b} | {field(text, 'SERIES')} | {field(text, 'TITLE')}{mark} "
                            f"| {field(text, 'MODE')} | {fmt} | {status} | [{os.path.basename(f)}]({rel}) |")
             else:
