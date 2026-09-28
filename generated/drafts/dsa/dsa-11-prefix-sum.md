@@ -47,6 +47,8 @@ Where is it used?
 • Cumulative counts behind histograms and percentiles
 • Time-series queries: "total between 09:00 and 17:00"
 
+[FACT_CHECK: summed-area tables are used for fast face detection → Viola & Jones 2001 (integral image); Crow 1984 (summed-area tables)]
+
 Spot it when the problem says…
 → "sum of range [l, r]", asked many times
 → "count subarrays that sum to k" (prefix sum + hash map)

@@ -196,6 +196,14 @@ def check_business(path, fields, body):
                 err(path, f"BLUEPRINT says '{c}' — a blueprint never claims it was built or delivered")
 
 
+MARKER_LINE = re.compile(r"^\[(PERSONAL|FACT_CHECK):.*\]\s*$", re.M)
+
+
+def posted(body):
+    """The body as it goes to LinkedIn: marker lines are removed before posting."""
+    return re.sub(r"\n{3,}", "\n\n", MARKER_LINE.sub("", body)).strip()
+
+
 def check_common(path, fields, body, quiz=False):
     mode = fields.get("MODE", "")
     if mode and mode not in MODES:
@@ -218,14 +226,17 @@ def check_common(path, fields, body, quiz=False):
     status = fields.get("STATUS", "")
     if status and status not in STATUSES:
         err(path, f"STATUS '{status}' is not one of {sorted(STATUSES)}")
-    if status in READY and "[PERSONAL" in body:
-        err(path, f"STATUS is {status} but the body still has a [PERSONAL: ...] marker — fill or delete it")
+    for marker in ("PERSONAL", "FACT_CHECK"):
+        if status in READY and f"[{marker}" in body:
+            err(path, f"STATUS is {status} but the body still has a [{marker}: ...] marker — clear it first")
+    if any(m.group() != "[FACT_CHECK:" for m in re.finditer(r"\[fact[ _-]?check\s*:?", body, re.I)):
+        err(path, "write fact markers exactly as [FACT_CHECK: claim → what to check]")
     level = fields.get("LEVEL")
     if level is None:
         warn(path, "no LEVEL: line")
     elif level not in LEVELS:
         err(path, f"LEVEL '{level}' is not one of {sorted(LEVELS)}")
-    n = len(body)
+    n = len(posted(body))
     if n > BODY_HARD_MAX:
         err(path, f"body is {n} characters (LinkedIn max {BODY_HARD_MAX})")
     elif fmt == "TEXT":

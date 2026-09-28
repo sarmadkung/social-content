@@ -34,6 +34,8 @@ Steps before you write any code
 3. Say the brute force out loud, then ask what work it repeats.
 4. Match that repeated work to a pattern from the list above.
 
+[FACT_CHECK: n up to 10⁵ means O(n log n) or better → competitive-programming limit tables (e.g. USACO Guide, CP-Algorithms / Codeforces rules of thumb)]
+
 Where is it used?
 • Coding interviews: the interviewer is checking step 4
 • Real code: a "find duplicates" task in a log pipeline is a hash set

@@ -37,6 +37,8 @@ A year has about 8,760 hours.
 → 99.999%: about 5 minutes per year
 Each extra nine means 10 times less downtime, and usually much more cost.
 
+[FACT_CHECK: Downtime per year: 99% ≈ 3.65 days, 99.9% ≈ 8.8 hours, 99.99% ≈ 53 minutes, 99.999% ≈ 5 minutes → an SLA/uptime calculator (e.g. uptime.is)]
+
 p50 and p99
 An average hides slow requests. Instead, sort all response times.
 → p50 (the median): half of requests are faster than this

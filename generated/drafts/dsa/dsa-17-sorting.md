@@ -12,6 +12,8 @@ VARIANT:   C (source mode)
 [1, 10, 2].sort() gives you [1, 10, 2].
 Not a bug. JavaScript converted every element to a string first.
 
+[FACT_CHECK: [1, 10, 2].sort() gives [1, 10, 2] because the default sort compares strings → MDN Array.prototype.sort]
+
 What is it?
 Sorting puts elements in order. Every language ships one. Almost nobody reads what theirs actually does.
 
@@ -32,6 +34,8 @@ Key properties
 → Heapsort: O(n log n) always, in-place, not stable
 → Timsort (Python, Java objects, V8): merge + insertion hybrid, stable, fast on partly-sorted real data
 
+[FACT_CHECK: Timsort is used by Python, Java (objects) and V8 → Python listsort.txt, Java Arrays.sort(Object[]) docs, v8.dev blog "Getting things sorted in V8" (2018)]
+
 Example
 // the default comparator is lexicographic
 [1, 10, 2].sort();              // [1, 10, 2]
@@ -40,6 +44,8 @@ Example
 // a comparator must return a number, not a boolean
 arr.sort((a, b) => a.age > b.age);      // wrong: true/false
 arr.sort((a, b) => a.age - b.age);      // right: negative/zero/positive
+
+[FACT_CHECK: a boolean comparator is wrong in JS sort (it must return negative/zero/positive) → MDN Array.prototype.sort compareFn]
 
 Spot it when the problem says…
 → "pairs", "duplicates", "closest" or "overlapping intervals" on unsorted data

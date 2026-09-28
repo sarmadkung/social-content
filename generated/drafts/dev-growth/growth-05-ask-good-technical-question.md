@@ -33,12 +33,18 @@ Actual: 413 Payload Too Large on files over 1 MB.
 Tried: raised the upload limit in Express. Same error.
 Setup: Node 20, behind Nginx.
 
+[FACT_CHECK: HTTP 413 is named "Payload Too Large" → RFC 9110 §15.5.14 (now "Content Too Large"; Nginx's own page says "Request Entity Too Large")]
+
 That last line is the clue. Nginx rejects request bodies over 1 MB by default (client_max_body_size), before Express ever sees them. A good question often carries its own answer.
+
+[FACT_CHECK: Nginx rejects request bodies over 1 MB by default via client_max_body_size, before the app sees them → Nginx ngx_http_core_module docs, client_max_body_size]
 
 Common mistakes
 → The XY problem: asking about your broken fix (Y) instead of your real goal (X).
 → "Can I ask a question?" Just ask it.
 → Leaving without sharing the answer once you find it.
+
+[FACT_CHECK: XY problem = asking about your attempted fix (Y) instead of the real goal (X) → xyproblem.info / the original definition]
 
 [PERSONAL: a question you once asked badly, or one from a teammate that was easy to answer because it was clear]
 

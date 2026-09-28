@@ -42,6 +42,8 @@ Peak views: about 6,000 per second.
 Peak uploads: about 30 per second.
 Design for the peak, not the average.
 
+[FACT_CHECK: Common rule: peak traffic ≈ 2 to 3 times the average → system design estimation references (e.g. Alex Xu, System Design Interview, back-of-the-envelope chapter)]
+
 Step 5: storage
 Per day: 1M photos × 2 MB = 2 TB.
 Per year: 2 TB × 365 ≈ 730 TB, close to 1 PB (petabyte = 1,000 TB).

@@ -47,6 +47,8 @@ Where is it used?
 • Brightest rectangle in a 2D grid: Kadane on column sums, O(n³) for an n×n grid
 • Highest-scoring segment in DNA and protein sequences
 
+[FACT_CHECK: max-subarray is used for highest-scoring segments in DNA and protein sequences → Karlin & Altschul 1990; Ruzzo & Tompa 1999]
+
 Spot it when the problem says…
 → "maximum (or minimum) subarray sum"
 → "best contiguous stretch", like max profit over a run of days

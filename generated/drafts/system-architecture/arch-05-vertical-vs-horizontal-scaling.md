@@ -32,6 +32,8 @@ Where is it used?
 Vertical: databases like PostgreSQL often start here, because splitting data is hard.
 Horizontal: web and API servers behind a load balancer, AWS Auto Scaling groups, Kubernetes adding pods.
 
+[FACT_CHECK: PostgreSQL databases often start with vertical scaling because splitting data is hard → PostgreSQL docs (no built-in sharding) / common practice write-ups]
+
 When to use it / when not to
 Vertical: early on, or for parts that are hard to split, like a database.
 Horizontal: when you need to survive a machine failure, or you have hit the biggest machine.

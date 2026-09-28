@@ -27,6 +27,10 @@ Key properties
 • Temperature 0 is close to "always pick the top token". Outputs can still differ slightly between runs.
 • Some models limit or ignore this setting. Check the docs.
 
+[FACT_CHECK: allowed temperature range and default vary by API → OpenAI API reference (0–2) and Anthropic Messages API reference (0–1)]
+[FACT_CHECK: temperature 0 ≈ always pick the top token, but outputs can still differ between runs → Anthropic Messages API reference (temperature) and OpenAI docs on determinism]
+[FACT_CHECK: some models limit or ignore temperature → OpenAI reasoning models docs and Anthropic extended thinking docs]
+
 Where is it used?
 → Data extraction and classification: low.
 → Code generation: usually low.
@@ -39,6 +43,9 @@ Use higher when you want options and can review them.
 Comparison
 Temperature → reshapes the scores so rare tokens get more or less chance.
 Top-p → a related setting. It keeps only the smallest set of top tokens that together reach a chosen probability, like 90%. Usually tune one of the two, not both.
+
+[FACT_CHECK: top-p keeps the smallest set of tokens reaching a chosen probability → Holtzman et al. 2019, "The Curious Case of Neural Text Degeneration" (nucleus sampling)]
+[FACT_CHECK: tune temperature or top-p, not both → OpenAI and Anthropic API reference (sampling parameters)]
 
 Senior detail: low temperature does not make answers correct. It makes them consistent. A wrong answer at temperature 0 is wrong the same way every time. That helps with testing, not with truth.
 

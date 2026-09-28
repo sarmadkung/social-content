@@ -27,6 +27,9 @@ Key properties
 → The timeout of an inner call must be shorter than the timeout of the request that called it.
 → A timeout does not mean the work failed. The server may still finish it. (More on that in #05.)
 
+[FACT_CHECK: most HTTP clients offer separate connect and read timeouts → docs of common clients (axios, Python requests, OkHttp, Go net/http)]
+[FACT_CHECK: fetch has no timeout option; you add one with an AbortSignal → WHATWG Fetch spec / MDN RequestInit]
+
 Where is it used?
 HTTP calls to other services, database queries, payment gateways, LLM APIs, message queue consumers.
 
@@ -39,6 +42,8 @@ const res = await fetch(url, {
 });
 
 After 2 seconds the call stops and throws a TimeoutError you can handle.
+
+[FACT_CHECK: AbortSignal.timeout makes fetch reject with a TimeoutError → MDN AbortSignal.timeout()]
 
 Comparison
 Timeout: "each call may take at most 2s."

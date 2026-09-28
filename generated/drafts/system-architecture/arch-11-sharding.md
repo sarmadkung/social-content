@@ -18,12 +18,16 @@ That decision is the whole design.
 
 Hash the key — shard = hash(user_id) % 4. Spreads evenly, no hot shard. But adding a fifth shard remaps almost every key, which is why real systems use consistent hashing instead of plain modulo.
 
+[FACT_CHECK: Real systems use consistent hashing instead of plain modulo → docs of sharded systems (e.g. Cassandra/DynamoDB use consistent hashing; others like Redis Cluster or Vitess use fixed slots or ranges)]
+
 Range the key — shard 1 holds A–F, shard 2 G–M. Range queries stay on one shard. But sign up a celebrity whose name starts with S and that shard melts.
 
 Directory — a lookup table says where each key lives. Total control, and one more thing that can be down.
 
 Why do we need it?
 Because vertical scaling ends. There is a biggest machine you can rent, and it costs more than several smaller ones.
+
+[FACT_CHECK: The biggest rentable machine costs more than several smaller ones → cloud pricing pages (e.g. AWS EC2 on-demand pricing for the largest vs smaller instances)]
 
 What it costs you
 → Cross-shard joins stop being free, and often stop being possible

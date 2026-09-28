@@ -32,8 +32,12 @@ Why does this matter?
 → Inference is what you run every day. You call a model through an API and pay per token (a small piece of text, about a word or part of one), for input and output.
 → So as an AI engineer, your cost and speed are inference problems.
 
+[FACT_CHECK: APIs bill per token, with input and output tokens priced separately → OpenAI and Anthropic pricing pages]
+
 Why the model does not learn from your chat
 At inference the weights do not change. The chat feels like it remembers because the app sends the whole conversation again with each message. Start a new chat and that history is gone. (A provider may use chats to train a future version. That is a separate training run, later.)
+
+[FACT_CHECK: providers may use chat data to train future models → OpenAI and Anthropic data-usage / privacy policies (consumer vs API defaults)]
 
 Fine-tuning, briefly
 Fine-tuning is more training on a model that is already trained, using your own examples. It changes the weights and gives you a new version of the model. It is still training: slower and costlier than just writing a better prompt.

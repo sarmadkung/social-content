@@ -25,8 +25,12 @@ Key properties
 → Absorbs traffic spikes, and many CDNs also help block DDoS attacks (floods of fake traffic)
 → Uses TTLs and cache headers to decide how long files stay
 
+[FACT_CHECK: Many CDNs also help block DDoS attacks → Cloudflare / Akamai / CloudFront DDoS protection docs]
+
 Where is it used?
 Cloudflare, Akamai, Amazon CloudFront, Fastly. Netflix runs its own CDN, Open Connect, to deliver video.
+
+[FACT_CHECK: Netflix runs its own CDN, Open Connect, to deliver video → Netflix Open Connect site (openconnect.netflix.com)]
 
 When to use it / when not to
 Use it: public files that many users download, or users spread across countries.
@@ -38,6 +42,8 @@ Steps: one image request
 3. Edge has it (cache hit)? Return it right away.
 4. No (cache miss)? Fetch it from the origin once.
 5. Store it at the edge. The next nearby user gets it fast.
+
+[FACT_CHECK: DNS sends users to the nearest edge server → CDN routing docs (some CDNs, e.g. Cloudflare, route by anycast rather than DNS)]
 
 Comparison
 CDN vs app cache like Redis:

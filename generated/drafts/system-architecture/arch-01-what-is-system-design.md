@@ -30,6 +30,8 @@ Key properties we design for
 Where is it used?
 Every product with real users. Instagram, Uber, your bank app. It is also the standard senior interview round at most tech companies.
 
+[FACT_CHECK: System design is the standard senior interview round at most tech companies → public interview guides from large tech companies (e.g. Google, Meta, Amazon careers pages)]
+
 When to use it / when not to
 Use it: before building something that must grow or must not go down.
 Not yet: for a prototype with ten users. Ship first, then measure.

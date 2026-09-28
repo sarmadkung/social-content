@@ -25,6 +25,8 @@ Key properties
 • It still costs tokens on every call.
 • It is not a security wall. A user can try to talk the model out of it.
 
+[FACT_CHECK: models are trained to give the system prompt extra weight → OpenAI Model Spec / "The Instruction Hierarchy" paper (Wallace et al. 2024), Anthropic system prompts docs]
+
 Example
 const messages = [
   { role: "system", content: "You are a support bot for Acme. Answer only about orders. Reply in under 80 words." },
@@ -32,6 +34,8 @@ const messages = [
 ];
 
 (Some APIs take the system prompt as its own field. The idea is the same.)
+
+[FACT_CHECK: some APIs take the system prompt as its own field → Anthropic Messages API reference (top-level system parameter)]
 
 Where is it used?
 Customer support bots, coding assistants, and agents. The system prompt holds the role, the rules, the output format and the tool list.

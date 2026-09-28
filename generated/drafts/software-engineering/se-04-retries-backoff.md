@@ -25,8 +25,12 @@ Key properties
 → Add jitter: a small random extra wait, so thousands of clients do not retry at the same moment.
 → Retries multiply. Three layers that each try 3 times can send 27 calls to the bottom service.
 
+[FACT_CHECK: three attempts is a common default → AWS SDK retry behavior docs (standard mode max attempts)]
+
 Where is it used?
 AWS SDKs, gRPC retry policies, job queues like BullMQ, HTTP clients that call payment or email providers.
+
+[FACT_CHECK: AWS SDKs retry with exponential backoff and jitter by default → AWS SDKs and Tools reference guide, retry behavior]
 
 When to use it: short, temporary failures on safe operations.
 When not to: validation errors, or actions that are not safe to repeat (#05 and #06).

@@ -16,9 +16,15 @@ Three ways for one program to ask another program for something.
 
 REST — resources and HTTP verbs. GET /orders/42. The server decides the shape of the response. Cacheable by any proxy on the way, because the URL is the identity.
 
+[FACT_CHECK: REST responses are cacheable by any proxy on the way because the URL is the identity → RFC 9111 (HTTP Caching), cache keys and cacheable methods]
+
 GraphQL — one endpoint, and the client sends the query. Ask for exactly the three fields you need, across two resources, in one round trip. The server stops guessing what the client wants.
 
 gRPC — a typed contract in a .proto file, binary over HTTP/2. Both sides generate code from the same schema. Fastest on the wire, and streaming is native rather than bolted on.
+
+[FACT_CHECK: gRPC sends binary (protobuf) messages over HTTP/2 → gRPC over HTTP/2 protocol spec]
+[FACT_CHECK: gRPC is the fastest on the wire → published gRPC vs REST/GraphQL benchmarks]
+[FACT_CHECK: streaming is native in gRPC → gRPC core concepts docs (streaming RPCs)]
 
 Why do we need three?
 Because they move the cost to different places.
@@ -29,6 +35,8 @@ Key properties
 → REST: cacheable, debuggable with curl, over-fetches
 → GraphQL: one round trip, client-driven, caching is now your problem
 → gRPC: fastest, typed end to end, needs codegen and a proxy for browsers
+
+[FACT_CHECK: browsers cannot call gRPC directly and need a proxy (gRPC-Web) → gRPC-Web docs]
 
 How to choose
 Public API for people you have never met — REST. Mobile client on a bad network with many screens — GraphQL. Service-to-service inside your own cluster — gRPC.

@@ -20,10 +20,15 @@ Think of a new employee. RAG is a searchable handbook. Fine-tuning is weeks of t
 Why does the choice matter?
 Fine-tune to add facts, and the facts go stale the day a document changes. Put everything in the prompt, and every request gets slower and costs more.
 
+[FACT_CHECK: fine-tuning is a weak way to add new facts compared with RAG → Ovadia et al. 2023, "Fine-Tuning or Retrieval?" and OpenAI fine-tuning guide]
+
 Key properties
 → RAG: fresh data, cited sources, per-user access checks at search time. Quality depends on retrieval.
 → Fine-tuning: shapes tone, format and narrow tasks. Needs good examples. Any change means training again.
 → Long context: nothing to build. Cost and latency grow with every token, on every request. Models can miss details buried in long inputs.
+
+[FACT_CHECK: long-context cost and latency grow with every token on every request → OpenAI and Anthropic prompt caching docs (cached input is cheaper)]
+[FACT_CHECK: models can miss details buried in long inputs → Liu et al. 2023, "Lost in the Middle"]
 
 When to use which
 RAG: facts are large, private or change often.

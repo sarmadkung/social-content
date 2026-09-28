@@ -47,6 +47,10 @@ Where is it used?
 • Its generalisation, Misra–Gries, finds frequent items in data streams, like top queries or heavy network traffic
 • With two candidates, it finds every value above n/3 (LeetCode 229)
 
+[FACT_CHECK: Majority Element is LeetCode 169 → leetcode.com/problems/majority-element]
+[FACT_CHECK: Misra–Gries generalises Boyer–Moore voting to frequent items in streams → Misra & Gries 1982, "Finding repeated elements"]
+[FACT_CHECK: the n/3 version is LeetCode 229 → leetcode.com/problems/majority-element-ii]
+
 Spot it when the problem says…
 → "majority element" or "appears more than n/2 times"
 → "O(1) extra space" plus counting
@@ -57,6 +61,8 @@ Use it: "more than half" and memory is tight.
 Not: you need the top value with no majority, or all counts. Use a hash map.
 
 Name check: same authors as the Boyer–Moore string search, but a different algorithm.
+
+[FACT_CHECK: voting algorithm has the same authors (Boyer and Moore) as the string search → Boyer & Moore, MJRTY 1981/1991; Boyer & Moore 1977 string search paper]
 
 Takeaway: when opposite votes cancel, the majority is the one left standing.
 

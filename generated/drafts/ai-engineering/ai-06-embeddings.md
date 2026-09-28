@@ -24,6 +24,8 @@ Key properties
 • Vectors from different models cannot be compared. Use the same model for your documents and your queries.
 • Closeness is usually measured with cosine similarity (how much two vectors point the same way).
 
+[FACT_CHECK: every vector from one model has the same length → OpenAI embeddings docs (some models allow a chosen `dimensions` size)]
+
 Example
 function cosine(a, b) {
   let dot = 0, na = 0, nb = 0;

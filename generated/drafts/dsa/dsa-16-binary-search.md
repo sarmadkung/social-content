@@ -46,9 +46,13 @@ Cost: O(n log m), where m is the largest pile.
 
 The senior detail: (lo + hi) / 2 overflowed in Java's Arrays.binarySearch for about nine years. lo + (hi − lo) / 2 avoids it in any language.
 
+[FACT_CHECK: (lo + hi) / 2 overflow sat in Java's Arrays.binarySearch for about nine years → Joshua Bloch, Google Research blog, 2006; JDK bug 5045582]
+
 Where is it used?
 • git bisect: finds the commit that broke a build in O(log n) test runs
 • B-tree database indexes, inside each page
+
+[FACT_CHECK: B-tree database indexes binary search inside each page → PostgreSQL nbtree README / _bt_binsrch source, or SQLite btree docs]
 
 [PERSONAL: a time you used git bisect or a halving search to find a bug or a limit]
 

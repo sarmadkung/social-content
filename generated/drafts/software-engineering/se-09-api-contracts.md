@@ -24,6 +24,8 @@ How does it work? Five parts of the contract
 → Retries are safe. GET, PUT and DELETE are idempotent; POST accepts an Idempotency-Key (#06).
 → Changes only add. A new optional field is safe. Renaming, removing or changing a type needs a new version.
 
+[FACT_CHECK: GET, PUT and DELETE are idempotent, POST is not → RFC 9110 §9.2.2]
+
 Example (Express)
 app.post("/orders", async (req, res) => {
   if (!req.body.items?.length)
@@ -34,6 +36,9 @@ app.post("/orders", async (req, res) => {
 
 Where is it used?
 Stripe pins each account to a dated API version, so old integrations keep working. GitHub picks a version from the X-GitHub-Api-Version header.
+
+[FACT_CHECK: Stripe pins each account to a dated API version → Stripe API versioning docs]
+[FACT_CHECK: GitHub picks the REST API version from the X-GitHub-Api-Version header → GitHub REST API versions docs]
 
 When to use it / when not to
 Treat any API with outside clients (mobile apps, partners, other teams) as a contract.
