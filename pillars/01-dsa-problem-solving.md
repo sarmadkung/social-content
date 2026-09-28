@@ -45,7 +45,7 @@ Each line: `#NN Title · MODE · needs <earlier posts>`. Modes are defined in th
 master prompt. Never more than 4 TEACH posts in a row.
 
 ### Foundations
-- #01 Why I'm relearning DSA in the age of AI · PERSONAL · needs —
+- #01 Reclaiming DSA in the age of AI · PERSONAL · needs —
 - #02 Big-O in plain English (what it measures, what it ignores) · TEACH · needs —
 - #03 Arrays: why index access is O(1) but insert is O(n) · WHY · needs #02
 - #04 Why building strings in a loop can quietly become O(n²) · TEACH · needs #03
