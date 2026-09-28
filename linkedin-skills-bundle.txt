@@ -688,6 +688,12 @@ Never use the accent as a gradient, and never give one card two accents.
    teaches nothing. Before designing, answer: *what should a reader understand
    from this image with the caption collapsed?* If the answer is "that the post
    sounds smart", start over.
+   Every shape carries a plain-word label; a diagram a reader cannot decode
+   without the post (unlabelled dots, symbol-only graphs) fails this rule. A
+   post may have more than one image when it has more than one idea worth
+   drawing — one idea per image.
+   Never copy a stat, count or sentence from the post text onto the image; the
+   image shows what words can't, it does not echo them.
 2. The image carries **one** idea. The headline is 8 words or fewer.
 3. Never put a paragraph on an image. If it needs a paragraph, it needs a
    carousel.
@@ -745,7 +751,7 @@ Before returning any image, verify each:
 
 Illustrative only — these describe the template cards in `templates/variant-*/`,
 whose series labels read `· Example`. They are not posts in the queue; real posts
-live in `generated/drafts/` and their cards in `visuals/week-*/`.
+live in `generated/drafts/` and their images in `posts/<post>/` (sources in `posts/<post>/src/`).
 
 **Variant A, problem solving.** Series `DSA SERIES #03`. Headline "Binary search
 is not about *sorted arrays*", the last two words amber. Thirteen cells labelled

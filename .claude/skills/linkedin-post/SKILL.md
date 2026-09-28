@@ -6,8 +6,9 @@ description: Write one LinkedIn post for this repo — the draft text plus its r
 # LinkedIn post from a number and a line
 
 Turns `<series> #<NN> [keyword] [angle]` into a finished post: the draft in
-`generated/drafts/` **and** its cover image in `visuals/week-NN/`, following the
-repo's content system. Every run ends with both files on disk.
+`generated/drafts/` **and** a ready-to-post folder `posts/<post>/` holding
+`post.md` (the text to paste) and its images, following the repo's content
+system. Every run ends with both on disk.
 
 ## Input
 
@@ -69,7 +70,10 @@ next unwritten number for that series.
 6. Save to `generated/drafts/<folder>/<prefix>-NN-<short-kebab-title>.md`.
 7. Run `python3 scripts/validate.py`. Fix every error in this post and rerun
    until it passes. Report warnings for this post.
-8. Run `python3 scripts/build_queue.py` so the queue includes it.
+8. Run `python3 scripts/build_queue.py` so the queue includes it, then
+   `python3 scripts/build_posts.py <draft basename>` to create this post's
+   folder (`posts/<post>/post.md`) and add it to `posts/README.md`. Folders are
+   made only for posts the user asks for — never for every draft.
 9. `FULL`/`VISUAL`: build the image(s) per the visual skill from the draft's
    `HEADLINE:` and `LAYOUT:`.
    - **Images explain the content that matters.** First list the 1–3 ideas the
@@ -82,17 +86,18 @@ next unwritten number for that series.
      (e.g. "23 technique write-ups") do not go on the image — not in the
      diagram, not in the footer. The image adds what the text can't show; the
      footer's right side is the topic, complexity, or `1 / 2` page number.
-   - Extra images use the same basename with `-2`, `-3` … and are listed in the
-     reply in posting order.
-   - Path: `visuals/week-NN/<same basename as the draft>.html`, where `NN` is
-     the week the post sits in within `published/queue.md` (two digits). If an
-     old card exists there, replace it when it no longer matches the draft's
-     HEADLINE/LAYOUT.
-   - Link `../../templates/variant-<x>/base.css`; set `:root{--accent:...}`
-     for the pillar; include the brand mark in the series row as the templates do.
-   - Render with `./render.sh variant-none` (renders post cards only), then
-     open the PNG and check it against the visual skill's review checklist.
-     Fix and re-render until it passes.
-10. Reply with: the draft path, the image path(s) (PNG), the post body, and a list
+   - Images are numbered in posting order: `1.png` is the first image shown.
+   - Path: `posts/<draft basename>/src/1.html`, `2.html` … in posting order
+     (carousel: `src/slide-01.html` …). If old sources exist there, replace
+     them when they no longer match the draft.
+   - Link `../../../templates/variant-<x>/base.css` and
+     `../../../brand/…`; set `:root{--accent:...}` for the pillar; include the
+     brand mark in the series row as the templates do.
+   - Render with `./render.sh variant-none` (renders post images only, into
+     `posts/<post>/1.png` …), then open each PNG and check it against the
+     visual skill's review checklist. Fix and re-render until it passes.
+   - Run `python3 scripts/build_posts.py <draft basename>` again so the index
+     counts the images.
+10. Reply with: the draft path, the `posts/<post>/` folder and its image(s), the post body, and a list
     of any `[PERSONAL]` / `[FACT_CHECK]` markers the user must resolve.
     Do not commit.

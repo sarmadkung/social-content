@@ -324,7 +324,7 @@ Before returning any image, verify each:
 
 Illustrative only — these describe the template cards in `templates/variant-*/`,
 whose series labels read `· Example`. They are not posts in the queue; real posts
-live in `generated/drafts/` and their cards in `visuals/week-*/`.
+live in `generated/drafts/` and their images in `posts/<post>/` (sources in `posts/<post>/src/`).
 
 **Variant A, problem solving.** Series `DSA SERIES #03`. Headline "Binary search
 is not about *sorted arrays*", the last two words amber. Thirteen cells labelled

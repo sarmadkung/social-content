@@ -11,7 +11,7 @@ Usage: python3 scripts/build_queue.py [START_DATE=YYYY-MM-DD] [--per-week N]
   ROTATION, so all seven pillars keep moving at a pace one person can hold.
   When a pillar has nothing left, its slot is marked "write next".
 
-Only published/queue.md is written. published/linkedin.md is the hand-kept
+Writes published/queue.md, then rebuilds posts/ (scripts/build_posts.py). published/linkedin.md is the hand-kept
 published log and is never touched by this script.
 """
 import datetime, glob, os, re, sys
@@ -155,6 +155,9 @@ def main():
             "🔎 = has a [FACT_CHECK: ...] claim to verify (fix or cut it if it is wrong), then delete the marker."]
     open(QUEUE, "w").write("\n".join(out) + "\n")
     print(f"{week} weeks written to published/queue.md ({skipped} published posts skipped)")
+    # posts/ reads the queue dates, so rebuild it now
+    import build_posts
+    build_posts.main()
 
 
 if __name__ == "__main__":

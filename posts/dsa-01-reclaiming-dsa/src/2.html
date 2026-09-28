@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{max-width:19ch;font-size:54px}
+.stage{justify-content:center}
+.stairs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:end}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px 22px;display:flex;flex-direction:column;gap:14px}
+.step.s1{height:270px}.step.s2{height:360px}.step.s3{height:450px}
+.step.hero{border-color:var(--accent)}
+.lv{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.who{font-size:34px;font-weight:700;letter-spacing:-.01em;color:var(--ink);line-height:1.15}
+.gain{margin-top:auto;font-family:var(--mono);font-size:22px;line-height:1.5;color:var(--ink-2)}
+.gain b{font-weight:500;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:18px;color:var(--ink-2);border:1px solid #3A4453;border-radius:6px;padding:5px 10px}
+.base{margin-top:14px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:15px;color:var(--ink-3)}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>DSA helps at<br><em>every level</em></h1>
+  <div class="stage">
+    <div class="stairs">
+      <div class="step s1">
+        <div class="lv">step 1</div>
+        <div class="who">Students &amp; juniors</div>
+        <div class="gain">interview round<br>→ <b>first job</b></div>
+      </div>
+      <div class="step s2 hero">
+        <div class="lv">step 2</div>
+        <div class="who">Mid-level</div>
+        <div class="gain">"it works"<br>→ <b>"it scales"</b></div>
+      </div>
+      <div class="step s3">
+        <div class="lv">step 3</div>
+        <div class="who">Seniors &amp; architects</div>
+        <div class="chips"><span class="chip">storage</span><span class="chip">caching</span><span class="chip">scale</span></div>
+        <div class="gain">→ <b>better calls</b></div>
+      </div>
+    </div>
+    <div class="base"><span>learning</span><span>career →</span><span>leading</span></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 2</span></div>
+</div></body></html>

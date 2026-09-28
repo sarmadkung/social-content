@@ -1,0 +1,83 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{max-width:19ch;font-size:54px}
+.stage{justify-content:center;padding-top:28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px 20px;height:300px;display:flex;flex-direction:column}
+.top{display:flex;gap:12px;align-items:baseline;font-family:var(--mono)}
+.no{font-size:16px;color:var(--ink-3)}
+.nm{font-size:21px;color:var(--ink)}
+.cap{font-family:var(--mono);font-size:16px;color:var(--ink-3)}
+svg{flex:1;width:100%;margin:8px 0}
+svg text{font-family:"SF Mono",Menlo,monospace}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Why DSA <em>still matters</em> with AI</h1>
+  <div class="stage">
+    <div class="grid">
+
+      <div class="card">
+        <div class="top"><span class="no">01</span><span class="nm">spot the pattern</span></div>
+        <svg viewBox="0 0 400 150">
+          <text x="200" y="22" text-anchor="middle" font-size="16" fill="#FFB86B">sliding window</text>
+          <g fill="#11141B" stroke="#3A4453" stroke-width="1.5">
+            <rect x="10" y="50" width="46" height="46" rx="6"/><rect x="64" y="50" width="46" height="46" rx="6"/><rect x="118" y="50" width="46" height="46" rx="6"/><rect x="172" y="50" width="46" height="46" rx="6"/><rect x="226" y="50" width="46" height="46" rx="6"/><rect x="280" y="50" width="46" height="46" rx="6"/><rect x="334" y="50" width="46" height="46" rx="6"/>
+          </g>
+          <rect x="112" y="42" width="166" height="62" rx="9" fill="none" stroke="#FFB86B" stroke-width="2"/>
+          <g font-size="15" fill="#9BA6B7" text-anchor="middle"><text x="130" y="130">← shrink</text><text x="262" y="130">grow →</text></g>
+        </svg>
+        <div class="cap">many problems, one shape</div>
+      </div>
+
+      <div class="card">
+        <div class="top"><span class="no">02</span><span class="nm">check AI's work</span></div>
+        <svg viewBox="0 0 400 150">
+          <g font-size="16" fill="#5E6977">
+            <text x="10" y="30">for a in items:</text>
+            <text x="30" y="56">for b in items:</text>
+          </g>
+          <path d="M8 24 H190 M28 50 H190" stroke="#5E6977" stroke-width="1.5"/>
+          <text x="300" y="44" font-size="18" fill="#5E6977" text-decoration="line-through">O(n²)</text>
+          <rect x="4" y="82" width="392" height="52" rx="8" fill="none" stroke="#FFB86B" stroke-width="1.8"/>
+          <text x="18" y="114" font-size="16" fill="#F2F5F9">seen = set()  # one pass</text>
+          <text x="310" y="114" font-size="18" fill="#FFB86B">O(n)</text>
+        </svg>
+        <div class="cap">know a faster answer exists</div>
+      </div>
+
+      <div class="card">
+        <div class="top"><span class="no">03</span><span class="nm">think like an architect</span></div>
+        <svg viewBox="0 0 400 150">
+          <g fill="#11141B" stroke="#3A4453" stroke-width="1.5">
+            <rect x="4" y="52" width="112" height="46" rx="8"/><rect x="144" y="52" width="112" height="46" rx="8"/>
+          </g>
+          <rect x="284" y="52" width="112" height="46" rx="8" fill="#11141B" stroke="#FFB86B" stroke-width="1.8"/>
+          <g font-size="16" text-anchor="middle"><text x="60" y="80" fill="#9BA6B7">problem</text><text x="200" y="80" fill="#9BA6B7">pattern</text><text x="340" y="80" fill="#FFB86B">trade-off</text></g>
+          <g stroke="#5E6977" stroke-width="1.5" fill="none"><path d="M118 75 H140"/><path d="M135 70 L140 75 L135 80"/><path d="M258 75 H280"/><path d="M275 70 L280 75 L275 80"/></g>
+        </svg>
+        <div class="cap">same steps, at system scale</div>
+      </div>
+
+      <div class="card">
+        <div class="top"><span class="no">04</span><span class="nm">AI is built on it</span></div>
+        <svg viewBox="0 0 400 150">
+          <g font-size="16">
+            <text x="6" y="30" fill="#9BA6B7">RAG search</text><text x="236" y="30" fill="#FFB86B">graph search</text>
+            <text x="6" y="80" fill="#9BA6B7">training</text><text x="236" y="80" fill="#FFB86B">graph traversal</text>
+            <text x="6" y="130" fill="#9BA6B7">GPU memory</text><text x="236" y="130" fill="#FFB86B">in-place ops</text>
+          </g>
+          <g stroke="#5E6977" stroke-width="1.5" fill="none">
+            <path d="M150 25 H222"/><path d="M217 20 L222 25 L217 30"/>
+            <path d="M150 75 H222"/><path d="M217 70 L222 75 L217 80"/>
+            <path d="M150 125 H222"/><path d="M217 120 L222 125 L217 130"/>
+          </g>
+        </svg>
+        <div class="cap">what you use → the DSA inside</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 2</span></div>
+</div></body></html>

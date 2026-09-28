@@ -360,7 +360,16 @@ def check_visuals():
     if len(hexes) != len(set(h.upper() for h in hexes)):
         err(theme_path, "two pillars share an accent colour")
     cards = glob.glob(os.path.join(ROOT, "templates", "variant-*", "*.html")) + \
-            glob.glob(os.path.join(ROOT, "visuals", "week-*", "*.html"))
+            glob.glob(os.path.join(ROOT, "posts", "*", "src", "*.html"))
+    names = {os.path.basename(f)[:-3] for f in
+             glob.glob(os.path.join(ROOT, "generated", "**", "*.md"), recursive=True)}
+    for src in glob.glob(os.path.join(ROOT, "posts", "*", "src")):
+        post = os.path.basename(os.path.dirname(src))
+        if post not in names:
+            err(src, f"no draft named {post}.md — post folders must match a draft's file name")
+        for f in glob.glob(os.path.join(src, "*.html")):
+            if not re.fullmatch(r"\d+\.html|slide-\d\d\.html", os.path.basename(f)):
+                err(f, "image sources are named 1.html, 2.html … or slide-01.html …")
     for f in cards:
         t = open(f).read()
         for href in re.findall(r'href="([^"]+\.css)"', t):
