@@ -149,9 +149,9 @@ Do not claim sole ownership of team work.
 
 ## Cadence
 
-One BUILDING post a week, on the Saturday slot. The bi-weekly update fills
-every other Saturday; the weeks between take a story, decision, postmortem,
-demo or retro when there is real material.
+One BUILDING post each time the rotation reaches it (about every 1.5 weeks at
+5 posts a week; see README). Alternate the bi-weekly update with a story,
+decision, postmortem, demo or retro when there is real material.
 
 Additional BUILDING posts only when there is meaningful material.
 

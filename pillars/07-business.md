@@ -79,5 +79,5 @@ real screenshot, or a carousel of real screens.
 
 ## Cadence
 
-One post a week, on the Friday slot. No roadmap: posts are numbered in the
+One post each time the rotation reaches it (see README). No roadmap: posts are numbered in the
 order they are written.

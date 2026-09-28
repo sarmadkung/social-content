@@ -10,7 +10,8 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 | `generated/drafts/<pillar>/` | Every post, one file each. `MODE:` must match the roadmap; no roadmap number may be skipped. Its `STATUS:` line (draft → approved → scheduled → published) is the source of truth |
 | `generated/quiz/` | Bonus `DSA QUIZ` posts |
 | `published/queue.md` | **Generated** posting plan — run `python3 scripts/build_queue.py`, never edit |
-| `published/linkedin.md` | Hand-kept log of what went live. No script writes it |
+| `published/linkedin.md` | Hand-kept log of what went live, with each post's numbers after 7 days. No script writes it |
+| `published/report.md` | **Generated** — what works, by pillar, mode and format. Run `python3 scripts/report.py` |
 | `sources/inbox.md` | Capture daily ideas here |
 | `sources/project-log.md` | Raw notes every two weeks on real projects — the only source for BUILDING posts |
 | `sources/apps.md` | My own apps — the only source for FOR BUSINESS PRODUCT posts |
@@ -31,17 +32,16 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 4. Post it.
 5. Add a row to `published/linkedin.md` and set the post's `STATUS:` to `published`.
 6. Run `python3 scripts/build_queue.py` so it leaves the queue.
+7. Seven days later, fill that row's numbers from LinkedIn analytics and run `python3 scripts/report.py`.
 
-## Weekly schedule (7 posts)
-| Day | Pillar |
-| --- | --- |
-| Mon | DSA |
-| Tue | AI Engineering |
-| Wed | Software Engineering |
-| Thu | System Architecture |
-| Fri | For Business (PRODUCT or BLUEPRINT) |
-| Sat | Building |
-| Sun | Dev Growth |
+## Weekly schedule (5 posts, rotating through 7 pillars)
+Seven pillars are the content inventory; five posts a week (Mon–Fri) is what
+goes out. Each posting day takes the next pillar in this order:
+
+DSA → AI Engineering → Software Engineering → Building → System Architecture → For Business → Dev Growth
+
+Change the pace in `scripts/build_queue.py` (`POSTS_PER_WEEK`) or for one run
+with `--per-week 3..7`.
 
 Rebuild the queue after adding or publishing posts: `python3 scripts/build_queue.py`
 (it starts from the next Monday; pass a date to override).
