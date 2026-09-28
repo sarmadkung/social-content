@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="carousel.css">
+<style>
+.line{font-family:var(--mono);font-size:22px;color:var(--ink-2)}
+.line span{color:var(--accent)}
+.flow{gap:0}
+.node{padding:26px 10px;gap:12px}
+.node .num{font-family:var(--mono);font-size:18px;color:var(--accent)}
+.node .nm{font-size:22px}
+.node .mt{font-size:15px;line-height:1.4}
+.conn{width:22px;font-size:18px}
+.down{font-family:var(--mono);font-size:26px;color:#39414E;text-align:center}
+</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering #02<span class="brand">truelogics</span></div>
+  <h1>The arrow hides <em>five steps</em></h1>
+  <p class="lede">Request goes out, response comes back. In between, five steps run in order, and each one can be slow or fail.</p>
+  <div class="stage">
+    <div class="line"><span>fetch</span>("https://api.example.com/weather")</div>
+    <div class="down">↓</div>
+    <div class="flow">
+      <div class="node"><div class="num">01</div><div class="nm">DNS</div><div class="mt">name → IP address</div></div>
+      <div class="conn">→</div>
+      <div class="node"><div class="num">02</div><div class="nm">TCP</div><div class="mt">open a connection</div></div>
+      <div class="conn">→</div>
+      <div class="node"><div class="num">03</div><div class="nm">TLS</div><div class="mt">encrypt + verify</div></div>
+      <div class="conn">→</div>
+      <div class="node"><div class="num">04</div><div class="nm">request</div><div class="mt">GET /weather</div></div>
+      <div class="conn">→</div>
+      <div class="node"><div class="num">05</div><div class="nm">response</div><div class="mt">200 OK + JSON</div></div>
+    </div>
+    <div class="down">↓</div>
+    <div class="line">{"city":"Lahore","tempC":24}</div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span class="pg">02 / 08</span></div>
+</div></body></html>

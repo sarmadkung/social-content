@@ -16,6 +16,11 @@ body::after{
   color:var(--accent);display:flex;align-items:center;gap:16px;
 }
 .series::before{content:"";width:34px;height:2px;background:var(--accent)}
+/* company mark, top right — sits in the series row:
+   <div class="series">… <span class="brand"><img src="…/brand/truelogics-icon.svg" alt=""><img src="…/brand/truelogics-logo.svg" alt="truelogics"></span></div> */
+.series .brand{margin-left:auto;display:flex;align-items:center;gap:12px}
+.series .brand img{height:28px;display:block}
+.series .brand img:first-child{height:36px}
 h1{
   margin-top:24px;font-size:58px;line-height:1.08;letter-spacing:-.025em;font-weight:700;max-width:16ch;
 }

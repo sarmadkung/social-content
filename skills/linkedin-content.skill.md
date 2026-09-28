@@ -100,6 +100,12 @@ example (code, numbers, a text diagram or before/after), a "when not to use it"
 line, and one common mistake with its fix. The full block order lives in
 `prompts/master-content-prompt.md`.
 
+**Failure scenario rule (Software Engineering):** every concept, tool or
+feature comes with a concrete production scenario showing what breaks without
+it, then why we adopt it. Model: a payment call times out, the client retries,
+the customer is charged twice → that is why payment APIs need idempotency
+keys. In COMPARE posts, give each option its own "where it hurts" scenario.
+
 ---
 
 ## 0. Request keywords
@@ -204,7 +210,7 @@ real work in `sources/project-log.md`; For Business comes from my own apps in
 | # | Pillar | Series label | Roadmap |
 | --- | --- | --- | --- |
 | 1 | Problem solving | `DSA SERIES #NN` (+ bonus `DSA QUIZ #NN`) | `pillars/01-dsa-problem-solving.md` |
-| 2 | Software engineering | `SOFTWARE ENGINEERING #NN` | `pillars/02-software-engineering.md` |
+| 2 | Software engineering | `SOFTWARE ENGINEERING · BACKEND #NN`, `· WEB #NN`, `· MOBILE #NN` (three subsections, each numbered on its own) | `pillars/02-software-engineering.md` (one roadmap section per subsection) |
 | 3 | System design | `SYSTEM ARCHITECTURE #NN` | `pillars/03-system-design.md` |
 | 4 | AI engineering | `AI ENGINEERING #NN` | `pillars/04-ai-engineering.md` |
 | 5 | Dev growth | `DEV GROWTH #NN` | `pillars/05-dev-growth.md` |
@@ -357,7 +363,8 @@ Use recognizable series labels:
 ```
 DSA SERIES #07            Hash Maps: The Pattern Behind Two Sum
 DSA QUIZ #01              Which Pattern Is This?
-SOFTWARE ENGINEERING #01  Ship the Boring Architecture First
+SOFTWARE ENGINEERING · BACKEND #01  Postgres vs MongoDB vs DynamoDB
+SOFTWARE ENGINEERING · MOBILE #03   FlatList vs FlashList
 SYSTEM ARCHITECTURE #01   What System Design Actually Is
 AI ENGINEERING #09        Agents Are Software, Not Magic
 DEV GROWTH #01            Junior vs Mid vs Senior: What Actually Changes

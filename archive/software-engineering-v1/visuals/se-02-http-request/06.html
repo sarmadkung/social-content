@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="carousel.css">
+<style>
+.msgbox{padding:24px 26px;display:flex;flex-direction:column;gap:10px;background:var(--code)}
+.msgbox .cap{font-family:var(--mono);font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.ln{display:flex;align-items:baseline;justify-content:space-between;gap:20px;font-family:var(--mono);font-size:22px;color:var(--ink)}
+.ln .k{color:var(--accent)}
+.ln .lb{flex:none;font-size:16px;color:var(--ink-3)}
+.ln .lb::before{content:"← "}
+.gap{height:6px}
+</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering #02 · Steps 4–5<span class="brand">truelogics</span></div>
+  <h1>The request and <em>the response</em></h1>
+  <div class="stage">
+    <div class="msgbox panel">
+      <div class="cap">request</div>
+      <div class="ln"><span><span class="k">GET</span> /weather?city=Lahore HTTP/1.1</span><span class="lb">method + path</span></div>
+      <div class="ln"><span>Host: api.example.com</span><span class="lb">header</span></div>
+      <div class="ln"><span>Accept: application/json</span><span class="lb">header</span></div>
+    </div>
+    <div class="msgbox panel">
+      <div class="cap">response</div>
+      <div class="ln"><span>HTTP/1.1 <span class="k">200 OK</span></span><span class="lb">status code</span></div>
+      <div class="ln"><span>Content-Type: application/json</span><span class="lb">header</span></div>
+      <div class="gap"></div>
+      <div class="ln"><span>{"city":"Lahore","tempC":24}</span><span class="lb">body</span></div>
+    </div>
+    <p class="note"><b>2xx</b> success · <b>4xx</b> client mistake · <b>5xx</b> server failed</p>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span class="pg">06 / 08</span></div>
+</div></body></html>
