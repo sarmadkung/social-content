@@ -73,6 +73,12 @@ reader; PERSONAL is the author's own experience. Each mode's structure lives
 in `prompts/master-content-prompt.md`. Never more than 4 TEACH posts in a row
 within a pillar, and a post only relies on the posts in its `needs` list.
 
+**Markers:** `[PERSONAL: ...]` marks a personal fact to fill in.
+`[FACT_CHECK: claim → what to check it against]` marks an outside claim to
+verify (history, dates, "X uses Y", benchmarks, specific library or runtime
+behaviour). Each goes on its own line after the paragraph. `validate.py` stops a
+post from moving past draft while either is left.
+
 **Senior Interest Test:** before writing, ask "Would an experienced software
 engineer learn something useful from this?" If not, do not write it. Every post
 holds at least one of: a non-obvious insight, a trade-off, a failure mode, a

@@ -101,7 +101,7 @@ def main():
            "The record of what went live is `published/linkedin.md`.", "",
            f"Schedule: {per_week} posts a week ({', '.join(datetime.date(2024, 1, 1 + d).strftime('%a') for d in days)}), "
            "pillars in rotation: " + " → ".join(NAMES[p] for p in ROTATION),
-           "Before posting: fill or delete any [PERSONAL: ...] line. 🖼 posts need an image made from HEADLINE + LAYOUT; 🎞 posts need one slide per SLIDES line (PDF for LinkedIn, images for Instagram); ✍ posts go out as text only."]
+           "Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [FACT_CHECK: ...] claim. 🖼 posts need an image made from HEADLINE + LAYOUT; 🎞 posts need one slide per SLIDES line (PDF for LinkedIn, images for Instagram); ✍ posts go out as text only."]
     day, week, turn = start, 0, 0
     while any(queue.values()):  # after the last draft, open slots name the next roadmap post
         if day.weekday() == 0:
@@ -115,7 +115,7 @@ def main():
         if pillar:
             if queue[pillar]:
                 f, text, status = queue[pillar].pop(0)
-                mark = " ✎" if "[PERSONAL" in text else ""
+                mark = (" ✎" if "[PERSONAL" in text else "") + (" 🔎" if "[FACT_CHECK" in text else "")
                 rel = os.path.relpath(f, os.path.dirname(QUEUE))
                 fmt = "🖼 visual" if field(text, "FORMAT") == "VISUAL" else "✍ text"
                 if field(text, "LAYOUT") == "CAROUSEL":
@@ -132,7 +132,8 @@ def main():
                 out.append(f"| {day:%a %d %b} | {LABELS[pillar]} | — write: {nxt} — | | | | |")
         day += datetime.timedelta(days=1)
 
-    out += ["", "✎ = has a [PERSONAL: ...] line to fill in or delete."]
+    out += ["", "✎ = has a [PERSONAL: ...] line to fill in or delete.",
+            "🔎 = has a [FACT_CHECK: ...] claim to verify (fix or cut it if it is wrong), then delete the marker."]
     open(QUEUE, "w").write("\n".join(out) + "\n")
     print(f"{week} weeks written to published/queue.md ({skipped} published posts skipped)")
 

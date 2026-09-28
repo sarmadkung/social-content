@@ -29,6 +29,8 @@ Key properties
 Where is it used?
 OpenTelemetry (one open standard for all three), Prometheus for metrics, Jaeger for traces, Grafana Loki or Elasticsearch for logs.
 
+[FACT_CHECK: OpenTelemetry is one open standard covering logs, metrics and traces → OpenTelemetry docs, signals and spec status]
+
 When to use it: from the first deploy. Adding it during an outage is too late.
 When not to: do not log secrets, passwords or personal data.
 
@@ -37,7 +39,7 @@ console.log(JSON.stringify({
   level: "error",
   msg: "payment failed",
   orderId: "o_123",
-  traceId: "4bf92f3577b34da6",
+  traceId: "4bf92f3577b34da6a3ce929d0e0e4736",
 }));
 
 Steps in a real incident

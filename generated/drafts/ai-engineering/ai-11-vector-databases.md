@@ -25,9 +25,14 @@ Key properties
 • It stores metadata (source, date, team) with each vector, so you can filter.
 • The distance measure (cosine, dot product, Euclidean) should match what your embedding model expects.
 
+[FACT_CHECK: distance measure should match what the embedding model expects → embedding model docs (e.g. OpenAI embeddings FAQ on normalised vectors)]
+
 Two common index types
 → IVF: groups vectors into clusters, then searches only the nearest clusters. The library idea.
 → HNSW: a graph that links each vector to close neighbours. Fast and accurate, but memory-hungry.
+
+[FACT_CHECK: IVF clusters vectors and searches only the nearest clusters → FAISS docs / wiki (IndexIVF)]
+[FACT_CHECK: HNSW is a neighbour graph, fast and accurate but memory-hungry → Malkov & Yashunin 2016 HNSW paper and FAISS / pgvector docs]
 
 Where is it used?
 The retrieval step of RAG, semantic search, recommendations, duplicate detection. You can use a dedicated vector database or a vector extension for a database you already run, like pgvector for PostgreSQL.
@@ -37,6 +42,8 @@ Use an ANN index when exact search is too slow for your data.
 Skip it for small collections. Exact search is simple and never misses.
 
 Senior detail: filters and ANN can clash. Filter after the search, and a strict filter may leave too few results. Check how your database handles filtering before you rely on it.
+
+[FACT_CHECK: filtering after ANN search can leave too few results → pgvector README (filtering, iterative index scans) and your vector DB's filtering docs]
 
 Takeaway: a vector database gives up a little accuracy to find "similar" fast.
 

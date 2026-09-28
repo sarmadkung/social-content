@@ -44,6 +44,9 @@ Step 3 is the catch. A bad hash sends every key to bucket 3. Now step 3 checks a
 
 The senior detail: attackers can send keys that all collide and slow a server down. This is called hash flooding. So many runtimes use a random seed in their hash function. Java 8+ also turns a crowded bucket into a tree, so that bucket costs O(log n) instead of O(n).
 
+[FACT_CHECK: many runtimes randomise their hash seed to stop hash flooding → 28C3 2011 hash-flooding talk (Klink & Wälde), Python PEP 456, Ruby/Perl changelogs]
+[FACT_CHECK: Java 8+ HashMap turns a crowded bucket into a tree, O(log n) → JEP 180 and OpenJDK HashMap source (TREEIFY_THRESHOLD)]
+
 Takeaway: O(1) is an average, not a promise. It holds because a good hash spreads keys evenly.
 
 Next: Hash Set vs Hash Map — which one to reach for, and why.

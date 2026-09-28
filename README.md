@@ -7,7 +7,7 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 | `pillars/` | One file per pillar: purpose, audience, ordered roadmap. Each line is `#NN Title · MODE · needs #..` — the post's content mode and the earlier posts it builds on. Pillars 06 Building and 07 For Business have no roadmap |
 | `prompts/master-content-prompt.md` | The prompt every post is generated from |
 | `linkedin-skills-bundle.txt` | **Derived** — both skills in one paste-able file. Never edit; run `./build-bundle.sh` |
-| `generated/drafts/<pillar>/` | Every post, one file each. `MODE:` must match the roadmap; no roadmap number may be skipped. Its `STATUS:` line (draft → approved → scheduled → published) is the source of truth |
+| `generated/drafts/<pillar>/` | Every post, one file each. `MODE:` must match the roadmap. Drafts follow roadmap order: a number cannot be skipped once a later post exists (later roadmap topics show in the queue as "write" slots). Its `STATUS:` line (draft → approved → scheduled → published) is the source of truth |
 | `generated/quiz/` | Bonus `DSA QUIZ` posts |
 | `published/queue.md` | **Generated** posting plan — run `python3 scripts/build_queue.py`, never edit |
 | `published/linkedin.md` | Hand-kept log of what went live, with each post's numbers after 7 days. No script writes it |
@@ -27,7 +27,7 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 
 ## Daily flow
 1. Open `published/queue.md` and take today's post.
-2. Fill or delete any `[PERSONAL: ...]` line.
+2. Fill or delete any `[PERSONAL: ...]` line. Verify each `[FACT_CHECK: ...]` claim (fix or cut it if wrong), then delete the marker.
 3. If the post is `FORMAT: VISUAL`, make the image from the HEADLINE + LAYOUT lines (visual skill). If `LAYOUT: CAROUSEL`, make one slide per `SLIDES:` line and post a PDF on LinkedIn, the images on Instagram. `FORMAT: TEXT` posts go out as words only.
 4. Post it.
 5. Add a row to `published/linkedin.md` and set the post's `STATUS:` to `published`.

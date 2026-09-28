@@ -32,6 +32,8 @@ includes() checks the list one item at a time. 100,000 orders × 100,000 blocked
 const blocked = new Set(blockedIds);
 if (blocked.has(order.userId)) { ... }
 
+[FACT_CHECK: Array.prototype.includes() checks items one at a time, and Set.has() is about one step per lookup → ECMAScript spec / MDN pages for Array.prototype.includes and Set]
+
 Someone who knows Big-O (how work grows as the input grows) spots this in review in ten seconds. Someone who does not ships it.
 
 What goes wrong if you skip fundamentals

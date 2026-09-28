@@ -30,6 +30,8 @@ Four common strategies
 → Structure-based: headings, sections or code functions become the borders.
 → Semantic: start a new chunk where the meaning shifts, measured with embeddings. Slower to build.
 
+[FACT_CHECK: recursive splitting goes section → paragraph → sentence until pieces fit → LangChain RecursiveCharacterTextSplitter docs (default separators)]
+
 Steps to choose
 1. Start with recursive splitting and a small overlap.
 2. Collect real questions with the passages that answer them.
@@ -43,6 +45,8 @@ Chunk long documents you need to search.
 Skip it for short items that are already one idea each, like FAQ entries.
 
 Senior detail: add context before you embed. Putting the title and section heading in front of each chunk is cheap, and fixes many chunks that make no sense alone.
+
+[FACT_CHECK: putting the title/section before each chunk improves retrieval → Anthropic "Introducing Contextual Retrieval" (Sept 2024)]
 
 Takeaway: retrieval can only return what your chunks contain. Cut with care.
 

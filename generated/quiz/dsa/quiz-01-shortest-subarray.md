@@ -32,3 +32,5 @@ Clues: "subarray" (an unbroken range) and "shortest". And every number is positi
 Grow the right edge until sum ≥ k. Then shrink from the left while it still holds, and record the length. O(n) time, O(1) space.
 
 The twist: if negative numbers were allowed, the one-way rule breaks. Then you need prefix sums with a monotonic deque instead.
+
+[FACT_CHECK: with negative numbers, shortest subarray with sum ≥ k needs prefix sums + a monotonic deque → LeetCode 862 official solution]

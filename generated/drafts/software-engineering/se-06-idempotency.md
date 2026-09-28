@@ -24,8 +24,13 @@ Key properties
 → The server saves the key with the result. Same key again? Return the saved result. Do not repeat the work.
 → Keys need an expiry, so the store does not grow forever.
 
+[FACT_CHECK: GET, PUT and DELETE are idempotent by definition, POST is not → RFC 9110 §9.2.2]
+[FACT_CHECK: a repeated DELETE may return 404 and still counts as idempotent → RFC 9110 §9.2.2 and §9.3.5]
+
 Where is it used?
 Stripe's Idempotency-Key header, message queues that deliver "at least once" (so a message can arrive twice), webhook handlers, background jobs.
+
+[FACT_CHECK: Stripe accepts an Idempotency-Key header → Stripe API docs, Idempotent requests]
 
 When to use it: anything with money, stock, emails or side effects that can be retried.
 When not to: pure reads. They are already safe to repeat.

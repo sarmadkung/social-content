@@ -210,6 +210,15 @@ ACCURACY
   - Do not invent personal stories, numbers, companies or metrics. Where a
     personal experience would help, write [PERSONAL: one line describing
     what to add] so Muhammad can fill it in.
+  - Mark every outside claim a reader could check and you could get wrong:
+    history and dates, "company/product X uses Y", benchmark or survey
+    numbers, a specific library or runtime behaviour, research results,
+    version details. Put [FACT_CHECK: the claim → what to check it against]
+    on its own line right after the paragraph. Textbook facts (binary search
+    is O(log n)) and arithmetic shown in the post need no marker.
+    Illustrative numbers stated as such ("say 50 ms") need no marker.
+  - Both markers are removed before posting; a post cannot move past draft
+    while either is left.
 
 AVOID REPEATING
 Already drafted, do not repeat: every post in generated/drafts/.

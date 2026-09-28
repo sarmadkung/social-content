@@ -49,7 +49,11 @@ for (const c of "banana") count.set(c, (count.get(c) ?? 0) + 1);
 Comparison: Map vs a plain object
 A plain object turns keys into strings. obj[1] and obj["1"] are the same key. A Map keeps 1 and "1" apart. It also accepts objects as keys. For lookup tables that change often, use Map.
 
+[FACT_CHECK: a plain JS object turns keys into strings, so obj[1] and obj["1"] are the same → MDN Property accessors / Map vs Object]
+
 The senior detail: a set is a map that ignores the value. Java's HashSet is literally built on a HashMap inside.
+
+[FACT_CHECK: Java's HashSet is built on a HashMap inside → OpenJDK java.util.HashSet source]
 
 Takeaway: need "if"? Use a set. Need "what"? Use a map.
 

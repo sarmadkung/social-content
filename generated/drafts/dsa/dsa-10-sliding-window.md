@@ -48,6 +48,8 @@ Where is it used?
 • Moving averages on dashboards and stock charts
 • TCP's sliding window for bytes in flight
 
+[FACT_CHECK: TCP uses a sliding window for bytes in flight → RFC 9293 (TCP)]
+
 Spot it when the problem says…
 → "subarray" or "substring" (an unbroken range)
 → "longest", "shortest" or "max sum" of a range

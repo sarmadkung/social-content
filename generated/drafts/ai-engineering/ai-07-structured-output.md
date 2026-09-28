@@ -18,11 +18,16 @@ Think of a paper form with labelled boxes. A free-text letter is hard to process
 Why do we need it?
 Your code cannot read a paragraph. It needs fields. Without structure you get missing fields, wrong types, extra text, or cut-off JSON when the answer hits a length limit.
 
+[FACT_CHECK: JSON can be cut off when the reply hits a length limit → OpenAI structured outputs / JSON mode docs (finish_reason "length")]
+
 Key properties
 • Asking in the prompt → works often, fails sometimes.
 • JSON mode → many APIs promise valid JSON, but not your exact fields.
 • Schema-constrained output → many APIs can force the reply to match your schema. Support varies by model and provider.
 • None of these checks that the values are correct.
+
+[FACT_CHECK: JSON mode promises valid JSON but not your exact fields → OpenAI JSON mode docs]
+[FACT_CHECK: many APIs can force the reply to match a schema, support varies by model → OpenAI Structured Outputs docs and Anthropic structured outputs docs]
 
 Steps
 1. Define a schema in code.

@@ -18,6 +18,8 @@ Think of keeping a water bottle on your desk. You do not walk to the kitchen for
 Why do we need it?
 Databases and remote APIs are slow compared to memory. Reading from memory takes well under a millisecond. A database query over the network often takes several milliseconds or more. Caching cuts load and speeds up responses.
 
+[FACT_CHECK: Reading from memory takes well under a millisecond; a database query over the network often takes several ms or more → published latency numbers (e.g. 'Latency Numbers Every Programmer Should Know') and database benchmarks]
+
 Key properties
 → Hit: the data was in the cache. Miss: it was not, so go to the source
 → TTL (time to live): how long an entry stays before it expires
@@ -41,6 +43,8 @@ Steps: cache-aside (the most common pattern)
 3. Miss? Read from the database.
 4. Save it in Redis with a TTL.
 5. On update, write the database, then delete the cache key.
+
+[FACT_CHECK: Cache-aside is the most common caching pattern → Redis docs / AWS caching best-practices whitepaper]
 
 Cache invalidation
 Invalidation means removing or updating cached data when the source changes. It is hard because two copies now exist, and they can disagree.

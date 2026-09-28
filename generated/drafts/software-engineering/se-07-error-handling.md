@@ -28,6 +28,8 @@ Key properties
 Where is it used?
 Express error middleware, React error boundaries, Node.js, which stops the process on an unhandled promise rejection by default (since v15).
 
+[FACT_CHECK: Node.js exits on an unhandled promise rejection by default since v15 → Node.js v15.0.0 changelog / --unhandled-rejections docs]
+
 When to use a catch: when you can recover or add useful context.
 When not to: just to make the red text go away.
 
@@ -42,6 +44,8 @@ catch (err) {
 }
 
 Now the log says which order failed and still shows the real database error underneath.
+
+[FACT_CHECK: new Error(msg, { cause }) keeps the original error and it shows in the logged output → MDN Error cause (ES2022) / Node.js util.inspect docs]
 
 Comparison
 Fail fast: stop right away when continuing would cause damage (bad config, broken data).

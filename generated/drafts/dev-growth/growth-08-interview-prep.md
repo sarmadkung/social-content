@@ -9,7 +9,7 @@ LAYOUT:    FLOW
 STATUS:    draft
 VARIANT:   D (flow + points)
 ---
-Solving 500 problems and recognising 15 patterns are different skills. Interviews test the second one.
+Solving 500 problems and recognising 13 patterns are different skills. Interviews test the second one.
 
 The loop that works
 Learn the pattern first. Two pointers, sliding window, binary search on the answer, hashing, BFS/DFS, topological sort, heaps, backtracking, prefix sums, monotonic stack, union-find, intervals, dynamic programming. That list is most of what gets asked.
@@ -21,10 +21,12 @@ Then simulate. Out loud, on a timer, explaining as you go. The gap between "I so
 Then review what broke. A one-line note per problem: what shape was it, what did I miss, what would make me spot it next time. That file is worth more than the next twenty problems.
 
 Key properties
-→ Pattern recognition beats volume — 15 patterns cover most interview questions
+→ Pattern recognition beats volume — 13 patterns cover most interview questions
 → Say your plan before you type: brute force, why it is too slow, better approach, complexity
 → Practise the parts nobody practises — clarifying questions, edge cases, testing your own code out loud
 → A wrong answer explained well beats a right answer produced in silence
+
+[FACT_CHECK: these 13 patterns cover most coding interview questions → a source on interview question frequency, e.g. a LeetCode company-tag or interview-pattern analysis]
 
 What to do the week before
 Stop learning new patterns. Redo problems you already solved, from scratch, on a timer. Confidence at the whiteboard comes from repetition, not from coverage.

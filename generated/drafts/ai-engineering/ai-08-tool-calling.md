@@ -25,6 +25,9 @@ Key properties
 • Arguments can still be wrong. Validate them like any model output.
 • Many APIs let the model request several tools in one reply.
 
+[FACT_CHECK: the model never runs anything itself → Anthropic tool use docs (client tools vs provider-run server tools like web search)]
+[FACT_CHECK: many APIs let the model request several tools in one reply → OpenAI parallel function calling docs and Anthropic parallel tool use docs]
+
 Steps
 1. Send the user message plus your list of tools.
 2. The model replies: call getOrder with { "id": "A123" }.

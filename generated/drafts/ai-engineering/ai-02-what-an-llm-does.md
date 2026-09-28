@@ -29,6 +29,8 @@ Key properties
 • One token is chosen, added to the text, and the loop runs again.
 • It stops at a special "end" token or a length limit.
 
+[FACT_CHECK: generation stops at an end token or a length limit → Anthropic Messages API stop_reason and OpenAI finish_reason docs (also stop sequences)]
+
 How it works, step by step
 1. Your text is split into tokens.
 2. The model scores every possible next token.

@@ -40,6 +40,8 @@ Cost for n words of length up to k: O(n · k log k) with a sorted key. Use a let
 
 The senior detail: "é" can be one character or two (e + an accent mark). Call w.normalize("NFC") first. Also lowercase and remove spaces, or "Dormitory" and "dirty room" will not match.
 
+[FACT_CHECK: "é" can be one or two code points and normalize("NFC") unifies them → MDN String.prototype.normalize]
+
 Where is it used?
 • Word-game solvers: index a dictionary by sorted letters
 • Grouping by a canonical key, like log lines by template

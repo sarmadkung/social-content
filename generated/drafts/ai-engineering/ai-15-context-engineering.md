@@ -19,7 +19,11 @@ It is closer to cache design than to prompt writing. You are choosing what enter
 Why do we need it?
 Because long context is not free memory. It is a retrieval problem the model has to solve before it can solve yours. Bury three useful sentences in forty thousand tokens of loosely related material and you have made the task harder, not easier.
 
+[FACT_CHECK: burying useful text in lots of loosely related context makes answers worse → Liu et al. 2023 "Lost in the Middle" and Chroma "Context Rot" report (2025)]
+
 There is also a cost you feel on the invoice: most APIs resend the entire context every single turn.
+
+[FACT_CHECK: most APIs resend the entire context every turn → OpenAI Chat Completions / Responses API docs and Anthropic Messages API docs (stateless calls, prompt caching)]
 
 The four questions per step
 → What is actually relevant to this step, not to the whole session?
@@ -32,6 +36,8 @@ Give each part of the window a number and enforce it. System 800, tools 1,200, r
 
 What to measure
 Tokens per successful task, not tokens per window. The teams shipping reliable agents are almost always sending less than you would expect.
+
+[FACT_CHECK: teams shipping reliable agents send less context than expected → source needed, e.g. Anthropic "Effective context engineering for AI agents"]
 
 What is in your agent's context right now that has not been read in ten steps?
 
