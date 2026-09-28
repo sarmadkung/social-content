@@ -9,10 +9,14 @@ import glob, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# pillar folder -> (series label, filename prefix, theme.css accent var)
+# pillar folder -> roadmap file, or (file, "## section") for a subsection
+SE_ROAD = "02-software-engineering.md"
 ROADMAPS = {
     "dsa": "01-dsa-problem-solving.md",
-    "software-engineering": "02-software-engineering.md",
+    # Software Engineering has three subsections, each its own series
+    "software-engineering/backend": (SE_ROAD, "Backend roadmap"),
+    "software-engineering/web": (SE_ROAD, "Web roadmap"),
+    "software-engineering/mobile": (SE_ROAD, "Mobile roadmap"),
     "system-architecture": "03-system-design.md",
     "ai-engineering": "04-ai-engineering.md",
     "dev-growth": "05-dev-growth.md",
@@ -20,9 +24,12 @@ ROADMAPS = {
     "building": None,
     "business": None,
 }
+# pillar folder -> (series label, filename prefix, theme.css accent var)
 PILLARS = {
     "dsa": ("DSA SERIES", "dsa", "--dsa"),
-    "software-engineering": ("SOFTWARE ENGINEERING", "se", "--swe"),
+    "software-engineering/backend": ("SOFTWARE ENGINEERING · BACKEND", "be", "--swe"),
+    "software-engineering/web": ("SOFTWARE ENGINEERING · WEB", "web", "--swe"),
+    "software-engineering/mobile": ("SOFTWARE ENGINEERING · MOBILE", "mob", "--swe"),
     "system-architecture": ("SYSTEM ARCHITECTURE", "arch", "--arch"),
     "ai-engineering": ("AI ENGINEERING", "ai", "--ai"),
     "dev-growth": ("DEV GROWTH", "growth", "--grow"),
@@ -93,10 +100,13 @@ def read_roadmap(pillar):
     Story pillars have no roadmap and return None."""
     if ROADMAPS[pillar] is None:
         return None
-    path = os.path.join(ROOT, "pillars", ROADMAPS[pillar])
-    road, run = {}, 0
+    name, section = ROADMAPS[pillar] if isinstance(ROADMAPS[pillar], tuple) else (ROADMAPS[pillar], None)
+    path = os.path.join(ROOT, "pillars", name)
+    road, run, inside = {}, 0, section is None
     for i, line in enumerate(open(path).read().splitlines(), 1):
-        if not re.match(r"^- #\d+ ", line):
+        if section and line.startswith("## "):
+            inside = line[3:].strip() == section
+        if not inside or not re.match(r"^- #\d+ ", line):
             continue
         m = ROAD_LINE.match(line)
         if not m:
@@ -116,6 +126,8 @@ def read_roadmap(pillar):
         if run > MAX_TEACH_RUN:
             err(path, f"#{n:02d} is the {run}th TEACH post in a row (max {MAX_TEACH_RUN})")
         road[n] = (mode, title)
+    if section and not road:
+        err(path, f"no '## {section}' section with roadmap lines")
     return road
 
 
@@ -300,10 +312,17 @@ def check_posts():
             if n not in drafted and (road is None or n in road):
                 err(os.path.join(ROOT, "generated", "drafts", pillar),
                     f"#{n:02d} {repr(road[n][1]) + ' ' if road else ''}has no draft, but later posts do")
-    known = set(PILLARS) | {".DS_Store"}
+    known = {p.split("/")[0] for p in PILLARS} | {".DS_Store"}
     for d in glob.glob(os.path.join(ROOT, "generated", "drafts", "*")):
         if os.path.basename(d) not in known:
-            err(d, "unknown pillar folder — pillars are " + ", ".join(PILLARS))
+            err(d, "unknown pillar folder — pillars are " + ", ".join(sorted(known - {".DS_Store"})))
+    # a pillar with subsections keeps its posts only inside them
+    for parent in {p.split("/")[0] for p in PILLARS if "/" in p}:
+        subs = sorted(p.split("/")[1] for p in PILLARS if p.startswith(parent + "/"))
+        for f in glob.glob(os.path.join(ROOT, "generated", "drafts", parent, "*")):
+            name = os.path.basename(f)
+            if name != ".DS_Store" and name not in subs:
+                err(f, f"{parent} posts go in one of its subsections: {', '.join(subs)}")
     for f in sorted(glob.glob(os.path.join(ROOT, "generated", "quiz", "*", "*.md"))):
         fields, body = parse(f)
         if fields is None:
@@ -322,8 +341,13 @@ def check_visuals():
     defined = set(re.findall(r"(--[a-z0-9-]+)\s*:", theme))
     # theme accents must match the visual skill's accent table
     skill = open(os.path.join(ROOT, "skills", "linkedin-visual.skill.md")).read()
+    checked = set()
     for pillar, (label, _, var) in PILLARS.items():
         label = label[0] if isinstance(label, tuple) else label
+        label = label.split(" · ")[0]   # subsections share their pillar's accent
+        if var in checked:
+            continue
+        checked.add(var)
         tm = re.search(rf"{var}:(#[0-9A-Fa-f]{{6}})", theme)
         sm = re.search(rf"`{label}`(?:\s*/\s*`[^`]+`)*\s*\|\s*`(#[0-9A-Fa-f]{{6}})`", skill)
         if not tm:
@@ -360,7 +384,7 @@ def main():
         print("warn   " + w)
     for e in errors:
         print("ERROR  " + e)
-    posts = len(glob.glob(os.path.join(ROOT, "generated", "*", "*", "*.md")))
+    posts = len(glob.glob(os.path.join(ROOT, "generated", "**", "*.md"), recursive=True))
     print(f"\n{posts} posts checked · {len(errors)} errors · {len(warnings)} warnings")
     sys.exit(1 if errors else 0)
 

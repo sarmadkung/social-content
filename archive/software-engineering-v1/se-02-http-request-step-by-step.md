@@ -29,8 +29,6 @@ Client and server open a connection. TCP is the set of rules that makes bytes ar
 3. TLS handshake
 The "s" in https. TLS encrypts the traffic and uses a certificate to prove the server really is api.example.com. One more round trip with TLS 1.3, two with the older TLS 1.2.
 
-[FACT_CHECK: TLS 1.3 full handshake takes one round trip, TLS 1.2 takes two → RFC 8446 §1.2 and §2 (and RFC 5246 handshake flow)]
-
 4. The request
 GET /weather?city=Lahore HTTP/1.1
 Host: api.example.com

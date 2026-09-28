@@ -1,0 +1,21 @@
+/* Carousel slides — 1080x1350 (4:5), built on variant D. One variant per deck. */
+@import url("../../../templates/variant-d/base.css");
+:root{--accent:var(--swe);--mute:#3A4453}
+body{height:1350px}
+.frame{padding:76px 72px 64px}
+.series .brand{margin-left:auto;color:var(--ink-2);letter-spacing:.14em;text-transform:none;font-weight:600}
+h1{font-size:56px;max-width:17ch}
+.lede{margin-top:22px;font-size:26px;line-height:1.45;color:var(--ink-2);max-width:34ch}
+.stage{gap:34px}
+.mono{font-family:var(--mono)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.hot{border-color:color-mix(in srgb,var(--accent) 55%,transparent);background:color-mix(in srgb,var(--accent) 10%,var(--panel))}
+.tag{font-family:var(--mono);font-size:16px;padding:5px 12px;border-radius:999px;color:var(--accent);
+  border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.tag.m{color:var(--ink-3);border-color:var(--line);background:transparent}
+.note{font-family:var(--mono);font-size:21px;line-height:1.55;color:var(--ink-2)}
+.note b{color:var(--accent);font-weight:500}
+.foot .pg{color:var(--ink-3)}
+/* 4:5 has more height than the square cards: scale the diagram to fill it */
+.stage{zoom:1.22}
+.lede{font-size:28px}

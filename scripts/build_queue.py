@@ -29,13 +29,23 @@ ROTATION = ["dsa", "ai-engineering", "software-engineering", "building",
 NAMES = {"dsa": "DSA", "ai-engineering": "AI Engineering", "software-engineering": "Software Engineering",
          "building": "Building", "system-architecture": "System Architecture",
          "business": "For Business", "dev-growth": "Dev Growth"}
+# a pillar with subsections gives its rotation slot to each subsection in turn
+TRACKS = {"software-engineering": ["software-engineering/backend", "software-engineering/web",
+                                   "software-engineering/mobile"]}
 QUEUED = {"draft", "approved", "scheduled"}
 # pillar folder -> series label, so empty slots read like filled ones
-LABELS = {"dsa": "DSA SERIES", "software-engineering": "SOFTWARE ENGINEERING",
+LABELS = {"dsa": "DSA SERIES", "software-engineering/backend": "SOFTWARE ENGINEERING · BACKEND",
+          "software-engineering/web": "SOFTWARE ENGINEERING · WEB",
+          "software-engineering/mobile": "SOFTWARE ENGINEERING · MOBILE",
           "system-architecture": "SYSTEM ARCHITECTURE", "ai-engineering": "AI ENGINEERING",
           "dev-growth": "DEV GROWTH", "building": "BUILDING",
           "business": "FOR BUSINESS / SOLUTIONS"}
-ROADMAPS = {"dsa": "01-dsa-problem-solving.md", "software-engineering": "02-software-engineering.md",
+SE_ROAD = "02-software-engineering.md"
+ROADMAPS = {"dsa": "01-dsa-problem-solving.md",
+            # (file, section): the subsection's roadmap is under "## <section>"
+            "software-engineering/backend": (SE_ROAD, "Backend roadmap"),
+            "software-engineering/web": (SE_ROAD, "Web roadmap"),
+            "software-engineering/mobile": (SE_ROAD, "Mobile roadmap"),
             "system-architecture": "03-system-design.md", "ai-engineering": "04-ai-engineering.md",
             "dev-growth": "05-dev-growth.md",
             # no roadmap: BUILDING from sources/project-log.md, FOR BUSINESS from
@@ -47,7 +57,10 @@ def roadmap(pillar):
     """{n: 'Title · MODE'} from the pillar's roadmap lines ({} for story pillars)."""
     if ROADMAPS[pillar] is None:
         return {}
-    text = open(os.path.join(ROOT, "pillars", ROADMAPS[pillar])).read()
+    name, section = ROADMAPS[pillar] if isinstance(ROADMAPS[pillar], tuple) else (ROADMAPS[pillar], None)
+    text = open(os.path.join(ROOT, "pillars", name)).read()
+    if section:
+        text = re.split(r"^## ", text.split(f"\n## {section}\n", 1)[1], maxsplit=1, flags=re.M)[0]
     return {int(n): f"{t} · {m}" for n, t, m in re.findall(r"^- #(\d+) (.+?) · ([A-Z]+) · needs", text, re.M)}
 
 
@@ -78,7 +91,7 @@ def main():
         start = today + datetime.timedelta(days=(7 - today.weekday()) % 7)
 
     queue, skipped, upcoming = {}, 0, {}
-    for pillar in ROTATION:
+    for pillar in (t for p in ROTATION for t in TRACKS.get(p, [p])):
         posts = []
         files = sorted(glob.glob(os.path.join(DRAFTS, pillar, "*.md")), key=num)
         last = num(files[-1]) if files else 0
@@ -100,9 +113,12 @@ def main():
            "Change a post's STATUS: line instead, then re-run the script.",
            "The record of what went live is `published/linkedin.md`.", "",
            f"Schedule: {per_week} posts a week ({', '.join(datetime.date(2024, 1, 1 + d).strftime('%a') for d in days)}), "
-           "pillars in rotation: " + " → ".join(NAMES[p] for p in ROTATION),
+           "pillars in rotation: " + " → ".join(NAMES[p] for p in ROTATION)
+           + "".join(f" ({NAMES[p]} takes " + " → ".join(t.split("/")[1].title() for t in ts) + " in turn)"
+                     for p, ts in TRACKS.items()),
            "Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [FACT_CHECK: ...] claim. 🖼 posts need an image made from HEADLINE + LAYOUT; 🎞 posts need one slide per SLIDES line (PDF for LinkedIn, images for Instagram); ✍ posts go out as text only."]
     day, week, turn = start, 0, 0
+    track_turn = dict.fromkeys(TRACKS, 0)
     while any(queue.values()):  # after the last draft, open slots name the next roadmap post
         if day.weekday() == 0:
             week += 1
@@ -112,6 +128,9 @@ def main():
         if day.weekday() in days:
             pillar = ROTATION[turn % len(ROTATION)]
             turn += 1
+            if pillar in TRACKS:
+                pillar = TRACKS[pillar][track_turn[pillar] % len(TRACKS[pillar])]
+                track_turn[pillar.split("/")[0]] += 1
         if pillar:
             if queue[pillar]:
                 f, text, status = queue[pillar].pop(0)

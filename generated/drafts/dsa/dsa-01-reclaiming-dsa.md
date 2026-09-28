@@ -1,36 +1,48 @@
 SERIES:    DSA SERIES #01
-TITLE:     Reclaiming DSA: Two Weeks, 23 Algorithms, One Repo
+TITLE:     Why I'm Relearning DSA in the Age of AI
 PILLAR:    DSA & Problem Solving — for developers rebuilding their fundamentals
 LEVEL:     BEGINNER
 MODE:      PERSONAL
 FORMAT:    VISUAL
-HEADLINE:  Two weeks, 23 algorithms
-LAYOUT:    STAT
+HEADLINE:  Why DSA still matters with AI
+LAYOUT:    GRID
 STATUS:    draft
 ---
-This month I spent two weeks rebuilding my algorithm fundamentals in public. Here's the honest state of it.
+This month I spent two weeks relearning data structures and algorithms. In 2026. When AI agents write most of the code.
 
-23 technique explainers written — Boyer-Moore voting, Kadane's, two pointers, monotonic stack, union-find, Dijkstra, backtracking, and the rest.
-179 problem files across 23 categories.
-41 commits, mostly at night.
+AI writes the code. You still solve the problem.
+DSA was never really about writing code. It is about problem solving: seeing what a problem really is, and knowing which way to solve it. AI can type the solution. It can't tell whether it solved the right problem.
+I noticed I was accepting answers I could not fully check. That is the gap I wanted to close.
 
-What I didn't expect was which part took longest.
+What I did
+→ 179 problems solved, across 23 categories
+→ 23 technique write-ups: two pointers, sliding window, prefix sum, Kadane's, binary search, monotonic stack, union-find, Dijkstra, backtracking and more
+→ 41 commits, mostly at night
 
-Not the solutions. Writing code that passes is the easy half. The slow part was answering "why does this work?" in a way that survives being read six months later — the invariant, the proof sketch, the reason the loop terminates.
+[PERSONAL: confirm 179 problems / 23 categories / 41 commits are still your current numbers]
 
-I also added a section to every explainer I hadn't planned on: where the technique shows up in real systems. Cyclic sort is the same trick a receiver can use to spot missing packet numbers. Monotonic stacks are how you compute a stock's next-higher price in one pass. Union-find answers "are these two machines in the same partition?" almost instantly.
+Why it still matters
+→ It trains your eye for patterns. After enough sliding-window problems, you stop seeing "a new problem". You see "a window that grows and shrinks".
+→ You can check AI's work. Is this loop O(n²) on a list that keeps growing? Is there a simpler way?
+→ It is how architects think. Designing a full system means spotting the problem, matching it to a pattern you know, and choosing a solution and its trade-offs. The same skill, at a bigger size.
+→ AI itself is built on it. Three examples:
 
-[FACT_CHECK: cyclic sort is a trick receivers can use to spot missing packet numbers (real stacks use sequence numbers, SACK or bitmaps) → RFC 9293 (TCP), RFC 2018 (SACK)]
+Search: when a chatbot looks up your own documents (RAG), a vector database finds the closest matches. Many use HNSW, a layered graph searched greedily from the top layer down instead of scanning millions of vectors.
 
-That section changed how I write the rest. An algorithm you can place in a real system is one you actually remember.
+Traversal: when a model trains, backpropagation walks its computation graph backwards in reverse topological order to get each weight's gradient. PyTorch does it every training step.
 
-[PERSONAL: confirm the 3,417 figure from your fuzz run, or drop the number]
-One bug worth admitting: my Boyer-Moore n/3 implementation passed every test I wrote, then failed 3,417 cases under a fuzz test. The check ordering was wrong in a way no hand-written test was ever going to catch.
+In-place: PyTorch ops like x.relu_() change a tensor where it sits instead of making a copy. On a tight GPU, that can decide whether a model fits. Same idea as reversing an array in place with two pointers.
 
-Write the fuzz test. Your tests agree with your assumptions.
+Who it helps
+• Students and juniors: many companies still run DSA rounds in their interviews. It is still one of the doors to your first job.
+• Mid-level developers: the step from "it works" to "it scales".
+• Seniors and architects: better decisions about storage, caching, queues and scale.
+
+What surprised me
+Writing code that passes was the easy half. The slow part was answering "why does this work?" in a way I would still understand six months later.
 
 This series is where I'll share it, one pattern at a time.
 
 Next: Big-O in plain English — what it measures, and what it ignores.
 
-#DataStructures #Algorithms #BuildInPublic #LearningInPublic #SoftwareEngineering
+#DataStructures #Algorithms #AI #LearningInPublic #SoftwareEngineering

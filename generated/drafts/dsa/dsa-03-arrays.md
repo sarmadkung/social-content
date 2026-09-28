@@ -30,9 +30,7 @@ Key properties
 → Insert or delete at the front or middle: O(n)
 → Items sit next to each other, so the CPU cache reads them fast
 
-Why "amortised" for push? A JS array grows as needed. When its space is full, the engine copies it into a bigger block. That copy is O(n), but it happens rarely, so the average push is O(1).
-
-[FACT_CHECK: a full JS array is copied into a bigger block when it grows → V8 source / v8.dev blog on elements kinds and backing store growth]
+Why "amortised" for push? A JS array grows as needed. When its space is full, the engine copies it into a bigger block, about 1.5 times the size. That copy is O(n), but it happens rarely, so the average push is O(1).
 
 Example
 const a = [10, 20, 30, 40];
@@ -47,15 +45,11 @@ Where is it used?
 • The buckets inside a hash map (post #05)
 • Stacks, which only touch the end
 
-[FACT_CHECK: image pixels in JS are TypedArrays → MDN ImageData.data (Uint8ClampedArray)]
-
 When to use it / when not to
 Use it: you read by position, loop in order, or add at the end.
 Not: you insert or remove at the front all the time. Use a deque or a queue instead.
 
-The senior detail: a.shift() is O(n) too. Using an array as a queue in a big BFS loop can quietly turn O(n) into O(n²).
-
-[FACT_CHECK: a.shift() is O(n) in JS engines → ECMAScript Array.prototype.shift spec; V8 left-trimming can make it cheap in some cases]
+The senior detail: a.shift() is O(n) too. The spec says every item moves down one slot. Some engines have tricks that make it cheap in some cases, but you can't count on them. Using an array as a queue in a big BFS loop can quietly turn O(n) into O(n²). A head index that moves forward is O(1), every time.
 
 Takeaway: arrays are fast to read and slow to rearrange.
 

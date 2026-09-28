@@ -233,6 +233,9 @@ Change a colour there, never in a variant's `base.css`.
 | Building | `BUILDING` | `#2DD4BF` teal |
 | For business | `FOR BUSINESS` / `SOLUTIONS` | `#A3E635` lime |
 
+Software engineering has three subsections. Their tags add the subsection
+(`SOFTWARE ENGINEERING · BACKEND`, `· WEB`, `· MOBILE`) and all use the same green.
+
 Building uses teal for real-world building. It sits near Software
 engineering's green; the series label is what tells the two apart. For
 business uses lime, the widest free gap on the wheel (between amber and
@@ -331,7 +334,7 @@ a four-row table; the improved rows stay in plain ink, and the regressed
 `tool-calling 20 61% -23` row is marked in the indigo accent. Closing line
 `overall 86% (+2) — ship? no.`
 
-**Variant D, flow, software engineering.** Series `SOFTWARE ENGINEERING #03`.
+**Variant D, flow, software engineering.** Series `SOFTWARE ENGINEERING · BACKEND #03`.
 Headline "You optimised the code. The time was *never there.*" Four nodes —
 client 12 ms, CDN 8 ms, API 31 ms, postgres 240 ms — the last with the green
 accent border and accent metric. Three points beneath: measure first, p99 not average,

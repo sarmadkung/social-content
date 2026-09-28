@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="carousel.css">
+<style>
+.cmp{display:flex;gap:22px}
+.side{flex:1;padding:30px 28px;display:flex;flex-direction:column;gap:18px}
+.side .v{font-family:var(--mono);font-size:24px;color:var(--ink)}
+.side .big{font-size:64px;font-weight:700;letter-spacing:-.02em;color:var(--accent)}
+.side.m .big{color:var(--ink-3)}
+.side .u{font-family:var(--mono);font-size:18px;color:var(--ink-2)}
+.trips{display:flex;gap:8px}
+.trip{height:34px;flex:0 0 120px;border-radius:8px;background:color-mix(in srgb,var(--accent) 30%,transparent);
+  border:1px solid var(--accent);font-family:var(--mono);font-size:15px;color:var(--ink);display:flex;align-items:center;justify-content:center}
+.side.m .trip{background:transparent;border-color:var(--mute);color:var(--ink-3)}
+.cert{display:flex;align-items:center;gap:20px;padding:24px 26px}
+.cert svg{flex:none;width:44px;height:44px;color:var(--accent)}
+.cert p{font-size:22px;line-height:1.45;color:var(--ink-2)}
+.cert p b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering #02 · Step 3<span class="brand">truelogics</span></div>
+  <h1>TLS: one round trip, <em>or two</em></h1>
+  <p class="lede">TLS is the "s" in https. It encrypts the traffic, so nobody in between can read it.</p>
+  <div class="stage">
+    <div class="cmp">
+      <div class="side panel hot"><div class="v">TLS 1.3</div><div class="big">1 trip</div>
+        <div class="trips"><div class="trip">50 ms</div></div><div class="u">= 50 ms</div></div>
+      <div class="side panel m"><div class="v">TLS 1.2 (older)</div><div class="big">2 trips</div>
+        <div class="trips"><div class="trip">50 ms</div><div class="trip">50 ms</div></div><div class="u">= 100 ms</div></div>
+    </div>
+    <div class="cert panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      <p><b>Certificate check.</b> The server proves it really is api.example.com before any data is sent.</p>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span class="pg">05 / 08</span></div>
+</div></body></html>

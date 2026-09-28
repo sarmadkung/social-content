@@ -28,7 +28,9 @@ GOAL
 Produce a queue of ready-to-post LinkedIn posts, one topic per post, across
 these pillars:
   1. DSA & Problem Solving        series label: DSA SERIES #NN
-  2. Software Engineering         series label: SOFTWARE ENGINEERING #NN
+  2. Software Engineering         series label: SOFTWARE ENGINEERING · BACKEND #NN,
+                                  SOFTWARE ENGINEERING · WEB #NN or
+                                  SOFTWARE ENGINEERING · MOBILE #NN
   3. System Design & Architecture series label: SYSTEM ARCHITECTURE #NN
   4. AI Engineering               series label: AI ENGINEERING #NN
   5. Career & Developer Growth    series label: DEV GROWTH #NN
@@ -36,6 +38,11 @@ these pillars:
   7. For Business                series label: FOR BUSINESS #NN or SOLUTIONS #NN
 For pillars 1-5, follow the ordered topic roadmap in pillars/<pillar>.md.
 Post topics in that order so each post builds on the previous one.
+Software Engineering has three subsections (Backend, Web, Mobile), each with
+its own roadmap section, folder and numbering. Its posts are for mid-level
+and senior engineers: mostly tool comparisons (X vs Y vs Z: when each wins,
+what it costs, what to pick) and how to use one tool well in production.
+Never explain basics there (what HTTP is, what an API is).
 Pillar 6 (Building) has no roadmap: draft only from real entries in
 sources/project-log.md, use MODE: PERSONAL, pick a TYPE, and follow the rules
 in pillars/06-building.md. Pivot is a client's product: never name it.
@@ -148,6 +155,15 @@ CONCRETE EXAMPLE RULE
 Every post has at least one of: tiny code, a numeric example, a text diagram
 (A → B → C), a before/after comparison. An analogy alone is not enough.
 
+FAILURE SCENARIO RULE (Software Engineering)
+Every concept, tool or feature an SE post explains comes with a concrete
+production scenario that shows what breaks without it, and only then why we
+adopt it. Order: the real situation → what goes wrong (with numbers: users,
+money, latency, rows) → the concept that prevents it → how to apply it.
+Model example: a payment call times out, the client retries, the customer is
+charged twice → that is why payment APIs need idempotency keys. A COMPARE
+post gives each option its own "this is where it hurts" scenario.
+
 FORMAT PER POST (output exactly this)
   SERIES:    <series label and number>
   TITLE:     <title>
@@ -234,6 +250,8 @@ SELF-CHECK BEFORE RETURNING
   7. Does the reader meet the idea before the technical term?
   8. Is there a concrete example (code, numbers, diagram, before/after)?
   9. Is there a "when not to" and a common mistake? (TEACH and COMPARE)
+  9b. SOFTWARE ENGINEERING: does every concept come with a failure scenario
+     (what breaks without it) before the reason to adopt it?
  10. Does the post follow its MODE's structure?
  11. Does it use only ideas from the posts in its "needs" field?
  12. Does the "Next:" line name the next post in the roadmap?
@@ -275,3 +293,13 @@ SELF-CHECK BEFORE RETURNING
    old minimum-depth rule only said what not to write. The test says what a
    post must hold to be worth writing, and it replaces the four-readers rule,
    which told the model to start from zero.
+11. **Software Engineering split into Backend, Web and Mobile** (added
+   2026-09-28). The first SE series taught basics (one HTTP request, what a
+   timeout is) that mid-level and senior engineers already know. It moved to
+   `archive/software-engineering-v1/`. Each subsection now has its own
+   roadmap of tool comparisons and "use it well" posts, and the SE slot in
+   the rotation cycles Backend → Web → Mobile.
+12. **Failure scenario rule for Software Engineering** (added 2026-09-28).
+   A concept on its own does not stick. Each one now comes with a real
+   situation where skipping it causes damage (the payment timeout that
+   double-charges a customer), so the reader sees why to adopt it.
