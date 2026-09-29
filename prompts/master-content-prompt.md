@@ -177,6 +177,7 @@ FORMAT PER POST (output exactly this)
   HEADLINE:  <image headline, 8 words or fewer>   (VISUAL only)
   LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
   SLIDES:    <slide list, one per line>   (CAROUSEL only; see CAROUSEL below)
+  VISUALS:   <1 = <section heading> · 2 = … · rest = text>   (VISUAL, optional: which sections become images)
   STATUS:    draft
   ---
   <post body, ready to paste>

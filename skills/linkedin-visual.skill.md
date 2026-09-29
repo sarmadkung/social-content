@@ -266,7 +266,9 @@ Never use the accent as a gradient, and never give one card two accents.
    post may have more than one image when it has more than one idea worth
    drawing — one idea per image.
    Never copy a stat, count or sentence from the post text onto the image; the
-   image shows what words can't, it does not echo them.
+   image shows what words can't, it does not echo them. The reverse holds too: once
+   an image covers a section, that section is cut from the posted text
+   (`posts/<post>/post.md`) — never from the draft, which stays the full source.
 2. The image carries **one** idea. The headline is 8 words or fewer.
 3. Never put a paragraph on an image. If it needs a paragraph, it needs a
    carousel.

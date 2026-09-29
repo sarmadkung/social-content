@@ -6,6 +6,7 @@ MODE:      PERSONAL
 FORMAT:    VISUAL
 HEADLINE:  Why DSA still matters with AI
 LAYOUT:    GRID
+VISUALS:   1 = Why it still matters · 2 = Who it helps · 3 = Search: + Traversal: + In-place: · rest = text
 STATUS:    draft
 ---
 This month I spent two weeks revisiting data structures and algorithms after some time away. In 2026. When AI agents write most of the code.

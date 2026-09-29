@@ -1,4 +1,4 @@
-> ⚠ NOT READY — resolve these in the draft, then re-run build_posts.py:
+> ⚠ NOT READY — resolve these, then delete this block:
 > - [PERSONAL: confirm 23 technique write-ups is right; add a problem count only if you have a real number]
 
 ---
@@ -15,22 +15,7 @@ What I did
 
 [PERSONAL: confirm 23 technique write-ups is right; add a problem count only if you have a real number]
 
-Why it still matters
-→ It trains your eye for patterns. After enough sliding-window problems, you stop seeing "a new problem". You see "a window that grows and shrinks".
-→ You can check AI's work. Is this loop O(n²) on a list that keeps growing? Is there a simpler way?
-→ It is how architects think. Designing a full system means spotting the problem, matching it to a pattern you know, and choosing a solution and its trade-offs.
-→ AI itself is built on it. Three examples:
-
-Search: when a chatbot looks up your own documents (RAG), a vector database finds the closest matches. Many use HNSW, a layered graph searched greedily from the top layer down instead of scanning millions of vectors.
-
-Traversal: when a model trains, backpropagation walks its computation graph backwards in reverse topological order to get each weight's gradient. PyTorch does it every step.
-
-In-place: PyTorch ops like x.relu_() change a tensor where it sits instead of making a copy. On a tight GPU, that can decide whether a model fits. Same idea as reversing an array in place with two pointers.
-
-Who it helps
-• Students and juniors: many companies still run DSA rounds in their interviews. It is still a door to your first job.
-• Mid-level developers: the step from "it works" to "it scales".
-• Seniors and architects: better calls on storage, caching and scale.
+Why it still matters, who it helps, and the DSA inside the AI you already use: it's all in the images.
 
 What surprised me
 Writing code that passes was the easy half. The slow part was answering "why does this work?" in a way I would still understand six months later.

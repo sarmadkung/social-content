@@ -5,18 +5,21 @@ Usage: python3 scripts/build_posts.py              refresh existing folders + in
                                                    (<post> = draft basename, e.g. dsa-01-reclaiming-dsa)
 
 Folders are made only on request (the linkedin-post skill does it), never for
-every draft. For each folder it writes
-posts/<post>/post.md: the post body only (no SERIES/MODE header),
-ready to paste into LinkedIn. If the body still has [PERSONAL: ...] or
-[FACT_CHECK: ...] markers, a "not ready" block at the top lists them.
+every draft. The draft in generated/drafts/ is the source and is never changed.
+
+posts/<post>/post.md is the text to paste. On creation it is the draft body
+(no SERIES/MODE header); the linkedin-post skill then cuts from post.md the
+sections the images already show. This script never overwrites an existing
+post.md — delete it to start again from the draft. If the text still has
+[PERSONAL: ...] or [FACT_CHECK: ...] markers, a "not ready" block lists them;
+if the draft was edited after post.md, the index says so.
 
 Images live next to it and are made by render.sh from posts/<post>/src/:
   src/1.html, src/2.html …       → 1.png, 2.png …   (feed images, posting order)
   src/slide-01.html …            → slide-01.png … + carousel.pdf
 
-posts/README.md is the index: every post, its queue date, status, image count
-and whether it is ready. Both files are generated — edit the draft, never
-post.md, then re-run this (build_queue.py runs it for you).
+posts/README.md is the index: every prepared post, its queue date, status,
+image count and whether it is ready. build_queue.py re-runs this for you.
 """
 import glob, os, re, sys
 
@@ -70,18 +73,23 @@ def main(create=()):
         names.add(name)
         fields, body = split(by_name[name])
         folder = os.path.join(POSTS, name)
-        markers = MARKER.findall(body)
-        full = [m.group(0) for m in MARKER.finditer(body)]
-        out = body
-        if full:
-            out = "> ⚠ NOT READY — resolve these in the draft, then re-run build_posts.py:\n" + \
-                  "".join(f"> - {m}\n" for m in full) + "\n---\n\n" + body
-        open(os.path.join(folder, "post.md"), "w").write(out)
+        post = os.path.join(folder, "post.md")
+        if not os.path.exists(post):
+            full = [m.group(0) for m in MARKER.finditer(body)]
+            out = body
+            if full:
+                out = "> ⚠ NOT READY — resolve these, then delete this block:\n" + \
+                      "".join(f"> - {m}\n" for m in full) + "\n---\n\n" + body
+            open(post, "w").write(out)
+        text = open(post).read()
+        markers = MARKER.findall(text.split("\n---\n", 1)[-1] if text.startswith("> ⚠") else text)
 
         feed, slides = images(folder)
         fmt = fields.get("FORMAT", "")
         carousel = fields.get("LAYOUT", "") == "CAROUSEL"
         todo = []
+        if os.path.getmtime(by_name[name]) > os.path.getmtime(post):
+            todo.append("draft changed since post.md")
         if markers:
             todo.append(f"{len(markers)} marker{'s' * (len(markers) > 1)}")
         if fmt == "VISUAL" and carousel and not slides:

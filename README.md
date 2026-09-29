@@ -30,7 +30,7 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 1. Open `posts/README.md` (or `published/queue.md`) and take today's post.
 2. Fill or delete any `[PERSONAL: ...]` line in the draft. Verify each `[FACT_CHECK: ...]` claim (fix or cut it if wrong), then delete the marker. Re-run `python3 scripts/build_queue.py`.
 3. If the post is `FORMAT: VISUAL` and has no images yet, make them in `posts/<post>/src/` (visual skill) and run `./render.sh`. A carousel is `slide-01.html` …, posted as `carousel.pdf` on LinkedIn, the PNGs on Instagram. `FORMAT: TEXT` posts go out as words only.
-4. Post it: paste `posts/<post>/post.md`, attach `1.png`, `2.png` … in order.
+4. Post it: paste `posts/<post>/post.md`, attach `1.png`, `2.png` … in order. `post.md` is the draft minus the sections the images show; the draft itself is never trimmed.
 5. Add a row to `published/linkedin.md` and set the post's `STATUS:` to `published`.
 6. Run `python3 scripts/build_queue.py` so it leaves the queue.
 7. Seven days later, fill that row's numbers from LinkedIn analytics and run `python3 scripts/report.py`.

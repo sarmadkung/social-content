@@ -49,12 +49,21 @@ FORMAT:    <TEXT | VISUAL>   (TEXT = words only; VISUAL = words + image)
 HEADLINE:  <image headline, 8 words or fewer>          (VISUAL only)
 LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
 SLIDES:    <one line per slide: NN · LAYOUT · headline · what it draws>   (CAROUSEL only)
+VISUALS:   <1 = <section heading> · 2 = <section heading> · rest = text>   (VISUAL, optional)
 STATUS:    <draft | approved | scheduled | published>
 ---
 <post body, ready to paste — no markdown headers, short paragraphs>
 ```
 
 New posts start as `STATUS: draft`. Only the text below `---` goes into LinkedIn.
+
+**VISUALS:** says which sections of the body become images and which stay
+text. Each item names a section by its heading line exactly as it appears in
+the body — or, for paragraphs with no heading, their opening words joined by
+` + ` (`3 = Search: + Traversal: + In-place:`) — in posting order (`1 = …` is `1.png`); `rest = text` closes the line.
+The draft keeps every section in full — the posted text
+(`posts/<post>/post.md`) leaves out the sections listed here and points to the
+images instead.
 
 **Choosing MODE:** the roadmap line in `pillars/` gives each post its mode
 (`#NN Title · MODE · needs #..`). TEACH explains what X is; WHY explains a

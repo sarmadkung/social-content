@@ -228,6 +228,23 @@ def check_common(path, fields, body, quiz=False):
             err(path, f"VISUAL post is missing {f}:")
         if fmt == "TEXT" and f in fields:
             err(path, f"TEXT post has {f}: — remove it, or set FORMAT: VISUAL")
+    visuals = fields.get("VISUALS", "")
+    if visuals:
+        if fmt == "TEXT":
+            err(path, "TEXT post has VISUALS: — remove it, or set FORMAT: VISUAL")
+        parts = [p.strip() for p in visuals.split(" · ")]
+        if not parts or parts[-1] != "rest = text":
+            err(path, "VISUALS: must end with '· rest = text'")
+        lines = {l.strip() for l in body.splitlines()}
+        for i, part in enumerate(parts[:-1], 1):
+            m = re.match(r"^(\d+) = (.+)$", part)
+            if not m or int(m.group(1)) != i:
+                err(path, f"VISUALS: item '{part}' is not '{i} = <section heading>'")
+            else:
+                # a section heading exactly, or several paragraph starts joined by " + "
+                for piece in m.group(2).split(" + "):
+                    if piece not in lines and not any(l.startswith(piece) for l in lines):
+                        err(path, f"VISUALS: no line '{piece}' in the body — name a section heading or a paragraph's opening words exactly")
     headline = fields.get("HEADLINE", "")
     if headline and len(headline.split()) > 8:
         err(path, f"HEADLINE has {len(headline.split())} words (max 8): '{headline}'")

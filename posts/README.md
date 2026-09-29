@@ -8,4 +8,4 @@ Edit the draft in `generated/drafts/`, never `post.md`.
 
 | Date | Series | Title | Status | Images | Ready | Folder |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 05 Oct | DSA SERIES #01 | Reclaiming DSA in the Age of AI | draft | 2 | 1 marker | [dsa-01-reclaiming-dsa/](dsa-01-reclaiming-dsa/) |
+| Mon 05 Oct | DSA SERIES #01 | Reclaiming DSA in the Age of AI | draft | 3 | 1 marker | [dsa-01-reclaiming-dsa/](dsa-01-reclaiming-dsa/) |

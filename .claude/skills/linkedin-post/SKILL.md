@@ -76,6 +76,11 @@ next unwritten number for that series.
    made only for posts the user asks for — never for every draft.
 9. `FULL`/`VISUAL`: build the image(s) per the visual skill from the draft's
    `HEADLINE:` and `LAYOUT:`.
+   - **Read or write the draft's `VISUALS:` line first.** It names the
+     sections that become images (`1 = <section heading> · 2 = … · rest =
+     text`). If the draft has none, choose the sections and add the line to the
+     header — adding this header line is the only change allowed to an
+     existing draft. Make one image per listed section, in that order.
    - **Images explain the content that matters.** First list the 1–3 ideas the
      post is really about. Make one image per idea that needs a picture — more
      than one image is fine (LinkedIn multi-image post). Every shape is labelled
@@ -87,6 +92,13 @@ next unwritten number for that series.
      diagram, not in the footer. The image adds what the text can't show; the
      footer's right side is the topic, complexity, or `1 / 2` page number.
    - Images are numbered in posting order: `1.png` is the first image shown.
+   - **Then cut from `post.md` what the images show — never from the draft.**
+     The draft in `generated/drafts/` is the full source and is never trimmed.
+     `posts/<post>/post.md` is the text that gets posted: remove from it every
+     section listed in `VISUALS:` and leave one short line pointing to the images.
+     Keep only what the images can't carry: the story, the detail and
+     examples, the close. `build_posts.py` never overwrites an existing
+     `post.md`; to start over from the draft, delete `post.md` and re-run it.
    - Path: `posts/<draft basename>/src/1.html`, `2.html` … in posting order
      (carousel: `src/slide-01.html` …). If old sources exist there, replace
      them when they no longer match the draft.
