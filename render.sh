@@ -3,6 +3,7 @@
 # post's images from posts/<post>/src/:
 #   src/1.html, src/2.html …   → posts/<post>/1.png, 2.png … (1080x1080)
 #   src/slide-01.html …        → posts/<post>/slide-01.png … (1080x1350) + carousel.pdf
+#   src/cover.html             → posts/<post>/cover.png (1200x630, daily.dev / link preview)
 #   ./render.sh                         → all variants + post cards
 #   ./render.sh variant-c               → one variant (post cards still render)
 #   CHROME=/path/to/chrome ./render.sh  → use a specific browser binary
@@ -23,11 +24,11 @@ find_chrome() {
 }
 CHROME_BIN=$(find_chrome)
 
-render() {  # render <html> <png> [height]
-  local html=$1 png=$2 h=${3:-1080} log
+render() {  # render <html> <png> [height] [width]
+  local html=$1 png=$2 h=${3:-1080} w=${4:-1080} log
   rm -f "$png"
   log=$("$CHROME_BIN" --headless --disable-gpu --hide-scrollbars \
-    --force-device-scale-factor=2 --window-size=1080,$h \
+    --force-device-scale-factor=2 --window-size=$w,$h \
     --screenshot="$PWD/$png" --virtual-time-budget=1500 \
     "file://$PWD/$html" 2>&1) || true
   if [ ! -s "$png" ]; then
@@ -54,6 +55,12 @@ for f in posts/*/src/[0-9]*.html; do
   [ -e "$f" ] || continue
   post=${f%/src/*}
   render "$f" "$post/$(basename "${f%.html}").png"
+done
+
+# Covers: src/cover.html → cover.png at 1200x630 (daily.dev, link previews).
+for f in posts/*/src/cover.html; do
+  [ -e "$f" ] || continue
+  render "$f" "${f%/src/*}/cover.png" 630 1200
 done
 
 # Carousel decks: src/slide-NN.html → slide-NN.png at 1080x1350, then

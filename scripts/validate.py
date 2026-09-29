@@ -58,7 +58,9 @@ LEVELS = {"BEGINNER", "INTERMEDIATE", "ADVANCED"}
 BANNED = ["delve", "leverage", "robust", "seamless", "game-changer", "game changer",
           "fast-paced world", "unlock"]
 BODY_HARD_MAX = 3000          # LinkedIn's cap
-BODY_TARGET = (1400, 2500)    # master prompt target range
+BODY_TARGET = (1400, 2500)    # master prompt target range — checked on posts/<post>/post.md,
+                              # the text that gets posted. The draft is the full source: no limit.
+KEEP_IN_MIND = "Keep in mind"  # every prepared post (posts/<post>/) has this section
 TEXT_MAX = 1400               # TEXT posts must be short; longer posts get a visual
 FIRST_DSA_PATTERN_POST = 9    # DSA TEACH posts from #09 (Two Pointers) on need "Spot it when"
 
@@ -266,13 +268,13 @@ def check_common(path, fields, body, quiz=False):
     elif level not in LEVELS:
         err(path, f"LEVEL '{level}' is not one of {sorted(LEVELS)}")
     n = len(posted(body))
-    if n > BODY_HARD_MAX:
-        err(path, f"body is {n} characters (LinkedIn max {BODY_HARD_MAX})")
-    elif fmt == "TEXT":
-        if n > TEXT_MAX:
-            err(path, f"TEXT post is {n} characters (max {TEXT_MAX}) — shorten it or make it VISUAL")
-    elif not quiz and not BODY_TARGET[0] <= n <= BODY_TARGET[1]:
-        warn(path, f"body is {n} characters (target {BODY_TARGET[0]}–{BODY_TARGET[1]})")
+    name = os.path.basename(path)[:-3]
+    if not quiz and os.path.isdir(os.path.join(ROOT, "posts", name)) and \
+            not any(l.startswith(KEEP_IN_MIND) for l in body.splitlines()):
+        err(path, f"prepared post has no '{KEEP_IN_MIND}' section — add 3–8 do/don't lines for this topic")
+    # no length limit on the draft — it is the full source; post.md is limited (check_post_text)
+    if fmt == "TEXT" and n > TEXT_MAX:
+        err(path, f"TEXT post is {n} characters (max {TEXT_MAX}) — shorten it or make it VISUAL")
     for i, line in enumerate(body.splitlines(), 1):
         if re.match(r"^#{1,6} ", line):
             err(path, f"body line {i} is a markdown header (LinkedIn does not render it)")
@@ -352,6 +354,40 @@ def check_posts():
         check_common(f, fields, body, quiz=True)
 
 
+def check_post_text():
+    """posts/<post>/post.md is what gets posted, so the length limit lives here."""
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "post.md")):
+        text = open(p).read()
+        if text.startswith("> ⚠"):
+            text = text.split("\n---\n", 1)[-1]   # the NOT READY block is not posted
+        n = len(posted(text))
+        has_images = bool(glob.glob(os.path.join(os.path.dirname(p), "*.png")))
+        if n > BODY_HARD_MAX:
+            err(p, f"{n} characters (LinkedIn max {BODY_HARD_MAX}) — move a section into an image")
+        elif n > BODY_TARGET[1]:
+            warn(p, f"{n} characters (target up to {BODY_TARGET[1]}) — move a section into an image")
+        elif n < BODY_TARGET[0] and not has_images:
+            warn(p, f"{n} characters (target {BODY_TARGET[0]}–{BODY_TARGET[1]})")
+
+
+IG_CAPTION_MAX = 2200            # Instagram's caption cap
+
+
+def check_platform_texts():
+    """The other platforms' texts in posts/<post>/: Instagram caption length and markers."""
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "instagram.md")):
+        text = open(p).read()
+        if len(text) > IG_CAPTION_MAX:
+            err(p, f"{len(text)} characters (Instagram max {IG_CAPTION_MAX})")
+        tags = re.findall(r"(?<!\w)#\w+", text)
+        if len(tags) > 5:
+            warn(p, f"{len(tags)} hashtags — keep 3–5")
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "instagram.md")) + \
+             glob.glob(os.path.join(ROOT, "posts", "*", "dailydev.md")):
+        if re.search(r"\[(PERSONAL|FACT_CHECK):", open(p).read()):
+            err(p, "has a [PERSONAL]/[FACT_CHECK] marker — platform texts go out as written")
+
+
 def check_visuals():
     theme_path = os.path.join(ROOT, "templates", "theme.css")
     theme = open(theme_path).read()
@@ -385,8 +421,8 @@ def check_visuals():
         if post not in names:
             err(src, f"no draft named {post}.md — post folders must match a draft's file name")
         for f in glob.glob(os.path.join(src, "*.html")):
-            if not re.fullmatch(r"\d+\.html|slide-\d\d\.html", os.path.basename(f)):
-                err(f, "image sources are named 1.html, 2.html … or slide-01.html …")
+            if not re.fullmatch(r"\d+\.html|slide-\d\d\.html|cover\.html", os.path.basename(f)):
+                err(f, "image sources are named 1.html, 2.html …, slide-01.html … or cover.html")
     for f in cards:
         t = open(f).read()
         for href in re.findall(r'href="([^"]+\.css)"', t):
@@ -405,6 +441,8 @@ def check_visuals():
 
 def main():
     check_posts()
+    check_post_text()
+    check_platform_texts()
     check_visuals()
     for w in warnings:
         print("warn   " + w)

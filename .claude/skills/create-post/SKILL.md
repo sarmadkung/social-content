@@ -1,29 +1,38 @@
 ---
-name: linkedin-post
-description: Write one LinkedIn post for this repo — the draft text plus its rendered cover image — from a series + post number and an optional one-line angle. Use when the user types /linkedin-post, or says "write DSA #18", "generate backend #04", "make post web #05 about ...", or gives a pillar, a number and a line and wants the post.
+name: create-post
+description: Create one post for every platform — LinkedIn, daily.dev and Instagram — from a series + post number and an optional one-line angle: the draft, the shared images, a daily.dev cover, and each platform's text. Use when the user types /create-post (or the old /linkedin-post), or says "create post", "generate post", "write DSA #18", "generate backend #04", "make post web #05 about ...", or gives a pillar, a number and a line and wants the post.
 ---
 
-# LinkedIn post from a number and a line
+# Create a post (LinkedIn, daily.dev, Instagram) from a number and a line
 
 Turns `<series> #<NN> [keyword] [angle]` into a finished post: the draft in
 `generated/drafts/` **and** a ready-to-post folder `posts/<post>/` holding
-`post.md` (the text to paste) and its images, following the repo's content
-system. Every run ends with both on disk.
+the images (shared by every platform) and one text file per platform,
+following the repo's content system. Every run ends with both on disk.
+
+| Platform | Text | Images |
+| --- | --- | --- |
+| LinkedIn | `post.md` | `1.png`, `2.png` … (or `carousel.pdf`) |
+| daily.dev | `dailydev.md` | `cover.png` |
+| Instagram | `instagram.md` | `1.png`, `2.png` … as a carousel (or the `slide-NN.png` files) |
+
+The images are made once and reused everywhere; only the text changes per
+platform.
 
 ## Input
 
-`/linkedin-post <series> #<NN> [COPY|FULL|VISUAL] [angle...]`
+`/create-post <series> #<NN> [COPY|FULL|VISUAL] [angle...]`
 
 Examples:
-- `/linkedin-post BE #04 we cached the wrong thing and Redis made it worse`
-- `/linkedin-post dsa 18`
-- `/linkedin-post web #05 FULL memo made our table slower`
+- `/create-post BE #04 we cached the wrong thing and Redis made it worse`
+- `/create-post dsa 18`
+- `/create-post web #05 FULL memo made our table slower`
 
 The angle is the user's line: the story, opinion or example to build the post
 around. It is optional. When given, it shapes the hook and example; it never
 overrides the roadmap title, mode or the rules.
 
-Keyword default is `FULL` (post text + cover image). `COPY` makes the post
+Keyword default is `FULL` (all platform texts + images + daily.dev cover). `COPY` makes the post
 text only, `VISUAL` makes only the image for an existing draft. A post whose
 `FORMAT:` is `TEXT` gets no image even under `FULL`; a `CAROUSEL` post gets its
 slide deck instead of a single cover.
@@ -65,7 +74,8 @@ next unwritten number for that series.
 5. Write the post in the skill's output format, with `SERIES: <label> #NN`,
    `MODE:` exactly as the roadmap says, `STATUS: draft`. Apply every rule:
    Senior Interest Test, teaching order, mode structure, failure scenario rule
-   (Software Engineering), FORMAT/CAROUSEL choice, banned words, length.
+   (Software Engineering), Keep in mind rule (every post), Watch out section
+   (when the topic has real drawbacks), FORMAT/CAROUSEL choice, banned words, length.
    Add `[PERSONAL: ...]` and `[FACT_CHECK: ...]` markers where the rules say.
 6. Save to `generated/drafts/<folder>/<prefix>-NN-<short-kebab-title>.md`.
 7. Run `python3 scripts/validate.py`. Fix every error in this post and rerun
@@ -79,8 +89,13 @@ next unwritten number for that series.
    - **Read or write the draft's `VISUALS:` line first.** It names the
      sections that become images (`1 = <section heading> · 2 = … · rest =
      text`). If the draft has none, choose the sections and add the line to the
-     header — adding this header line is the only change allowed to an
-     existing draft. Make one image per listed section, in that order.
+     header — adding this header line, and a missing `Keep in mind …`
+     section, are the only changes allowed to an existing draft. Make one image per listed section, in that order.
+   - **Text or image, per section.** Any section — including `Keep in mind`
+     and `Watch out` — can stay in the text or become an image. Decide per
+     post: a list of 4+ short items or anything with a shape (steps,
+     comparison, before/after) reads better as an image; a story or a single
+     argument stays in the text.
    - **Images explain the content that matters.** First list the 1–3 ideas the
      post is really about. Make one image per idea that needs a picture — more
      than one image is fine (LinkedIn multi-image post). Every shape is labelled
@@ -108,8 +123,33 @@ next unwritten number for that series.
    - Render with `./render.sh variant-none` (renders post images only, into
      `posts/<post>/1.png` …), then open each PNG and check it against the
      visual skill's review checklist. Fix and re-render until it passes.
+   - **daily.dev cover** (every `FULL`/`VISUAL` run, `TEXT` posts too): write
+     `posts/<post>/src/cover.html` using `../../../templates/cover/base.css`
+     (1200×630). Only the series label + brand mark, the draft's `HEADLINE:`
+     with the `<em>` accent, one small labelled motif for the post's main idea,
+     and the footer (name lockup · topic). No stats, no grids, no second idea —
+     the cover gets the click; the post images explain. `render.sh` renders
+     it to `posts/<post>/cover.png`. Check it at 300px wide: the headline must
+     still read. See the visual skill's cover rules.
+   - **daily.dev text**: write `posts/<post>/dailydev.md` — a `TITLE:` line
+     (a clear claim, ≤ 70 characters, not the series label), `COVER: cover.png`,
+     `---`, then 150–250 words of Markdown from the draft: the hook, the key
+     points as a short bold-led list, one close line. daily.dev readers are
+     developers who click through from a feed card, so drop the personal
+     diary parts and hashtags, keep the technical substance, and leave out any
+     unresolved `[PERSONAL]` / `[FACT_CHECK]` content. Never overwrite an
+     existing `dailydev.md` unless the user asks.
+   - **Instagram text**: write `posts/<post>/instagram.md` — the caption only;
+     the images carry the post. A hook line (the headline idea, not the
+     series label), 2–4 short lines saying what the images show and one
+     takeaway, a `Swipe →` line when there are 2+ images, then 3–5 hashtags on
+     the last line. 300–700 characters, plain text (Instagram shows no
+     markdown and links in captions don't click). No unresolved `[PERSONAL]` /
+     `[FACT_CHECK]` content. Never overwrite an existing `instagram.md` unless
+     the user asks.
    - Run `python3 scripts/build_posts.py <draft basename>` again so the index
-     counts the images.
-10. Reply with: the draft path, the `posts/<post>/` folder and its image(s), the post body, and a list
+     counts the images, cover and platform texts.
+10. Reply with: the draft path, the `posts/<post>/` folder and its image(s),
+    `cover.png`, `dailydev.md` and `instagram.md`, the post body, and a list
     of any `[PERSONAL]` / `[FACT_CHECK]` markers the user must resolve.
     Do not commit.
