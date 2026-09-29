@@ -20,7 +20,7 @@ the system prompt / custom-instructions field.
 | Skill | What it does | When to use it |
 | --- | --- | --- |
 | `linkedin-content.skill.md` | Content system for Muhammad Sarmad's LinkedIn — positioning, three pillars, series, tone | Writing, planning, or reviewing a LinkedIn post |
-| `linkedin-visual.skill.md` | Visual system for LinkedIn images — locked dark identity, four variants, per-pillar accent | Generating a post image, code graphic, or carousel |
+| `linkedin-visual.skill.md` | Visual system for LinkedIn images — locked dark identity, four variants, per-pillar accent | Generating a post image, code graphic, carousel, or daily.dev cover |
 | `TEMPLATE.skill.md` | Blank skill scaffold | Writing a new skill |
 
 ## Writing a new skill

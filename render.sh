@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# Render every card template to visuals/renders/ at 1080x1080 @2x,
-# then every post card in visuals/week-*/, then every carousel deck in
-# visuals/week-*/<post>/ (1080x1350 slides + one PDF for LinkedIn).
+# Render every card template to visuals/renders/ at 1080x1080 @2x, then every
+# post's images from posts/<post>/src/:
+#   src/1.html, src/2.html …   → posts/<post>/1.png, 2.png … (1080x1080)
+#   src/slide-01.html …        → posts/<post>/slide-01.png … (1080x1350) + carousel.pdf
+#   src/cover.html             → posts/<post>/cover.png (1200x630, daily.dev / link preview)
 #   ./render.sh                         → all variants + post cards
 #   ./render.sh variant-c               → one variant (post cards still render)
 #   CHROME=/path/to/chrome ./render.sh  → use a specific browser binary
@@ -22,11 +24,11 @@ find_chrome() {
 }
 CHROME_BIN=$(find_chrome)
 
-render() {  # render <html> <png> [height]
-  local html=$1 png=$2 h=${3:-1080} log
+render() {  # render <html> <png> [height] [width]
+  local html=$1 png=$2 h=${3:-1080} w=${4:-1080} log
   rm -f "$png"
   log=$("$CHROME_BIN" --headless --disable-gpu --hide-scrollbars \
-    --force-device-scale-factor=2 --window-size=1080,$h \
+    --force-device-scale-factor=2 --window-size=$w,$h \
     --screenshot="$PWD/$png" --virtual-time-budget=1500 \
     "file://$PWD/$html" 2>&1) || true
   if [ ! -s "$png" ]; then
@@ -47,25 +49,33 @@ for dir in templates/${1:-variant-*}/; do
   done
 done
 
-# Post cards in visuals/week-*/ link straight to templates/<variant>/base.css,
-# so they re-render with any change to a variant or to templates/theme.css.
-for f in visuals/week-*/*.html; do
+# Post images link straight to templates/<variant>/base.css, so they
+# re-render with any change to a variant or to templates/theme.css.
+for f in posts/*/src/[0-9]*.html; do
   [ -e "$f" ] || continue
-  render "$f" "${f%.html}.png"
+  post=${f%/src/*}
+  render "$f" "$post/$(basename "${f%.html}").png"
 done
 
-# Carousel decks: visuals/week-*/<post>/NN.html → NN.png at 1080x1350,
-# then <post>.pdf — one page per slide, the PNGs as-is (LinkedIn document post).
-for dir in visuals/week-*/*/; do
-  [ -e "$dir"01.html ] || continue
-  deck="$dir.deck.html"
+# Covers: src/cover.html → cover.png at 1200x630 (daily.dev, link previews).
+for f in posts/*/src/cover.html; do
+  [ -e "$f" ] || continue
+  render "$f" "${f%/src/*}/cover.png" 630 1200
+done
+
+# Carousel decks: src/slide-NN.html → slide-NN.png at 1080x1350, then
+# carousel.pdf — one page per slide, the PNGs as-is (LinkedIn document post).
+for post in posts/*/; do
+  [ -e "${post}src/slide-01.html" ] || continue
+  deck="${post}.deck.html"
   printf '<!doctype html><html><head><meta charset="utf-8"><style>@page{size:1080px 1350px;margin:0}*{margin:0}img{display:block;width:1080px;height:1350px;break-after:page}</style></head><body>' > "$deck"
-  for f in "$dir"[0-9][0-9].html; do
-    render "$f" "${f%.html}.png" 1350
-    printf '<img src="%s">' "$(basename "${f%.html}.png")" >> "$deck"
+  for f in "${post}"src/slide-[0-9][0-9].html; do
+    png="${post}$(basename "${f%.html}").png"
+    render "$f" "$png" 1350
+    printf '<img src="%s">' "$(basename "$png")" >> "$deck"
   done
   printf '</body></html>' >> "$deck"
-  pdf="${dir%/}/$(basename "$dir").pdf"
+  pdf="${post}carousel.pdf"
   "$CHROME_BIN" --headless --disable-gpu --no-pdf-header-footer \
     --print-to-pdf="$PWD/$pdf" "file://$PWD/$deck" >/dev/null 2>&1 || true
   rm -f "$deck"

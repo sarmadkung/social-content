@@ -58,7 +58,9 @@ LEVELS = {"BEGINNER", "INTERMEDIATE", "ADVANCED"}
 BANNED = ["delve", "leverage", "robust", "seamless", "game-changer", "game changer",
           "fast-paced world", "unlock"]
 BODY_HARD_MAX = 3000          # LinkedIn's cap
-BODY_TARGET = (1400, 2500)    # master prompt target range
+BODY_TARGET = (1400, 2500)    # master prompt target range — checked on posts/<post>/post.md,
+                              # the text that gets posted. The draft is the full source: no limit.
+KEEP_IN_MIND = "Keep in mind"  # every prepared post (posts/<post>/) has this section
 TEXT_MAX = 1400               # TEXT posts must be short; longer posts get a visual
 FIRST_DSA_PATTERN_POST = 9    # DSA TEACH posts from #09 (Two Pointers) on need "Spot it when"
 
@@ -228,6 +230,23 @@ def check_common(path, fields, body, quiz=False):
             err(path, f"VISUAL post is missing {f}:")
         if fmt == "TEXT" and f in fields:
             err(path, f"TEXT post has {f}: — remove it, or set FORMAT: VISUAL")
+    visuals = fields.get("VISUALS", "")
+    if visuals:
+        if fmt == "TEXT":
+            err(path, "TEXT post has VISUALS: — remove it, or set FORMAT: VISUAL")
+        parts = [p.strip() for p in visuals.split(" · ")]
+        if not parts or parts[-1] != "rest = text":
+            err(path, "VISUALS: must end with '· rest = text'")
+        lines = {l.strip() for l in body.splitlines()}
+        for i, part in enumerate(parts[:-1], 1):
+            m = re.match(r"^(\d+) = (.+)$", part)
+            if not m or int(m.group(1)) != i:
+                err(path, f"VISUALS: item '{part}' is not '{i} = <section heading>'")
+            else:
+                # a section heading exactly, or several paragraph starts joined by " + "
+                for piece in m.group(2).split(" + "):
+                    if piece not in lines and not any(l.startswith(piece) for l in lines):
+                        err(path, f"VISUALS: no line '{piece}' in the body — name a section heading or a paragraph's opening words exactly")
     headline = fields.get("HEADLINE", "")
     if headline and len(headline.split()) > 8:
         err(path, f"HEADLINE has {len(headline.split())} words (max 8): '{headline}'")
@@ -249,13 +268,13 @@ def check_common(path, fields, body, quiz=False):
     elif level not in LEVELS:
         err(path, f"LEVEL '{level}' is not one of {sorted(LEVELS)}")
     n = len(posted(body))
-    if n > BODY_HARD_MAX:
-        err(path, f"body is {n} characters (LinkedIn max {BODY_HARD_MAX})")
-    elif fmt == "TEXT":
-        if n > TEXT_MAX:
-            err(path, f"TEXT post is {n} characters (max {TEXT_MAX}) — shorten it or make it VISUAL")
-    elif not quiz and not BODY_TARGET[0] <= n <= BODY_TARGET[1]:
-        warn(path, f"body is {n} characters (target {BODY_TARGET[0]}–{BODY_TARGET[1]})")
+    name = os.path.basename(path)[:-3]
+    if not quiz and os.path.isdir(os.path.join(ROOT, "posts", name)) and \
+            not any(l.startswith(KEEP_IN_MIND) for l in body.splitlines()):
+        err(path, f"prepared post has no '{KEEP_IN_MIND}' section — add 3–8 do/don't lines for this topic")
+    # no length limit on the draft — it is the full source; post.md is limited (check_post_text)
+    if fmt == "TEXT" and n > TEXT_MAX:
+        err(path, f"TEXT post is {n} characters (max {TEXT_MAX}) — shorten it or make it VISUAL")
     for i, line in enumerate(body.splitlines(), 1):
         if re.match(r"^#{1,6} ", line):
             err(path, f"body line {i} is a markdown header (LinkedIn does not render it)")
@@ -335,6 +354,59 @@ def check_posts():
         check_common(f, fields, body, quiz=True)
 
 
+def check_post_text():
+    """posts/<post>/post.md is what gets posted, so the length limit lives here."""
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "post.md")):
+        text = open(p).read()
+        if text.startswith("> ⚠"):
+            text = text.split("\n---\n", 1)[-1]   # the NOT READY block is not posted
+        n = len(posted(text))
+        has_images = bool(glob.glob(os.path.join(os.path.dirname(p), "*.png")))
+        if n > BODY_HARD_MAX:
+            err(p, f"{n} characters (LinkedIn max {BODY_HARD_MAX}) — move a section into an image")
+        elif n > BODY_TARGET[1]:
+            warn(p, f"{n} characters (target up to {BODY_TARGET[1]}) — move a section into an image")
+        elif n < BODY_TARGET[0] and not has_images:
+            warn(p, f"{n} characters (target {BODY_TARGET[0]}–{BODY_TARGET[1]})")
+
+
+IG_CAPTION_MAX = 2200            # Instagram's caption cap
+X_POST_MAX = 280                 # X free-account post cap
+
+
+def check_platform_texts():
+    """The other platforms' texts in posts/<post>/: Instagram and X limits, markers."""
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "instagram.md")):
+        text = open(p).read()
+        if len(text) > IG_CAPTION_MAX:
+            err(p, f"{len(text)} characters (Instagram max {IG_CAPTION_MAX})")
+        tags = re.findall(r"(?<!\w)#\w+", text)
+        if len(tags) > 5:
+            warn(p, f"{len(tags)} hashtags — keep 3–5")
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "x.md")):
+        folder = os.path.dirname(p)
+        used = []
+        for i, tweet in enumerate(re.split(r"^---\s*$", open(p).read(), flags=re.M), 1):
+            m = re.search(r"^\[images:\s*([\d,\s]+)\]\s*$", tweet, re.M)
+            nums = [int(x) for x in re.findall(r"\d+", m.group(1))] if m else []
+            text = re.sub(r"^\[images:.*\]\s*$", "", tweet, flags=re.M).strip()
+            if len(text) > X_POST_MAX:
+                err(p, f"post {i} is {len(text)} characters (X max {X_POST_MAX})")
+            if len(nums) > 4:
+                err(p, f"post {i} attaches {len(nums)} images (X max 4)")
+            for n in nums:
+                if not os.path.exists(os.path.join(folder, f"{n}.png")):
+                    err(p, f"post {i} attaches image {n}, but {n}.png does not exist")
+            used += nums
+        if len(re.findall(r"(?<!\w)#\w+", open(p).read())) > 2:
+            warn(p, "more than 2 hashtags — X threads use 0–2")
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "instagram.md")) + \
+             glob.glob(os.path.join(ROOT, "posts", "*", "dailydev.md")) + \
+             glob.glob(os.path.join(ROOT, "posts", "*", "x.md")):
+        if re.search(r"\[(PERSONAL|FACT_CHECK):", open(p).read()):
+            err(p, "has a [PERSONAL]/[FACT_CHECK] marker — platform texts go out as written")
+
+
 def check_visuals():
     theme_path = os.path.join(ROOT, "templates", "theme.css")
     theme = open(theme_path).read()
@@ -360,7 +432,16 @@ def check_visuals():
     if len(hexes) != len(set(h.upper() for h in hexes)):
         err(theme_path, "two pillars share an accent colour")
     cards = glob.glob(os.path.join(ROOT, "templates", "variant-*", "*.html")) + \
-            glob.glob(os.path.join(ROOT, "visuals", "week-*", "*.html"))
+            glob.glob(os.path.join(ROOT, "posts", "*", "src", "*.html"))
+    names = {os.path.basename(f)[:-3] for f in
+             glob.glob(os.path.join(ROOT, "generated", "**", "*.md"), recursive=True)}
+    for src in glob.glob(os.path.join(ROOT, "posts", "*", "src")):
+        post = os.path.basename(os.path.dirname(src))
+        if post not in names:
+            err(src, f"no draft named {post}.md — post folders must match a draft's file name")
+        for f in glob.glob(os.path.join(src, "*.html")):
+            if not re.fullmatch(r"\d+\.html|slide-\d\d\.html|cover\.html", os.path.basename(f)):
+                err(f, "image sources are named 1.html, 2.html …, slide-01.html … or cover.html")
     for f in cards:
         t = open(f).read()
         for href in re.findall(r'href="([^"]+\.css)"', t):
@@ -379,6 +460,8 @@ def check_visuals():
 
 def main():
     check_posts()
+    check_post_text()
+    check_platform_texts()
     check_visuals()
     for w in warnings:
         print("warn   " + w)

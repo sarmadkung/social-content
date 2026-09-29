@@ -49,12 +49,21 @@ FORMAT:    <TEXT | VISUAL>   (TEXT = words only; VISUAL = words + image)
 HEADLINE:  <image headline, 8 words or fewer>          (VISUAL only)
 LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
 SLIDES:    <one line per slide: NN · LAYOUT · headline · what it draws>   (CAROUSEL only)
+VISUALS:   <1 = <section heading> · 2 = <section heading> · rest = text>   (VISUAL, optional)
 STATUS:    <draft | approved | scheduled | published>
 ---
 <post body, ready to paste — no markdown headers, short paragraphs>
 ```
 
 New posts start as `STATUS: draft`. Only the text below `---` goes into LinkedIn.
+
+**VISUALS:** says which sections of the body become images and which stay
+text. Each item names a section by its heading line exactly as it appears in
+the body — or, for paragraphs with no heading, their opening words joined by
+` + ` (`3 = Search: + Traversal: + In-place:`) — in posting order (`1 = …` is `1.png`); `rest = text` closes the line.
+The draft keeps every section in full — the posted text
+(`posts/<post>/post.md`) leaves out the sections listed here and points to the
+images instead.
 
 **Choosing MODE:** the roadmap line in `pillars/` gives each post its mode
 (`#NN Title · MODE · needs #..`). TEACH explains what X is; WHY explains a
@@ -99,6 +108,31 @@ words, and only then say "this is called X". Every post includes a concrete
 example (code, numbers, a text diagram or before/after), a "when not to use it"
 line, and one common mistake with its fix. The full block order lives in
 `prompts/master-content-prompt.md`.
+
+**Keep in mind rule (every pillar):** every post except a QUIZ question has a
+section whose heading starts with `Keep in mind`, then a tail worded for the
+post: `Keep in mind: how to learn DSA without wasting time`, `Keep in mind
+before you add a cache`, `Keep in mind when you ship a RAG feature`, `Keep in
+mind before you hire a developer`. 3–8 short `→` lines (about 60 characters
+each), each a do or a don't with its reason. Examples per pillar are in
+`prompts/master-content-prompt.md`. `validate.py` fails a prepared post
+without it.
+
+**Watch out section (optional):** when the topic has real drawbacks, add a
+section whose heading starts with `Watch out`, worded for the topic: `Watch
+out: what caching breaks`, `Watch out: where RAG fails`, `Watch out: what
+microservices cost you`. 2–5 `→` lines, each `problem → where you see it → how
+to prevent or catch it`. "Keep in mind" is how to do the thing well; "Watch
+out" is what the thing costs even when done well. Skip it when there are no
+real drawbacks. Text or image, decided per post. Examples per pillar are in
+`prompts/master-content-prompt.md`.
+
+**Length:** the draft in `generated/drafts/` is the skeleton — the full
+source that the images and the posted text are made from — so it has no length
+limit. The limit is on `posts/<post>/post.md`, the text that gets posted:
+1,400–2,500 characters, 3,000 max (LinkedIn's cap), and no minimum when the
+post has images. Never cut content from the draft to fit; move a section into
+an image instead.
 
 **Failure scenario rule (Software Engineering):** every concept, tool or
 feature comes with a concrete production scenario showing what breaks without

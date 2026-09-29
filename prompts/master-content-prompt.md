@@ -151,6 +151,45 @@ understand the idea before they see the jargon. Never open with a definition.
   Next                One line teasing the next post in the series.
   Hashtags            3-5.
 
+KEEP IN MIND RULE (every pillar, every mode except a QUIZ question)
+Every post has a section whose heading starts with "Keep in mind", then a
+tail that fits the post: what to watch for when you do this thing.
+  DSA            Keep in mind: how to learn DSA without wasting time
+                 Keep in mind when you reach for two pointers
+  Backend / Web / Mobile   Keep in mind before you add a cache
+                 Keep in mind when you retry a payment call
+  Architecture   Keep in mind when you split a monolith
+  AI engineering Keep in mind when you ship a RAG feature
+  Dev growth     Keep in mind when you ask for a promotion
+  Building       Keep in mind if you build something like this
+  For business   Keep in mind before you hire a developer
+3-8 "→" lines. Each is short (one line, about 60 characters or fewer) and a
+do or a don't with its reason: "Measure before optimising: Big-O ignores
+constants." It can absorb the "Common mistake" block. On VISUAL posts it is a
+good section to turn into an image (list it in VISUALS:).
+
+WATCH OUT SECTION (optional, when the topic has real drawbacks)
+Where "Keep in mind" is how to do the thing well, "Watch out" is what the
+thing itself costs you: its drawbacks, the problems it brings, where it
+breaks, and what to watch so that doesn't happen. Include it whenever the
+topic has real drawbacks (most Software Engineering, Architecture and AI
+posts); skip it when there are none (a personal story, a pure motivation
+post). The heading starts with "Watch out", then a tail for the topic:
+  DSA            Watch out: where hash maps hurt
+  Backend        Watch out: what caching breaks
+  Web            Watch out: when memo makes it slower
+  Mobile         Watch out: what offline sync breaks
+  Architecture   Watch out: what microservices cost you
+  AI engineering Watch out: where RAG fails
+  Dev growth     Watch out: when side projects hurt your career
+  For business   Watch out: the hidden costs of a cheap build
+2-5 "→" lines, each: the problem → where you see it → how to prevent or
+catch it. "Stale data → users see old prices after an update → set a TTL and
+invalidate on write." It is not the SE failure scenario (that is what breaks
+WITHOUT the thing) and not "Common mistake" (that is misusing it) — this is
+what goes wrong even when you use it correctly. Like any section, it goes
+into the text or into an image (list it in VISUALS:), decided per post.
+
 CONCRETE EXAMPLE RULE
 Every post has at least one of: tiny code, a numeric example, a text diagram
 (A → B → C), a before/after comparison. An analogy alone is not enough.
@@ -177,6 +216,7 @@ FORMAT PER POST (output exactly this)
   HEADLINE:  <image headline, 8 words or fewer>   (VISUAL only)
   LAYOUT:    <STATEMENT | GRID | ANATOMY | FLOW | COMPARE | STAT | CAROUSEL>   (VISUAL only)
   SLIDES:    <slide list, one per line>   (CAROUSEL only; see CAROUSEL below)
+  VISUALS:   <1 = <section heading> · 2 = … · rest = text>   (VISUAL, optional: which sections become images)
   STATUS:    draft
   ---
   <post body, ready to paste>
@@ -215,8 +255,12 @@ every level passes the Senior Interest Test)
 Within a pillar, levels should rise over the roadmap, not jump around.
 
 LENGTH
-1,400-2,500 characters for the body. Hard limit 3,000 (LinkedIn's cap).
-If a topic needs more, split it into two posts. CAROUSEL is not a way to
+The draft is the skeleton: the full source for the images and the posted
+text, with no length limit. The limit is on the text that gets posted
+(posts/<post>/post.md): 1,400-2,500 characters, hard limit 3,000 (LinkedIn's
+cap), no minimum when the post has images. Never cut content to fit: move a
+section into an image instead. If it still doesn't fit, split it into two
+posts. CAROUSEL is not a way to
 fit more words: it is only for sequences that pass the CAROUSEL rule.
 
 ACCURACY
@@ -244,12 +288,14 @@ SELF-CHECK BEFORE RETURNING
   1. Could a junior follow the language all the way through?
   2. Senior Interest Test: what would a senior learn here? Name it.
   3. Is every term explained?
-  4. Is the body under 3,000 characters?
+  4. Is the posted text (post.md) under 3,000 characters?
   5. Is the headline 8 words or fewer?
   6. No invented personal facts?
   7. Does the reader meet the idea before the technical term?
   8. Is there a concrete example (code, numbers, diagram, before/after)?
   9. Is there a "when not to" and a common mistake? (TEACH and COMPARE)
+  9a. Is there a "Keep in mind …" section with short do/don't lines?
+  9c. If the topic has real drawbacks, is there a "Watch out …" section?
   9b. SOFTWARE ENGINEERING: does every concept come with a failure scenario
      (what breaks without it) before the reason to adopt it?
  10. Does the post follow its MODE's structure?
@@ -303,3 +349,13 @@ SELF-CHECK BEFORE RETURNING
    A concept on its own does not stick. Each one now comes with a real
    situation where skipping it causes damage (the payment timeout that
    double-charges a customer), so the reader sees why to adopt it.
+13. **Keep in mind rule for every post** (added 2026-09-29). Readers want to
+   know what to watch for, not only what a thing is. Every post now ends its
+   teaching with a "Keep in mind …" section of short do/don't lines, worded
+   for the post's topic. The draft is now the unlimited skeleton; only the
+   posted text (post.md) has a length limit, so content moves into images
+   instead of being cut.
+14. **Watch out section** (added 2026-09-29). Posts explained what a thing
+   is and how to use it, but not what it costs. An optional "Watch out …"
+   section now lists the thing's own drawbacks and what to watch so they
+   don't bite, whenever the topic has them.

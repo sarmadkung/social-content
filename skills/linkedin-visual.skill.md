@@ -266,7 +266,9 @@ Never use the accent as a gradient, and never give one card two accents.
    post may have more than one image when it has more than one idea worth
    drawing — one idea per image.
    Never copy a stat, count or sentence from the post text onto the image; the
-   image shows what words can't, it does not echo them.
+   image shows what words can't, it does not echo them. The reverse holds too: once
+   an image covers a section, that section is cut from the posted text
+   (`posts/<post>/post.md`) — never from the draft, which stays the full source.
 2. The image carries **one** idea. The headline is 8 words or fewer.
 3. Never put a paragraph on an image. If it needs a paragraph, it needs a
    carousel.
@@ -304,6 +306,23 @@ Never use the accent as a gradient, and never give one card two accents.
    document (image posts show as a grid, not a swipe); Instagram gets the
    PNGs as a carousel. Same files, both platforms.
 
+## 5b. Cover rules (daily.dev and link previews)
+
+Every prepared post also gets a cover: `posts/<post>/src/cover.html` →
+`cover.png`, built on `templates/cover/base.css`.
+
+1. Size 1200 × 630 (the Open Graph size). daily.dev publishes no cover size and
+   feeds crop to other shapes, so everything stays inside the frame padding
+   (88px sides, 80px top and bottom) — the base CSS already does this.
+2. Content, and nothing else: series label with brand mark, the post's
+   `HEADLINE:` (accent on the key words via `<em>`), one motif on the right,
+   footer with name lockup left and topic right.
+3. The motif is one small labelled picture of the post's main idea (e.g.
+   "AI writes the code → you spot the O(n²)"). Two or three shapes, plain-word
+   labels. No grids, no stats, no second idea.
+4. Same locked identity as the feed images: ground, ink, one pillar accent.
+5. Check at 300px wide: the headline must read; the motif may blur.
+
 ## 6. Review checklist
 
 Before returning any image, verify each:
@@ -324,7 +343,7 @@ Before returning any image, verify each:
 
 Illustrative only — these describe the template cards in `templates/variant-*/`,
 whose series labels read `· Example`. They are not posts in the queue; real posts
-live in `generated/drafts/` and their cards in `visuals/week-*/`.
+live in `generated/drafts/` and their images in `posts/<post>/` (sources in `posts/<post>/src/`).
 
 **Variant A, problem solving.** Series `DSA SERIES #03`. Headline "Binary search
 is not about *sorted arrays*", the last two words amber. Thirteen cells labelled

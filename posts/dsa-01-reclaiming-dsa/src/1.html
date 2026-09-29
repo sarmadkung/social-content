@@ -1,0 +1,107 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{max-width:19ch;font-size:54px}
+.stage{justify-content:center;padding-top:24px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px 16px;height:212px;display:flex;flex-direction:column}
+.top{display:flex;gap:12px;align-items:baseline;font-family:var(--mono)}
+.no{font-size:15px;color:var(--ink-3)}
+.nm{font-size:20px;color:var(--ink)}
+.cap{font-family:var(--mono);font-size:15px;color:var(--ink-3)}
+svg{flex:1;width:100%;margin:6px 0}
+svg text{font-family:"SF Mono",Menlo,monospace}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Why DSA <em>still matters</em> with AI</h1>
+  <div class="stage">
+    <div class="grid">
+
+      <div class="card">
+        <div class="top"><span class="no">01</span><span class="nm">learn the patterns</span></div>
+        <svg viewBox="0 0 400 110">
+          <g fill="#11141B" stroke="#3A4453" stroke-width="1.5">
+            <rect x="10" y="22" width="46" height="42" rx="6"/><rect x="64" y="22" width="46" height="42" rx="6"/><rect x="118" y="22" width="46" height="42" rx="6"/><rect x="172" y="22" width="46" height="42" rx="6"/><rect x="226" y="22" width="46" height="42" rx="6"/><rect x="280" y="22" width="46" height="42" rx="6"/><rect x="334" y="22" width="46" height="42" rx="6"/>
+          </g>
+          <rect x="112" y="14" width="166" height="58" rx="9" fill="none" stroke="#FFB86B" stroke-width="2"/>
+          <g font-size="15" fill="#9BA6B7" text-anchor="middle"><text x="130" y="100">← shrink</text><text x="262" y="100">grow →</text></g>
+        </svg>
+        <div class="cap">a "new" problem is a known pattern</div>
+      </div>
+
+      <div class="card">
+        <div class="top"><span class="no">02</span><span class="nm">one problem, many ways</span></div>
+        <svg viewBox="0 0 400 110">
+          <text x="4" y="16" font-size="15" fill="#5E6977">Two Sum</text>
+          <g font-size="16">
+            <text x="4" y="46" fill="#9BA6B7">check every pair</text><text x="396" y="46" text-anchor="end" fill="#9BA6B7">O(n²)</text>
+            <text x="4" y="74" fill="#9BA6B7">sort + two pointers</text><text x="396" y="74" text-anchor="end" fill="#9BA6B7">O(n log n)</text>
+            <text x="4" y="102" fill="#FFB86B">one pass + hash map</text><text x="396" y="102" text-anchor="end" fill="#FFB86B">O(n)</text>
+          </g>
+        </svg>
+        <div class="cap">each way, a different trade-off</div>
+      </div>
+
+      <div class="card">
+        <div class="top"><span class="no">03</span><span class="nm">understand existing systems</span></div>
+        <svg viewBox="0 0 400 110">
+          <g font-size="16">
+            <text x="4" y="30" fill="#9BA6B7">LRU cache</text><text x="170" y="30" fill="#FFB86B">hash map + linked list</text>
+            <text x="4" y="64" fill="#9BA6B7">DB index</text><text x="170" y="64" fill="#FFB86B">B-tree</text>
+            <text x="4" y="98" fill="#9BA6B7">scheduler</text><text x="170" y="98" fill="#FFB86B">heap</text>
+          </g>
+          <g stroke="#5E6977" stroke-width="1.5" fill="none">
+            <path d="M112 25 H156"/><path d="M151 20 L156 25 L151 30"/>
+            <path d="M112 59 H156"/><path d="M151 54 L156 59 L151 64"/>
+            <path d="M112 93 H156"/><path d="M151 88 L156 93 L151 98"/>
+          </g>
+        </svg>
+        <div class="cap">the DSA inside tools you use</div>
+      </div>
+
+      <div class="card">
+        <div class="top"><span class="no">04</span><span class="nm">build better systems</span></div>
+        <svg viewBox="0 0 400 110">
+          <g fill="#11141B" stroke="#3A4453" stroke-width="1.5">
+            <rect x="4" y="32" width="112" height="46" rx="8"/><rect x="144" y="32" width="112" height="46" rx="8"/>
+          </g>
+          <rect x="284" y="32" width="112" height="46" rx="8" fill="#11141B" stroke="#FFB86B" stroke-width="1.8"/>
+          <g font-size="16" text-anchor="middle"><text x="60" y="60" fill="#9BA6B7">problem</text><text x="200" y="60" fill="#9BA6B7">pattern</text><text x="340" y="60" fill="#FFB86B">trade-off</text></g>
+          <g stroke="#5E6977" stroke-width="1.5" fill="none"><path d="M118 55 H140"/><path d="M135 50 L140 55 L135 60"/><path d="M258 55 H280"/><path d="M275 50 L280 55 L275 60"/></g>
+        </svg>
+        <div class="cap">same steps, at system scale</div>
+      </div>
+
+      <div class="card">
+        <div class="top"><span class="no">05</span><span class="nm">sharp mind, open doors</span></div>
+        <svg viewBox="0 0 400 110">
+          <g fill="#11141B" stroke="#3A4453" stroke-width="1.5"><rect x="4" y="32" width="170" height="46" rx="8"/></g>
+          <rect x="226" y="32" width="170" height="46" rx="8" fill="#11141B" stroke="#FFB86B" stroke-width="1.8"/>
+          <g font-size="16" text-anchor="middle"><text x="89" y="60" fill="#9BA6B7">daily practice</text><text x="311" y="60" fill="#FFB86B">interview round</text></g>
+          <g stroke="#5E6977" stroke-width="1.5" fill="none"><path d="M178 55 H220"/><path d="M215 50 L220 55 L215 60"/></g>
+        </svg>
+        <div class="cap">many companies still test it</div>
+      </div>
+
+      <div class="card">
+        <div class="top"><span class="no">06</span><span class="nm">AI is built on it</span></div>
+        <svg viewBox="0 0 400 110">
+          <g font-size="16">
+            <text x="4" y="30" fill="#9BA6B7">RAG search</text><text x="200" y="30" fill="#FFB86B">graph search</text>
+            <text x="4" y="64" fill="#9BA6B7">training</text><text x="200" y="64" fill="#FFB86B">graph traversal</text>
+            <text x="4" y="98" fill="#9BA6B7">GPU memory</text><text x="200" y="98" fill="#FFB86B">in-place ops</text>
+          </g>
+          <g stroke="#5E6977" stroke-width="1.5" fill="none">
+            <path d="M130 25 H186"/><path d="M181 20 L186 25 L181 30"/>
+            <path d="M130 59 H186"/><path d="M181 54 L186 59 L181 64"/>
+            <path d="M130 93 H186"/><path d="M181 88 L186 93 L181 98"/>
+          </g>
+        </svg>
+        <div class="cap">details in image 3</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 4</span></div>
+</div></body></html>

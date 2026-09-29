@@ -110,4 +110,5 @@ A post card is not a copy of a template — it *links* to one:
 
 Set `--accent` to the pillar's var and nothing else. Because the card references the
 shared stylesheet, a fix to a variant re-renders every card built on it. `./render.sh`
-renders `templates/` and every `visuals/week-*/` card.
+renders `templates/` and every post image in `posts/*/src/`. A post image lives
+three levels down, so it links `../../../templates/variant-d/base.css`.
