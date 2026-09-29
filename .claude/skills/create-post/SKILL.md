@@ -1,9 +1,9 @@
 ---
 name: create-post
-description: Create one post for every platform — LinkedIn, daily.dev and Instagram — from a series + post number and an optional one-line angle: the draft, the shared images, a daily.dev cover, and each platform's text. Use when the user types /create-post (or the old /linkedin-post), or says "create post", "generate post", "write DSA #18", "generate backend #04", "make post web #05 about ...", or gives a pillar, a number and a line and wants the post.
+description: Create one post for every platform — LinkedIn, daily.dev, Instagram and X — from a series + post number and an optional one-line angle: the draft, the shared images, a daily.dev cover, and each platform's text. Use when the user types /create-post (or the old /linkedin-post), or says "create post", "generate post", "write DSA #18", "generate backend #04", "make post web #05 about ...", or gives a pillar, a number and a line and wants the post.
 ---
 
-# Create a post (LinkedIn, daily.dev, Instagram) from a number and a line
+# Create a post (LinkedIn, daily.dev, Instagram, X) from a number and a line
 
 Turns `<series> #<NN> [keyword] [angle]` into a finished post: the draft in
 `generated/drafts/` **and** a ready-to-post folder `posts/<post>/` holding
@@ -15,6 +15,7 @@ following the repo's content system. Every run ends with both on disk.
 | LinkedIn | `post.md` | `1.png`, `2.png` … (or `carousel.pdf`) |
 | daily.dev | `dailydev.md` | `cover.png` |
 | Instagram | `instagram.md` | `1.png`, `2.png` … as a carousel (or the `slide-NN.png` files) |
+| X | `x.md` (a thread) | up to 4 images per post, as `x.md` says |
 
 The images are made once and reused everywhere; only the text changes per
 platform.
@@ -147,9 +148,19 @@ next unwritten number for that series.
      markdown and links in captions don't click). No unresolved `[PERSONAL]` /
      `[FACT_CHECK]` content. Never overwrite an existing `instagram.md` unless
      the user asks.
+   - **X thread**: write `posts/<post>/x.md` — 3–6 posts separated by a line
+     holding only `---`. Each post is 280 characters or fewer (the free-account
+     limit). Post 1 is the hook and stands alone (most people only see it);
+     the middle posts carry one point each; the last post is the takeaway
+     and the `Next:` line. Put `[images: 1, 2]` on its own line at the end of
+     a post to attach images — at most 4 per post, each image once, usually
+     all on post 1 or spread next to the point they show. 0–2 hashtags in the
+     whole thread, plain text, no markdown. No unresolved `[PERSONAL]` /
+     `[FACT_CHECK]` content. Never overwrite an existing `x.md` unless the
+     user asks.
    - Run `python3 scripts/build_posts.py <draft basename>` again so the index
      counts the images, cover and platform texts.
 10. Reply with: the draft path, the `posts/<post>/` folder and its image(s),
-    `cover.png`, `dailydev.md` and `instagram.md`, the post body, and a list
+    `cover.png`, `dailydev.md`, `instagram.md` and `x.md`, the post body, and a list
     of any `[PERSONAL]` / `[FACT_CHECK]` markers the user must resolve.
     Do not commit.

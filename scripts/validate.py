@@ -371,10 +371,11 @@ def check_post_text():
 
 
 IG_CAPTION_MAX = 2200            # Instagram's caption cap
+X_POST_MAX = 280                 # X free-account post cap
 
 
 def check_platform_texts():
-    """The other platforms' texts in posts/<post>/: Instagram caption length and markers."""
+    """The other platforms' texts in posts/<post>/: Instagram and X limits, markers."""
     for p in glob.glob(os.path.join(ROOT, "posts", "*", "instagram.md")):
         text = open(p).read()
         if len(text) > IG_CAPTION_MAX:
@@ -382,8 +383,26 @@ def check_platform_texts():
         tags = re.findall(r"(?<!\w)#\w+", text)
         if len(tags) > 5:
             warn(p, f"{len(tags)} hashtags — keep 3–5")
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "x.md")):
+        folder = os.path.dirname(p)
+        used = []
+        for i, tweet in enumerate(re.split(r"^---\s*$", open(p).read(), flags=re.M), 1):
+            m = re.search(r"^\[images:\s*([\d,\s]+)\]\s*$", tweet, re.M)
+            nums = [int(x) for x in re.findall(r"\d+", m.group(1))] if m else []
+            text = re.sub(r"^\[images:.*\]\s*$", "", tweet, flags=re.M).strip()
+            if len(text) > X_POST_MAX:
+                err(p, f"post {i} is {len(text)} characters (X max {X_POST_MAX})")
+            if len(nums) > 4:
+                err(p, f"post {i} attaches {len(nums)} images (X max 4)")
+            for n in nums:
+                if not os.path.exists(os.path.join(folder, f"{n}.png")):
+                    err(p, f"post {i} attaches image {n}, but {n}.png does not exist")
+            used += nums
+        if len(re.findall(r"(?<!\w)#\w+", open(p).read())) > 2:
+            warn(p, "more than 2 hashtags — X threads use 0–2")
     for p in glob.glob(os.path.join(ROOT, "posts", "*", "instagram.md")) + \
-             glob.glob(os.path.join(ROOT, "posts", "*", "dailydev.md")):
+             glob.glob(os.path.join(ROOT, "posts", "*", "dailydev.md")) + \
+             glob.glob(os.path.join(ROOT, "posts", "*", "x.md")):
         if re.search(r"\[(PERSONAL|FACT_CHECK):", open(p).read()):
             err(p, "has a [PERSONAL]/[FACT_CHECK] marker — platform texts go out as written")
 
