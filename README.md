@@ -26,6 +26,15 @@ Learn → Build → Solve → Document → Teach → Repurpose → Grow
 | `archive/` | Old versions kept for reference, not in use |
 | `build-bundle.sh` | Rebuild the bundle from `skills/` after editing a skill |
 
+## Related projects
+
+| Repo | Local path | Role |
+| --- | --- | --- |
+| **optimal-lab** | `../optimal-lab` | The [optimallab.dev](https://optimallab.dev) site: interactive visuals for concepts in these posts. A post whose idea teaches better when you can play with it gets a page there, and links to it |
+| **[optimal-round](https://github.com/sarmadkung/optimal-round)** | `../optimal-round` | Hand-solved DSA practice problems; the source for DSA posts and for Optimal Lab's Practice section |
+
+Current visuals: DSA #01 → `optimallab.dev/dsa-01`, AI Engineering #02 → `optimallab.dev/next-token`.
+
 ## Daily flow
 1. Open `posts/README.md` (or `published/queue.md`) and take today's post.
 2. Fill or delete any `[PERSONAL: ...]` line in the draft. Verify each `[FACT_CHECK: ...]` claim (fix or cut it if wrong), then delete the marker. Re-run `python3 scripts/build_queue.py`.
