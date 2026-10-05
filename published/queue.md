@@ -12,7 +12,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 05 Oct | DSA SERIES #01 | Reclaiming DSA in the Age of AI ✎ | PERSONAL | 🖼 visual | draft | [dsa-01-reclaiming-dsa.md](../generated/drafts/dsa/dsa-01-reclaiming-dsa.md) |
-| Tue 06 Oct | AI ENGINEERING #01 | Training vs Inference: Where a Model Learns, Where You Use It 🔎 | TEACH | 🖼 visual | draft | [ai-01-training-vs-inference.md](../generated/drafts/ai-engineering/ai-01-training-vs-inference.md) |
+| Tue 06 Oct | AI ENGINEERING #01 | AI Foundations: From "What Is AI" to Inference 🔎 | TEACH | 🖼 visual | draft | [ai-01-ai-foundations.md](../generated/drafts/ai-engineering/ai-01-ai-foundations.md) |
 | Wed 07 Oct | SOFTWARE ENGINEERING · BACKEND #01 | Postgres vs MongoDB vs DynamoDB: Choose by Access Pattern ✎ 🔎 | COMPARE | 🖼 visual | draft | [be-01-postgres-mongodb-dynamodb.md](../generated/drafts/software-engineering/backend/be-01-postgres-mongodb-dynamodb.md) |
 | Thu 08 Oct | BUILDING | — write: next post from sources/project-log.md — | | | | |
 | Fri 09 Oct | SYSTEM ARCHITECTURE #01 | What System Design Actually Is ✎ 🔎 | TEACH | 🖼 visual | draft | [arch-01-what-is-system-design.md](../generated/drafts/system-architecture/arch-01-what-is-system-design.md) |
