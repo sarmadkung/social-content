@@ -15,7 +15,7 @@ Each line: `#NN Title · MODE · needs <earlier posts>`. Modes are defined in th
 master prompt. Never more than 4 TEACH posts in a row.
 
 ### Foundations
-- #01 Training vs inference: where a model learns, where you use it · TEACH · needs —
+- #01 AI foundations: AI vs ML vs deep learning, what a model is, neural networks, how a model learns, training vs inference (one post, one image per idea) · TEACH · needs —
 - #02 What an LLM actually does (next-token prediction, plainly) · TEACH · needs #01
 - #03 Tokens and context windows · TEACH · needs #02
 - #04 Prompts vs system prompts · COMPARE · needs #03
