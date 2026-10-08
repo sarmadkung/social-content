@@ -4,7 +4,7 @@ PILLAR:    Career & Developer Growth — for engineers and tech leads moving rea
 LEVEL:     INTERMEDIATE
 MODE:      TEACH
 FORMAT:    VISUAL
-HEADLINE:  Agents do the work. You own the gates.
+HEADLINE:  Agents do the work. You make the calls.
 LAYOUT:    FLOW
 VISUALS:   1 = How it works: 8 stages, 6 gates · 2 = Why the early gates matter most · 3 = Example: the spec the agent builds from · 4 = Keep in mind when you build a feature with agents + Watch out: where agent workflows break · rest = text
 STATUS:    draft

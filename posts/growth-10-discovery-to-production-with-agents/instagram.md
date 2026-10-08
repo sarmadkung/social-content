@@ -1,8 +1,8 @@
-Agents do the work. You own the gates.
+Agents do the work. You make the calls.
 
-A feature workflow with coding agents, from discovery to production: 8 stages, and a person signs off at 6 of them.
+Building a feature with coding agents, from idea to production: 8 stages, and you say yes at 6 of them.
 
-The images show who does what at each stage, why a mistake costs less the earlier you catch it, a real spec example, and where the workflow breaks.
+The images show who does what, why a mistake is cheaper the earlier you catch it, a real spec, and what breaks.
 
 Swipe →
 

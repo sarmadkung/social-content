@@ -4,9 +4,9 @@
 .series .brand{margin-left:auto;display:flex;align-items:center;gap:12px}
 .series .brand img{height:28px;display:block}
 .series .brand img:first-child{height:36px}
-h1{font-size:54px;max-width:20ch}
-.code{font-size:21px;justify-content:center}
-.note{margin:0 22px 22px;padding:14px 18px;border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:18px;color:var(--ink-2)}
+h1{font-size:56px;max-width:20ch}
+.code{font-size:25px;justify-content:center}
+.note{margin:0 22px 24px;padding:18px 20px;border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:22px;color:var(--ink-2);text-align:center}
 .note .k{color:var(--accent)}
 </style></head><body>
 <div class="frame">
@@ -14,21 +14,16 @@ h1{font-size:54px;max-width:20ch}
   <h1>The spec is the <em>real prompt</em></h1>
   <div class="win">
     <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-      <span class="file">specs/invoice-csv-export.md</span><span class="tag">gate 2</span></div>
+      <span class="file">spec.md</span><span class="tag">you approve this</span></div>
     <div class="code">
-      <div class="ln"><span class="no">1</span><span class="tx"><span class="k">goal</span>: admins export invoices as CSV</span></div>
-      <div class="ln"><span class="no">2</span><span class="tx"><span class="k">non-goals</span>: PDF, scheduled exports</span></div>
-      <div class="ln"><span class="no">3</span><span class="tx"><span class="k">acceptance</span>:</span></div>
-      <div class="ln"><span class="no">4</span><span class="tx">- date range is 12 months or less</span></div>
-      <div class="ln"><span class="no">5</span><span class="tx">- number, date, customer, amount, …</span></div>
-      <div class="ln hl"><span class="no">6</span><span class="tx">- commas and quotes are escaped</span></div>
-      <div class="ln"><span class="no">7</span><span class="tx">- 50,000 rows stream, not all in memory</span></div>
-      <div class="ln"><span class="no">8</span><span class="tx">- non-admins get 403 Forbidden</span></div>
-      <div class="ln"><span class="no">9</span><span class="tx"><span class="k">edge cases</span>:</span></div>
-      <div class="ln"><span class="no">10</span><span class="tx">- empty range</span></div>
-      <div class="ln"><span class="no">11</span><span class="tx">- dates in the account's time zone</span></div>
+      <div class="ln"><span class="no">1</span><span class="tx"><span class="k">goal</span>: export invoices as CSV</span></div>
+      <div class="ln"><span class="no">2</span><span class="tx"><span class="k">not now</span>: PDF</span></div>
+      <div class="ln"><span class="no">3</span><span class="tx"><span class="k">must</span>:</span></div>
+      <div class="ln hl"><span class="no">4</span><span class="tx">- handle commas in names</span></div>
+      <div class="ln"><span class="no">5</span><span class="tx">- handle 50,000 rows</span></div>
+      <div class="ln"><span class="no">6</span><span class="tx">- only admins can export</span></div>
     </div>
-    <div class="note"><span class="k">each line → one test.</span> line 6 stops "Acme, Inc." from<br>shifting every column to the right.</div>
+    <div class="note"><span class="k">each line becomes a test.</span> line 4 stops the bug.</div>
   </div>
   <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 4</span></div>
 </div></body></html>

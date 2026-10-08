@@ -1,41 +1,36 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
 <style>
 :root{--accent:var(--grow)}
-h1{max-width:20ch;font-size:52px}
-.stage{justify-content:center;padding-top:16px;gap:20px}
-.lbl{font-family:var(--mono);font-size:16px;letter-spacing:.1em;color:var(--ink-3);margin-bottom:10px}
-.dos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.do{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 18px;font-family:var(--mono);font-size:17px;line-height:1.35;color:var(--ink-2)}
-.do b{display:block;font-weight:500;color:var(--accent);font-size:18px;margin-bottom:2px}
-.wo{display:flex;flex-direction:column;gap:8px}
-.w{display:grid;grid-template-columns:230px 1fr 1fr;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 18px;font-family:var(--mono);font-size:16px;line-height:1.35;color:var(--ink-2)}
-.w b{font-weight:500;color:var(--ink);font-size:17px}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:16px;gap:28px}
+.lbl{font-family:var(--mono);font-size:18px;letter-spacing:.1em;color:var(--ink-3);margin-bottom:12px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.do{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 22px;font-family:var(--mono);font-size:22px;color:var(--accent)}
+.wo{display:flex;flex-direction:column;gap:10px}
+.w{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 22px;font-family:var(--mono);font-size:21px;color:var(--ink-2)}
+.w .ar{color:var(--ink-3);text-align:center}
 .w .fx{color:var(--ink)}
-.hd{display:grid;grid-template-columns:230px 1fr 1fr;gap:14px;padding:0 19px 6px;font-family:var(--mono);font-size:14px;letter-spacing:.08em;color:var(--ink-3)}
 </style></head><body>
 <div class="frame">
   <div class="series">Dev Growth #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
-  <h1>Where agent workflows <em>win and break</em></h1>
+  <h1>What helps, <em>what breaks</em></h1>
   <div class="stage">
     <div>
-      <div class="lbl">KEEP IN MIND</div>
+      <div class="lbl">DO THIS</div>
       <div class="dos">
-        <div class="do"><b>spec over prompt</b>more time on the spec than the prompt</div>
-        <div class="do"><b>review the plan</b>cheapest place to fix direction</div>
-        <div class="do"><b>small tasks</b>one task, one reviewable PR</div>
-        <div class="do"><b>one agent per branch</b>or worktree: no shared mess</div>
-        <div class="do"><b>evidence, not "done"</b>test output, screenshots</div>
-        <div class="do"><b>ship behind a flag</b>rollback = a switch, not a deploy</div>
+        <div class="do">write the spec first</div>
+        <div class="do">read the plan</div>
+        <div class="do">small tasks, small PRs</div>
+        <div class="do">ship behind a flag</div>
       </div>
     </div>
     <div>
       <div class="lbl">WATCH OUT</div>
-      <div class="hd"><span>PROBLEM</span><span>WHAT HAPPENS</span><span>PREVENT IT</span></div>
       <div class="wo">
-        <div class="w"><b>vague spec</b><span>agent fills gaps with guesses</span><span class="fx">write non-goals + edge cases</span></div>
-        <div class="w"><b>long sessions</b><span>later steps forget early decisions</span><span class="fx">plan in a file, fresh session per task</span></div>
-        <div class="w"><b>parallel agents</b><span>conflicts, duplicate code</span><span class="fx">split work by area</span></div>
-        <div class="w"><b>review backlog</b><span>PRs pile up faster than reviews</span><span class="fx">limit open PRs per reviewer</span></div>
+        <div class="w"><span>vague spec</span><span class="ar">→</span><span class="fx">write edge cases</span></div>
+        <div class="w"><span>long chats drift</span><span class="ar">→</span><span class="fx">new chat per task</span></div>
+        <div class="w"><span>2 agents, same files</span><span class="ar">→</span><span class="fx">split the work</span></div>
+        <div class="w"><span>too many PRs</span><span class="ar">→</span><span class="fx">limit per reviewer</span></div>
       </div>
     </div>
   </div>

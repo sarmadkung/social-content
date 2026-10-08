@@ -1,36 +1,35 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
 <style>
 :root{--accent:var(--grow)}
-h1{max-width:22ch;font-size:52px}
-.stage{justify-content:center;padding-top:10px}
-.g{display:grid;grid-template-columns:200px 1fr 1fr 74px;column-gap:14px;align-items:center;font-family:var(--mono)}
-.hd{font-size:15px;color:var(--ink-3);letter-spacing:.08em;padding:0 18px 8px}
-.rows{display:flex;flex-direction:column;gap:6px}
-.row{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:0 18px;height:64px}
-.st{display:flex;flex-direction:column;gap:3px}
-.st b{font-weight:500;font-size:20px;color:var(--ink)}
-.st i{font-style:normal;font-size:15px;color:var(--ink-3)}
-.c{font-size:16px;line-height:1.35;color:var(--ink-2)}
-.gate{justify-self:end;font-size:14px;letter-spacing:.08em;color:var(--accent);border:1.5px solid var(--accent);border-radius:6px;padding:4px 8px}
-.row.hero{border-color:color-mix(in srgb,var(--accent) 60%,transparent);box-shadow:inset 3px 0 0 var(--accent)}
-.loop{margin-top:8px;margin-bottom:18px;border:1.5px dashed #2A313C;border-radius:11px;padding:12px 18px;font-family:var(--mono);font-size:16px;color:var(--ink-2)}
+h1{max-width:22ch;font-size:56px}
+.stage{justify-content:center;padding-top:14px}
+.g{display:grid;grid-template-columns:200px 1fr 1fr 40px;column-gap:16px;align-items:center;font-family:var(--mono)}
+.hd{font-size:17px;color:var(--ink-3);letter-spacing:.08em;padding:0 22px 10px}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:0 22px;height:70px}
+.st{font-size:23px;color:var(--ink)}
+.c{font-size:20px;color:var(--ink-2)}
+.you{color:var(--ink)}
+.gate{justify-self:end;width:16px;height:16px;border-radius:50%;background:var(--accent)}
+.key{display:flex;align-items:center;gap:12px;margin:16px 0 22px;font-family:var(--mono);font-size:18px;color:var(--ink-2)}
+.key i{width:16px;height:16px;border-radius:50%;background:var(--accent)}
 </style></head><body>
 <div class="frame">
   <div class="series">Dev Growth #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
-  <h1>Agents do the work. <em>You own the gates.</em></h1>
+  <h1>Agents do the work. <em>You make the calls.</em></h1>
   <div class="stage">
-    <div class="g hd"><span>STAGE · LEAVES</span><span>AGENT DOES</span><span>YOU DECIDE</span><span></span></div>
+    <div class="g hd"><span>STAGE</span><span>AGENT</span><span>YOU</span><span></span></div>
     <div class="rows">
-      <div class="g row"><span class="st"><b>1 discover</b><i>problem.md</i></span><span class="c">groups tickets, finds<br>what already exists</span><span class="c">is it worth<br>solving now?</span><span></span></div>
-      <div class="g row hero"><span class="st"><b>2 spec</b><i>spec.md</i></span><span class="c">drafts it, asks about<br>edge cases</span><span class="c">goal, non-goals,<br>acceptance criteria</span><span class="gate">GATE</span></div>
-      <div class="g row"><span class="st"><b>3 plan</b><i>plan.md</i></span><span class="c">lists files, steps,<br>tests, risks</span><span class="c">right direction?<br>tasks small enough?</span><span class="gate">GATE</span></div>
-      <div class="g row"><span class="st"><b>4 build</b><i>commits + tests</i></span><span class="c">one task at a time,<br>own branch, tests first</span><span class="c">check in between<br>tasks, not every line</span><span></span></div>
-      <div class="g row"><span class="st"><b>5 verify</b><i>test output</i></span><span class="c">runs tests and app,<br>self-reviews vs spec</span><span class="c">see the evidence,<br>not the word "done"</span><span class="gate">GATE</span></div>
-      <div class="g row"><span class="st"><b>6 review</b><i>approved PR</i></span><span class="c">AI reviewer does<br>the line checks</span><span class="c">intent, scope,<br>tests, risk</span><span class="gate">GATE</span></div>
-      <div class="g row"><span class="st"><b>7 ship</b><i>feature flag</i></span><span class="c">merges behind a flag</span><span class="c">5% → 25% → 100%,<br>one step at a time</span><span class="gate">GATE</span></div>
-      <div class="g row"><span class="st"><b>8 watch</b><i>metrics, logs</i></span><span class="c">reads errors, drafts<br>a fix or rollback</span><span class="c">roll back,<br>fix, or keep going</span><span class="gate">GATE</span></div>
+      <div class="g row"><span class="st">1 discover</span><span class="c">finds the problem</span><span class="c you">worth doing?</span><span></span></div>
+      <div class="g row"><span class="st">2 spec</span><span class="c">writes a draft</span><span class="c you">approve it</span><span class="gate"></span></div>
+      <div class="g row"><span class="st">3 plan</span><span class="c">lists the steps</span><span class="c you">approve it</span><span class="gate"></span></div>
+      <div class="g row"><span class="st">4 build</span><span class="c">code + tests</span><span class="c you">check in</span><span></span></div>
+      <div class="g row"><span class="st">5 verify</span><span class="c">runs the tests</span><span class="c you">see the proof</span><span class="gate"></span></div>
+      <div class="g row"><span class="st">6 review</span><span class="c">first pass</span><span class="c you">final pass</span><span class="gate"></span></div>
+      <div class="g row"><span class="st">7 ship</span><span class="c">merges it</span><span class="c you">5% → 100%</span><span class="gate"></span></div>
+      <div class="g row"><span class="st">8 watch</span><span class="c">reads errors</span><span class="c you">fix or undo</span><span class="gate"></span></div>
     </div>
-    <div class="loop">↺ what you learn in watch feeds the next discover</div>
+    <div class="key"><i></i>you must say yes before the next stage</div>
   </div>
   <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 4</span></div>
 </div></body></html>

@@ -4,33 +4,28 @@
 .series .brand{margin-left:auto;display:flex;align-items:center;gap:12px}
 .series .brand img{height:28px;display:block}
 .series .brand img:first-child{height:36px}
-h1{font-size:54px;max-width:20ch}
-.code{font-size:21px;justify-content:center}
-.ci{display:flex;align-items:center;gap:14px;margin:0 28px;padding:14px 18px;border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:19px;color:var(--ink-2)}
+h1{font-size:56px;max-width:20ch}
+.code{font-size:25px;justify-content:center}
+.say{margin:0 28px 26px;font-family:var(--mono);font-size:22px;color:var(--ink-2);text-align:center}
+.ci{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 28px 26px}
+.ci span{padding:20px;border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:23px;text-align:center}
 .ci .ok{color:var(--add)}
-.ci .bad{margin-left:auto;color:var(--accent)}
+.ci .bad{color:var(--accent);border-color:var(--accent)}
 </style></head><body>
 <div class="frame">
   <div class="series">Dev Growth #09<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
-  <h1>Green CI. <em>The bug is still there.</em></h1>
+  <h1>Tests pass. <em>The bug is still there.</em></h1>
   <div class="win">
     <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
       <span class="file">cart.test.ts</span><span class="tag">the agent's "fix"</span></div>
     <div class="code term">
       <div class="ln"><span class="tx">  it("adds 8% tax", () =&gt; {</span></div>
-      <div class="ln out"><span class="tx"><span class="s">-   expect(total(cart)).toBe(108.00)</span></span></div>
-      <div class="ln add"><span class="tx">+   expect(total(cart)).toBe(107.99)</span></div>
+      <div class="ln out"><span class="tx"><span class="s">-   expect(total).toBe(108.00)</span></span></div>
+      <div class="ln add"><span class="tx">+   expect(total).toBe(107.99)</span></div>
       <div class="ln"><span class="tx">  })</span></div>
-      <div class="ln"><span class="tx">&nbsp;</span></div>
-      <div class="ln"><span class="tx"><span class="dim">// the code diff looks fine. only this file shows it.</span></span></div>
-      <div class="ln"><span class="tx">&nbsp;</span></div>
-      <div class="ln"><span class="tx"><span class="k">red flags in a test diff</span></span></div>
-      <div class="ln"><span class="tx">→ an expected value changed to match the output</span></div>
-      <div class="ln"><span class="tx">→ an assert deleted, or .skip / .only added</span></div>
-      <div class="ln"><span class="tx">→ a mock replacing the thing under test</span></div>
-      <div class="ln"><span class="tx">→ a snapshot updated with no reason given</span></div>
     </div>
-    <div class="ci" style="margin-bottom:22px"><span class="ok">✓ checks passed</span><span class="bad">rounding bug: now protected by a test</span></div>
+    <div class="say">it changed the test, not the code</div>
+    <div class="ci"><span class="ok">✓ tests pass</span><span class="bad">✗ bug still there</span></div>
   </div>
   <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 3</span></div>
 </div></body></html>

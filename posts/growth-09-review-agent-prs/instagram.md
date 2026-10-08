@@ -1,8 +1,8 @@
-The agent wrote the code. You still own it.
+The agent wrote it. You still own it.
 
-Agent PRs come in big, green and fast. Review isn't about the agent being worse at code. It's about ownership, context only people have, and keeping a codebase your team understands.
+Agent PRs come in big, green and fast. We don't review because the agent writes bad code. We review because you're on call for it, you know things it doesn't, and your team has to understand its own code.
 
-The images show why review stays, the 7 checks in order, and the one most people skip: the test diff.
+The images show why, the 7 checks in order, and the one most people skip: the test change.
 
 Swipe →
 

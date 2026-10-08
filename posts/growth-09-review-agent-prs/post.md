@@ -1,37 +1,47 @@
 > ⚠ NOT READY — resolve these, then delete this block:
-> - [PERSONAL: one agent PR you sent back, and what the review caught: a changed test, scope creep, a missed edge case]
+> - [PERSONAL: one agent PR you sent back, and what the review caught: a changed test, extra changes, a missed edge case]
 
 ---
 
-An agent opens a pull request. 38 files, +1,600 lines, every check green, a tidy summary that says "all tests pass". It took the agent 12 minutes. Reading it properly takes an hour.
+An agent opens a pull request. 38 files, 1,600 new lines, all checks green. The summary says "all tests pass". The agent wrote it in 12 minutes. Reading it properly takes an hour.
 
-So the tempting move is a skim and an approve. That is where teams get hurt.
+So it's tempting to skim it and click approve. That is where teams get hurt.
 
-Review is not about the agent being worse at code. Why we still review, the 7 checks I run in order, and the one most people skip (the test diff): it's all in the images.
+We don't review because the agent writes bad code. We review because:
+→ You are on call for it, not the agent.
+→ You know things the agent doesn't: plans, users, rules.
+→ Your team has to understand its own code.
+→ "Tests pass" can mean the agent changed the test, not the code.
+
+The images show the 7 checks I do, in order, and the one most people skip.
+
+Red flags in a test change
+→ An expected value changed to match the new output.
+→ A check deleted, or a test skipped.
+→ A mock that replaces the very thing being tested.
 
 Split the work with an AI reviewer
-→ AI reviewer, first pass: typos, null checks, unused code, obvious bugs, style.
-→ You, second pass: intent, scope, tests, risk, fit.
-Neither pass replaces the other. Together they are fast and still careful.
+→ AI reviewer first: typos, null checks, unused code, obvious bugs.
+→ You second: does it do what the ticket asked, and is it safe?
+One does not replace the other.
 
-[PERSONAL: one agent PR you sent back, and what the review caught: a changed test, scope creep, a missed edge case]
+[PERSONAL: one agent PR you sent back, and what the review caught: a changed test, extra changes, a missed edge case]
 
 Keep in mind when you review an agent's PR
-→ Read the ticket before the diff: intent first.
-→ Review the tests first: a changed assert can hide a bug.
-→ Big PR? Ask for smaller ones. Size hides problems.
-→ Run it yourself: "all tests pass" is a claim.
-→ Let an AI reviewer do the line checks; you check intent.
+→ Read the ticket before the code.
+→ Read the tests before the code.
+→ PR too big? Ask for smaller ones.
+→ Run it yourself. "Done" is not proof.
 → Don't approve a line you can't explain.
 
-Watch out: what reviewing agent PRs costs
-→ Review fatigue → agents open PRs faster than you can read them → cap PR size and how many agent PRs are open per reviewer.
-→ Green CI as proof → the same agent wrote the code and the tests → write or agree the acceptance tests before the agent starts.
-→ Skim approvals → "it's probably fine" becomes the habit → make "I ran it" part of every approval.
+Watch out
+→ Too many PRs to read → set a limit of open agent PRs per reviewer.
+→ The agent wrote the code and the tests → agree on the tests before it starts.
+→ "It's probably fine" becomes a habit → only approve what you ran.
 
 Takeaway
-The agent can write the code. Only your team can own it. Review is how you take ownership.
+The agent can write the code. Only your team can own it. Review is how you own it.
 
-Next: the whole workflow, from feature discovery to production, with agents.
+Next: the full workflow, from idea to production, with agents.
 
 #CodeReview #AIEngineering #SoftwareEngineering #DeveloperGrowth #AIAgents

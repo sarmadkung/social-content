@@ -1,30 +1,30 @@
-"Add CSV export for invoices." An agent ships it in 20 minutes.
+"Add CSV export for invoices." An agent builds it in 20 minutes.
 
-Then "Acme, Inc." downloads their file, and every column after the comma shifts right.
+Then "Acme, Inc." downloads their file, and every column after the comma moves right.
 
 The agent did what it was told. The problem is what it wasn't told. A workflow that fixes this:
 ---
 8 stages: discover, spec, plan, build, verify, review, ship, watch.
 
-The agent does the work inside each stage. You sign off at the gates between them. Each stage leaves a file, so the agent's memory is the repo, not the chat.
+The agent does the work in each stage. You say yes before the next one. Each stage leaves a file, so the agent remembers through the repo, not the chat.
 [images: 1]
 ---
-Why the early gates matter. The same wrong guess costs:
-→ spec: one line
-→ plan: one step
-→ PR: a rework
-→ production: a rollback + telling customers
+Why the early checks matter. The same wrong guess costs:
+→ in the spec: 1 line
+→ in the plan: 1 step
+→ in the PR: redo the code
+→ in production: undo + tell customers
 [images: 2]
 ---
-The spec is the real prompt. Goal, non-goals, acceptance criteria, edge cases. Each line becomes a test.
+The spec is the real prompt. Goal, what's not in scope, what it must do. Each line becomes a test.
 
-"commas and quotes are escaped" would have stopped the Acme bug.
+"handle commas in names" would have stopped the Acme bug.
 [images: 3]
 ---
-Where it breaks: vague specs, long sessions that drift, parallel agents on the same files, and review backlogs.
+What breaks: vague specs, long chats that drift, two agents on the same files, and too many PRs to review.
 [images: 4]
 ---
-Agents made code cheap. Deciding what to build, and checking it's right, is still the job. Put your time at the gates.
+Agents made code cheap. Deciding what to build, and checking it's right, is still your job.
 
 Next: how to break a problem down before you code.
 
