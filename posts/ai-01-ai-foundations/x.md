@@ -3,7 +3,7 @@ You correct a chat model. Tomorrow, in a new chat, it makes the same mistake.
 It didn't forget. It never learned.
 
 5 ideas under every AI system explain why 🧵
-[images: 1, 2]
+[images: 0, 1, 2]
 ---
 A model is a function with learned numbers inside it.
 

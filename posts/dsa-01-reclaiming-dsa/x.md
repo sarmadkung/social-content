@@ -1,7 +1,7 @@
 AI writes more code every month. I still spent two weeks revisiting DSA.
 
 Not to memorise answers. To get sharp at problem solving again. Here's why it still matters 🧵
-[images: 1]
+[images: 0, 1]
 ---
 Patterns. After enough sliding-window problems, a "new" problem is one you already know: a window that grows and shrinks.
 

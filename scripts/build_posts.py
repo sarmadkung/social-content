@@ -15,6 +15,7 @@ post.md — delete it to start again from the draft. If the text still has
 if the draft was edited after post.md, the index says so.
 
 Images live next to it and are made by render.sh from posts/<post>/src/:
+  src/0.html                     → 0.png            (feed cover, posts with 3+ images)
   src/1.html, src/2.html …       → 1.png, 2.png …   (feed images, posting order)
   src/slide-01.html …            → slide-01.png … + carousel.pdf
   src/cover.html                 → cover.png        (1200x630, daily.dev cover)

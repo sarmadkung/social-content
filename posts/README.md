@@ -9,7 +9,7 @@ Edit the draft in `generated/drafts/`, never `post.md`.
 
 | Date | Series | Title | Status | Images | Also for | Ready | Folder |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Tue 13 Oct | AI ENGINEERING #01 | AI Foundations: From "What Is AI" to Inference | draft | 5 + cover | daily.dev · Instagram · X · Blog | ✅ ready | [ai-01-ai-foundations/](ai-01-ai-foundations/) |
-| Wed 06 Jan | DEV GROWTH #09 | How to Review a PR an AI Agent Wrote (and Why You Still Must) | draft | 3 + cover | daily.dev · Instagram · X | 1 marker | [growth-09-review-agent-prs/](growth-09-review-agent-prs/) |
-| Fri 15 Jan | DEV GROWTH #10 | From Discovery to Production: A Feature Workflow With Agents | draft | 4 + cover | daily.dev · Instagram · X | 1 marker | [growth-10-discovery-to-production-with-agents/](growth-10-discovery-to-production-with-agents/) |
-|  | DSA SERIES #01 | Reclaiming DSA in the Age of AI | published | 4 + cover | daily.dev · Instagram · X | draft changed since post.md, 1 marker | [dsa-01-reclaiming-dsa/](dsa-01-reclaiming-dsa/) |
+| Tue 13 Oct | AI ENGINEERING #01 | AI Foundations: From "What Is AI" to Inference | draft | 6 + cover | daily.dev · Instagram · X · Blog | ✅ ready | [ai-01-ai-foundations/](ai-01-ai-foundations/) |
+| Wed 06 Jan | DEV GROWTH #09 | How to Review a PR an AI Agent Wrote (and Why You Still Must) | draft | 4 + cover | daily.dev · Instagram · X | 1 marker | [growth-09-review-agent-prs/](growth-09-review-agent-prs/) |
+| Fri 15 Jan | DEV GROWTH #10 | From Discovery to Production: A Feature Workflow With Agents | draft | 5 + cover | daily.dev · Instagram · X | 1 marker | [growth-10-discovery-to-production-with-agents/](growth-10-discovery-to-production-with-agents/) |
+|  | DSA SERIES #01 | Reclaiming DSA in the Age of AI | published | 5 + cover | daily.dev · Instagram · X | draft changed since post.md, 1 marker | [dsa-01-reclaiming-dsa/](dsa-01-reclaiming-dsa/) |
