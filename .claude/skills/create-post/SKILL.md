@@ -185,11 +185,17 @@ next unwritten number for that series.
      trimmed `post.md`): the hook as the opening paragraph, each draft section
      as a `##` heading with its content written as prose and lists, and each
      image placed inline under the section it shows (`![<what the image
-     shows>](1.png)`). This is where the detail the social limits cut goes
-     back in: the full failure scenario, comparisons as Markdown tables, short
-     code examples where they help, and the `Keep in mind` / `Watch out`
-     sections in full. Every claim must already be in the draft or be common,
-     checkable knowledge — no new numbers, dates or versions. 600–2000 words.
+     shows>](1.png)`). **Easy to understand comes first; aim for a 1–5 minute
+     read (220–1100 words; the blog shows "N min read" from the word count
+     at 220 words a minute).** Plain words and short sentences; one simple
+     example per idea, the same one the images use; define a term once, in
+     a few words, when it first appears. Let the images carry the detail.
+     Leave out what the reader doesn't need to get the idea: side topics,
+     history, extra techniques, long glossaries, repeated points. The length
+     is a guide, not a cap: if a topic needs 7 minutes to explain properly,
+     write 7 minutes — never cut something the learner needs just to fit. Every claim must
+     already be in the draft or be common, checkable knowledge — no new
+     numbers, dates or versions.
      If `lab:` is set, add a line linking to the interactive version. End with a
      `## Next in the series` line naming the next post. No hashtags, no
      `→` arrows (use `-` lists), no unresolved `[PERSONAL]` / `[FACT_CHECK]`

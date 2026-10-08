@@ -409,7 +409,7 @@ def check_platform_texts():
 
 
 BLOG_KEYS = ("title", "description", "date", "series", "seriesNumber", "slug", "tags", "cover")
-BLOG_WORDS = (600, 2000)
+BLOG_WORDS = (220, 1100)    # a 1–5 minute read at 220 words a minute (a guide: longer is fine if needed)
 
 
 def check_blog():
@@ -439,7 +439,7 @@ def check_blog():
                 err(p, f"links {img}, but it does not exist in the folder")
         words = len(re.findall(r"\w+", body))
         if not BLOG_WORDS[0] <= words <= BLOG_WORDS[1]:
-            warn(p, f"{words} words (target {BLOG_WORDS[0]}–{BLOG_WORDS[1]})")
+            warn(p, f"{words} words, about {max(1, round(words / 220))} min read (target {BLOG_WORDS[0]}–{BLOG_WORDS[1]}: 1–5 min; fine if the extra is needed to explain it)")
         if re.search(r"(?<![\w#(])#[A-Za-z]\w*", re.sub(r"```.*?```", "", body, flags=re.S)):
             warn(p, "has hashtags — the blog uses front-matter tags instead")
 
