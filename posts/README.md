@@ -5,8 +5,10 @@ Each folder holds `post.md` (the text to paste) and the images to attach, in ord
 plus `dailydev.md` + `cover.png` (daily.dev), `instagram.md` (Instagram) and `x.md` (X thread), same images.
 Edit the draft in `generated/drafts/`, never `post.md`.
 
-**1 post prepared · 0 ready to post · 60 more drafts not prepared yet** (prepare one with `/create-post <series> <NN>`)
+**3 posts prepared · 0 ready to post · 60 more drafts not prepared yet** (prepare one with `/create-post <series> <NN>`)
 
 | Date | Series | Title | Status | Images | Also for | Ready | Folder |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Mon 05 Oct | DSA SERIES #01 | Reclaiming DSA in the Age of AI | draft | 4 + cover | daily.dev · Instagram · X | 1 marker | [dsa-01-reclaiming-dsa/](dsa-01-reclaiming-dsa/) |
+| Mon 12 Oct | DSA SERIES #01 | Reclaiming DSA in the Age of AI | draft | 4 + cover | daily.dev · Instagram · X | 1 marker | [dsa-01-reclaiming-dsa/](dsa-01-reclaiming-dsa/) |
+| Wed 06 Jan | DEV GROWTH #09 | How to Review a PR an AI Agent Wrote (and Why You Still Must) | draft | 3 + cover | daily.dev · Instagram · X | 1 marker | [growth-09-review-agent-prs/](growth-09-review-agent-prs/) |
+| Fri 15 Jan | DEV GROWTH #10 | From Discovery to Production: A Feature Workflow With Agents | draft | 4 + cover | daily.dev · Instagram · X | 1 marker | [growth-10-discovery-to-production-with-agents/](growth-10-discovery-to-production-with-agents/) |

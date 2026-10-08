@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:54px}
+.stage{justify-content:center;padding-top:22px}
+.rows{display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:48px 300px 1fr;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:0 22px;height:76px;font-family:var(--mono)}
+.row .no{font-size:16px;color:var(--ink-3)}
+.row .nm{font-size:22px;color:var(--ink)}
+.row .lk{font-size:17px;line-height:1.4;color:var(--ink-2)}
+.row.hero{border-color:color-mix(in srgb,var(--accent) 60%,transparent);box-shadow:inset 3px 0 0 var(--accent)}
+.row.hero .nm,.row.hero .no{color:var(--accent)}
+.lab{display:grid;grid-template-columns:48px 300px 1fr;padding:0 23px 2px;font-family:var(--mono);font-size:15px;color:var(--ink-3);letter-spacing:.06em}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #09<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Review in this order: <em>intent first</em></h1>
+  <div class="stage">
+    <div class="lab"><span></span><span>CHECK</span><span>LOOK FOR</span></div>
+    <div class="rows">
+      <div class="row hero"><span class="no">01</span><span class="nm">intent</span><span class="lk">read the ticket first. does the PR do<br>that: no more, no less?</span></div>
+      <div class="row"><span class="no">02</span><span class="nm">scope</span><span class="lk">config, CI, lockfiles, "while I was<br>here" refactors → separate PR</span></div>
+      <div class="row"><span class="no">03</span><span class="nm">tests before code</span><span class="lk">read the test diff first, and hardest</span></div>
+      <div class="row"><span class="no">04</span><span class="nm">risky paths</span><span class="lk">auth, payments, deletes, migrations,<br>retries, logged user data</span></div>
+      <div class="row"><span class="no">05</span><span class="nm">fit</span><span class="lk">new dependency? helper written twice?<br>a pattern the team doesn't use?</span></div>
+      <div class="row"><span class="no">06</span><span class="nm">run it yourself</span><span class="lk">the PR summary is a claim, not proof</span></div>
+      <div class="row"><span class="no">07</span><span class="nm">can you explain it?</span><span class="lk">no → ask why, or ask for a smaller PR</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 3</span></div>
+</div></body></html>

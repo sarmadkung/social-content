@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:10px}
+.guess{font-family:var(--mono);font-size:19px;color:var(--ink-2);margin-bottom:26px}
+.guess b{font-weight:500;color:var(--ink)}
+.rows{display:flex;flex-direction:column;gap:18px}
+.row{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:20px;font-family:var(--mono)}
+.where{font-size:20px;color:var(--ink-2);text-align:right}
+.bar{height:116px;border-radius:12px;background:var(--panel);border:1.5px solid #3A4453;display:flex;flex-direction:column;justify-content:center;padding:0 22px;gap:4px}
+.bar .fix{font-size:19px;color:var(--ink)}
+.bar .sz{font-size:15px;color:var(--ink-3)}
+.row.hero .bar{border-color:var(--accent);border-width:2px}
+.row.hero .fix,.row.hero .where{color:var(--accent)}
+.axis{display:grid;grid-template-columns:190px 1fr;gap:20px;margin-top:14px;font-family:var(--mono);font-size:15px;color:var(--ink-3)}
+.axis .sc{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:8px}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Catch it in the spec, <em>not in production</em></h1>
+  <div class="stage">
+    <div class="guess">one wrong guess: <b>"customer names never contain commas"</b></div>
+    <div class="rows">
+      <div class="row hero"><span class="where">caught in<br>the spec</span><div class="bar" style="width:34%"><span class="fix">add one line</span><span class="sz">no code yet</span></div></div>
+      <div class="row"><span class="where">caught in<br>the plan</span><div class="bar" style="width:50%"><span class="fix">change one step</span><span class="sz">still no code</span></div></div>
+      <div class="row"><span class="where">caught in<br>the PR</span><div class="bar" style="width:74%"><span class="fix">rework the export + its tests</span><span class="sz">code written, reviewed, redone</span></div></div>
+      <div class="row"><span class="where">caught in<br>production</span><div class="bar" style="width:100%"><span class="fix">roll back, fix, tell customers</span><span class="sz">their files were already wrong</span></div></div>
+    </div>
+    <div class="axis"><span></span><div class="sc"><span>cheap to fix</span><span>expensive to fix →</span></div></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 4</span></div>
+</div></body></html>
