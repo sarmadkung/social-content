@@ -402,9 +402,46 @@ def check_platform_texts():
             warn(p, "more than 2 hashtags — X threads use 0–2")
     for p in glob.glob(os.path.join(ROOT, "posts", "*", "instagram.md")) + \
              glob.glob(os.path.join(ROOT, "posts", "*", "dailydev.md")) + \
-             glob.glob(os.path.join(ROOT, "posts", "*", "x.md")):
+             glob.glob(os.path.join(ROOT, "posts", "*", "x.md")) + \
+             glob.glob(os.path.join(ROOT, "posts", "*", "blog.md")):
         if re.search(r"\[(PERSONAL|FACT_CHECK):", open(p).read()):
             err(p, "has a [PERSONAL]/[FACT_CHECK] marker — platform texts go out as written")
+
+
+BLOG_KEYS = ("title", "description", "date", "series", "seriesNumber", "slug", "tags", "cover")
+BLOG_WORDS = (600, 2000)
+
+
+def check_blog():
+    """posts/<post>/blog.md: front-matter, image links, length, no social leftovers."""
+    for p in glob.glob(os.path.join(ROOT, "posts", "*", "blog.md")):
+        folder = os.path.dirname(p)
+        text = open(p).read()
+        m = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
+        if not m:
+            err(p, "no YAML front-matter (--- ... ---) at the top")
+            continue
+        front = dict(re.findall(r"^(\w+):\s*(.*)$", m.group(1), re.M))
+        body = m.group(2)
+        for key in BLOG_KEYS:
+            if not front.get(key, "").strip():
+                err(p, f"front-matter is missing {key}")
+        if len(front.get("title", "").strip('"')) > 70:
+            warn(p, "title over 70 characters")
+        if len(front.get("description", "").strip('"')) > 160:
+            warn(p, "description over 160 characters (search results cut it)")
+        if front.get("slug") and front["slug"] != os.path.basename(folder):
+            err(p, f"slug {front['slug']} does not match the folder {os.path.basename(folder)}")
+        if front.get("date") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", front["date"]):
+            err(p, "date must be YYYY-MM-DD")
+        for img in re.findall(r"!\[[^\]]*\]\(([^)\s]+)\)", body) + [front.get("cover", "")]:
+            if img and not img.startswith("http") and not os.path.exists(os.path.join(folder, img)):
+                err(p, f"links {img}, but it does not exist in the folder")
+        words = len(re.findall(r"\w+", body))
+        if not BLOG_WORDS[0] <= words <= BLOG_WORDS[1]:
+            warn(p, f"{words} words (target {BLOG_WORDS[0]}–{BLOG_WORDS[1]})")
+        if re.search(r"(?<![\w#(])#[A-Za-z]\w*", re.sub(r"```.*?```", "", body, flags=re.S)):
+            warn(p, "has hashtags — the blog uses front-matter tags instead")
 
 
 def check_visuals():
@@ -462,6 +499,7 @@ def main():
     check_posts()
     check_post_text()
     check_platform_texts()
+    check_blog()
     check_visuals()
     for w in warnings:
         print("warn   " + w)
