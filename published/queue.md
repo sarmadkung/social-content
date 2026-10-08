@@ -11,7 +11,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 12 Oct | DSA SERIES #01 | Reclaiming DSA in the Age of AI ✎ | PERSONAL | 🖼 visual | draft | [dsa-01-reclaiming-dsa.md](../generated/drafts/dsa/dsa-01-reclaiming-dsa.md) |
+| Mon 12 Oct | DSA SERIES #02 | Big-O in Plain English ✎ | TEACH | 🖼 visual | draft | [dsa-02-big-o-plain-english.md](../generated/drafts/dsa/dsa-02-big-o-plain-english.md) |
 | Tue 13 Oct | AI ENGINEERING #01 | AI Foundations: From "What Is AI" to Inference 🔎 | TEACH | 🖼 visual | draft | [ai-01-ai-foundations.md](../generated/drafts/ai-engineering/ai-01-ai-foundations.md) |
 | Wed 14 Oct | SOFTWARE ENGINEERING · BACKEND #01 | Postgres vs MongoDB vs DynamoDB: Choose by Access Pattern ✎ 🔎 | COMPARE | 🖼 visual | draft | [be-01-postgres-mongodb-dynamodb.md](../generated/drafts/software-engineering/backend/be-01-postgres-mongodb-dynamodb.md) |
 | Thu 15 Oct | BUILDING | — write: next post from sources/project-log.md — | | | | |
@@ -23,7 +23,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 19 Oct | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Tue 20 Oct | DEV GROWTH #01 | Junior vs Mid vs Senior: What Actually Changes ✎ | COMPARE | 🖼 visual | draft | [growth-01-junior-mid-senior.md](../generated/drafts/dev-growth/growth-01-junior-mid-senior.md) |
-| Wed 21 Oct | DSA SERIES #02 | Big-O in Plain English ✎ | TEACH | 🖼 visual | draft | [dsa-02-big-o-plain-english.md](../generated/drafts/dsa/dsa-02-big-o-plain-english.md) |
+| Wed 21 Oct | DSA SERIES #03 | Arrays: Why Index Access Is O(1) but Insert Is O(n) | WHY | 🖼 visual | draft | [dsa-03-arrays.md](../generated/drafts/dsa/dsa-03-arrays.md) |
 | Thu 22 Oct | AI ENGINEERING #02 | What an LLM Actually Does ✎ 🔎 | TEACH | 🖼 visual | draft | [ai-02-what-an-llm-does.md](../generated/drafts/ai-engineering/ai-02-what-an-llm-does.md) |
 | Fri 23 Oct | SOFTWARE ENGINEERING · WEB #01 | Next.js vs React Router 7 vs Astro ✎ 🔎 | COMPARE | 🖼 visual | draft | [web-01-nextjs-react-router-astro.md](../generated/drafts/software-engineering/web/web-01-nextjs-react-router-astro.md) |
 
@@ -35,7 +35,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Tue 27 Oct | SYSTEM ARCHITECTURE #02 | Requirements First: Functional vs Non-Functional ✎ | TEACH | 🖼 visual | draft | [arch-02-functional-vs-non-functional-requirements.md](../generated/drafts/system-architecture/arch-02-functional-vs-non-functional-requirements.md) |
 | Wed 28 Oct | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Thu 29 Oct | DEV GROWTH #02 | How to Learn a New Technology Fast ✎ | TEACH | 🖼 visual | draft | [growth-02-learn-new-tech-fast.md](../generated/drafts/dev-growth/growth-02-learn-new-tech-fast.md) |
-| Fri 30 Oct | DSA SERIES #03 | Arrays: Why Index Access Is O(1) but Insert Is O(n) | WHY | 🖼 visual | draft | [dsa-03-arrays.md](../generated/drafts/dsa/dsa-03-arrays.md) |
+| Fri 30 Oct | DSA SERIES #04 | Why Building Strings in a Loop Can Quietly Become O(n²) 🔎 | TEACH | 🖼 visual | draft | [dsa-04-string-building-cost.md](../generated/drafts/dsa/dsa-04-string-building-cost.md) |
 
 ## Week 4 — from Mon 02 Nov 2026
 
@@ -52,7 +52,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 09 Nov | DEV GROWTH #03 | How to Read an Unfamiliar Codebase ✎ | TEACH | 🖼 visual | draft | [growth-03-read-unfamiliar-codebase.md](../generated/drafts/dev-growth/growth-03-read-unfamiliar-codebase.md) |
-| Tue 10 Nov | DSA SERIES #04 | Why Building Strings in a Loop Can Quietly Become O(n²) 🔎 | TEACH | 🖼 visual | draft | [dsa-04-string-building-cost.md](../generated/drafts/dsa/dsa-04-string-building-cost.md) |
+| Tue 10 Nov | DSA SERIES #05 | Why a Hash Map Lookup Is O(1) — and When It Isn't 🔎 | WHY | 🖼 visual | draft | [dsa-05-hash-map-o1.md](../generated/drafts/dsa/dsa-05-hash-map-o1.md) |
 | Wed 11 Nov | AI ENGINEERING #04 | Prompts vs System Prompts 🔎 | COMPARE | 🖼 visual | draft | [ai-04-prompts-vs-system-prompts.md](../generated/drafts/ai-engineering/ai-04-prompts-vs-system-prompts.md) |
 | Thu 12 Nov | SOFTWARE ENGINEERING · BACKEND #02 | Node vs Go vs Python (FastAPI) for API Services 🔎 | COMPARE | 🖼 visual | draft | [be-02-node-go-python.md](../generated/drafts/software-engineering/backend/be-02-node-go-python.md) |
 | Fri 13 Nov | BUILDING | — write: next post from sources/project-log.md — | | | | |
@@ -64,7 +64,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Mon 16 Nov | SYSTEM ARCHITECTURE #04 | Back-of-the-Envelope Estimation: A Photo App in Five Minutes ✎ 🔎 | SCENARIO | 🎞 carousel (8 slides) | draft | [arch-04-back-of-the-envelope-estimation.md](../generated/drafts/system-architecture/arch-04-back-of-the-envelope-estimation.md) |
 | Tue 17 Nov | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Wed 18 Nov | DEV GROWTH #04 | How to Debug Systematically ✎ | TEACH | 🖼 visual | draft | [growth-04-debug-systematically.md](../generated/drafts/dev-growth/growth-04-debug-systematically.md) |
-| Thu 19 Nov | DSA SERIES #05 | Why a Hash Map Lookup Is O(1) — and When It Isn't 🔎 | WHY | 🖼 visual | draft | [dsa-05-hash-map-o1.md](../generated/drafts/dsa/dsa-05-hash-map-o1.md) |
+| Thu 19 Nov | DSA SERIES #06 | Hash Set vs Hash Map: Which One and Why 🔎 | COMPARE | 🖼 visual | draft | [dsa-06-set-vs-map.md](../generated/drafts/dsa/dsa-06-set-vs-map.md) |
 | Fri 20 Nov | AI ENGINEERING #05 | Temperature and Why Outputs Change ✎ 🔎 | WHY | 🖼 visual | draft | [ai-05-temperature.md](../generated/drafts/ai-engineering/ai-05-temperature.md) |
 
 ## Week 7 — from Mon 23 Nov 2026
@@ -81,7 +81,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 30 Nov | DSA SERIES #06 | Hash Set vs Hash Map: Which One and Why 🔎 | COMPARE | 🖼 visual | draft | [dsa-06-set-vs-map.md](../generated/drafts/dsa/dsa-06-set-vs-map.md) |
+| Mon 30 Nov | DSA SERIES #07 | Hash Maps: The Pattern Behind Two Sum | TEACH | 🖼 visual | draft | [dsa-07-hash-maps-two-sum.md](../generated/drafts/dsa/dsa-07-hash-maps-two-sum.md) |
 | Tue 01 Dec | AI ENGINEERING #06 | Embeddings: Turning Text into Numbers 🔎 | TEACH | 🖼 visual | draft | [ai-06-embeddings.md](../generated/drafts/ai-engineering/ai-06-embeddings.md) |
 | Wed 02 Dec | SOFTWARE ENGINEERING · MOBILE #02 | Expo vs Bare React Native: Is There Still a Reason to Eject? ✎ 🔎 | WHY | 🖼 visual | draft | [mob-02-expo-vs-bare.md](../generated/drafts/software-engineering/mobile/mob-02-expo-vs-bare.md) |
 | Thu 03 Dec | BUILDING | — write: next post from sources/project-log.md — | | | | |
@@ -93,7 +93,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 07 Dec | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Tue 08 Dec | DEV GROWTH #06 | Why Fundamentals Still Matter When AI Writes Code ✎ 🔎 | WHY | 🖼 visual | draft | [growth-06-why-fundamentals-still-matter.md](../generated/drafts/dev-growth/growth-06-why-fundamentals-still-matter.md) |
-| Wed 09 Dec | DSA SERIES #07 | Hash Maps: The Pattern Behind Two Sum | TEACH | 🖼 visual | draft | [dsa-07-hash-maps-two-sum.md](../generated/drafts/dsa/dsa-07-hash-maps-two-sum.md) |
+| Wed 09 Dec | DSA SERIES #08 | Every DSA Problem Has a Pattern — How to Spot It 🔎 | LIST | 🖼 visual | draft | [dsa-08-spot-the-pattern.md](../generated/drafts/dsa/dsa-08-spot-the-pattern.md) |
 | Thu 10 Dec | AI ENGINEERING #07 | Structured Output: Getting JSON You Can Trust 🔎 | TEACH | 🖼 visual | draft | [ai-07-structured-output.md](../generated/drafts/ai-engineering/ai-07-structured-output.md) |
 | Fri 11 Dec | SOFTWARE ENGINEERING · BACKEND #03 | Kafka vs RabbitMQ vs SQS 🔎 | COMPARE | 🖼 visual | draft | [be-03-kafka-rabbitmq-sqs.md](../generated/drafts/software-engineering/backend/be-03-kafka-rabbitmq-sqs.md) |
 
@@ -105,7 +105,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Tue 15 Dec | SYSTEM ARCHITECTURE #07 | Caching: Where to Cache, and When to Forget ✎ 🔎 | TEACH | 🖼 visual | draft | [arch-07-caching.md](../generated/drafts/system-architecture/arch-07-caching.md) |
 | Wed 16 Dec | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Thu 17 Dec | DEV GROWTH #07 | Using AI Coding Tools Without Losing Your Skills ✎ | TEACH | 🖼 visual | draft | [growth-07-ai-tools-keep-skills.md](../generated/drafts/dev-growth/growth-07-ai-tools-keep-skills.md) |
-| Fri 18 Dec | DSA SERIES #08 | Every DSA Problem Has a Pattern — How to Spot It 🔎 | LIST | 🖼 visual | draft | [dsa-08-spot-the-pattern.md](../generated/drafts/dsa/dsa-08-spot-the-pattern.md) |
+| Fri 18 Dec | DSA SERIES #09 | Two Pointers: How One Pass Replaces a Nested Loop | TEACH | 🖼 visual | draft | [dsa-09-two-pointers.md](../generated/drafts/dsa/dsa-09-two-pointers.md) |
 
 ## Week 11 — from Mon 21 Dec 2026
 
@@ -122,7 +122,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 28 Dec | DEV GROWTH #08 | How to prepare for coding interviews without grinding 500 problems 🔎 | TEACH | 🖼 visual | draft | [growth-08-interview-prep.md](../generated/drafts/dev-growth/growth-08-interview-prep.md) |
-| Tue 29 Dec | DSA SERIES #09 | Two Pointers: How One Pass Replaces a Nested Loop | TEACH | 🖼 visual | draft | [dsa-09-two-pointers.md](../generated/drafts/dsa/dsa-09-two-pointers.md) |
+| Tue 29 Dec | DSA SERIES #10 | Sliding Window: Stop Recomputing Overlapping Ranges 🔎 | TEACH | 🖼 visual | draft | [dsa-10-sliding-window.md](../generated/drafts/dsa/dsa-10-sliding-window.md) |
 | Wed 30 Dec | AI ENGINEERING #09 | Agents Are Software, Not Magic | WHY | 🖼 visual | draft | [ai-09-agents-are-software.md](../generated/drafts/ai-engineering/ai-09-agents-are-software.md) |
 | Thu 31 Dec | SOFTWARE ENGINEERING · MOBILE #03 | FlatList vs FlashList: Why Your List Janks ✎ 🔎 | COMPARE | 🖼 visual | draft | [mob-03-flatlist-vs-flashlist.md](../generated/drafts/software-engineering/mobile/mob-03-flatlist-vs-flashlist.md) |
 | Fri 01 Jan | BUILDING | — write: next post from sources/project-log.md — | | | | |
@@ -134,7 +134,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Mon 04 Jan | SYSTEM ARCHITECTURE #09 | Database Replication and Read Replicas ✎ | TEACH | 🖼 visual | draft | [arch-09-database-replication.md](../generated/drafts/system-architecture/arch-09-database-replication.md) |
 | Tue 05 Jan | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Wed 06 Jan | DEV GROWTH #09 | How to Review a PR an AI Agent Wrote (and Why You Still Must) ✎ | LIST | 🖼 visual | draft | [growth-09-review-agent-prs.md](../generated/drafts/dev-growth/growth-09-review-agent-prs.md) |
-| Thu 07 Jan | DSA SERIES #10 | Sliding Window: Stop Recomputing Overlapping Ranges 🔎 | TEACH | 🖼 visual | draft | [dsa-10-sliding-window.md](../generated/drafts/dsa/dsa-10-sliding-window.md) |
+| Thu 07 Jan | DSA SERIES #11 | Prefix Sum: Pay Once, Answer Any Range in O(1) 🔎 | TEACH | 🖼 visual | draft | [dsa-11-prefix-sum.md](../generated/drafts/dsa/dsa-11-prefix-sum.md) |
 | Fri 08 Jan | AI ENGINEERING #10 | RAG: Retrieval-Augmented Generation, Plainly ✎ | TEACH | 🖼 visual | draft | [ai-10-rag.md](../generated/drafts/ai-engineering/ai-10-rag.md) |
 
 ## Week 14 — from Mon 11 Jan 2027
@@ -151,7 +151,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 18 Jan | DSA SERIES #11 | Prefix Sum: Pay Once, Answer Any Range in O(1) 🔎 | TEACH | 🖼 visual | draft | [dsa-11-prefix-sum.md](../generated/drafts/dsa/dsa-11-prefix-sum.md) |
+| Mon 18 Jan | DSA SERIES #12 | Kadane's Algorithm: Knowing What to Throw Away 🔎 | TEACH | 🖼 visual | draft | [dsa-12-kadanes-algorithm.md](../generated/drafts/dsa/dsa-12-kadanes-algorithm.md) |
 | Tue 19 Jan | AI ENGINEERING #11 | Vector Databases and Similarity Search 🔎 | TEACH | 🖼 visual | draft | [ai-11-vector-databases.md](../generated/drafts/ai-engineering/ai-11-vector-databases.md) |
 | Wed 20 Jan | SOFTWARE ENGINEERING · WEB | — write: #04 TanStack Query vs Redux Toolkit vs Zustand · COMPARE — | | | | |
 | Thu 21 Jan | BUILDING | — write: next post from sources/project-log.md — | | | | |
@@ -163,7 +163,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 25 Jan | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Tue 26 Jan | DEV GROWTH | — write: #11 How to break a problem down before you code · TEACH — | | | | |
-| Wed 27 Jan | DSA SERIES #12 | Kadane's Algorithm: Knowing What to Throw Away 🔎 | TEACH | 🖼 visual | draft | [dsa-12-kadanes-algorithm.md](../generated/drafts/dsa/dsa-12-kadanes-algorithm.md) |
+| Wed 27 Jan | DSA SERIES #13 | Two Pointers vs Sliding Window vs Prefix Sum vs Kadane: Which One? | COMPARE | 🖼 visual | draft | [dsa-13-array-patterns-which-one.md](../generated/drafts/dsa/dsa-13-array-patterns-which-one.md) |
 | Thu 28 Jan | AI ENGINEERING #12 | Chunking Strategies for RAG 🔎 | TEACH | 🖼 visual | draft | [ai-12-chunking.md](../generated/drafts/ai-engineering/ai-12-chunking.md) |
 | Fri 29 Jan | SOFTWARE ENGINEERING · MOBILE | — write: #04 Local storage: MMKV vs SQLite vs WatermelonDB · COMPARE — | | | | |
 
@@ -175,7 +175,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Tue 02 Feb | SYSTEM ARCHITECTURE | — write: #12 Message queues and async processing · TEACH — | | | | |
 | Wed 03 Feb | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Thu 04 Feb | DEV GROWTH | — write: #12 Estimating work honestly · TEACH — | | | | |
-| Fri 05 Feb | DSA SERIES #13 | Two Pointers vs Sliding Window vs Prefix Sum vs Kadane: Which One? | COMPARE | 🖼 visual | draft | [dsa-13-array-patterns-which-one.md](../generated/drafts/dsa/dsa-13-array-patterns-which-one.md) |
+| Fri 05 Feb | DSA SERIES #14 | Boyer–Moore Voting: Finding the Majority With O(1) Memory 🔎 | TEACH | 🖼 visual | draft | [dsa-14-boyer-moore-voting.md](../generated/drafts/dsa/dsa-14-boyer-moore-voting.md) |
 
 ## Week 18 — from Mon 08 Feb 2027
 
@@ -192,7 +192,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
 | Mon 15 Feb | DEV GROWTH | — write: #13 5 questions to ask before you start any task · LIST — | | | | |
-| Tue 16 Feb | DSA SERIES #14 | Boyer–Moore Voting: Finding the Majority With O(1) Memory 🔎 | TEACH | 🖼 visual | draft | [dsa-14-boyer-moore-voting.md](../generated/drafts/dsa/dsa-14-boyer-moore-voting.md) |
+| Tue 16 Feb | DSA SERIES #15 | Group Anagrams: Let the Right Key Do the Grouping 🔎 | TEACH | 🖼 visual | draft | [dsa-15-anagrams-group-anagrams.md](../generated/drafts/dsa/dsa-15-anagrams-group-anagrams.md) |
 | Wed 17 Feb | AI ENGINEERING #14 | Agent vs Workflow: Which One Do You Need? ✎ | COMPARE | 🖼 visual | draft | [ai-14-agent-vs-workflow.md](../generated/drafts/ai-engineering/ai-14-agent-vs-workflow.md) |
 | Thu 18 Feb | SOFTWARE ENGINEERING · WEB | — write: #05 When memo and useMemo are useless (and when they are not) · WHY — | | | | |
 | Fri 19 Feb | BUILDING | — write: next post from sources/project-log.md — | | | | |
@@ -204,7 +204,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 | Mon 22 Feb | SYSTEM ARCHITECTURE | — write: #14 CAP theorem in plain English · TEACH — | | | | |
 | Tue 23 Feb | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
 | Wed 24 Feb | DEV GROWTH | — write: #14 Writing a pull request people want to review · TEACH — | | | | |
-| Thu 25 Feb | DSA SERIES #15 | Group Anagrams: Let the Right Key Do the Grouping 🔎 | TEACH | 🖼 visual | draft | [dsa-15-anagrams-group-anagrams.md](../generated/drafts/dsa/dsa-15-anagrams-group-anagrams.md) |
+| Thu 25 Feb | DSA SERIES #16 | Binary Search: Halving Sorted Data, Then Halving the Answer ✎ 🔎 | TEACH | 🖼 visual | draft | [dsa-16-binary-search.md](../generated/drafts/dsa/dsa-16-binary-search.md) |
 | Fri 26 Feb | AI ENGINEERING #15 | Context engineering: the window is a budget, not a bucket 🔎 | TEACH | 🖼 visual | draft | [ai-15-context-engineering.md](../generated/drafts/ai-engineering/ai-15-context-engineering.md) |
 
 ## Week 21 — from Mon 01 Mar 2027
@@ -221,19 +221,7 @@ Before posting: fill or delete any [PERSONAL: ...] line and verify or cut any [F
 
 | Date | Series | Title | Mode | Format | Status | File |
 | --- | --- | --- | --- | --- | --- | --- |
-| Mon 08 Mar | DSA SERIES #16 | Binary Search: Halving Sorted Data, Then Halving the Answer ✎ 🔎 | TEACH | 🖼 visual | draft | [dsa-16-binary-search.md](../generated/drafts/dsa/dsa-16-binary-search.md) |
-| Tue 09 Mar | AI ENGINEERING | — write: #16 AI memory: short-term vs long-term · COMPARE — | | | | |
-| Wed 10 Mar | SOFTWARE ENGINEERING · BACKEND | — write: #06 Prisma vs Drizzle vs raw SQL · COMPARE — | | | | |
-| Thu 11 Mar | BUILDING | — write: next post from sources/project-log.md — | | | | |
-| Fri 12 Mar | SYSTEM ARCHITECTURE | — write: #16 Monolith vs microservices · COMPARE — | | | | |
-
-## Week 23 — from Mon 15 Mar 2027
-
-| Date | Series | Title | Mode | Format | Status | File |
-| --- | --- | --- | --- | --- | --- | --- |
-| Mon 15 Mar | FOR BUSINESS / SOLUTIONS | — write: a PRODUCT (sources/apps.md) or a BLUEPRINT post — | | | | |
-| Tue 16 Mar | DEV GROWTH | — write: #16 Writing a design doc · TEACH — | | | | |
-| Wed 17 Mar | DSA SERIES #17 | Sorting: stable, in-place, and the comparator that bites everyone 🔎 | TEACH | 🖼 visual | draft | [dsa-17-sorting.md](../generated/drafts/dsa/dsa-17-sorting.md) |
+| Mon 08 Mar | DSA SERIES #17 | Sorting: stable, in-place, and the comparator that bites everyone 🔎 | TEACH | 🖼 visual | draft | [dsa-17-sorting.md](../generated/drafts/dsa/dsa-17-sorting.md) |
 
 ✎ = has a [PERSONAL: ...] line to fill in or delete.
 🔎 = has a [FACT_CHECK: ...] claim to verify (fix or cut it if it is wrong), then delete the marker.

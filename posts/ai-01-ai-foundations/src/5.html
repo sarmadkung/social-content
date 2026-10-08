@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:26px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.p{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 28px;display:flex;flex-direction:column;gap:20px}
+.p.hero{border:2px solid var(--accent)}
+.t{font-size:42px;font-weight:700}
+.hero .t{color:var(--accent)}
+.r{font-family:var(--mono);font-size:24px;color:var(--ink-2);line-height:1.4;padding-top:16px;border-top:1px solid var(--line)}
+.r .k{display:block;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.r b{color:var(--ink);font-weight:500}
+.story{border:1px dashed #3A4453;border-radius:12px;padding:22px 24px;font-family:var(--mono);font-size:22px;color:var(--ink-2);line-height:1.5}
+.story b{color:var(--ink);font-weight:500}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Training learns. <em>Inference doesn't.</em></h1>
+  <div class="stage">
+    <div class="cols">
+      <div class="p">
+        <div class="t">Training</div>
+        <div class="r"><span class="k">weights</span><b>change</b></div>
+        <div class="r"><span class="k">how often</span>rare: weeks on many GPUs</div>
+        <div class="r"><span class="k">who does it</span>model labs, few teams</div>
+      </div>
+      <div class="p hero">
+        <div class="t">Inference</div>
+        <div class="r"><span class="k">weights</span><b>frozen</b></div>
+        <div class="r"><span class="k">how often</span>every single call</div>
+        <div class="r"><span class="k">who does it</span>you, paying per token</div>
+      </div>
+    </div>
+    <div class="story"><b>Why chat "remembers":</b> the app resends the whole conversation each time. New chat → no history → same mistake.</div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>5 / 5</span></div>
+</div></body></html>

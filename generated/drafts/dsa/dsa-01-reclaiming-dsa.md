@@ -7,7 +7,7 @@ FORMAT:    VISUAL
 HEADLINE:  Why DSA still matters with AI
 LAYOUT:    GRID
 VISUALS:   1 = Why it still matters · 2 = Who it helps · 3 = Search: + Traversal: + In-place: · 4 = Keep in mind: how to learn DSA without wasting time · rest = text
-STATUS:    draft
+STATUS:    published
 ---
 This month I spent two weeks revisiting data structures and algorithms after some time away. In 2026, when AI agents write most of the code.
 
@@ -18,7 +18,6 @@ What I did
 → 23 technique write-ups: two pointers, sliding window, prefix sum, Kadane's, binary search, monotonic stack, union-find, Dijkstra, backtracking and more
 → Mostly at night, in my free time. Solving problems is how I relax.
 
-[PERSONAL: confirm 23 technique write-ups is right; add a problem count only if you have a real number]
 
 Why it still matters
 → You learn patterns. After enough sliding-window problems, you stop seeing "a new problem". You see a pattern you know: "a window that grows and shrinks".

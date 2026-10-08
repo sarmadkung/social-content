@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:26px}
+.row{display:grid;grid-template-columns:1.2fr 40px 1.1fr 40px 0.85fr;align-items:stretch}
+.arw{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:30px;color:var(--ink-3)}
+.box{background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:24px 22px;display:flex;flex-direction:column;gap:14px}
+.box.hero{border:2px solid var(--accent)}
+.lb{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.v{font-family:var(--mono);font-size:24px;color:var(--ink-2);line-height:1.6}
+.v b{color:var(--ink);font-weight:500}
+.hero .v .k{color:var(--accent)}
+.out{font-size:46px;font-weight:700;color:var(--ink)}
+.file{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+.part{border:1px dashed #3A4453;border-radius:12px;padding:24px 22px}
+.part.w{border:1.5px solid var(--accent)}
+.part .t{font-size:32px;font-weight:700}
+.part.w .t{color:var(--accent)}
+.part .d{font-family:var(--mono);font-size:21px;color:var(--ink-2);margin-top:6px}
+.cap{font-family:var(--mono);font-size:17px;color:var(--ink-3);letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>A model is <em>a function with weights</em></h1>
+  <div class="stage">
+    <div class="row">
+      <div class="box">
+        <div class="lb">1 · input → numbers</div>
+        <div class="v">links: <b>2</b><br>"free": <b>1</b><br>known sender: <b>1</b></div>
+      </div>
+      <div class="arw">→</div>
+      <div class="box hero">
+        <div class="lb">2 · weigh + add</div>
+        <div class="v"><span class="k">0.9</span> × 2<br>+ <span class="k">1.4</span> × 1<br>− <span class="k">2.0</span> × 1<br>= <b>1.2</b></div>
+      </div>
+      <div class="arw">→</div>
+      <div class="box">
+        <div class="lb">3 · answer</div>
+        <div class="v">1.2 &gt; 0.5</div>
+        <div class="out">spam</div>
+      </div>
+    </div>
+    <div class="cap">a model file holds two things</div>
+    <div class="file" style="margin-top:0">
+      <div class="part"><div class="t">Architecture</div><div class="d">the shape of the maths</div></div>
+      <div class="part w"><div class="t">Weights</div><div class="d">the numbers training finds</div></div>
+    </div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 5</span></div>
+</div></body></html>
