@@ -110,6 +110,12 @@ next unwritten number for that series.
      diagram, not in the footer. The image adds what the text can't show; the
      footer's right side is the topic, complexity, or `1 / 2` page number.
    - Images are numbered in posting order: `1.png` is the first image shown.
+   - **Feed cover for 3+ images.** When the post has 3 or more images, also
+     write `src/0.html` → `0.png` per the visual skill's section 5c: the
+     headline plus a numbered "In this post" list, one row per image. It is
+     shown first everywhere: attach it first on LinkedIn and Instagram, and
+     put `0` first in post 1's `[images: …]` line in `x.md`. 1–2 images: no
+     feed cover.
    - **Then cut from `post.md` what the images show — never from the draft.**
      The draft in `generated/drafts/` is the full source and is never trimmed.
      `posts/<post>/post.md` is the text that gets posted: remove from it every

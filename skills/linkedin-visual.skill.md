@@ -323,6 +323,25 @@ Every prepared post also gets a cover: `posts/<post>/src/cover.html` →
 4. Same locked identity as the feed images: ground, ink, one pillar accent.
 5. Check at 300px wide: the headline must read; the motif may blur.
 
+## 5c. Feed cover (`0.png`) — posts with 3 or more images
+
+A post with 3+ feed images gets a feed cover, `posts/<post>/src/0.html` →
+`0.png`, shown first on LinkedIn, Instagram and X. Feeds show only the first
+image, so it has to say what the whole post covers; otherwise a reader sees
+idea 1 and never learns there are four more. Posts with 1–2 images get no feed
+cover: the first image already is the hook.
+
+1. Size 1080 × 1080, built on `templates/feed-cover/base.css` (variant B
+   identity). The daily.dev `cover.png` is 1200 × 630 and is never reused here.
+2. It is a contents slide, not a title card: series label with brand mark, the
+   post's `HEADLINE:` (accent via `<em>`), an `In this post` label, then one
+   numbered row per image — plain name + 3–6 word description. The rows follow
+   the `VISUALS:` order, so row 1 is `1.png`.
+3. No diagram, no stats, no lines copied from the post body.
+4. Footer: name lockup left, `swipe →` right. The other images keep their
+   `1 / N` numbers; the cover is not counted.
+5. Check at 200px wide: the headline must read; the rows may blur.
+
 ## 6. Review checklist
 
 Before returning any image, verify each:

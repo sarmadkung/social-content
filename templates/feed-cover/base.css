@@ -1,0 +1,23 @@
+@import url("../variant-b/base.css");
+/* Feed cover — 0.png, 1080x1080, first image on LinkedIn, Instagram and X for
+   posts with 3+ images. A contents slide: headline, then one numbered row per
+   image, so a reader who sees only the first image knows what the post covers.
+
+   <div class="frame">
+     <div class="series">… <span class="brand">…</span></div>
+     <h1>… <em>…</em></h1>
+     <div class="stage"><div class="toc-label">In this post</div>
+       <ol class="toc"><li><b>Name</b><span>short description</span></li>…</ol></div>
+     <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>swipe →</span></div>
+   </div> */
+h1{font-size:58px;max-width:18ch}
+.stage{justify-content:center}
+.toc-label{font-family:var(--mono);font-size:17px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
+.toc{list-style:none;counter-reset:n;border-top:1px solid var(--line)}
+.toc li{counter-increment:n;display:grid;grid-template-columns:64px 1fr;column-gap:8px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.toc li::before{content:counter(n,decimal-leading-zero);grid-row:span 2;font-family:var(--mono);font-size:26px;color:var(--accent)}
+.toc b{font-size:31px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.toc span{font-family:var(--mono);font-size:20px;color:var(--ink-2);margin-top:6px}
+.toc.few li{padding:28px 0}
+.toc.few b{font-size:36px}
+.toc.few span{font-size:22px}

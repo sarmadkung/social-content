@@ -3,7 +3,7 @@ An agent opens a PR: 38 files, 1,600 lines, all checks green. 12 minutes to writ
 So people skim and approve. That's where it hurts.
 
 Why we still review agent PRs, and how:
-[images: 1]
+[images: 0, 1]
 ---
 It's not that the agent writes bad code.
 

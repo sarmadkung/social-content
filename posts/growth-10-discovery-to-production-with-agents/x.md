@@ -7,7 +7,7 @@ The agent did what it was told. The problem is what it wasn't told. A workflow t
 8 stages: discover, spec, plan, build, verify, review, ship, watch.
 
 The agent does the work in each stage. You say yes before the next one. Each stage leaves a file, so the agent remembers through the repo, not the chat.
-[images: 1]
+[images: 0, 1]
 ---
 Why the early checks matter. The same wrong guess costs:
 → in the spec: 1 line
