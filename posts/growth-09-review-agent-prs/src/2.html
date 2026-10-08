@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:22px}
+.rows{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:56px 250px 1fr;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:0 26px;height:84px;font-family:var(--mono)}
+.row .no{font-size:18px;color:var(--ink-3)}
+.row .nm{font-size:26px;color:var(--ink)}
+.row .lk{font-size:21px;color:var(--ink-2)}
+.row.hero{border-color:color-mix(in srgb,var(--accent) 60%,transparent);box-shadow:inset 3px 0 0 var(--accent)}
+.row.hero .nm,.row.hero .no{color:var(--accent)}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #09<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Review in this order: <em>ticket first</em></h1>
+  <div class="stage">
+    <div class="rows">
+      <div class="row hero"><span class="no">1</span><span class="nm">the ticket</span><span class="lk">what should change?</span></div>
+      <div class="row"><span class="no">2</span><span class="nm">size</span><span class="lk">only what was asked</span></div>
+      <div class="row"><span class="no">3</span><span class="nm">the tests</span><span class="lk">read them before the code</span></div>
+      <div class="row"><span class="no">4</span><span class="nm">risky code</span><span class="lk">login, payments, deletes</span></div>
+      <div class="row"><span class="no">5</span><span class="nm">fit</span><span class="lk">does it match our code?</span></div>
+      <div class="row"><span class="no">6</span><span class="nm">run it</span><span class="lk">"done" is not proof</span></div>
+      <div class="row"><span class="no">7</span><span class="nm">explain it</span><span class="lk">can't? don't approve</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 3</span></div>
+</div></body></html>

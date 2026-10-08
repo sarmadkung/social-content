@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:16px;gap:28px}
+.lbl{font-family:var(--mono);font-size:18px;letter-spacing:.1em;color:var(--ink-3);margin-bottom:12px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.do{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 22px;font-family:var(--mono);font-size:22px;color:var(--accent)}
+.wo{display:flex;flex-direction:column;gap:10px}
+.w{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 22px;font-family:var(--mono);font-size:21px;color:var(--ink-2)}
+.w .ar{color:var(--ink-3);text-align:center}
+.w .fx{color:var(--ink)}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>What helps, <em>what breaks</em></h1>
+  <div class="stage">
+    <div>
+      <div class="lbl">DO THIS</div>
+      <div class="dos">
+        <div class="do">write the spec first</div>
+        <div class="do">read the plan</div>
+        <div class="do">small tasks, small PRs</div>
+        <div class="do">ship behind a flag</div>
+      </div>
+    </div>
+    <div>
+      <div class="lbl">WATCH OUT</div>
+      <div class="wo">
+        <div class="w"><span>vague spec</span><span class="ar">→</span><span class="fx">write edge cases</span></div>
+        <div class="w"><span>long chats drift</span><span class="ar">→</span><span class="fx">new chat per task</span></div>
+        <div class="w"><span>2 agents, same files</span><span class="ar">→</span><span class="fx">split the work</span></div>
+        <div class="w"><span>too many PRs</span><span class="ar">→</span><span class="fx">limit per reviewer</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>4 / 4</span></div>
+</div></body></html>

@@ -52,6 +52,13 @@ Training vs inference
 
 [FACT_CHECK: APIs bill per token, with input and output tokens priced separately → OpenAI and Anthropic pricing pages]
 
+Keep in mind when you start building with models
+→ The model won't learn from use. Send what it needs on every call.
+→ New facts go in the input, not the weights. The weights are fixed.
+→ Long chat history costs tokens on every call. Trim it.
+→ Test on data the model never saw, or you measure its memory.
+→ Try prompts and examples before fine-tuning. It is cheaper.
+
 Takeaway: a model is a function with learned weights. Training finds them. Inference uses them, on every call you pay for.
 
 Next: what an LLM actually does at inference. Next-token prediction, plainly.

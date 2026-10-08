@@ -1,9 +1,9 @@
 ---
 name: create-post
-description: Create one post for every platform — LinkedIn, daily.dev, Instagram and X — from a series + post number and an optional one-line angle: the draft, the shared images, a daily.dev cover, and each platform's text. Use when the user types /create-post (or the old /linkedin-post), or says "create post", "generate post", "write DSA #18", "generate backend #04", "make post web #05 about ...", or gives a pillar, a number and a line and wants the post.
+description: Create one post for every platform — LinkedIn, daily.dev, Instagram, X and the blog — from a series + post number and an optional one-line angle: the draft, the shared images, a daily.dev cover, and each platform's text. Use when the user types /create-post (or the old /linkedin-post), or says "create post", "generate post", "write DSA #18", "generate backend #04", "make post web #05 about ...", or gives a pillar, a number and a line and wants the post.
 ---
 
-# Create a post (LinkedIn, daily.dev, Instagram, X) from a number and a line
+# Create a post (LinkedIn, daily.dev, Instagram, X, blog) from a number and a line
 
 Turns `<series> #<NN> [keyword] [angle]` into a finished post: the draft in
 `generated/drafts/` **and** a ready-to-post folder `posts/<post>/` holding
@@ -16,9 +16,11 @@ following the repo's content system. Every run ends with both on disk.
 | daily.dev | `dailydev.md` | `cover.png` |
 | Instagram | `instagram.md` | `1.png`, `2.png` … as a carousel (or the `slide-NN.png` files) |
 | X | `x.md` (a thread) | up to 4 images per post, as `x.md` says |
+| Blog (portfolio) | `blog.md` (the full article) | `1.png`, `2.png` … inline, `cover.png` as the header |
 
 The images are made once and reused everywhere; only the text changes per
-platform.
+platform. The blog is the full, canonical version; the social texts are the
+short versions of it.
 
 ## Input
 
@@ -33,7 +35,7 @@ The angle is the user's line: the story, opinion or example to build the post
 around. It is optional. When given, it shapes the hook and example; it never
 overrides the roadmap title, mode or the rules.
 
-Keyword default is `FULL` (all platform texts + images + daily.dev cover). `COPY` makes the post
+Keyword default is `FULL` (all platform texts + blog article + images + daily.dev cover). `COPY` makes the post
 text only, `VISUAL` makes only the image for an existing draft. A post whose
 `FORMAT:` is `TEXT` gets no image even under `FULL`; a `CAROUSEL` post gets its
 slide deck instead of a single cover.
@@ -158,9 +160,37 @@ next unwritten number for that series.
      whole thread, plain text, no markdown. No unresolved `[PERSONAL]` /
      `[FACT_CHECK]` content. Never overwrite an existing `x.md` unless the
      user asks.
+   - **Blog article**: write `posts/<post>/blog.md` — the full, canonical
+     version for the portfolio blog. Start with YAML front-matter:
+     ```
+     ---
+     title: "<a clear claim, ≤ 70 characters — may match dailydev.md's TITLE>"
+     description: "<one sentence for search results, ≤ 160 characters>"
+     date: <the post's queue date from published/queue.md, else today, YYYY-MM-DD>
+     series: "<series label in title case, e.g. AI Engineering>"
+     seriesNumber: <NN as a number>
+     slug: <draft basename>
+     tags: [<3–5 lowercase tags>]
+     cover: cover.png
+     lab: <optimallab.dev URL, only if the post has a Lab page — else omit>
+     ---
+     ```
+     Then the article in Markdown, built from the **full draft** (never from the
+     trimmed `post.md`): the hook as the opening paragraph, each draft section
+     as a `##` heading with its content written as prose and lists, and each
+     image placed inline under the section it shows (`![<what the image
+     shows>](1.png)`). This is where the detail the social limits cut goes
+     back in: the full failure scenario, comparisons as Markdown tables, short
+     code examples where they help, and the `Keep in mind` / `Watch out`
+     sections in full. Every claim must already be in the draft or be common,
+     checkable knowledge — no new numbers, dates or versions. 600–2000 words.
+     If `lab:` is set, add a line linking to the interactive version. End with a
+     `## Next in the series` line naming the next post. No hashtags, no
+     `→` arrows (use `-` lists), no unresolved `[PERSONAL]` / `[FACT_CHECK]`
+     content. Never overwrite an existing `blog.md` unless the user asks.
    - Run `python3 scripts/build_posts.py <draft basename>` again so the index
      counts the images, cover and platform texts.
 10. Reply with: the draft path, the `posts/<post>/` folder and its image(s),
-    `cover.png`, `dailydev.md`, `instagram.md` and `x.md`, the post body, and a list
+    `cover.png`, `dailydev.md`, `instagram.md`, `x.md` and `blog.md`, the post body, and a list
     of any `[PERSONAL]` / `[FACT_CHECK]` markers the user must resolve.
     Do not commit.

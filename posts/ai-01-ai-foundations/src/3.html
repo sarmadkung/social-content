@@ -1,0 +1,127 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:26px}
+svg text{font-family:var(--mono)}
+.neuron{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:19px;color:var(--ink-2);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.neuron .t{color:var(--ink-3);font-size:15px;letter-spacing:.16em;text-transform:uppercase;margin-right:6px}
+.neuron b{color:var(--accent);font-weight:500}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.note{border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-family:var(--mono);font-size:17px;color:var(--ink-2);line-height:1.45}
+.note b{color:var(--ink);font-weight:500}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Deep means <em>many layers</em></h1>
+  <div class="stage">
+    <div class="neuron"><span class="t">one neuron</span> inputs <b>×</b> weights → add up → simple function → output</div>
+    <svg viewBox="0 0 928 360" width="928" height="360">
+      <g stroke="#2A313D" stroke-width="1.2">
+        <line x1="80" y1="74" x2="290" y2="60"/>
+<line x1="80" y1="74" x2="290" y2="108"/>
+<line x1="80" y1="74" x2="290" y2="156"/>
+<line x1="80" y1="74" x2="290" y2="204"/>
+<line x1="80" y1="74" x2="290" y2="252"/>
+<line x1="80" y1="74" x2="290" y2="300"/>
+<line x1="80" y1="134" x2="290" y2="60"/>
+<line x1="80" y1="134" x2="290" y2="108"/>
+<line x1="80" y1="134" x2="290" y2="156"/>
+<line x1="80" y1="134" x2="290" y2="204"/>
+<line x1="80" y1="134" x2="290" y2="252"/>
+<line x1="80" y1="134" x2="290" y2="300"/>
+<line x1="80" y1="194" x2="290" y2="60"/>
+<line x1="80" y1="194" x2="290" y2="108"/>
+<line x1="80" y1="194" x2="290" y2="156"/>
+<line x1="80" y1="194" x2="290" y2="204"/>
+<line x1="80" y1="194" x2="290" y2="252"/>
+<line x1="80" y1="194" x2="290" y2="300"/>
+<line x1="80" y1="254" x2="290" y2="60"/>
+<line x1="80" y1="254" x2="290" y2="108"/>
+<line x1="80" y1="254" x2="290" y2="156"/>
+<line x1="80" y1="254" x2="290" y2="204"/>
+<line x1="80" y1="254" x2="290" y2="252"/>
+<line x1="80" y1="254" x2="290" y2="300"/>
+        <line x1="290" y1="60" x2="500" y2="60"/><line x1="500" y1="60" x2="710" y2="60"/>
+<line x1="290" y1="60" x2="500" y2="108"/><line x1="500" y1="60" x2="710" y2="108"/>
+<line x1="290" y1="60" x2="500" y2="156"/><line x1="500" y1="60" x2="710" y2="156"/>
+<line x1="290" y1="60" x2="500" y2="204"/><line x1="500" y1="60" x2="710" y2="204"/>
+<line x1="290" y1="60" x2="500" y2="252"/><line x1="500" y1="60" x2="710" y2="252"/>
+<line x1="290" y1="60" x2="500" y2="300"/><line x1="500" y1="60" x2="710" y2="300"/>
+<line x1="290" y1="108" x2="500" y2="60"/><line x1="500" y1="108" x2="710" y2="60"/>
+<line x1="290" y1="108" x2="500" y2="108"/><line x1="500" y1="108" x2="710" y2="108"/>
+<line x1="290" y1="108" x2="500" y2="156"/><line x1="500" y1="108" x2="710" y2="156"/>
+<line x1="290" y1="108" x2="500" y2="204"/><line x1="500" y1="108" x2="710" y2="204"/>
+<line x1="290" y1="108" x2="500" y2="252"/><line x1="500" y1="108" x2="710" y2="252"/>
+<line x1="290" y1="108" x2="500" y2="300"/><line x1="500" y1="108" x2="710" y2="300"/>
+<line x1="290" y1="156" x2="500" y2="60"/><line x1="500" y1="156" x2="710" y2="60"/>
+<line x1="290" y1="156" x2="500" y2="108"/><line x1="500" y1="156" x2="710" y2="108"/>
+<line x1="290" y1="156" x2="500" y2="156"/><line x1="500" y1="156" x2="710" y2="156"/>
+<line x1="290" y1="156" x2="500" y2="204"/><line x1="500" y1="156" x2="710" y2="204"/>
+<line x1="290" y1="156" x2="500" y2="252"/><line x1="500" y1="156" x2="710" y2="252"/>
+<line x1="290" y1="156" x2="500" y2="300"/><line x1="500" y1="156" x2="710" y2="300"/>
+<line x1="290" y1="204" x2="500" y2="60"/><line x1="500" y1="204" x2="710" y2="60"/>
+<line x1="290" y1="204" x2="500" y2="108"/><line x1="500" y1="204" x2="710" y2="108"/>
+<line x1="290" y1="204" x2="500" y2="156"/><line x1="500" y1="204" x2="710" y2="156"/>
+<line x1="290" y1="204" x2="500" y2="204"/><line x1="500" y1="204" x2="710" y2="204"/>
+<line x1="290" y1="204" x2="500" y2="252"/><line x1="500" y1="204" x2="710" y2="252"/>
+<line x1="290" y1="204" x2="500" y2="300"/><line x1="500" y1="204" x2="710" y2="300"/>
+<line x1="290" y1="252" x2="500" y2="60"/><line x1="500" y1="252" x2="710" y2="60"/>
+<line x1="290" y1="252" x2="500" y2="108"/><line x1="500" y1="252" x2="710" y2="108"/>
+<line x1="290" y1="252" x2="500" y2="156"/><line x1="500" y1="252" x2="710" y2="156"/>
+<line x1="290" y1="252" x2="500" y2="204"/><line x1="500" y1="252" x2="710" y2="204"/>
+<line x1="290" y1="252" x2="500" y2="252"/><line x1="500" y1="252" x2="710" y2="252"/>
+<line x1="290" y1="252" x2="500" y2="300"/><line x1="500" y1="252" x2="710" y2="300"/>
+<line x1="290" y1="300" x2="500" y2="60"/><line x1="500" y1="300" x2="710" y2="60"/>
+<line x1="290" y1="300" x2="500" y2="108"/><line x1="500" y1="300" x2="710" y2="108"/>
+<line x1="290" y1="300" x2="500" y2="156"/><line x1="500" y1="300" x2="710" y2="156"/>
+<line x1="290" y1="300" x2="500" y2="204"/><line x1="500" y1="300" x2="710" y2="204"/>
+<line x1="290" y1="300" x2="500" y2="252"/><line x1="500" y1="300" x2="710" y2="252"/>
+<line x1="290" y1="300" x2="500" y2="300"/><line x1="500" y1="300" x2="710" y2="300"/>
+        <line x1="710" y1="60" x2="860" y2="180"/>
+<line x1="710" y1="108" x2="860" y2="180"/>
+<line x1="710" y1="156" x2="860" y2="180"/>
+<line x1="710" y1="204" x2="860" y2="180"/>
+<line x1="710" y1="252" x2="860" y2="180"/>
+<line x1="710" y1="300" x2="860" y2="180"/>
+      </g>
+      <rect x="62" y="60" width="36" height="28" rx="5" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<rect x="62" y="120" width="36" height="28" rx="5" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<rect x="62" y="180" width="36" height="28" rx="5" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<rect x="62" y="240" width="36" height="28" rx="5" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+      <circle cx="290" cy="60" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="290" cy="108" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="290" cy="156" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="290" cy="204" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="290" cy="252" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="290" cy="300" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="500" cy="60" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="500" cy="108" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="500" cy="156" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="500" cy="204" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="500" cy="252" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="500" cy="300" r="14" fill="#11141B" stroke="#5E6977" stroke-width="2"/>
+<circle cx="710" cy="60" r="14" fill="#11141B" stroke="#8AA4FF" stroke-width="2"/>
+<circle cx="710" cy="108" r="14" fill="#11141B" stroke="#8AA4FF" stroke-width="2"/>
+<circle cx="710" cy="156" r="14" fill="#11141B" stroke="#8AA4FF" stroke-width="2"/>
+<circle cx="710" cy="204" r="14" fill="#11141B" stroke="#8AA4FF" stroke-width="2"/>
+<circle cx="710" cy="252" r="14" fill="#11141B" stroke="#8AA4FF" stroke-width="2"/>
+<circle cx="710" cy="300" r="14" fill="#11141B" stroke="#8AA4FF" stroke-width="2"/>
+      <circle cx="860" cy="180" r="20" fill="#11141B" stroke="#F2F5F9" stroke-width="2"/>
+      <text x="80" y="22" text-anchor="middle" font-size="17" fill="#9BA6B7">pixels</text>
+      <text x="290" y="22" text-anchor="middle" font-size="17" fill="#9BA6B7">layer 1</text>
+      <text x="500" y="22" text-anchor="middle" font-size="17" fill="#9BA6B7">layer 2</text>
+      <text x="710" y="22" text-anchor="middle" font-size="17" fill="#8AA4FF">layer 3</text>
+      <text x="860" y="22" text-anchor="middle" font-size="17" fill="#9BA6B7">answer</text>
+      <text x="290" y="350" text-anchor="middle" font-size="19" fill="#F2F5F9">finds edges</text>
+      <text x="500" y="350" text-anchor="middle" font-size="19" fill="#F2F5F9">finds shapes</text>
+      <text x="710" y="350" text-anchor="middle" font-size="19" fill="#8AA4FF">finds faces</text>
+      <text x="860" y="226" text-anchor="middle" font-size="19" fill="#F2F5F9">"face"</text>
+    </svg>
+    <div class="notes">
+      <div class="note"><b>Nobody writes these rules.</b><br>They come out of training.</div>
+      <div class="note"><b>It's all matrix maths.</b><br>That's why it runs on GPUs.</div>
+    </div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 5</span></div>
+</div></body></html>

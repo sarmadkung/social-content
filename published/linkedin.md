@@ -14,3 +14,4 @@ so the report can join each row to its draft.
 
 | Date | Series | Title | Link | Impressions | Reactions | Comments | Reposts | Saves | Followers | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10-08 | DSA SERIES #01 | Reclaiming DSA in the Age of AI |  |  |  |  |  |  |  |  |

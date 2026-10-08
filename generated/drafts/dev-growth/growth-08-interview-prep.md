@@ -36,6 +36,6 @@ I mistook a long problem count for progress. The number that actually moved me w
 
 What pattern took you longest to finally see?
 
-Next: how to break a problem down before you write any code.
+Next: how to review a PR an AI agent wrote, and why you still must.
 
 #CodingInterviews #DataStructures #Algorithms #CareerGrowth

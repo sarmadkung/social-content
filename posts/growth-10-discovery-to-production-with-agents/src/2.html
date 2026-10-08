@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:10px}
+.guess{font-family:var(--mono);font-size:22px;color:var(--ink-2);margin-bottom:30px}
+.guess b{font-weight:500;color:var(--ink)}
+.rows{display:flex;flex-direction:column;gap:20px}
+.row{display:grid;grid-template-columns:200px 1fr;align-items:center;gap:22px;font-family:var(--mono)}
+.where{font-size:23px;color:var(--ink-2);text-align:right}
+.bar{height:110px;border-radius:12px;background:var(--panel);border:1.5px solid #3A4453;display:flex;align-items:center;padding:0 24px}
+.bar .fix{font-size:23px;color:var(--ink)}
+.row.hero .bar{border-color:var(--accent);border-width:2px}
+.row.hero .fix,.row.hero .where{color:var(--accent)}
+.axis{display:grid;grid-template-columns:200px 1fr;gap:22px;margin-top:16px;font-family:var(--mono);font-size:18px;color:var(--ink-3)}
+.axis .sc{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Catch it in the spec, <em>not in production</em></h1>
+  <div class="stage">
+    <div class="guess">one wrong guess: <b>"names never have commas"</b></div>
+    <div class="rows">
+      <div class="row hero"><span class="where">in the spec</span><div class="bar" style="width:40%"><span class="fix">edit 1 line</span></div></div>
+      <div class="row"><span class="where">in the plan</span><div class="bar" style="width:55%"><span class="fix">edit 1 step</span></div></div>
+      <div class="row"><span class="where">in the PR</span><div class="bar" style="width:76%"><span class="fix">redo the code</span></div></div>
+      <div class="row"><span class="where">in production</span><div class="bar" style="width:100%"><span class="fix">undo + tell customers</span></div></div>
+    </div>
+    <div class="axis"><span></span><div class="sc"><span>cheap</span><span>expensive →</span></div></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 4</span></div>
+</div></body></html>
