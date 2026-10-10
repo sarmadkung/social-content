@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <!-- truelogics icon: the official "t" mark from truelogics.io, green dot as in the wordmark -->
-  <rect width="120" height="120" rx="28" fill="#252932"/>
-  <g transform="translate(37 22) scale(0.9)">
-    <path d="M30.861 63.7413C32.4742 68.0429 35.2971 70.0593 39.7331 69.7233C40.943 69.5889 42.22 69.5889 43.4298 69.6561C47.0593 69.7233 49.7479 71.9413 50.2856 75.3019C50.7561 78.4609 48.6725 81.8216 45.5135 82.9642C35.2299 86.5937 21.2496 80.3429 18.4939 69.5888C16.6791 62.5987 17.1496 55.0037 17.284 47.6102C17.3513 44.2496 21.3168 42.0988 24.8791 42.5693C28.1725 43.0398 30.7266 46.0643 30.7938 49.6266C30.7266 54.3315 30.7266 58.902 30.861 63.7413Z" fill="#FFFFFF"/>
-    <path d="M31.5311 36.5867C23.4656 36.5867 15.7361 36.6539 8.00664 36.5867C3.30174 36.5867 -0.193339 33.226 0.0083 28.9916C0.142726 25.2277 3.36895 22.7408 8.00664 22.7408C19.4328 22.7408 30.859 22.6736 42.2852 22.7408C48.0655 22.7408 51.5606 27.4457 49.5442 32.285C48.2672 35.3096 45.7803 36.5867 42.6213 36.5867C39.059 36.5195 35.4967 36.5195 31.5311 36.5867Z" fill="#FFFFFF"/>
-    <path d="M16.1407 9.50022C15.7374 5.33302 17.2833 2.37565 20.7784 0.762541C23.7358 -0.648929 26.6931 -0.0440131 29.18 2.1068C31.8685 4.32482 32.7423 7.75268 31.5325 10.8445C30.1882 14.2051 27.4325 16.0871 23.7358 16.0871C20.0391 16.0871 17.7538 14.1379 16.1407 9.50022Z" fill="#24A556"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="TrueLogics"><title>TrueLogics</title><defs>
+<linearGradient id="tl-blade" x1="10" y1="80" x2="196" y2="16" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#16A34A"/><stop offset=".55" stop-color="#22C55E"/><stop offset="1" stop-color="#86EFAC"/>
+</linearGradient>
+<linearGradient id="tl-fold" x1="14" y1="76" x2="124" y2="124" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#4ADE80"/><stop offset=".55" stop-color="#16A34A"/><stop offset="1" stop-color="#166534"/>
+</linearGradient>
+<linearGradient id="tl-stem" x1="100" y1="104" x2="100" y2="192" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#14532D"/><stop offset=".3" stop-color="#15803D"/><stop offset=".7" stop-color="#22C55E"/><stop offset="1" stop-color="#4ADE80"/>
+</linearGradient>
+</defs><rect x="2" y="2" width="508" height="508" rx="112" fill="#252932"/><g transform="translate(96 92) scale(1.6)"><path d="M74 100C96 100 120 106 128 118L128 168C128 186 116 196 102 194C86 192 74 180 74 166Z" fill="url(#tl-stem)"/><path d="M18 88C42 82 70 82 94 88C114 93 126 104 128 122C112 112 94 108 74 112C64 100 42 92 18 88Z" fill="url(#tl-fold)"/><path d="M18 88C6 84 6 72 14 62C34 36 76 20 124 20L196 16C182 50 152 74 104 76L58 78C42 79 30 84 18 88Z" fill="url(#tl-blade)"/></g></svg>
