@@ -95,7 +95,7 @@ wrong one is struck in tertiary ink. Only diff mode keeps green — `--add` — 
 | Software engineering | `#4ADE80` green | `--swe` |
 | System design | `#C084FC` violet | `--arch` |
 | AI engineering | `#8AA4FF` indigo | `--ai` |
-| Dev growth | `#F2555F` crimson | `--grow` |
+| Dev growth | `#8B5CF6` deep violet | `--grow` |
 | Building | `#2DD4BF` teal | `--build` |
 | For business | `#A3E635` lime | `--biz` |
 
