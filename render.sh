@@ -2,7 +2,8 @@
 # Render every card template to visuals/renders/ at 1080x1080 @2x, then every
 # post's images from posts/<post>/src/:
 #   src/1.html, src/2.html …   → posts/<post>/1.png, 2.png … (1080x1080)
-#   src/slide-01.html …        → posts/<post>/slide-01.png … (1080x1350) + carousel.pdf
+#   src/slide-01.html …        → posts/<post>/slide-01.png … (1080x1350)
+#   then every post's images    → posts/<post>/carousel.pdf (LinkedIn swipe carousel)
 #   src/cover.html             → posts/<post>/cover.png (1200x630, daily.dev / link preview)
 #   ./render.sh                         → all variants + post cards
 #   ./render.sh variant-c               → one variant (post cards still render)
@@ -63,22 +64,14 @@ for f in posts/*/src/cover.html; do
   render "$f" "${f%/src/*}/cover.png" 630 1200
 done
 
-# Carousel decks: src/slide-NN.html → slide-NN.png at 1080x1350, then
-# carousel.pdf — one page per slide, the PNGs as-is (LinkedIn document post).
+# Carousel decks: src/slide-NN.html → slide-NN.png at 1080x1350.
 for post in posts/*/; do
   [ -e "${post}src/slide-01.html" ] || continue
-  deck="${post}.deck.html"
-  printf '<!doctype html><html><head><meta charset="utf-8"><style>@page{size:1080px 1350px;margin:0}*{margin:0}img{display:block;width:1080px;height:1350px;break-after:page}</style></head><body>' > "$deck"
   for f in "${post}"src/slide-[0-9][0-9].html; do
-    png="${post}$(basename "${f%.html}").png"
-    render "$f" "$png" 1350
-    printf '<img src="%s">' "$(basename "$png")" >> "$deck"
+    render "$f" "${post}$(basename "${f%.html}").png" 1350
   done
-  printf '</body></html>' >> "$deck"
-  pdf="${post}carousel.pdf"
-  "$CHROME_BIN" --headless --disable-gpu --no-pdf-header-footer \
-    --print-to-pdf="$PWD/$pdf" "file://$PWD/$deck" >/dev/null 2>&1 || true
-  rm -f "$deck"
-  [ -s "$pdf" ] || { echo "render.sh: FAILED $pdf" >&2; exit 1; }
-  echo "  $pdf"
 done
+
+# LinkedIn carousel: every post's images → posts/<post>/carousel.pdf
+# (one page per image; git-ignored build output).
+CHROME="$CHROME_BIN" scripts/carousel_pdf.sh

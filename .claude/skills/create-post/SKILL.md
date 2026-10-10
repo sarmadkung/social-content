@@ -12,7 +12,7 @@ following the repo's content system. Every run ends with both on disk.
 
 | Platform | Text | Images |
 | --- | --- | --- |
-| LinkedIn | `post.md` | `1.png`, `2.png` … (or `carousel.pdf`) |
+| LinkedIn | `post.md` | `carousel.pdf` — every image in order, posted as a document so it swipes |
 | daily.dev | `dailydev.md` | `cover.png` |
 | Instagram | `instagram.md` | `1.png`, `2.png` … as a carousel (or the `slide-NN.png` files) |
 | X | `x.md` (a thread) | up to 4 images per post, as `x.md` says |
@@ -132,6 +132,15 @@ next unwritten number for that series.
    - Render with `./render.sh variant-none` (renders post images only, into
      `posts/<post>/1.png` …), then open each PNG and check it against the
      visual skill's review checklist. Fix and re-render until it passes.
+   - **LinkedIn carousel PDF.** `render.sh` ends by running
+     `scripts/carousel_pdf.sh`, which joins the post's images into
+     `posts/<post>/carousel.pdf` — one page per image, in posting order
+     (`0.png`, `1.png` … or `slide-01.png` …). LinkedIn shows a PDF document as
+     a swipeable carousel; images attached directly only show as a grid. After
+     re-rendering one post by hand, rebuild its PDF with
+     `scripts/carousel_pdf.sh posts/<post>`. Every post uses the same name,
+     `carousel.pdf`, inside its own folder. It is git-ignored: a build output,
+     never committed.
    - **daily.dev cover** (every `FULL`/`VISUAL` run, `TEXT` posts too): write
      `posts/<post>/src/cover.html` using `../../../templates/cover/base.css`
      (1200×630). Only the series label + brand mark, the draft's `HEADLINE:`

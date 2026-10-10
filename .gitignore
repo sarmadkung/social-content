@@ -1,3 +1,6 @@
 .DS_Store
 .serena/
 __pycache__/
+
+# LinkedIn carousel PDFs — build output of scripts/carousel_pdf.sh
+posts/*/carousel.pdf

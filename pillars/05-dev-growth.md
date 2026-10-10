@@ -1,6 +1,6 @@
 # Pillar 5 — Career & Developer Growth
 
-Series label: `DEV GROWTH #NN` · Visual accent: crimson `#F2555F` · Tag: `GROWTH`
+Series label: `DEV GROWTH #NN` · Visual accent: deep violet `#8B5CF6` · Tag: `GROWTH`
 
 ## Purpose
 Help developers grow from student to senior: how to learn, how to work, how to
