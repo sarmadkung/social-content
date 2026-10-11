@@ -194,7 +194,9 @@ next unwritten number for that series.
      trimmed `post.md`): the hook as the opening paragraph, each draft section
      as a `##` heading with its content written as prose and lists, and each
      image placed inline under the section it shows (`![<what the image
-     shows>](1.png)`). **Easy to understand comes first; aim for a 1–5 minute
+     shows>](1.png)`). If the post has a feed cover (`0.png`), put it right
+     after the hook under `## What we'll cover`, with a numbered list of the
+     sections, one line each. **Easy to understand comes first; aim for a 1–5 minute
      read (220–1100 words; the blog shows "N min read" from the word count
      at 220 words a minute).** Plain words and short sentences; one simple
      example per idea, the same one the images use; define a term once, in
