@@ -6,7 +6,7 @@ MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  Five ideas under every AI system
 LAYOUT:    GRID
-VISUALS:   1 = AI vs ML vs Deep Learning · 2 = What a model actually is · 3 = Neural networks and deep learning · 4 = How a model learns · 5 = Training vs inference · rest = text
+VISUALS:   1 = AI vs ML vs Deep Learning · 2 = What a model actually is · 3 = Neural networks and deep learning · 4 = How a model learns · 5 = How a model learns · 6 = How a model learns · 7 = Training vs inference · 8 = Training vs inference · rest = text
 STATUS:    draft
 ---
 You correct a chat model. It says "thanks, noted". Tomorrow, in a new chat, it makes the same mistake. It did not forget. It never learned.

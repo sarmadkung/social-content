@@ -1,15 +1,17 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
 <style>
 :root{--accent:var(--ai)}
-h1{font-size:56px;max-width:19ch}
+h1{font-size:52px;max-width:none}
 .stage{justify-content:center}
-.ring{border:1.5px solid #3A4453;border-radius:18px;padding:22px 24px 24px;background:rgba(17,20,27,.6)}
-.ring .ring{margin-top:16px}
+.ring{border:1.5px solid #3A4453;border-radius:18px;padding:18px 22px 20px;background:rgba(17,20,27,.6)}
+.ring .ring{margin-top:14px}
 .ring.hero{border:2px solid var(--accent)}
-.nm{font-size:30px;font-weight:700;letter-spacing:-.01em}
+.nm{font-size:28px;font-weight:700;letter-spacing:-.01em}
+.nm .full{font-family:var(--mono);font-size:16px;font-weight:400;color:var(--ink-3);margin-left:8px}
 .hero > .nm{color:var(--accent)}
-.ds{font-family:var(--mono);font-size:19px;color:var(--ink-2);margin-top:6px;line-height:1.4}
-.ex{font-family:var(--mono);font-size:17px;color:var(--ink-3);margin-top:4px}
+.ds{font-size:21px;color:var(--ink);margin-top:6px;line-height:1.35}
+.ex{font-size:19px;color:var(--ink-2);margin-top:6px;line-height:1.35}
+.ex span{font-family:var(--mono);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-right:6px}
 </style></head><body>
 <div class="frame">
 <div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
@@ -17,23 +19,24 @@ h1{font-size:56px;max-width:19ch}
   <div class="stage">
     <div class="ring">
       <div class="nm">AI</div>
-      <div class="ds">any system that does a "smart" task</div>
-      <div class="ex">e.g. hand-written rule: "free money" → spam</div>
+      <div class="ds">Any program that does a task we'd call smart. It doesn't have to learn anything.</div>
+      <div class="ex"><span>Example:</span> a spam filter with one rule a person wrote: if an email says "free money", mark it as spam.</div>
       <div class="ring">
         <div class="nm">Machine learning</div>
-        <div class="ds">learns the rules from examples</div>
-        <div class="ex">e.g. 10,000 labelled emails → spam filter</div>
+        <div class="ds">The program learns the rules itself, from examples. Nobody writes them.</div>
+        <div class="ex"><span>Example:</span> show it 10,000 emails marked "spam" or "not spam". It learns what spam looks like.</div>
         <div class="ring">
           <div class="nm">Deep learning</div>
-          <div class="ds">neural networks with many layers</div>
-          <div class="ex">works on raw text, images, audio</div>
+          <div class="ds">Machine learning with a neural network of many layers. It learns from raw text, photos and sound.</div>
+          <div class="ex"><span>Example:</span> a photo app that finds the faces in your pictures.</div>
           <div class="ring hero">
-            <div class="nm">LLMs</div>
-            <div class="ds">deep learning trained on text</div>
+            <div class="nm">LLMs <span class="full">large language models</span></div>
+            <div class="ds">Deep learning trained on huge amounts of text, so it can read and write language.</div>
+            <div class="ex"><span>Example:</span> the model behind a chat app. You type a question, it writes the answer.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 5</span></div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 8</span></div>
 </div></body></html>

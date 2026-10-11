@@ -6,12 +6,11 @@ The five ideas are in the images, one per image:
 1. AI vs ML vs deep learning
 2. What a model actually is
 3. Neural networks and deep learning
-4. How a model learns
-5. Training vs inference
+4. How a model learns (three images: the training loop, three ways to learn, and memorising vs learning)
+5. Training vs inference (two images: how a trained model predicts, then what changes and what doesn't)
 
-Three details the images don't show:
+Two details the images don't show:
 → Deep networks can be huge. GPT-2 (2019) had 1.5 billion weights. Today's large models have far more.
-→ Training can go wrong in a quiet way: overfitting. The model memorises its examples. 99% right on data it has seen, wrong on new data. You catch it by keeping some data aside that it never trains on, and measuring on that.
 → Fine-tuning is more training on a trained model, with your own examples. It gives you a new version of the model. Do not start there: most products only need inference.
 
 Keep in mind when you start building with models

@@ -21,12 +21,12 @@ It's all matrix maths, which is why it runs on GPUs.
 Training is a loop: guess, measure how wrong (the loss), adjust the weights a little. Repeat millions of times.
 
 Watch for overfitting: great on data it has seen, wrong on new data. Always test on held-out data.
-[images: 4]
+[images: 4, 5, 6]
 ---
 Training changes the weights. Inference uses them, frozen, on every call you pay for.
 
 Chat only "remembers" because the app resends the whole conversation.
-[images: 5]
+[images: 7, 8]
 ---
 So: send the model what it needs on every call. New facts go in the input, not the weights.
 

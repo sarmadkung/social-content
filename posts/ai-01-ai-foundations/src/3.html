@@ -7,6 +7,8 @@ svg text{font-family:var(--mono)}
 .neuron{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:19px;color:var(--ink-2);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
 .neuron .t{color:var(--ink-3);font-size:15px;letter-spacing:.16em;text-transform:uppercase;margin-right:6px}
 .neuron b{color:var(--accent);font-weight:500}
+.ndef{font-size:20px;color:var(--ink-2);line-height:1.4;margin-top:-10px}
+.ndef b{color:var(--ink);font-weight:600}
 .notes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .note{border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-family:var(--mono);font-size:17px;color:var(--ink-2);line-height:1.45}
 .note b{color:var(--ink);font-weight:500}
@@ -15,7 +17,8 @@ svg text{font-family:var(--mono)}
 <div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
   <h1>Deep means <em>many layers</em></h1>
   <div class="stage">
-    <div class="neuron"><span class="t">one neuron</span> inputs <b>×</b> weights → add up → simple function → output</div>
+    <div class="neuron"><span class="t">one neuron</span> inputs <b>×</b> weights → add up → small fixed rule → output</div>
+    <div class="ndef"><b>Neuron:</b> the spam model's maths in one small unit. The <b>small fixed rule</b> (called an activation function) is simple, e.g. "below 0, use 0". It lets the network learn curves, not just straight lines.</div>
     <svg viewBox="0 0 928 360" width="928" height="360">
       <g stroke="#2A313D" stroke-width="1.2">
         <line x1="80" y1="74" x2="290" y2="60"/>
@@ -120,8 +123,8 @@ svg text{font-family:var(--mono)}
     </svg>
     <div class="notes">
       <div class="note"><b>Nobody writes these rules.</b><br>They come out of training.</div>
-      <div class="note"><b>It's all matrix maths.</b><br>That's why it runs on GPUs.</div>
+      <div class="note"><b>It's all multiply and add,</b><br>millions of times. A GPU does thousands at once.</div>
     </div>
   </div>
-<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 5</span></div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 8</span></div>
 </div></body></html>

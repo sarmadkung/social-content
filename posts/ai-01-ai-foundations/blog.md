@@ -22,8 +22,8 @@ That sounds strange until you know five basic ideas. They sit under every AI sys
 1. **AI vs ML vs deep learning:** three words people mix up, and how they fit together.
 2. **What a model is:** a function with learned numbers inside it.
 3. **Neural networks:** why "deep" just means many layers.
-4. **How a model learns:** guess, measure, adjust, repeat.
-5. **Training vs inference:** why your chat never learns from you.
+4. **How a model learns:** guess, measure, adjust, repeat. Plus the three ways to learn, and the memorising trap.
+5. **Training vs inference:** how a trained model predicts, and why your chat never learns from you.
 
 ## 1. AI vs ML vs deep learning
 
@@ -124,6 +124,8 @@ A real model has billions of weights instead of one, so how does it know which o
 
 ### Three ways to learn
 
+![Supervised learns from examples with answers, unsupervised from data with no answers, reinforcement from rewards](5.png)
+
 The loop above learned from labelled examples. That's one of three ways a model can learn:
 
 - **Supervised:** from labelled examples. Emails marked "spam", houses with their prices.
@@ -131,6 +133,8 @@ The loop above learned from labelled examples. That's one of three ways a model 
 - **Reinforcement:** from rewards. The model tries actions and gets a reward for good ones, like a game player that gets points for winning.
 
 ### The trap: memorising instead of learning
+
+![Overfitting: a memorised model scores 99% on questions it has seen and fails new ones; held-out data catches it](6.png)
 
 A model can **memorise** its training examples instead of learning the real pattern. This is called **overfitting**.
 
@@ -143,9 +147,23 @@ How to catch it: before training, **keep some data aside** that the model never 
 
 ## 5. Training vs inference
 
-![Training changes the weights. Inference uses frozen weights on every call.](5.png)
+A model has two very different moments in its life: first it learns, then it predicts. Section 4 showed the learning. Here is the predicting.
 
-A model has two very different moments in its life.
+### How a model predicts
+
+![Predicting: a new input goes through the maths with the weights training found, and an answer comes out](7.png)
+
+**Prediction** means giving the trained model a new input it has never seen, and getting an answer back. It uses the weights training found. It learns nothing new while it does this.
+
+Take the house model from section 4. Training found w = 100. Now a new house comes along with 4 rooms. The model runs its maths: 100 × 4 = 400. It predicts a price of 400. The weight stays 100.
+
+The spam model works the same way. A new email arrives: 0 links, no "free", from a known sender. With the same weights as before: 0.9 × 0 + 1.4 × 0 − 2.0 × 1 = −2.0. That is below 0.5, so the answer is "not spam".
+
+Every model predicts like this, from the spam filter to the largest chat model: input becomes numbers, numbers are multiplied by weights and added up, and out comes an answer. A big model just has billions of weights instead of three.
+
+### What changes and what doesn't
+
+![Training changes the weights. Inference uses frozen weights on every call.](8.png)
 
 **Training** changes the weights. This is the loop from section 4. For a large model it is huge and rare: many GPUs running for weeks. Most teams never do it; model labs do it, then ship the finished weights.
 

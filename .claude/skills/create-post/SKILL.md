@@ -99,6 +99,11 @@ next unwritten number for that series.
      post: a list of 4+ short items or anything with a shape (steps,
      comparison, before/after) reads better as an image; a story or a single
      argument stays in the text.
+   - **Define every term fully, with an example.** In images and in text,
+     every term a beginner may not know gets a complete plain-sentence
+     definition and a complete, concrete `Example:` in simple words — never a
+     fragment like "deep learning trained on text" or "e.g. rule → spam". See
+     the visual skill's section 5d.
    - **Images explain the content that matters.** First list the 1–3 ideas the
      post is really about. Make one image per idea that needs a picture — more
      than one image is fine (LinkedIn multi-image post). Every shape is labelled
@@ -199,7 +204,8 @@ next unwritten number for that series.
      sections, one line each. **Easy to understand comes first; aim for a 1–5 minute
      read (220–1100 words; the blog shows "N min read" from the word count
      at 220 words a minute).** Plain words and short sentences; one simple
-     example per idea, the same one the images use; define a term once, in
+     example per idea, the same one the images use; define a term once, in a full plain sentence with a
+     simple example, in
      a few words, when it first appears. Let the images carry the detail.
      Leave out what the reader doesn't need to get the idea: side topics,
      history, extra techniques, long glossaries, repeated points. The length

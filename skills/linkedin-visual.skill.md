@@ -342,10 +342,28 @@ cover: the first image already is the hook.
    `1 / N` numbers; the cover is not counted.
 5. Check at 200px wide: the headline must read; the rows may blur.
 
+## 5d. Definitions and examples
+
+Whenever an image names a term the reader may not know (AI, LLM, weight,
+loss, token …), it explains it in full, in simple words:
+
+1. **Definition:** one complete plain sentence that says what it is — not a
+   fragment ("deep learning trained on text") and no new jargon inside it.
+   Spell out short forms the first time: "LLMs (large language models)".
+2. **Example:** a complete, concrete example, labelled `Example:`, that a
+   beginner can picture — "a spam filter with one rule a person wrote: if an
+   email says "free money", mark it as spam", never "e.g. rule → spam".
+3. Every defined term gets an example unless the picture itself is the
+   example (a worked calculation, a diagram of the thing).
+4. Body-sized text (19–22px, sans), not tertiary micro-text: the definition
+   is content, not a caption.
+
 ## 6. Review checklist
 
 Before returning any image, verify each:
 
+0. Every term a beginner may not know has a full plain definition and a
+   complete example (section 5d).
 1. Headline is 8 words or fewer.
 2. Ground is `#0A0C10`; no light variant slipped in.
 3. Exactly one accent on the canvas, and green only where it means correct.

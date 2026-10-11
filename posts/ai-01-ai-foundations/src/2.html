@@ -17,7 +17,9 @@ h1{font-size:56px;max-width:19ch}
 .part.w{border:1.5px solid var(--accent)}
 .part .t{font-size:32px;font-weight:700}
 .part.w .t{color:var(--accent)}
-.part .d{font-family:var(--mono);font-size:21px;color:var(--ink-2);margin-top:6px}
+.part .d{font-size:21px;color:var(--ink-2);margin-top:8px;line-height:1.4}
+.def{font-size:21px;color:var(--ink-2);line-height:1.4;margin-top:-6px}
+.def b{color:var(--accent);font-weight:600}
 .cap{font-family:var(--mono);font-size:17px;color:var(--ink-3);letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
 </style></head><body>
 <div class="frame">
@@ -41,11 +43,12 @@ h1{font-size:56px;max-width:19ch}
         <div class="out">spam</div>
       </div>
     </div>
+    <div class="def"><b>Weight:</b> a number that says how much one signal matters. A big number means it matters a lot; a minus number means it points away from spam.</div>
     <div class="cap">a model file holds two things</div>
     <div class="file" style="margin-top:0">
-      <div class="part"><div class="t">Architecture</div><div class="d">the shape of the maths</div></div>
-      <div class="part w"><div class="t">Weights</div><div class="d">the numbers training finds</div></div>
+      <div class="part"><div class="t">Architecture</div><div class="d">the steps: which numbers get multiplied and added, in what order</div></div>
+      <div class="part w"><div class="t">Weights</div><div class="d">the numbers used in those steps (0.9, 1.4, −2.0). Training finds them; nobody types them in.</div></div>
     </div>
   </div>
-<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 5</span></div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 8</span></div>
 </div></body></html>
