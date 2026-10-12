@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:18px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.p{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:20px 24px;display:flex;flex-direction:column;gap:10px}
+.p.hero{border:2px solid var(--accent)}
+.t{font-size:34px;font-weight:700}
+.hero .t{color:var(--accent)}
+.def{font-size:20px;color:var(--ink-2);line-height:1.35}
+.r{font-family:var(--mono);font-size:19px;color:var(--ink-2);line-height:1.35;padding-top:8px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+.r .k{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding-top:3px}
+.r b{color:var(--ink);font-weight:500}
+.lbl{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.lbl b{color:var(--accent);font-weight:500}
+.row{display:grid;grid-template-columns:1fr 34px 1.1fr 34px 0.8fr;align-items:stretch}
+.arw{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:26px;color:var(--ink-3)}
+.box{background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:14px 18px;display:flex;flex-direction:column;gap:6px}
+.box .k{font-family:var(--mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.box .v{font-family:var(--mono);font-size:21px;color:var(--ink-2)}
+.box .v b{color:var(--ink);font-weight:500}
+.box .sm{font-family:var(--mono);font-size:16px;color:var(--ink-3)}
+.out{font-size:34px;font-weight:700;color:var(--ink);line-height:1.1}
+.tok{font-size:18px;color:var(--ink-2);line-height:1.35}
+.tok b{color:var(--ink);font-weight:600}
+.story{border:1px dashed #3A4453;border-radius:12px;padding:14px 20px;font-size:20px;color:var(--ink-2);line-height:1.4}
+.story b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Training learns. <em>Inference doesn't.</em></h1>
+  <div class="stage">
+    <div class="cols">
+      <div class="p">
+        <div class="t">Training</div>
+        <div class="def">The guess-measure-adjust loop that finds the weights.</div>
+        <div class="r"><span class="k">weights</span><b>change</b></div>
+        <div class="r"><span class="k">how often</span><span>rare: weeks on many GPUs</span></div>
+      </div>
+      <div class="p hero">
+        <div class="t">Inference</div>
+        <div class="def">Using the trained model on a new input to get an answer.</div>
+        <div class="r"><span class="k">weights</span><b>frozen</b></div>
+        <div class="r"><span class="k">how often</span><span>every call, paid per token</span></div>
+      </div>
+    </div>
+    <div class="lbl">Example · <b>house price</b> · training found w = 100</div>
+    <div class="row">
+      <div class="box"><div class="k">new input</div><div class="v">a house with <b>4 rooms</b></div></div>
+      <div class="arw">→</div>
+      <div class="box"><div class="k">run the maths</div><div class="v">price = 100 × 4</div><div class="sm">w stays 100</div></div>
+      <div class="arw">→</div>
+      <div class="box"><div class="k">answer</div><div class="out">400</div></div>
+    </div>
+    <div class="tok"><b>Token:</b> a small piece of text, about a word or part of one. Example: "Hello world" is about 2 tokens.</div>
+    <div class="story"><b>Why chat seems to remember:</b> the app resends the whole conversation with every message. New chat → no history → the same mistake.</div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>9 / 9</span></div>
+</div></body></html>

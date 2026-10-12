@@ -5,6 +5,8 @@
 #   slide-01.png, slide-02.png …  (carousel decks, 1080x1350), else
 #   0.png, 1.png, 2.png …         (feed images, 1080x1080; 0 = feed cover)
 # carousel.pdf is a build output: git-ignored, rebuilt from the PNGs.
+# The PDF's title metadata comes from carousel-title.txt in the post folder —
+# the same line you type into LinkedIn's "document title" box on upload.
 #   scripts/carousel_pdf.sh                    → every post with images
 #   scripts/carousel_pdf.sh posts/ai-01-ai-foundations [...]
 #   CHROME=/path/to/chrome scripts/carousel_pdf.sh
@@ -39,7 +41,11 @@ for post in "${posts[@]}"; do
     continue
   fi
   deck="$post/.deck.html"
-  printf '<!doctype html><html><head><meta charset="utf-8"><style>@page{size:%spx %spx;margin:0}*{margin:0}img{display:block;width:%spx;height:%spx;break-after:page}</style></head><body>' "$w" "$h" "$w" "$h" > "$deck"
+  title=$(head -1 "$post/carousel-title.txt" 2>/dev/null \
+          | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+  [ -n "$title" ] || echo "carousel_pdf.sh: $post has no carousel-title.txt" >&2
+  printf '<!doctype html><html><head><meta charset="utf-8"><title>%s</title><style>' "$title" > "$deck"
+  printf '@page{size:%spx %spx;margin:0}*{margin:0}img{display:block;width:%spx;height:%spx;break-after:page}</style></head><body>' "$w" "$h" "$w" "$h" >> "$deck"
   for img in $imgs; do printf '<img src="%s">' "$img" >> "$deck"; done
   printf '</body></html>' >> "$deck"
   pdf="$post/carousel.pdf"

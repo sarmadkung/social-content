@@ -1,10 +1,9 @@
-Your chat model never learned from your correction. It can't.
+You correct a chat model. Tomorrow, in a new chat, it makes the same mistake. It never learned.
 
-Five ideas explain why:
-AI vs ML vs deep learning, what a model really is, why "deep" means many layers, how training works, and why inference never changes the weights.
+Nine ideas explain why, one per image: AI vs ML vs deep learning, data, what a model is, the answers it gives, neural networks, how training works, three ways to learn, overfitting, and training vs inference.
 
-Takeaway: training finds the weights. Inference uses them, frozen, on every call.
+The one to remember: training changes the weights. Using the model never does.
 
 Swipe →
 
-#ai #machinelearning #deeplearning #llm #softwareengineering
+#AIEngineering #MachineLearning #DeepLearning #LLM

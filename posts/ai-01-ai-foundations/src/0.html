@@ -1,16 +1,25 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/feed-cover/base.css">
-<style>:root{--accent:var(--ai)}</style></head><body>
+<style>:root{--accent:var(--ai)}
+.toc.many li{grid-template-columns:52px auto 1fr;column-gap:16px;padding:11px 0}
+.toc.many li::before{grid-row:auto;font-size:22px}
+.toc.many b{font-size:27px}
+.toc.many span{font-size:18px;margin-top:0;text-align:right}
+</style></head><body>
 <div class="frame">
   <div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
-  <h1>Five ideas under <em>every AI system</em></h1>
+  <h1>Nine ideas under <em>every AI system</em></h1>
   <div class="stage">
     <div class="toc-label">In this post</div>
-    <ol class="toc ">
-      <li><b>AI vs ML vs deep learning</b><span>each one sits inside the last</span></li>
+    <ol class="toc many">
+      <li><b>AI vs ML vs deep learning</b><span>each sits inside the last</span></li>
+      <li><b>Data</b><span>what a model learns from</span></li>
       <li><b>What a model is</b><span>a function with learned weights</span></li>
+      <li><b>Three kinds of answer</b><span>category, number, new content</span></li>
       <li><b>Neural networks</b><span>why deep means many layers</span></li>
-      <li><b>How a model learns</b><span>guess, measure, adjust · three ways to learn · memorising</span></li>
-      <li><b>Training vs inference</b><span>how a model predicts, and why your chat never learns</span></li>
+      <li><b>How a model learns</b><span>guess, measure, adjust</span></li>
+      <li><b>Three ways to learn</b><span>answers, no answers, rewards</span></li>
+      <li><b>Memorising vs learning</b><span>overfitting, and how to catch it</span></li>
+      <li><b>Training vs inference</b><span>why your chat never learns</span></li>
     </ol>
   </div>
   <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>swipe →</span></div>

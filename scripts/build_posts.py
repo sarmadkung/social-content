@@ -12,7 +12,9 @@ posts/<post>/post.md is the text to paste. On creation it is the draft body
 sections the images already show. This script never overwrites an existing
 post.md — delete it to start again from the draft. If the text still has
 [PERSONAL: ...] or [FACT_CHECK: ...] markers, a "not ready" block lists them;
-if the draft was edited after post.md, the index says so.
+if the draft was edited after post.md, the index says so. Posts with images
+also get carousel-title.txt (the carousel.pdf title LinkedIn asks for),
+seeded from the draft's TITLE: and never overwritten.
 
 Images live next to it and are made by render.sh from posts/<post>/src/:
   src/0.html                     → 0.png            (feed cover, posts with 3+ images)
@@ -88,6 +90,9 @@ def main(create=()):
                 out = "> ⚠ NOT READY — resolve these, then delete this block:\n" + \
                       "".join(f"> - {m}\n" for m in full) + "\n---\n\n" + body
             open(post, "w").write(out)
+        title = os.path.join(folder, "carousel-title.txt")   # the carousel.pdf title LinkedIn asks for
+        if fields.get("FORMAT", "") != "TEXT" and not os.path.exists(title):
+            open(title, "w").write(fields.get("TITLE", "") + "\n")
         text = open(post).read()
         markers = MARKER.findall(text.split("\n---\n", 1)[-1] if text.startswith("> ⚠") else text)
 
@@ -115,11 +120,14 @@ def main(create=()):
         name = os.path.basename(folder.rstrip("/"))
         if name in names:
             continue
-        leftovers = [f for f in os.listdir(folder) if f != "post.md"]
+        made = ("post.md", "carousel-title.txt")   # what this script writes
+        leftovers = [f for f in os.listdir(folder) if f not in made]
         if leftovers:
             print(f"build_posts: posts/{name}/ has no draft any more — kept (has {', '.join(leftovers)})")
         else:
-            os.remove(os.path.join(folder, "post.md"))
+            for f in made:
+                if os.path.exists(os.path.join(folder, f)):
+                    os.remove(os.path.join(folder, f))
             os.rmdir(folder)
 
     # queued posts first, in posting order; the rest after, by series

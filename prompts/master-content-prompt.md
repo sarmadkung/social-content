@@ -55,7 +55,8 @@ Never invent a project, a result or a number in pillars 6-7.
 AUDIENCE: SIMPLE LANGUAGE, PROFESSIONAL DEPTH
 Readers range from juniors to seniors. Serve both with the language, not by
 lowering the idea. The words stay simple enough for a junior to follow; the
-engineering idea stays deep enough that a senior learns something.
+idea is as deep as the post's LEVEL needs, and accurate enough that a senior
+would sign it.
 Never write a beginner post with a senior footnote at the end: the
 insight is the post, and the plain language is how everyone reaches it.
 
@@ -100,32 +101,37 @@ run of lessons, add a COMPARE, LIST, SCENARIO or WHY post that uses them.
 A post can also open with a myth ("Myth: hash maps are always O(1)") and
 correct it; that is a hook, not a separate mode.
 
-SENIOR INTEREST TEST (the depth rule): before writing a post, ask
-"Would an experienced software engineer learn something useful from this?"
-If not, do not write it. Every post holds at least one of: a non-obvious
-insight, an engineering trade-off, a failure mode, a production concern, a
-performance cost, an architectural consequence, a debugging technique, a
-practical pattern, a decision framework, or a real-world constraint.
-A definition alone is never enough.
-So: do not teach what every working developer already knows (variables,
-functions, loops, "what is an API", client vs server, "what is AI"). A
-foundation post earns its place only if later posts depend on it AND it
-passes this test (e.g. why array access is O(1), what DNS/TCP/TLS add to one
-request, how tokens drive cost and context limits).
-If a pillar runs out of new topics, write a mistakes, COMPARE, SCENARIO or
-trade-off post on topics already covered, never a more basic one.
+SENIOR INTEREST AND LEARNING VALUE TEST (the depth rule): defined in the
+content skill. Before writing, write down for yourself: the reader (LEVEL +
+the posts in "needs"), what they already know, the learning outcome in one
+sentence, and why it matters to them. The post must deliver that outcome;
+a definition alone is never enough.
+  - A foundation post on the roadmap (AI #01, DSA #01 ...) is judged by its
+    outcome, not rejected for being basic: later posts depend on it.
+  - Do not add unplanned basics (variables, loops, "what is an API", client
+    vs server), and never basics in Software Engineering.
+  - If a pillar runs out of new topics, write a mistakes, COMPARE, SCENARIO
+    or trade-off post on topics already covered, never a more basic one.
 
 PREREQUISITES: a post may only rely on ideas from the posts listed in its
 "needs" field (or plain common knowledge). If it needs more, the roadmap is
 wrong: fix the roadmap first.
 
 TEACH STRUCTURE
-Each TEACH post answers these questions, in this order. Skip a block only
-when it truly does not fit the topic. Other modes borrow blocks from here
+Each TEACH post answers these questions, in this order. Skip a block when it
+does not fit the topic or has nothing true to say — never fill it with an
+invented drawback, mistake or caveat. Other modes borrow blocks from here
 where useful (Common mistake, Takeaway, Next, Hashtags are always welcome).
 
-TEACHING ORDER RULE: problem → plain idea → technical name. The reader should
-understand the idea before they see the jargon. Never open with a definition.
+TEACHING ORDER RULE (adaptive; full rule in the content skill): choose the
+order that fits the LEVEL.
+  BEGINNER      problem → plain idea → "this is called X" → example →
+                what it means in practice. Never open with a definition.
+  INTERMEDIATE  problem → key term → how it works → demonstration →
+                trade-offs.
+  ADVANCED      precise claim → terms and assumptions → mechanism →
+                evidence → edge cases and trade-offs. Formal terms early.
+The blocks below may be reordered to match; the content they ask for stays.
 
   Hook          1-3 lines. A concrete situation, ideally with numbers
                 ("1 million users. You know one user's ID. Find them now.")
@@ -143,9 +149,9 @@ understand the idea before they see the jargon. Never open with a definition.
   Spot it when…  DSA pattern posts only. 2-3 "→" lines of clue words from
                 a problem statement that point to this pattern.
   When to use it / when not to   One line each. "Not" teaches judgment:
-                name the tempting-but-wrong case.
+                name the tempting-but-wrong case. Only a real case.
   Common mistake      One real mistake people make with this, and the fix.
-                      1-3 lines.
+                      1-3 lines. Skip it rather than invent one.
   Comparison          Optional. X vs Y in 2-4 lines, when a confusion exists.
   Takeaway            One line the reader can remember or say in an interview.
   Next                One line teasing the next post in the series.
@@ -165,7 +171,9 @@ tail that fits the post: what to watch for when you do this thing.
   For business   Keep in mind before you hire a developer
 3-8 "→" lines. Each is short (one line, about 60 characters or fewer) and a
 do or a don't with its reason: "Measure before optimising: Big-O ignores
-constants." It can absorb the "Common mistake" block. On VISUAL posts it is a
+constants." Every line is specific to this topic and adds something the body
+doesn't already say; no generic advice, no summary. 3 strong lines beat 8
+weak ones. It can absorb the "Common mistake" block. On VISUAL posts it is a
 good section to turn into an image (list it in VISUALS:).
 
 WATCH OUT SECTION (optional, when the topic has real drawbacks)
@@ -247,8 +255,8 @@ List the slides in the header, after LAYOUT:
 Slide layouts are STATEMENT, GRID, ANATOMY, FLOW, COMPARE or STAT.
 Post it on LinkedIn as a PDF document (swipeable) and on Instagram as images.
 
-LEVEL guide (how much the reader must already know, never how deep the post is:
-every level passes the Senior Interest Test)
+LEVEL guide (how much the reader must already know; every level passes the
+Learning Value Test, and the depth for each level is in the content skill)
   BEGINNER      few prerequisites: needs no earlier post except basics
   INTERMEDIATE  builds on earlier posts in the series; trade-offs appear
   ADVANCED      production detail, failure modes, or system-level design
@@ -256,11 +264,13 @@ Within a pillar, levels should rise over the roadmap, not jump around.
 
 LENGTH
 The draft is the skeleton: the full source for the images and the posted
-text, with no length limit. The limit is on the text that gets posted
-(posts/<post>/post.md): 1,400-2,500 characters, hard limit 3,000 (LinkedIn's
-cap), no minimum when the post has images. Never cut content to fit: move a
-section into an image instead. If it still doesn't fit, split it into two
-posts. CAROUSEL is not a way to
+text, with no length limit. The limit is on the LinkedIn text that gets
+posted (posts/<post>/post.md): with images, a short caption of about
+700-1,200 characters (1,400 soft ceiling, hashtags not counted); without
+images, 1,400 max; 3,000 is LinkedIn's hard cap. The caption selects from the
+draft (hook, why it matters, a pointer to the images, one takeaway); the
+images and the blog carry the rest. Other platforms keep their own lengths.
+Never cut content from the draft to fit. CAROUSEL is not a way to
 fit more words: it is only for sequences that pass the CAROUSEL rule.
 
 ACCURACY
@@ -285,16 +295,23 @@ Already drafted, do not repeat: every post in generated/drafts/.
 Check published/linkedin.md (the published log) and generated/ before writing.
 
 SELF-CHECK BEFORE RETURNING
-  1. Could a junior follow the language all the way through?
-  2. Senior Interest Test: what would a senior learn here? Name it.
+First run the CONTENT QUALITY GATE from the content skill on the finished
+draft (correctness, depth, teaching, language, completeness, author intent,
+markers), fix what fails, and re-read the fixed version. Then check:
+  1. Could the intended reader (its LEVEL) follow the language all the way?
+  2. Learning Value Test: name the learning outcome in one sentence. Does
+     the post deliver it?
   3. Is every term explained?
-  4. Is the posted text (post.md) under 3,000 characters?
+  4. Is the LinkedIn caption (post.md) short and selective: about
+     700-1,200 characters with images, nothing the images already explain?
   5. Is the headline 8 words or fewer?
-  6. No invented personal facts?
-  7. Does the reader meet the idea before the technical term?
+  6. No invented personal facts, incidents, metrics or quotes?
+  7. Does the teaching order fit the LEVEL?
   8. Is there a concrete example (code, numbers, diagram, before/after)?
-  9. Is there a "when not to" and a common mistake? (TEACH and COMPARE)
-  9a. Is there a "Keep in mind …" section with short do/don't lines?
+  9. Where the topic has a real "when not to" or common mistake, is it
+     there? Is nothing invented to fill a block?
+  9a. Is there a "Keep in mind …" section with short, topic-specific
+     do/don't lines?
   9c. If the topic has real drawbacks, is there a "Watch out …" section?
   9b. SOFTWARE ENGINEERING: does every concept come with a failure scenario
      (what breaks without it) before the reason to adopt it?
@@ -359,3 +376,17 @@ SELF-CHECK BEFORE RETURNING
    is and how to use it, but not what it costs. An optional "Watch out …"
    section now lists the thing's own drawbacks and what to watch so they
    don't bite, whenever the topic has them.
+15. **Learning value, adaptive order and a quality gate** (added 2026-10-12).
+   The Senior Interest Test rejected roadmap foundation posts (AI #01) just
+   because seniors know the basics; it now judges a post by its learning
+   outcome at its level, while still blocking unplanned basics. The single
+   teaching order became one per LEVEL, because advanced topics read better
+   with the terms first. "When not to" and "Common mistake" are written only
+   when real, because fixed blocks invited invented caveats. A Content
+   Quality Gate (in the content skill) now runs before a draft is saved, so
+   smooth writing with a wrong definition or claim does not get through.
+16. **Short LinkedIn captions** (added 2026-10-12). Captions with images ran
+   1,600+ characters because everything not drawn stayed in. The caption is
+   now a selection (hook, why it matters, image list, one takeaway, at most
+   one closer) of about 700-1,200 characters; the draft, images and blog keep
+   the full lesson. Other platforms are unchanged.

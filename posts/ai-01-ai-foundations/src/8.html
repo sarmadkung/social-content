@@ -2,39 +2,53 @@
 <style>
 :root{--accent:var(--ai)}
 h1{font-size:56px;max-width:19ch}
-.stage{justify-content:center;gap:26px}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.p{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 28px;display:flex;flex-direction:column;gap:20px}
+.stage{justify-content:center;gap:20px}
+.def{font-size:22px;color:var(--ink-2);line-height:1.4}
+.def b{color:var(--ink);font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.p{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:12px}
 .p.hero{border:2px solid var(--accent)}
-.t{font-size:42px;font-weight:700}
+.t{font-size:30px;font-weight:700}
 .hero .t{color:var(--accent)}
-.r{font-family:var(--mono);font-size:24px;color:var(--ink-2);line-height:1.4;padding-top:16px;border-top:1px solid var(--line)}
-.r .k{display:block;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
-.r b{color:var(--ink);font-weight:500}
-.r .sm{display:block;font-family:var(--sans);font-size:20px;color:var(--ink-2);margin-top:8px}
-.def{font-size:22px;color:var(--ink-2);line-height:1.4;margin-top:-8px}
-.story{border:1px dashed #3A4453;border-radius:12px;padding:22px 24px;font-family:var(--mono);font-size:22px;color:var(--ink-2);line-height:1.5}
-.story b{color:var(--ink);font-weight:500}
+.s{font-size:19px;color:var(--ink-2);line-height:1.35}
+.r{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:20px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:10px}
+.r b{font-weight:600}
+.ok{color:var(--ink)}
+.bad{color:var(--ink)}
+.lbl{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.split{display:grid;grid-template-columns:1.6fr 1fr;gap:12px}
+.part{border:1.5px solid #3A4453;border-radius:12px;padding:14px 18px;font-size:20px;color:var(--ink-2);line-height:1.35}
+.part b{display:block;color:var(--ink);font-size:21px;margin-bottom:2px}
+.part.held{border:2px dashed var(--accent)}
+.part.held b{color:var(--accent)}
+.check{font-size:20px;color:var(--ink-2);line-height:1.45}
+.check b{color:var(--ink);font-weight:600}
 </style></head><body>
 <div class="frame">
 <div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
-  <h1>Training learns. <em>Inference doesn't.</em></h1>
+  <h1>Memorising is <em>not learning</em></h1>
   <div class="stage">
+    <div class="def"><b>Overfitting:</b> the model memorises its training examples instead of learning the real pattern. It looks great on data it has seen and fails on new data.</div>
     <div class="cols">
       <div class="p">
-        <div class="t">Training</div><div class="def">Teaching the model. The guess-measure-adjust loop that finds the weights.</div>
-        <div class="r"><span class="k">weights</span><b>change</b></div>
-        <div class="r"><span class="k">how often</span>rare: weeks on many GPUs</div>
-        <div class="r"><span class="k">who does it</span>model labs, few teams</div>
+        <div class="t">Memorised</div>
+        <div class="s">like a student who memorised last year's exam answers</div>
+        <div class="r"><span>questions it has seen</span><b class="ok">99% ✓</b></div>
+        <div class="r"><span>new questions</span><b class="bad">fails ✗</b></div>
       </div>
       <div class="p hero">
-        <div class="t">Inference</div><div class="def">Using the model. You send a question, it gives an answer.</div>
-        <div class="r"><span class="k">weights</span><b>frozen</b></div>
-        <div class="r"><span class="k">how often</span>every single call</div>
-        <div class="r"><span class="k">who does it</span>you, paying per token<span class="sm">Token: a small piece of text, about one word.</span></div>
+        <div class="t">Learned</div>
+        <div class="s">like a student who understood the topic</div>
+        <div class="r"><span>questions it has seen</span><b class="ok">good ✓</b></div>
+        <div class="r"><span>new questions</span><b class="ok">good ✓</b></div>
       </div>
     </div>
-    <div class="story"><b>Why chat "remembers":</b> the app resends the whole conversation each time. New chat → no history → same mistake.</div>
+    <div class="lbl">How to catch it: keep some data aside</div>
+    <div class="split">
+      <div class="part"><b>Training data</b>the model learns from this</div>
+      <div class="part held"><b>Held-out data</b>never shown in training; test on this</div>
+    </div>
+    <div class="check"><b>Good on both:</b> it learned. &nbsp;<b>Good on training, bad on held-out:</b> it memorised.</div>
   </div>
-<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>8 / 8</span></div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>8 / 9</span></div>
 </div></body></html>

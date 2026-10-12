@@ -11,7 +11,7 @@ SKILL 1 OF 2 — LINKEDIN CONTENT  (source file: skills/linkedin-content.skill.m
 ---
 name: linkedin-content
 description: Use when writing, planning, or reviewing LinkedIn content for Muhammad Sarmad — enforces positioning, the seven content pillars, series labels, and tone.
-version: 1.6
+version: 1.7
 owner: Muhammad Sarmad
 works-with: any (Claude, ChatGPT, Gemini, local)
 ---
@@ -88,15 +88,35 @@ verify (history, dates, "X uses Y", benchmarks, specific library or runtime
 behaviour). Each goes on its own line after the paragraph. `validate.py` stops a
 post from moving past draft while either is left.
 
-**Senior Interest Test:** before writing, ask "Would an experienced software
-engineer learn something useful from this?" If not, do not write it. Every post
-holds at least one of: a non-obvious insight, a trade-off, a failure mode, a
-production concern, a performance cost, an architectural consequence, a
-debugging technique, a practical pattern, a decision framework, or a real-world
-constraint. A definition alone is never enough, so skip anything every working
-developer already knows (variables, functions, loops, client vs server, "what
-is AI"). Simple language, professional depth: juniors follow the words, seniors
-learn from the idea. Never a beginner post with a senior footnote.
+**Senior Interest and Learning Value Test:** before writing or refining, answer
+four things: who the reader is (the `LEVEL:` and the posts in `needs`), what
+they already know, the learning outcome in one sentence, and why it matters to
+them. A post earns its place when it delivers that outcome — more than a bare
+definition. Valid outcomes: understand a foundation concept accurately; see how
+or why a mechanism works; learn a technique or mental model; spot a non-obvious
+insight, trade-off, failure mode or limitation; separate two concepts people
+mix up; learn to choose, build, debug or evaluate something; see a production
+or architecture consequence.
+- **Foundation posts the roadmap plans are welcome.** A roadmap line like AI
+  #01 or DSA #01 exists because later posts depend on it; do not reject it
+  because seniors know it. Judge it by its outcome: accurate definitions, a
+  complete example, and the one idea a learner needs next.
+- **Unplanned basics are not.** Do not add a post on what every working
+  developer knows (variables, loops, client vs server) outside a roadmap
+  foundation slot, and never in Software Engineering, which targets mid-level
+  and senior readers. When a pillar runs out of topics, go sideways (mistakes,
+  COMPARE, SCENARIO), never more basic.
+- **"Beginner-friendly" never excuses a wrong or empty explanation.**
+Simple language, professional depth: juniors follow the words, seniors trust
+the accuracy. Never a beginner post with a senior footnote.
+
+**Depth by LEVEL** (guidance, not boxes — follow the post's actual goal):
+- BEGINNER — build intuition, define every term, familiar examples, no jargon
+  the reader doesn't need yet.
+- INTERMEDIATE — explain the mechanism, the implementation choices, a realistic
+  example and the trade-offs that matter.
+- ADVANCED — be precise about assumptions, system boundaries, mechanisms, edge
+  cases and failure modes; use the formal terms early when they help.
 
 **Choosing FORMAT:** `VISUAL` is the default. A post is `TEXT` only when both
 are true: it is short (body 1,400 characters or fewer) and the words explain it
@@ -111,18 +131,121 @@ image would be unreadable or lose the order. Otherwise one image. A carousel is
 the cover (HEADLINE) + one slide per stage + an END slide, 6–10 slides, listed
 in a `SLIDES:` block (full rule in `prompts/master-content-prompt.md`).
 
-**Teaching order for every educational post:** problem → plain idea → technical
-name. Open with a concrete situation (numbers help), explain the idea in plain
-words, and only then say "this is called X". Every post includes a concrete
-example (code, numbers, a text diagram or before/after), a "when not to use it"
-line, and one common mistake with its fix. The full block order lives in
+**Adaptive teaching order:** pick the order that makes the idea easiest to
+understand at the post's level. These are starting points, not templates:
+- BEGINNER: familiar problem → plain idea → "this is called X" → concrete
+  example → what it means in practice.
+- INTERMEDIATE: problem or question → key term → how the mechanism works →
+  demonstration → trade-offs and when to use it.
+- ADVANCED: precise claim or problem → terms and assumptions → mechanism or
+  reasoning → evidence or example → edge cases, trade-offs, implications.
+Whatever the order: prerequisites are present or covered by `needs`; terms
+the reader may not know are defined when they first appear; the post shows how
+or why when the outcome needs it; the example demonstrates the idea instead of
+restating the definition; the ending gives an implication, decision rule or
+takeaway. The block order per mode lives in `prompts/master-content-prompt.md`.
+
+**Examples, limits and mistakes — real or not at all:** every post has a
+concrete example (code, numbers, a text diagram or before/after). A "when not
+to use it" line, a common mistake with its fix, a failure mode and a trade-off
+go in whenever the topic has a real one — most TEACH and COMPARE topics do.
+Never invent one to fill a slot: no made-up drawback, no straw-man mistake, no
+caveat the topic doesn't have. If a block has nothing true to say, leave it
+out.
+
+**Keep in mind rule (every pillar):** every post except a QUIZ question has a
+section whose heading starts with `Keep in mind`, then a tail worded for the
+post: `Keep in mind: how to learn DSA without wasting time`, `Keep in mind
+before you add a cache`, `Keep in mind when you ship a RAG feature`, `Keep in
+mind before you hire a developer`. 3–8 short `→` lines (about 60 characters
+each), each a do or a don't with its reason. Examples per pillar are in
+`prompts/master-content-prompt.md`. `validate.py` fails a prepared post
+without it, so it stays required — but every line must be specific to this
+topic and say something the body doesn't already say word for word. Use 3
+strong lines rather than 8 with filler; no generic advice ("practice daily",
+"keep learning") and no summary of the post.
+
+**Watch out section (optional):** when the topic has real drawbacks, add a
+section whose heading starts with `Watch out`, worded for the topic: `Watch
+out: what caching breaks`, `Watch out: where RAG fails`, `Watch out: what
+microservices cost you`. 2–5 `→` lines, each `problem → where you see it → how
+to prevent or catch it`. "Keep in mind" is how to do the thing well; "Watch
+out" is what the thing costs even when done well. Skip it when there are no
+real drawbacks. Text or image, decided per post. Examples per pillar are in
 `prompts/master-content-prompt.md`.
+
+**Length:** the draft in `generated/drafts/` is the skeleton — the full
+source that the images and the posted text are made from — so it has no length
+limit. The limit is on `posts/<post>/post.md`, the LinkedIn text that gets
+posted. With images it is a short caption: about 700–1,200 characters
+(hashtags not counted), 1,400 as a soft ceiling, no minimum — shorter is better
+when the point is clear; go over only when the user asks or the post truly
+needs it. Without images (TEXT): 1,400 max. 3,000 is LinkedIn's hard cap. These
+numbers are for LinkedIn only; daily.dev, Instagram, X and the blog keep their
+own rules in `create-post`. Never cut content from the draft to fit; the
+caption is an editorial selection from it (rule in `create-post`).
+
+**Blog links (every platform):** the blog is the one place social posts send
+readers for the full explanation: https://www.muhammadsarmad.com. Link only
+when a matching article is live there — its file exists in the site repo
+(`~/Documents/personal/muhammadsarmad/content/blog/<slug>.mdx`, `draft:
+false`) and the URL is `https://www.muhammadsarmad.com/blog/<slug>`, using the
+site's slug, which can differ from the draft basename. Never invent a URL,
+never link to an unrelated page; no matching article → no link. Never link
+one social profile from another or ask readers to follow on another platform.
+The call to action is one natural line, e.g. "Read the full explanation on my
+blog: <url>" or "The detailed guide is on my blog: <url>". Placement per
+platform is in `create-post`.
 
 **Failure scenario rule (Software Engineering):** every concept, tool or
 feature comes with a concrete production scenario showing what breaks without
 it, then why we adopt it. Model: a payment call times out, the client retries,
 the customer is charged twice → that is why payment APIs need idempotency
 keys. In COMPARE posts, give each option its own "where it hurts" scenario.
+The scenario must be technically plausible; numbers are illustrative unless
+sourced, and are worded that way ("say 2,000 requests").
+
+**Content Quality Gate (before a draft is saved or moves past draft):** this
+is the one definition of the gate; `create-post`, `improve-draft` and the
+master prompt's self-check all run it. Read the finished draft — not the plan
+for it — as both the intended reader and a technical reviewer, fix what fails,
+then read the fixed version again.
+1. **Technical correctness.** Definitions and terms are accurate. Mechanisms,
+   causal claims, comparisons and conclusions are sound. Code, numbers,
+   examples and analogies actually support the point (and the maths is
+   right). Related concepts are not confused. A simplification is not stated
+   as always true; needed assumptions, scope and qualifications are there.
+   Every checkable outside claim has a `[FACT_CHECK: …]` marker unless you
+   really checked it. Never say a source, benchmark or spec was verified when
+   it wasn't. If a claim can't be supported, qualify it, mark it, or cut it.
+2. **Depth and learning value.** The post delivers the one-sentence learning
+   outcome at its `LEVEL:`. It teaches the idea, not just names it. Nothing a
+   reader needs for the central claim is missing; no advanced detail pulls
+   away from it.
+3. **Teaching.** The order is logical for the level; prerequisites are present
+   or in `needs`; jargon and abbreviations are handled; the example shows the
+   concept; analogies are bounded and not misleading. After reading, the
+   reader could explain the main idea.
+4. **Language and structure.** No repetition, filler, vague claims, needless
+   hedging or generic AI phrasing. Direct, specific, natural sentences. Every
+   section earns its heading — none exists only because a template has it.
+   Shorter is not a reason to cut correctness or needed depth.
+5. **Completeness and relevance.** It says why the concept matters; examples,
+   failure modes, limits and trade-offs are there when they matter; no
+   important distinction or caveat is missing; nothing is said twice; the
+   ending fits the outcome.
+6. **Author intent.** Topic, argument, stance, audience and real experience are
+   kept. No invented anecdotes, incidents, metrics, credentials, client
+   results, benchmarks or quotes — a gap is a `[PERSONAL: …]` marker. No
+   complexity added to sound senior; no needed detail removed to sound
+   simple. A good draft gets only the changes that add real value. When a
+   factual or logical fix changes what the draft claims, say so in the reply.
+7. **Markers and status.** Every `[PERSONAL: …]` and `[FACT_CHECK: …]` is on
+   its own line in the right form. A draft with any marker left stays
+   `STATUS: draft` (`validate.py` enforces this), and platform texts never
+   carry one.
+The gate is a review, not a list of things to add: it never licenses an extra
+section, an invented caveat or an unsupported fact.
 
 ---
 
@@ -214,8 +337,8 @@ architects; engineering leaders; technical founders; developers interested in
 architecture, scalable systems, and AI engineering.
 
 Stay accessible to juniors without becoming simplistic for experienced
-engineers: simple language, professional depth (see the Senior Interest Test
-above).
+engineers: simple language, professional depth (see the Senior Interest and
+Learning Value Test above).
 
 ## 4. Seven content pillars
 
@@ -428,7 +551,7 @@ curriculum · YouTube content system · LinkedIn-to-YouTube repurposing ·
 newsletter strategy · audience feedback system · topic prioritization · content
 analytics · brand voice examples · examples of high-performing posts.
 
-*End of v1.5*
+*End of v1.7*
 
 ==============================================================================
 SKILL 2 OF 2 — LINKEDIN VISUAL SYSTEM  (source file: skills/linkedin-visual.skill.md)
@@ -742,10 +865,64 @@ Never use the accent as a gradient, and never give one card two accents.
    document (image posts show as a grid, not a swipe); Instagram gets the
    PNGs as a carousel. Same files, both platforms.
 
+## 5b. Cover rules (daily.dev and link previews)
+
+Every prepared post also gets a cover: `posts/<post>/src/cover.html` →
+`cover.png`, built on `templates/cover/base.css`.
+
+1. Size 1200 × 630 (the Open Graph size). daily.dev publishes no cover size and
+   feeds crop to other shapes, so everything stays inside the frame padding
+   (88px sides, 80px top and bottom) — the base CSS already does this.
+2. Content, and nothing else: series label with brand mark, the post's
+   `HEADLINE:` (accent on the key words via `<em>`), one motif on the right,
+   footer with name lockup left and topic right.
+3. The motif is one small labelled picture of the post's main idea (e.g.
+   "AI writes the code → you spot the O(n²)"). Two or three shapes, plain-word
+   labels. No grids, no stats, no second idea.
+4. Same locked identity as the feed images: ground, ink, one pillar accent.
+5. Check at 300px wide: the headline must read; the motif may blur.
+
+## 5c. Feed cover (`0.png`) — posts with 3 or more images
+
+A post with 3+ feed images gets a feed cover, `posts/<post>/src/0.html` →
+`0.png`, shown first on LinkedIn, Instagram and X. Feeds show only the first
+image, so it has to say what the whole post covers; otherwise a reader sees
+idea 1 and never learns there are four more. Posts with 1–2 images get no feed
+cover: the first image already is the hook.
+
+1. Size 1080 × 1080, built on `templates/feed-cover/base.css` (variant B
+   identity). The daily.dev `cover.png` is 1200 × 630 and is never reused here.
+2. It is a contents slide, not a title card: series label with brand mark, the
+   post's `HEADLINE:` (accent via `<em>`), an `In this post` label, then one
+   numbered row per image — plain name + 3–6 word description. The rows follow
+   the `VISUALS:` order, so row 1 is `1.png`.
+3. No diagram, no stats, no lines copied from the post body.
+4. Footer: name lockup left, `swipe →` right. The other images keep their
+   `1 / N` numbers; the cover is not counted.
+5. Check at 200px wide: the headline must read; the rows may blur.
+
+## 5d. Definitions and examples
+
+Whenever an image names a term the reader may not know (AI, LLM, weight,
+loss, token …), it explains it in full, in simple words:
+
+1. **Definition:** one complete plain sentence that says what it is — not a
+   fragment ("deep learning trained on text") and no new jargon inside it.
+   Spell out short forms the first time: "LLMs (large language models)".
+2. **Example:** a complete, concrete example, labelled `Example:`, that a
+   beginner can picture — "a spam filter with one rule a person wrote: if an
+   email says "free money", mark it as spam", never "e.g. rule → spam".
+3. Every defined term gets an example unless the picture itself is the
+   example (a worked calculation, a diagram of the thing).
+4. Body-sized text (19–22px, sans), not tertiary micro-text: the definition
+   is content, not a caption.
+
 ## 6. Review checklist
 
 Before returning any image, verify each:
 
+0. Every term a beginner may not know has a full plain definition and a
+   complete example (section 5d).
 1. Headline is 8 words or fewer.
 2. Ground is `#0A0C10`; no light variant slipped in.
 3. Exactly one accent on the canvas, and green only where it means correct.

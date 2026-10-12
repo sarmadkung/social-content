@@ -1,27 +1,34 @@
-You correct a chat model. It says "thanks, noted". Tomorrow, in a new chat, it makes the same mistake. It did not forget. It never learned.
+> ⚠ NOT READY — resolve these, then delete this block:
+> - [FACT_CHECK: APIs bill per token, with input and output tokens priced separately → OpenAI and Anthropic pricing pages]
 
-That makes sense once you know five basic ideas. Most of you know them already. This post puts them in one place, in order, before this series goes into LLMs.
+---
 
-The five ideas are in the images, one per image:
-1. AI vs ML vs deep learning
-2. What a model actually is
-3. Neural networks and deep learning
-4. How a model learns (three images: the training loop, three ways to learn, and memorising vs learning)
-5. Training vs inference (two images: how a trained model predicts, then what changes and what doesn't)
+You correct an AI model. It says, "Thanks, noted."
 
-Two details the images don't show:
-→ Deep networks can be huge. GPT-2 (2019) had 1.5 billion weights. Today's large models have far more.
-→ Fine-tuning is more training on a trained model, with your own examples. It gives you a new version of the model. Do not start there: most products only need inference.
+Tomorrow, in a new chat, it makes the same mistake.
 
-Keep in mind when you start building with models
-→ The model won't learn from use. Send what it needs on every call.
-→ New facts go in the input, not the weights. The weights are fixed.
-→ Long chat history costs tokens on every call. Trim it.
-→ Test on data the model never saw, or you measure its memory.
-→ Try prompts and examples before fine-tuning. It is cheaper.
+It didn't forget. It never learned from your correction.
 
-Takeaway: a model is a function with learned weights. Training finds them. Inference uses them, on every call you pay for.
+To understand why, you need to understand a few fundamentals before diving into LLMs.
 
-Next: what an LLM actually does at inference. Next-token prediction, plainly.
+I put these 9 fundamental AI concepts into one visual guide:
 
-#AIEngineering #MachineLearning #DeepLearning #LLM #SoftwareEngineering
+1. AI vs. ML vs. Deep Learning
+2. Data: What a model learns from
+3. What a model actually is
+4. What a model can give back
+5. Neural networks: Why deep means many layers
+6. How a model learns: Guess, measure, adjust
+7. Three ways a model can learn
+8. Memorising vs. learning
+9. Training vs. inference
+
+The key takeaway: A model is a function with learned weights. Training adjusts those weights; inference uses them to generate outputs.
+
+And every inference call comes with a cost.
+
+What fundamental concept would you add to this list?
+
+Read the full explanation on my blog: https://www.muhammadsarmad.com/blog/ai-foundations
+
+#AIEngineering #MachineLearning #DeepLearning #LLM

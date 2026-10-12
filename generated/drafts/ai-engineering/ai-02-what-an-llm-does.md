@@ -17,6 +17,10 @@ An LLM (large language model) is a program trained on a huge amount of text. Giv
 
 Think of the autocomplete on your phone keyboard. An LLM is that idea, trained at a much larger scale.
 
+How is it trained? In two steps. First it learns to predict the next word from huge amounts of text; the text holds its own answers, so nobody has to label it. Then rewards from human ratings tune it to give helpful answers (reinforcement learning, from post #01).
+
+[FACT_CHECK: LLM pretraining is self-supervised next-token prediction, followed by RLHF → InstructGPT paper (Ouyang et al., 2022)]
+
 Why does this matter?
 Once you know this, many "strange" behaviours make sense:
 → It can sound sure and still be wrong. It picks likely text, not checked facts.

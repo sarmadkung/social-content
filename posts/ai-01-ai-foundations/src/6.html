@@ -2,53 +2,38 @@
 <style>
 :root{--accent:var(--ai)}
 h1{font-size:56px;max-width:19ch}
-.stage{justify-content:center;gap:20px}
-.def{font-size:22px;color:var(--ink-2);line-height:1.4}
-.def b{color:var(--ink);font-weight:600}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.p{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:12px}
-.p.hero{border:2px solid var(--accent)}
-.t{font-size:30px;font-weight:700}
-.hero .t{color:var(--accent)}
-.s{font-size:19px;color:var(--ink-2);line-height:1.35}
-.r{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:20px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:10px}
-.r b{font-weight:600}
-.ok{color:var(--ink)}
-.bad{color:var(--ink)}
-.lbl{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
-.split{display:grid;grid-template-columns:1.6fr 1fr;gap:12px}
-.part{border:1.5px solid #3A4453;border-radius:12px;padding:14px 18px;font-size:20px;color:var(--ink-2);line-height:1.35}
-.part b{display:block;color:var(--ink);font-size:21px;margin-bottom:2px}
-.part.held{border:2px dashed var(--accent)}
-.part.held b{color:var(--accent)}
-.check{font-size:20px;color:var(--ink-2);line-height:1.45}
-.check b{color:var(--ink);font-weight:600}
+.stage{justify-content:center;gap:28px}
+.model{font-family:var(--mono);font-size:24px;color:var(--ink-2)}
+.model b{color:var(--accent);font-weight:500}
+.loop{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;align-items:stretch}
+.arw{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:28px;color:var(--ink-3)}
+.box{background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:26px 22px;display:flex;flex-direction:column;gap:14px}
+.box.hero{border:2px solid var(--accent)}
+.n{font-size:36px;font-weight:700}
+.hero .n{color:var(--accent)}
+.d{font-family:var(--mono);font-size:23px;color:var(--ink-2);line-height:1.5}
+.sm{font-size:21px;color:var(--ink-2);line-height:1.35}
+.back{border:1.5px dashed #3A4453;border-radius:12px;padding:20px 18px;font-family:var(--mono);font-size:22px;color:var(--ink-2);text-align:center}
+.cap{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.track{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:30px;color:var(--ink-3)}
+.track .w{border:1px solid #3A4453;border-radius:8px;padding:12px 18px;color:var(--ink-2)}
+.track .w.fin{border:2px solid var(--accent);color:var(--accent)}
 </style></head><body>
 <div class="frame">
 <div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
-  <h1>Memorising is <em>not learning</em></h1>
+  <h1>Learning is <em>guess, measure, adjust</em></h1>
   <div class="stage">
-    <div class="def"><b>Overfitting:</b> the model memorises its training examples instead of learning the real pattern. It looks great on data it has seen and fails on new data.</div>
-    <div class="cols">
-      <div class="p">
-        <div class="t">Memorised</div>
-        <div class="s">like a student who memorised last year's exam answers</div>
-        <div class="r"><span>questions it has seen</span><b class="ok">99% ✓</b></div>
-        <div class="r"><span>new questions</span><b class="bad">fails ✗</b></div>
-      </div>
-      <div class="p hero">
-        <div class="t">Learned</div>
-        <div class="s">like a student who understood the topic</div>
-        <div class="r"><span>questions it has seen</span><b class="ok">good ✓</b></div>
-        <div class="r"><span>new questions</span><b class="ok">good ✓</b></div>
-      </div>
+    <div class="model">tiny model: price = <b>w</b> × rooms &nbsp;·&nbsp; 3 rooms really cost 300</div>
+    <div class="loop">
+      <div class="box"><div class="n">Guess</div><div class="d">w = 50<br>50 × 3 = 150</div></div>
+      <div class="arw">→</div>
+      <div class="box"><div class="n">Measure</div><div class="d">300 − 150<br>loss = 150</div><div class="sm"><b style="color:var(--ink)">Loss:</b> how wrong the guess was</div></div>
+      <div class="arw">→</div>
+      <div class="box hero"><div class="n">Adjust</div><div class="d">too low,<br>raise w a little</div></div>
     </div>
-    <div class="lbl">How to catch it: keep some data aside</div>
-    <div class="split">
-      <div class="part"><b>Training data</b>the model learns from this</div>
-      <div class="part held"><b>Held-out data</b>never shown in training; test on this</div>
-    </div>
-    <div class="check"><b>Good on both:</b> it learned. &nbsp;<b>Good on training, bad on held-out:</b> it memorised.</div>
+    <div class="back">↺ repeat over many examples, many times</div>
+    <div class="cap">w over training</div>
+    <div class="track"><span class="w">50</span>→<span class="w">70</span>→<span class="w">85</span>→<span class="w">95</span>→<span class="w fin">100</span><span style="font-size:21px;margin-left:8px">100 × 3 = 300 ✓</span></div>
   </div>
-<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>6 / 8</span></div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>6 / 9</span></div>
 </div></body></html>

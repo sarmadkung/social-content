@@ -58,7 +58,9 @@ LEVELS = {"BEGINNER", "INTERMEDIATE", "ADVANCED"}
 BANNED = ["delve", "leverage", "robust", "seamless", "game-changer", "game changer",
           "fast-paced world", "unlock"]
 BODY_HARD_MAX = 3000          # LinkedIn's cap
-BODY_TARGET = (1400, 2500)    # master prompt target range — checked on posts/<post>/post.md,
+CAPTION_SOFT_MAX = 1400       # post.md with images is a short caption (~700–1,200, hashtags not counted)
+DOC_TITLE_MAX = 60            # carousel-title.txt — the carousel.pdf title typed into LinkedIn
+BODY_TARGET = (1400, 2500)    # TEXT-post target range — checked on posts/<post>/post.md,
                               # the text that gets posted. The draft is the full source: no limit.
 KEEP_IN_MIND = "Keep in mind"  # every prepared post (posts/<post>/) has this section
 TEXT_MAX = 1400               # TEXT posts must be short; longer posts get a visual
@@ -358,12 +360,26 @@ def check_post_text():
     """posts/<post>/post.md is what gets posted, so the length limit lives here."""
     for p in glob.glob(os.path.join(ROOT, "posts", "*", "post.md")):
         text = open(p).read()
+        if text.startswith("DOCUMENT_TITLE:"):
+            err(p, "DOCUMENT_TITLE: belongs in carousel-title.txt, not in the caption")
+        tfile = os.path.join(os.path.dirname(p), "carousel-title.txt")
+        if os.path.exists(tfile):
+            title = open(tfile).read().strip()
+            if not title or "\n" in title:
+                err(tfile, "must be exactly one line — the carousel.pdf title")
+            elif len(title) > DOC_TITLE_MAX:
+                err(tfile, f"{len(title)} characters (max {DOC_TITLE_MAX})")
+        elif glob.glob(os.path.join(os.path.dirname(p), "*.png")):
+            err(p, "has images but no carousel-title.txt — LinkedIn asks for a title for carousel.pdf")
         if text.startswith("> ⚠"):
             text = text.split("\n---\n", 1)[-1]   # the NOT READY block is not posted
         n = len(posted(text))
         has_images = bool(glob.glob(os.path.join(os.path.dirname(p), "*.png")))
+        caption = len(re.sub(r"(?m)^\s*(#\w+\s*)+$", "", posted(text)).strip())
         if n > BODY_HARD_MAX:
             err(p, f"{n} characters (LinkedIn max {BODY_HARD_MAX}) — move a section into an image")
+        elif has_images and caption > CAPTION_SOFT_MAX:
+            warn(p, f"caption is {caption} characters (aim 700–1,200, soft max {CAPTION_SOFT_MAX}) — select less; the images and blog carry the rest")
         elif n > BODY_TARGET[1]:
             warn(p, f"{n} characters (target up to {BODY_TARGET[1]}) — move a section into an image")
         elif n < BODY_TARGET[0] and not has_images:

@@ -2,54 +2,36 @@
 <style>
 :root{--accent:var(--ai)}
 h1{font-size:56px;max-width:19ch}
-.stage{justify-content:center;gap:22px}
-.def{font-size:22px;color:var(--ink-2);line-height:1.4}
-.def b{color:var(--ink);font-weight:600}
-.ex{display:flex;flex-direction:column;gap:12px}
-.lbl{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
-.lbl b{color:var(--accent);font-weight:500}
-.row{display:grid;grid-template-columns:1fr 36px 1.15fr 36px 0.9fr;align-items:stretch}
-.arw{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:28px;color:var(--ink-3)}
-.box{background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
-.box.hero{border:2px solid var(--accent)}
-.k{font-family:var(--mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
-.v{font-family:var(--mono);font-size:21px;color:var(--ink-2);line-height:1.5}
-.v b{color:var(--ink);font-weight:500}
-.v .w{color:var(--accent)}
-.out{font-size:34px;font-weight:700;color:var(--ink);line-height:1.1}
-.sm{font-size:18px;color:var(--ink-3)}
-.note{border:1px dashed #3A4453;border-radius:12px;padding:16px 20px;font-size:21px;color:var(--ink-2);line-height:1.4}
-.note b{color:var(--ink);font-weight:600}
+.stage{justify-content:center;gap:18px}
+.way{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:22px 26px;display:grid;grid-template-columns:230px 1fr;column-gap:26px;align-items:start}
+.way.hero{border:2px solid var(--accent)}
+.nm{font-size:30px;font-weight:700;line-height:1.1}
+.hero .nm{color:var(--accent)}
+.gets{font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:10px;line-height:1.5}
+.gets b{display:block;color:var(--ink-2);font-weight:500;letter-spacing:.06em}
+.ds{font-size:22px;color:var(--ink);line-height:1.35}
+.ex{font-size:20px;color:var(--ink-2);line-height:1.4;margin-top:10px}
+.ex span{font-family:var(--mono);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-right:6px}
 </style></head><body>
 <div class="frame">
 <div class="series">AI Engineering #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
-  <h1>Predicting is just <em>running the maths</em></h1>
+  <h1>Three ways a model <em>can learn</em></h1>
   <div class="stage">
-    <div class="def"><b>Prediction:</b> you give the trained model a new input it has never seen, and it gives an answer. It uses the weights training found. It learns nothing new.</div>
-
-    <div class="ex">
-      <div class="lbl">Example 1 · <b>house price</b> · training found w = 100</div>
-      <div class="row">
-        <div class="box"><div class="k">new input</div><div class="v">a house with<br><b>4 rooms</b></div></div>
-        <div class="arw">→</div>
-        <div class="box hero"><div class="k">run the maths</div><div class="v">price = <span class="w">100</span> × 4</div><div class="sm">w stays 100</div></div>
-        <div class="arw">→</div>
-        <div class="box"><div class="k">answer</div><div class="out">400</div></div>
-      </div>
+    <div class="way hero">
+      <div><div class="nm">Supervised</div><div class="gets">learns from<b>examples with answers</b></div></div>
+      <div><div class="ds">It learns from examples that come with the right answer, and copies the pattern.</div>
+      <div class="ex"><span>Example:</span> 10,000 emails, each one marked "spam" or "not spam". Our spam filter and house-price model learn this way.</div></div>
     </div>
-
-    <div class="ex">
-      <div class="lbl">Example 2 · <b>spam filter</b> · same weights as before</div>
-      <div class="row">
-        <div class="box"><div class="k">new email</div><div class="v">links: <b>0</b><br>"free": <b>0</b><br>known sender: <b>1</b></div></div>
-        <div class="arw">→</div>
-        <div class="box hero"><div class="k">run the maths</div><div class="v"><span class="w">0.9</span> × 0 + <span class="w">1.4</span> × 0<br>− <span class="w">2.0</span> × 1 = <b>−2.0</b></div></div>
-        <div class="arw">→</div>
-        <div class="box"><div class="k">answer</div><div class="out">not spam</div><div class="sm">−2.0 is below 0.5</div></div>
-      </div>
+    <div class="way">
+      <div><div class="nm">Unsupervised</div><div class="gets">learns from<b>data with no answers</b></div></div>
+      <div><div class="ds">Nobody gives it answers. It finds groups and patterns in the data by itself.</div>
+      <div class="ex"><span>Example:</span> a shop's model sorts customers into groups that buy similar things, without being told what the groups are.</div></div>
     </div>
-
-    <div class="note"><b>Every model predicts this way:</b> input → numbers → multiply by weights and add → answer. A big model just has billions of weights.</div>
+    <div class="way">
+      <div><div class="nm">Reinforcement</div><div class="gets">learns from<b>rewards</b></div></div>
+      <div><div class="ds">It tries actions and gets a reward when they go well, so it does more of what works.</div>
+      <div class="ex"><span>Example:</span> a game player that gets points for winning, and slowly learns which moves win.</div></div>
+    </div>
   </div>
-<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>7 / 8</span></div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>7 / 9</span></div>
 </div></body></html>
