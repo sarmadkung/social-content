@@ -46,3 +46,9 @@ h1 em{font-style:normal;color:var(--accent)}
 .ln.add{background:color-mix(in srgb,var(--add) 11%,transparent);box-shadow:inset 3px 0 0 var(--add)}
 .ln.add .tx{color:var(--ink)}
 .ln.add .no{color:var(--add)}
+/* slide links (visual skill §5 rule 8): <div class="from">← from 02: …</div> after .series,
+   <div class="next">next → …</div> right before .foot */
+.from{margin-top:18px;font-family:var(--mono);font-size:18px;color:var(--ink-3);letter-spacing:.02em}
+.from + h1{margin-top:10px}
+.next{margin:14px 0 16px;font-family:var(--mono);font-size:18px;color:var(--ink-3);letter-spacing:.02em;text-align:right}
+.next b,.from b{color:var(--accent);font-weight:500}

@@ -6,6 +6,7 @@ MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  A 200k window isn't 200k useful context
 LAYOUT:    STAT
+VISUALS:   1 = Budget it explicitly · 2 = The four questions per step · rest = text
 STATUS:    draft
 VARIANT:   B (budget bar)
 ---
@@ -38,6 +39,12 @@ What to measure
 Tokens per successful task, not tokens per window. The teams shipping reliable agents are almost always sending less than you would expect.
 
 [FACT_CHECK: teams shipping reliable agents send less context than expected → source needed, e.g. Anthropic "Effective context engineering for AI agents"]
+
+Keep in mind when you design an agent's context
+→ Log the exact context of every step: you can't debug what you never saw.
+→ Every tool description takes room in the window: drop unused tools.
+→ Summarise outcomes, but keep IDs, paths and error text exact.
+→ Test at step 30, not step 1: late steps carry the most context.
 
 What is in your agent's context right now that has not been read in ten steps?
 

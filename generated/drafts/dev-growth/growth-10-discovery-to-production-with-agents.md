@@ -88,6 +88,6 @@ Watch out: where agent workflows break
 Takeaway
 Agents made writing code cheap. Deciding what to build, and checking it is right, is still the job. Put your time at the gates.
 
-Next: how to break a problem down before you write any code.
+Next: why your stack and product knowledge still matter when you build with agents.
 
 #AIEngineering #SoftwareEngineering #DeveloperGrowth #AIAgents #ProductEngineering

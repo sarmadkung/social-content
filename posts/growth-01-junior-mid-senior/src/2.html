@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:none}
+.stage{justify-content:center;padding-top:22px}
+.bug{font-family:var(--mono);font-size:21px;color:var(--ink-2);border:1px dashed #3A4453;border-radius:12px;padding:20px 26px;line-height:1.4}
+.bug span{font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:6px}
+.bug b{color:var(--ink);font-weight:500}
+.head{display:grid;grid-template-columns:130px 1fr 250px;column-gap:22px;padding:0 26px;margin:26px 0 10px;font-family:var(--mono);font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.rows{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:130px 1fr 250px;column-gap:22px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 26px;min-height:124px}
+.row .lv{font-family:var(--mono);font-size:24px;color:var(--ink)}
+.row .act{font-size:22px;line-height:1.35;color:var(--ink)}
+.row .act small{display:block;font-size:19px;color:var(--ink-2);margin-top:4px}
+.row .st{font-family:var(--mono);font-size:19px;line-height:1.35;color:var(--ink-2)}
+.row.hero{border:2px solid var(--accent)}
+.row.hero .lv,.row.hero .st{color:var(--accent)}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Same bug.<br><em>Three sizes of fix.</em></h1>
+  <div class="stage">
+    <div class="bug"><span>Example bug</span><b>The app crashes when a user's name is empty.</b></div>
+    <div class="head"><span>level</span><span>what they do</span><span>what it stops</span></div>
+    <div class="rows">
+      <div class="row"><span class="lv">Junior</span><div class="act">Fixes the line that crashed.<small>Adds a check for an empty name there.</small></div><span class="st">this one crash</span></div>
+      <div class="row"><span class="lv">Mid</span><div class="act">Fixes the cause, adds a test.<small>Finds where empty names get saved and blocks them.</small></div><span class="st">this bug, for good</span></div>
+      <div class="row hero"><span class="lv">Senior</span><div class="act">Asks why this kind of bug keeps coming back.<small>Changes the design: every input is checked where it enters.</small></div><span class="st">every bug like it</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 2</span></div>
+</div></body></html>

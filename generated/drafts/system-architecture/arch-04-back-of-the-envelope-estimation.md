@@ -63,6 +63,12 @@ Designing for the average. At 3× peak, a system sized for 2,000 a second falls 
 
 [PERSONAL: one line on an estimate that changed a real design decision]
 
+Keep in mind when you estimate in an interview
+→ Say each assumption out loud: the interviewer may change it.
+→ Write the unit on every number: per day or per second, MB or TB.
+→ Storage counts every copy: keep 3 copies, store 3× the bytes.
+→ Round to one or two digits. Precision here is wasted time.
+
 Takeaway: Five minutes of rough maths tells you what to design for, and what you can ignore.
 
 Next: vertical vs horizontal scaling, the first choice when traffic grows.

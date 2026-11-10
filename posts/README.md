@@ -5,11 +5,27 @@ Each folder holds `post.md` (the text to paste) and the images to attach, in ord
 plus `dailydev.md` + `cover.png` (daily.dev), `instagram.md` (Instagram), `x.md` (X thread) and `blog.md` (blog article), same images.
 Edit the draft in `generated/drafts/`, never `post.md`.
 
-**4 posts prepared · 1 ready to post · 59 more drafts not prepared yet** (prepare one with `/create-post <series> <NN>`)
+**20 posts prepared · 2 ready to post · 46 more drafts not prepared yet** (prepare one with `/create-post <series> <NN>`)
 
 | Date | Series | Title | Status | Images | Also for | Ready | Folder |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Tue 13 Oct | AI ENGINEERING #01 | AI Foundations: From "What Is AI" to Inference | draft | 10 + cover | daily.dev · Instagram · X · Blog | ✅ ready | [ai-01-ai-foundations/](ai-01-ai-foundations/) |
-| Wed 06 Jan | DEV GROWTH #09 | How to Review a PR an AI Agent Wrote (and Why You Still Must) | draft | 4 + cover | daily.dev · Instagram · X | 1 marker | [growth-09-review-agent-prs/](growth-09-review-agent-prs/) |
-| Fri 15 Jan | DEV GROWTH #10 | From Discovery to Production: A Feature Workflow With Agents | draft | 5 + cover | daily.dev · Instagram · X | 1 marker | [growth-10-discovery-to-production-with-agents/](growth-10-discovery-to-production-with-agents/) |
+| Mon 26 Oct | DSA SERIES #02 | Big-O in Plain English | draft | 5 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [dsa-02-big-o-plain-english/](dsa-02-big-o-plain-english/) |
+| Tue 27 Oct | AI ENGINEERING #01 | AI Foundations: From "What Is AI" to Inference | draft | 10 + cover | daily.dev · Instagram · X · Blog | ✅ ready | [ai-01-ai-foundations/](ai-01-ai-foundations/) |
+| Thu 29 Oct | BUILDING #01 | We Shipped Four Platforms From One Codebase. Then We Went Native. | draft | 8 + cover | daily.dev · Instagram · X · Blog | ✅ ready | [build-01-one-codebase-to-native/](build-01-one-codebase-to-native/) |
+| Fri 30 Oct | SYSTEM ARCHITECTURE #01 | What System Design Actually Is | draft | 4 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [arch-01-what-is-system-design/](arch-01-what-is-system-design/) |
+| Tue 03 Nov | DEV GROWTH #01 | Junior vs Mid vs Senior: What Actually Changes | draft | 2 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [growth-01-junior-mid-senior/](growth-01-junior-mid-senior/) |
+| Thu 05 Nov | AI ENGINEERING #02 | What an LLM Actually Does | draft | 4 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [ai-02-what-an-llm-does/](ai-02-what-an-llm-does/) |
+| Fri 13 Nov | DSA SERIES #04 | Why Building Strings in a Loop Can Quietly Become O(n²) | draft | 4 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [dsa-04-string-building-cost/](dsa-04-string-building-cost/) |
+| Mon 30 Nov | SYSTEM ARCHITECTURE #04 | Back-of-the-Envelope Estimation: A Photo App in Five Minutes | draft | 8 slides + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [arch-04-back-of-the-envelope-estimation/](arch-04-back-of-the-envelope-estimation/) |
+| Tue 22 Dec | DEV GROWTH #06 | Why Fundamentals Still Matter When AI Writes Code | draft | 2 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [growth-06-why-fundamentals-still-matter/](growth-06-why-fundamentals-still-matter/) |
+| Mon 04 Jan | AI ENGINEERING #08 | Tool Calling: How a Model Asks Your Code to Act | draft | 4 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [ai-08-tool-calling/](ai-08-tool-calling/) |
+| Wed 20 Jan | DEV GROWTH #09 | How to Review a PR an AI Agent Wrote (and Why You Still Must) | draft | 4 + cover | daily.dev · Instagram · X | 1 marker | [growth-09-review-agent-prs/](growth-09-review-agent-prs/) |
+| Wed 27 Jan | SYSTEM ARCHITECTURE #10 | Your Database Is at 90% CPU. What Do You Try First? | draft | 9 slides + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [arch-10-database-at-90-percent-cpu/](arch-10-database-at-90-percent-cpu/) |
+| Fri 29 Jan | DEV GROWTH #10 | From Discovery to Production: A Feature Workflow With Agents | draft | 5 + cover | daily.dev · Instagram · X | 1 marker | [growth-10-discovery-to-production-with-agents/](growth-10-discovery-to-production-with-agents/) |
+| Tue 09 Feb | DEV GROWTH #11 | Building With Agents: Why Your Stack and Product Knowledge Still Matter | draft | 3 + cover | Blog | 1 marker | [growth-11-know-your-stack-and-product/](growth-11-know-your-stack-and-product/) |
+| Wed 10 Feb | DSA SERIES #13 | Two Pointers vs Sliding Window vs Prefix Sum vs Kadane: Which One? | draft | 5 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [dsa-13-array-patterns-which-one/](dsa-13-array-patterns-which-one/) |
+| Thu 18 Feb | DEV GROWTH #12 | Cross-Platform Was a Cost Fix. Agents Changed the Cost. | draft | — + cover | — | needs image | [growth-12-cross-platform-era-ending/](growth-12-cross-platform-era-ending/) |
+| Wed 03 Mar | AI ENGINEERING #14 | Agent vs Workflow: Which One Do You Need? | draft | 4 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [ai-14-agent-vs-workflow/](ai-14-agent-vs-workflow/) |
+| Fri 12 Mar | AI ENGINEERING #15 | Context engineering: the window is a budget, not a bucket | draft | 2 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [ai-15-context-engineering/](ai-15-context-engineering/) |
+| Mon 22 Mar | DSA SERIES #17 | Sorting: stable, in-place, and the comparator that bites everyone | draft | 4 + cover | daily.dev · Instagram · X · Blog | draft changed since post.md | [dsa-17-sorting/](dsa-17-sorting/) |
 |  | DSA SERIES #01 | Reclaiming DSA in the Age of AI | published | 5 + cover | daily.dev · Instagram · X | draft changed since post.md, 1 marker | [dsa-01-reclaiming-dsa/](dsa-01-reclaiming-dsa/) |

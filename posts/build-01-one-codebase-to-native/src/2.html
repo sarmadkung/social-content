@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--build)}
+h1{max-width:none;font-size:52px}
+.sub{font-family:var(--mono);font-size:19px;line-height:1.45;color:var(--ink-2);margin-top:12px;max-width:none}
+.sub b{color:#F87171;font-weight:500}
+.stage{justify-content:center;padding-top:10px;gap:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* costly = red tint, same as slide 1's "took" panel */
+.t{background:color-mix(in srgb,#F87171 8%,var(--panel));border:1.5px solid color-mix(in srgb,#F87171 35%,transparent);border-radius:12px;padding:12px 16px;display:flex;flex-direction:column;gap:4px}
+.t b{font-size:21px;color:var(--ink);font-weight:600}
+.t span{font-family:var(--mono);font-size:16.5px;line-height:1.4;color:var(--ink-2)}
+.so{font-family:var(--mono);font-size:19px;color:var(--ink-2);text-align:center;margin-top:6px}
+.so b{color:var(--accent);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">Building #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 01: it gave four things and took four</div>
+  <h1>Did cross&#8209;platform <em>manage everything for us?</em></h1>
+  <div class="sub"><b>No.</b> One codebase on paper. Underneath, we still handled each platform by hand:</div>
+  <div class="stage">
+    <div class="grid">
+      <div class="t"><b>Libraries</b><span>many work only on native or only on web; each needs a fallback</span></div>
+      <div class="t"><b>Web vs native APIs</b><span>localStorage on web, camera and files on phones: two code paths</span></div>
+      <div class="t"><b>Logs and crashes</b><span>Xcode, Logcat, browser console; crash symbols per platform</span></div>
+      <div class="t"><b>Permissions</b><span>Info.plist on iOS, manifest on Android, prompts on web</span></div>
+      <div class="t"><b>Notifications</b><span>APNs on iOS, FCM on Android, web push on web</span></div>
+      <div class="t"><b>Platform actions</b><span>share sheet, deep links, background tasks: different on each OS</span></div>
+      <div class="t"><b>UI details</b><span>safe areas, keyboard, Android back button vs iOS back gesture</span></div>
+      <div class="t"><b>Testing</b><span>each platform on its own devices and simulators</span></div>
+    </div>
+    <div class="so">that is the work native apps do anyway, <b>so going native cost less than it looked</b></div>
+  </div>
+  <div class="next">next <b>→</b> what we decided to do about it</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 7</span></div>
+</div></body></html>

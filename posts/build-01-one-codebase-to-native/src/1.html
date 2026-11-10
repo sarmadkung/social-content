@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--build)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:18px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pan{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:10px}
+.pan.gave{border:2px solid var(--accent)}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.14em;color:var(--ink-3);margin-bottom:4px}
+.gave .lbl{color:var(--accent)}
+.it{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.it b{display:block;font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.it span{display:block;margin-top:4px;font-family:var(--mono);font-size:16px;line-height:1.35;color:var(--ink-2)}
+.took .it b{color:var(--ink-2)}
+.took .it span{color:var(--ink-3)}
+/* comparison: good side green, costly side red */
+.pan.gave{background:color-mix(in srgb,#4ADE80 8%,var(--panel));border:2px solid color-mix(in srgb,#4ADE80 45%,transparent)}
+.pan.gave .lbl{color:#4ADE80}
+.pan.took{background:color-mix(in srgb,#F87171 8%,var(--panel));border:2px solid color-mix(in srgb,#F87171 45%,transparent)}
+.pan.took .lbl{color:#F87171}
+.took .it b{color:var(--ink)}
+.took .it span{color:var(--ink-2)}
+</style></head><body>
+<div class="frame">
+  <div class="series">Building #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>What did cross&#8209;platform <em>give us, and take?</em></h1>
+  <div class="stage">
+    <div class="cmp">
+      <div class="pan gave">
+        <div class="lbl">IT GAVE US</div>
+        <div class="it"><b>One codebase</b><span>write a feature once, ship it everywhere</span></div>
+        <div class="it"><b>One team</b><span>no one needs Swift, Kotlin and web at once</span></div>
+        <div class="it"><b>Every platform at once</b><span>a feature reaches all four together</span></div>
+        <div class="it"><b>Apps that match</b><span>same screens, same behaviour</span></div>
+      </div>
+      <div class="pan took">
+        <div class="lbl">IT TOOK FROM US</div>
+        <div class="it"><b>Performance</b><span>everything waits on one JavaScript thread</span></div>
+        <div class="it"><b>Native feel</b><span>close, never exact. Real bug: a larger text size cut off a sheet's own buttons</span></div>
+        <div class="it"><b>Independence</b><span>a fix for one breaks another. Real bug: one browser-only config line crashed every phone launch</span></div>
+        <div class="it"><b>Simple builds</b><span>shared plumbing breaks one app</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="next">next <b>→</b> what we still handled by hand</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 7</span></div>
+</div></body></html>

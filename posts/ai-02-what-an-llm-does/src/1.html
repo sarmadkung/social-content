@@ -1,0 +1,56 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:16px}
+.flow{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr 22px 1fr;align-items:stretch}
+.arw{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:22px;color:var(--ink-3)}
+.box{background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:14px 14px;display:flex;flex-direction:column;gap:6px}
+.box.hero{border:2px solid var(--accent)}
+.box .n{font-family:var(--mono);font-size:15px;color:var(--ink-3)}
+.box .t{font-size:23px;font-weight:700;line-height:1.15}
+.hero .t{color:var(--accent)}
+.box .d{font-size:17px;color:var(--ink-2);line-height:1.3}
+.back{border:1.5px dashed #3A4453;border-radius:12px;padding:10px 16px;font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center}
+.lbl{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+.lbl b{color:var(--ink-2);font-weight:500;letter-spacing:0;text-transform:none;font-size:18px}
+.trace{border-top:1px solid var(--line)}
+.r{display:grid;grid-template-columns:72px 1fr 210px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:19px}
+.r .s{color:var(--ink-3);font-size:16px}
+.r .c{color:var(--ink-2)}
+.r .c i{font-style:normal;color:var(--ink-3)}
+.r .p{justify-self:start;border:1px solid #3A4453;border-radius:8px;padding:5px 12px;color:var(--ink)}
+.r.hero .p{border:2px solid var(--accent);color:var(--accent)}
+.r .p.end{color:var(--ink-3);border-style:dashed}
+.hd{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:6px 0}
+.def{font-size:18px;color:var(--ink-2);line-height:1.35}
+.def b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #02<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>An LLM predicts <em>the next token</em></h1>
+  <div class="stage">
+    <div class="flow">
+      <div class="box"><div class="n">01</div><div class="t">Split into tokens</div><div class="d">the text so far</div></div>
+      <div class="arw">→</div>
+      <div class="box"><div class="n">02</div><div class="t">Score every token</div><div class="d">each one it knows gets odds</div></div>
+      <div class="arw">→</div>
+      <div class="box hero"><div class="n">03</div><div class="t">Pick one</div><div class="d">from those odds</div></div>
+      <div class="arw">→</div>
+      <div class="box"><div class="n">04</div><div class="t">Add it to the text</div><div class="d">it is now input too</div></div>
+    </div>
+    <div class="back">↺ repeat until an "end" token or a length limit</div>
+    <div class="lbl">Example · <b>you ask "What is the capital of Pakistan?"</b></div>
+    <div class="trace">
+      <div class="r hd"><span>step</span><span>text the model sees</span><span>token it picks</span></div>
+      <div class="r"><span class="s">1</span><span class="c">What is the capital of Pakistan?</span><span class="p">The</span></div>
+      <div class="r"><span class="s">2</span><span class="c"><i>…</i> Pakistan? The</span><span class="p">capital</span></div>
+      <div class="r"><span class="s">…</span><span class="c"><i>…</i></span><span class="p" style="border:0;padding:5px 0;color:var(--ink-3)">…</span></div>
+      <div class="r hero"><span class="s">6</span><span class="c"><i>…</i> The capital of Pakistan is</span><span class="p">Islamabad</span></div>
+      <div class="r"><span class="s">7</span><span class="c"><i>…</i> Pakistan is Islamabad</span><span class="p">.</span></div>
+      <div class="r"><span class="s">8</span><span class="c"><i>…</i> Pakistan is Islamabad.</span><span class="p end">[end] → stop</span></div>
+    </div>
+    <div class="def"><b>LLM (large language model):</b> a program trained on huge amounts of text to predict what comes next. <b>Token:</b> a word or part of a word. Example: "Pakistan?" is two tokens, "Pakistan" and "?".</div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 3</span></div>
+</div></body></html>

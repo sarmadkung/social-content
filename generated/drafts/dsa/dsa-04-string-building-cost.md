@@ -6,6 +6,7 @@ MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  The hidden O(n²) in string building
 LAYOUT:    COMPARE
+VISUALS:   1 = What is it? + Why does it matter? · 2 = How do you fix it? · 3 = Key properties · rest = text
 STATUS:    draft
 ---
 This loop looks O(n):
@@ -18,7 +19,7 @@ Build a 100,000-character string this way in Java and it copies about 5 billion 
 [FACT_CHECK: Java += on a String in a loop copies the whole string every iteration (javac/JIT does not turn it into one StringBuilder) → JEP 280 and Java String/StringBuilder docs]
 
 What is it?
-You cannot change a string after it is made. Every "change" builds a new string and copies the old characters into it. So out += c copies everything in out so far, then adds one character.
+In JavaScript, Java, Python and C#, you cannot change a string after it is made. Every "change" builds a new string and copies the old characters into it. So out += c copies everything in out so far, then adds one character.
 This is called immutability. Think of a printed page: to fix one letter, you print the whole page again.
 
 Why does it matter?
@@ -50,7 +51,7 @@ Use parts + join whenever you build a string inside a loop.
 Not needed for 3 or 4 fixed pieces: `${a}-${b}` is clear and cheap.
 
 Common mistake
-Reversing with s.split("").reverse().join(""). JS length counts UTF-16 code units, so "😀".length is 2 and split("") cuts the emoji in half. [...s] splits by character.
+Reversing with s.split("").reverse().join(""). JS length counts UTF-16 code units, so "😀".length is 2 and split("") cuts the emoji in half. [...s] splits by code point, so 😀 stays whole.
 
 [FACT_CHECK: "😀".length is 2, split("") cuts it in half, [...s] splits by code point → MDN String.length and String iterator]
 
@@ -59,6 +60,11 @@ Java: += in a loop copies every time. Use StringBuilder.
 JavaScript: V8 links pieces and copies later (a "rope"), so += is often fast. Parts + join is still the portable habit.
 
 [FACT_CHECK: V8 builds += strings as ropes (ConsString) and flattens later → V8 source / v8.dev blog on string representation]
+
+Keep in mind when you build strings
+→ In code review, flag += on a string inside a loop.
+→ s = s.slice(1) in a loop can copy too: O(n²) again.
+→ Big CSV or log export? Stream rows; don't build one string.
 
 Takeaway: strings are read-only. Build in parts, join once.
 

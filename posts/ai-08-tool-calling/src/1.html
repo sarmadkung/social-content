@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:8px}
+.who{font-family:var(--mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.code{font-family:var(--mono);font-size:19px;color:var(--ink-2);line-height:1.45;white-space:pre}
+.code b{color:var(--accent);font-weight:500}
+.code i{font-style:normal;color:var(--ink-3)}
+.def{font-size:18px;color:var(--ink-2);line-height:1.35}
+.def b{color:var(--ink);font-weight:600}
+.row{display:grid;grid-template-columns:50px 150px 1fr;align-items:center;background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:12px 18px}
+.row.hero{border:2px solid var(--accent)}
+.row .n{font-family:var(--mono);font-size:20px;color:var(--ink-3)}
+.row.hero .n,.row.hero .who{color:var(--accent)}
+.row .t{font-size:21px;color:var(--ink);line-height:1.3}
+.row .t .code{font-size:18px;margin-top:4px}
+.dn{font-family:var(--mono);font-size:16px;color:var(--ink-3);text-align:left;padding-left:62px;line-height:1}
+.back{border:1.5px dashed #3A4453;border-radius:12px;padding:9px 16px;font-family:var(--mono);font-size:17px;color:var(--ink-2);text-align:center}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #08<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>The model asks. <em>Your code runs.</em></h1>
+  <div class="stage">
+    <div class="row"><span class="n">01</span><span class="who">your app</span><div class="t">Sends the user's message and the list of tools.<div class="code">"Where is order A123?"  <i>+ tools:</i> getOrder(id)</div></div></div>
+    <div class="dn">↓</div>
+    <div class="row"><span class="n">02</span><span class="who">model</span><div class="t">Replies with a request, not an answer.<div class="code">{ "tool": "getOrder", "args": { "id": "A123" } }</div></div></div>
+    <div class="dn">↓</div>
+    <div class="row hero"><span class="n">03</span><span class="who">your code</span><div class="t">Checks the arguments and permissions, then runs it.<div class="code">getOrder("A123") → { "status": "shipped", "eta": "Fri" }</div></div></div>
+    <div class="dn">↓</div>
+    <div class="row"><span class="n">04</span><span class="who">your app</span><div class="t">Sends the result back to the model.</div></div>
+    <div class="dn">↓</div>
+    <div class="row"><span class="n">05</span><span class="who">model</span><div class="t">Writes the answer, or asks for another tool.<div class="code">"Order A123 has shipped. It should arrive Friday."</div></div></div>
+    <div class="back">↺ another tool request → back to step 03</div>
+    <div class="def" style="margin-top:8px"><b>Tool:</b> a function in your code that you let the model ask for. Example: getOrder(id) looks up one order in your database.</div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 3</span></div>
+</div></body></html>

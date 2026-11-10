@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:26px;padding-top:22px}
+svg{width:100%;display:block}
+svg text{font-family:"SF Mono",Menlo,monospace}
+.defs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.d{display:grid;grid-template-columns:160px 1fr;column-gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.d .t{font-family:var(--mono);font-size:20px;color:var(--ink);padding-top:2px}
+.d .x{font-size:20px;line-height:1.38;color:var(--ink-2)}
+.d .x i{font-style:normal;color:var(--ink-3);font-family:var(--mono);font-size:17px;letter-spacing:.04em}
+</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>System design: how <em>the parts fit together</em></h1>
+  <div class="stage">
+    <svg viewBox="-2 0 932 250">
+      <g fill="#11141B" stroke="#3A4453" stroke-width="1.5">
+        <rect x="0" y="92" width="130" height="66" rx="10"/>
+        <rect x="560" y="2" width="170" height="66" rx="10"/>
+        <rect x="560" y="92" width="170" height="66" rx="10"/>
+        <rect x="560" y="182" width="170" height="66" rx="10"/>
+        <rect x="788" y="182" width="140" height="66" rx="10"/>
+      </g>
+      <rect x="250" y="92" width="200" height="66" rx="10" fill="#11141B" stroke="#C084FC" stroke-width="2"/>
+      <g font-size="21" text-anchor="middle" fill="#F2F5F9">
+        <text x="65" y="132">users</text>
+        <text x="350" y="132" fill="#C084FC">app servers</text>
+        <text x="645" y="42">cache</text>
+        <text x="645" y="132">database</text>
+        <text x="645" y="222">queue</text>
+        <text x="858" y="222">worker</text>
+      </g>
+      <g stroke="#5E6977" stroke-width="1.6" fill="none">
+        <path d="M134 125 H244"/><path d="M237 119 L244 125 L237 131"/>
+        <path d="M454 125 C505 125 505 35 552 35"/><path d="M545 30 L552 35 L546 41"/>
+        <path d="M454 125 H552"/><path d="M545 119 L552 125 L545 131"/>
+        <path d="M454 125 C505 125 505 215 552 215"/><path d="M546 209 L552 215 L545 220"/>
+        <path d="M734 215 H782"/><path d="M775 209 L782 215 L775 221"/>
+      </g>
+      <text x="189" y="112" font-size="16" text-anchor="middle" fill="#9BA6B7">network</text>
+      <text x="0" y="200" font-size="16" fill="#5E6977">every arrow is a network hop:</text>
+      <text x="0" y="224" font-size="16" fill="#5E6977">it adds time and can fail</text>
+    </svg>
+    <div class="defs">
+      <div class="d"><span class="t">server</span><span class="x">A computer that runs your code and answers requests. <i>Example:</i> the machine that sends back your feed when you open an app.</span></div>
+      <div class="d"><span class="t">database</span><span class="x">Stores data so it is still there after a restart. <i>Example:</i> every order a shop has ever taken.</span></div>
+      <div class="d"><span class="t">cache</span><span class="x">A fast, short-lived copy of data that is read often. <i>Example:</i> today's top products, kept in memory.</span></div>
+      <div class="d"><span class="t">queue</span><span class="x">A waiting line of jobs to do later, so the user doesn't wait. <i>Example:</i> "send the receipt email", done by a worker.</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 3</span></div>
+</div></body></html>

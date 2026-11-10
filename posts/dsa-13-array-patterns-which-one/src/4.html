@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;padding-top:20px;gap:18px}
+.lead{font-family:var(--mono);font-size:20px;color:var(--ink-2);line-height:1.5}
+.lead b{color:var(--ink);font-weight:500}
+.chart{display:block;width:100%}
+.chart text{font-family:var(--mono)}
+.def{font-size:21px;color:var(--ink-2);line-height:1.4}
+.def b{color:var(--accent);font-weight:600}
+.k{border-top:1px solid var(--line);padding-top:16px;font-family:var(--mono);font-size:20px;color:var(--ink-2);line-height:1.5}
+.k b{color:var(--accent);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #13<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Kadane is <em>prefix sum in disguise</em></h1>
+  <div class="stage">
+    <div class="lead">a = [2, -1, 3, -4, 5] &nbsp;→&nbsp; running totals <b>pre = [0, 2, 1, 4, 0, 5]</b></div>
+    <svg class="chart" viewBox="0 0 928 400">
+      <!-- scale: 1 unit = 56px, baseline y=330 -->
+      <g stroke="#1F2530" stroke-width="1"><path d="M70 330 H900"/><path d="M70 50 V330"/></g>
+      <g font-size="15" fill="#5E6977" text-anchor="end"><text x="58" y="335">0</text><text x="58" y="223">2</text><text x="58" y="111">4</text></g>
+      <g stroke="#1F2530" stroke-width="1" stroke-dasharray="3 5"><path d="M70 218 H900"/><path d="M70 106 H900"/></g>
+      <g fill="#11141B" stroke="#3A4453" stroke-width="1.5">
+        <rect x="236" y="218" width="70" height="112" rx="5"/>
+        <rect x="372" y="274" width="70" height="56" rx="5"/>
+        <rect x="508" y="106" width="70" height="224" rx="5"/>
+      </g>
+      <rect x="780" y="50" width="70" height="280" rx="5" fill="#FFB86B" fill-opacity=".18" stroke="#FFB86B" stroke-width="2"/>
+      <g fill="#9BA6B7" font-size="20" text-anchor="middle">
+        <text x="135" y="318">0</text><text x="271" y="208">2</text><text x="407" y="264">1</text><text x="543" y="96">4</text><text x="679" y="318">0</text>
+      </g>
+      <text x="815" y="40" text-anchor="middle" font-size="20" fill="#FFB86B">5</text>
+      <g fill="#5E6977" font-size="15" text-anchor="middle">
+        <text x="135" y="360">pre[0]</text><text x="271" y="360">pre[1]</text><text x="407" y="360">pre[2]</text><text x="543" y="360">pre[3]</text><text x="679" y="360">pre[4]</text><text x="815" y="360">pre[5]</text>
+      </g>
+      <path d="M100 330 H740" stroke="#9BA6B7" stroke-width="3" stroke-dasharray="10 7"/>
+      <text x="100" y="392" font-size="17" fill="#9BA6B7">lowest total so far = 0</text>
+      <g stroke="#FFB86B" stroke-width="2" fill="none"><path d="M760 322 V58"/><path d="M754 66 L760 56 L766 66"/><path d="M754 314 L760 324 L766 314"/></g>
+      <text x="742" y="180" text-anchor="end" font-size="19" fill="#FFB86B">biggest gap</text>
+      <text x="742" y="206" text-anchor="end" font-size="19" fill="#FFB86B">5 − 0 = 5</text>
+    </svg>
+    <div class="def"><b>Best subarray sum</b> = the biggest gap between a running total and the lowest total before it. Here 5 − 0 = 5, the same answer Kadane gives.</div>
+    <div class="k">Kadane keeps that gap as it walks (<b>cur</b>), so it never stores the totals: O(1) space instead of O(n).</div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>4 / 4</span></div>
+</div></body></html>

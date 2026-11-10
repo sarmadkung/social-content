@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--build)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:18px;gap:22px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pan{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:10px}
+.pan.after{border:2px solid var(--accent)}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.14em;color:var(--ink-3);margin-bottom:2px}
+.after .lbl{color:var(--accent)}
+.who{font-size:24px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.how{font-family:var(--mono);font-size:17px;line-height:1.4;color:var(--ink-3);margin-bottom:6px}
+.p{font-family:var(--mono);font-size:19px;line-height:1.35;border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:var(--ink-2)}
+.after .p{color:var(--ink)}
+.after .p.k{border-color:var(--accent)}
+.line{font-family:var(--mono);font-size:20px;color:var(--ink-2);text-align:center}
+.line em{font-style:normal;color:var(--ink)}
+/* comparison: good side green, costly side red */
+.pan.after{background:color-mix(in srgb,#4ADE80 8%,var(--panel));border:2px solid color-mix(in srgb,#4ADE80 45%,transparent)}
+.pan.after .lbl{color:#4ADE80}
+.pan:not(.after){background:color-mix(in srgb,#F87171 8%,var(--panel));border:2px solid color-mix(in srgb,#F87171 45%,transparent)}
+.pan:not(.after) .lbl{color:#F87171}
+</style></head><body>
+<div class="frame">
+  <div class="series">Building #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 03: native iOS and Android, a separate web app</div>
+  <h1>Who keeps the apps <em>in sync now?</em></h1>
+  <div class="stage">
+    <div class="cmp">
+      <div class="pan">
+        <div class="lbl">BEFORE</div>
+        <div class="who">The framework</div>
+        <div class="how">there is only one copy of the code</div>
+        <div class="p">same code on every platform</div>
+        <div class="p">same compromises in every app</div>
+        <div class="p">a fix reaches every app, and so does a bug</div>
+      </div>
+      <div class="pan after">
+        <div class="lbl">NOW</div>
+        <div class="who">Agents + one rules file</div>
+        <div class="how">the file every agent session reads first</div>
+        <div class="p">build on web first, agents port it</div>
+        <div class="p">a fix lands in every app it affects</div>
+        <div class="p">shared behaviour names the native code to change</div>
+        <div class="p">a person owns each native app</div>
+        <div class="p k">shared tests fail the build if a port is skipped</div>
+      </div>
+    </div>
+    <div class="line">the framework synced the code. <em>agents sync the behaviour.</em></div>
+  </div>
+  <div class="next">next <b>→</b> what we achieved in the end</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>4 / 7</span></div>
+</div></body></html>

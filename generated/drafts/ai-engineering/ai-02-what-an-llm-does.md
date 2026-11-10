@@ -6,6 +6,7 @@ MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  An LLM predicts the next token
 LAYOUT:    FLOW
+VISUALS:   1 = How it works, step by step · 2 = 3. Where Do These Probabilities Come From? + 7. Sampling · 3 = Why does this matter? · rest = text
 STATUS:    draft
 ---
 An LLM does one thing, over and over: it guesses the next piece of text.
@@ -17,7 +18,7 @@ An LLM (large language model) is a program trained on a huge amount of text. Giv
 
 Think of the autocomplete on your phone keyboard. An LLM is that idea, trained at a much larger scale.
 
-How is it trained? In two steps. First it learns to predict the next word from huge amounts of text; the text holds its own answers, so nobody has to label it. Then rewards from human ratings tune it to give helpful answers (reinforcement learning, from post #01).
+How is it trained? In two steps. First it learns to predict the next word from huge amounts of text; the text holds its own answers, so nobody has to label it. Then it is tuned to give helpful answers: on example answers, and with rewards from human ratings (reinforcement learning, from post #01).
 
 [FACT_CHECK: LLM pretraining is self-supervised next-token prediction, followed by RLHF → InstructGPT paper (Ouyang et al., 2022)]
 
@@ -51,6 +52,12 @@ Do not trust it alone for exact facts or maths. Check with code or a real data s
 
 [PERSONAL: one moment where knowing "it predicts, it does not look up" changed how you designed a feature]
 
+Keep in mind when you build on an LLM
+→ Put the facts it needs in the input, or check its answer with code.
+→ Send the chat history on every call. The model stores none.
+→ Set a max output length. Every extra token adds time and cost.
+→ Expect new wording on a rerun. Each token is picked from odds.
+
 Takeaway: an LLM does not look things up. It predicts likely text, one token at a time.
 
 Next: tokens and context windows. What a token really is, and why the limit matters.
@@ -59,19 +66,19 @@ Next: tokens and context windows. What a token really is, and why the limit matt
 
 [FACT_CHECK: example numbers don't match softmax of logits 5.0/3.0/2.5/1.5/0.5 → T=1 gives 79.4/10.8/6.5/2.4/0.9; T=0.5 gives 97.5/1.8/0.7/0.1/0.0; T=2 gives 51.7/19.0/14.8/9.0/5.5. Recompute Top-K/Top-P tables from the corrected T=2 row.]
 
-# How LLMs Predict the Next Token
+How LLMs Predict the Next Token
 
 > A visual, beginner-friendly explanation of how an LLM goes from a question like “What is the capital of Pakistan?” to a generated answer.
 
 ---
 
-## 1. The Question
+1. The Question
 
-**Prompt:**
+Prompt:
 
 > What is the capital of Pakistan?
 
-### What the LLM actually sees
+What the LLM actually sees
 
 [TODO: Explain that the text is tokenized.]
 
@@ -81,7 +88,7 @@ What | is | the | capital | of | Pakistan | ?
 
 ---
 
-## 2. The LLM Predicts the Next Token
+2. The LLM Predicts the Next Token
 
 [TODO: Explain that an LLM generates text one token at a time.]
 
@@ -106,9 +113,9 @@ Possible candidates might include:
 
 ---
 
-## 3. Where Do These Probabilities Come From?
+3. Where Do These Probabilities Come From?
 
-### Logits
+Logits
 
 [TODO: Explain logits.]
 
@@ -122,7 +129,7 @@ Example:
 | Peshawar | 1.5 |
 | Multan | 0.5 |
 
-### Logits → Softmax → Probabilities
+Logits → Softmax → Probabilities
 
 ```text
 Raw logits
@@ -142,17 +149,17 @@ Example:
 
 | Token | Probability |
 |---|---:|
-| Islamabad | 84.1% |
-| Lahore | 11.4% |
-| Karachi | 6.9% |
-| Peshawar | 1.5% |
-| Multan | 0.6% |
+| Islamabad | 79.4% |
+| Lahore | 10.8% |
+| Karachi | 6.5% |
+| Peshawar | 2.4% |
+| Multan | 0.9% |
 
 > [TODO: Explain why the model does not initially produce percentages directly.]
 
 ---
 
-# 4. Temperature
+4. Temperature
 
 Temperature changes the shape of the probability distribution.
 
@@ -160,7 +167,7 @@ Temperature changes the shape of the probability distribution.
 P(tokenᵢ) = softmax(logitᵢ / T)
 ```
 
-### Low Temperature
+Low Temperature
 
 Example:
 
@@ -170,17 +177,17 @@ T = 0.5
 
 | Token | Probability |
 |---|---:|
-| Islamabad | 97.1% |
+| Islamabad | 97.5% |
 | Lahore | 1.8% |
-| Karachi | 1.1% |
-| Peshawar | 0.05% |
+| Karachi | 0.7% |
+| Peshawar | 0.09% |
 | Multan | 0.01% |
 
-**Idea:**
+Idea:
 
 > Lower temperature → sharper / more concentrated distribution.
 
-### Higher Temperature
+Higher Temperature
 
 Example:
 
@@ -190,19 +197,19 @@ T = 2.0
 
 | Token | Probability |
 |---|---:|
-| Islamabad | 50.3% |
-| Lahore | 18.5% |
-| Karachi | 14.4% |
-| Peshawar | 8.7% |
-| Multan | 8.1% |
+| Islamabad | 51.7% |
+| Lahore | 19.0% |
+| Karachi | 14.8% |
+| Peshawar | 9.0% |
+| Multan | 5.5% |
 
-**Idea:**
+Idea:
 
 > Higher temperature → flatter / more random distribution.
 
 ---
 
-# 5. Top-K
+5. Top-K
 
 Top-K keeps only the K most probable tokens.
 
@@ -215,11 +222,11 @@ Top-K = 3
 Before filtering:
 
 ```text
-Islamabad   50.3%   ← keep
-Lahore      18.5%   ← keep
-Karachi     14.4%   ← keep
-Peshawar     8.7%   ← remove
-Multan       8.1%   ← remove
+Islamabad   51.7%   ← keep
+Lahore      19.0%   ← keep
+Karachi     14.8%   ← keep
+Peshawar     9.0%   ← remove
+Multan       5.5%   ← remove
 ```
 
 The remaining probabilities are then normalized.
@@ -227,14 +234,14 @@ The remaining probabilities are then normalized.
 Total:
 
 ```text
-50.3 + 18.5 + 14.4 = 83.2%
+51.7 + 19.0 + 14.8 = 85.5%
 ```
 
 After renormalization:
 
 | Token | Final probability |
 |---|---:|
-| Islamabad | 60.5% |
+| Islamabad | 60.4% |
 | Lahore | 22.2% |
 | Karachi | 17.3% |
 
@@ -242,7 +249,7 @@ After renormalization:
 
 ---
 
-# 6. Top-P
+6. Top-P
 
 Top-P works differently from Top-K.
 
@@ -263,9 +270,9 @@ Top-P = 0.80
 Starting from the highest probability:
 
 ```text
-Islamabad   50.3%   cumulative = 50.3%
-Lahore      18.5%   cumulative = 68.8%
-Karachi     14.4%   cumulative = 83.2%  ← reached 80%
+Islamabad   51.7%   cumulative = 51.7%
+Lahore      19.0%   cumulative = 70.7%
+Karachi     14.8%   cumulative = 85.5%  ← reached 80%
 ```
 
 So the candidate set becomes:
@@ -280,7 +287,7 @@ Then the probabilities are normalized again.
 
 ---
 
-# 7. Sampling
+7. Sampling
 
 After temperature and filtering, the model samples one token from the final distribution.
 
@@ -288,17 +295,17 @@ Example:
 
 | Token | Final probability |
 |---|---:|
-| Islamabad | 60.5% |
+| Islamabad | 60.4% |
 | Lahore | 22.2% |
 | Karachi | 17.3% |
 
 Suppose the sampler chooses:
 
-> **Islamabad**
+> Islamabad
 
 The probability of selecting Islamabad from this final distribution was:
 
-**60.5%**
+60.4%
 
 Important:
 
@@ -306,7 +313,7 @@ Important:
 
 ---
 
-# 8. The Complete Pipeline
+8. The Complete Pipeline
 
 ```text
 User prompt
@@ -336,7 +343,7 @@ Repeat
 
 ---
 
-# 9. What About France?
+9. What About France?
 
 Prompt:
 
@@ -381,23 +388,23 @@ Paris
 
 ---
 
-# 10. One Important Distinction
+10. One Important Distinction
 
 There are several different things that are easy to confuse:
 
-### Model probability
+Model probability
 
 The probability produced by the model's distribution before sampling/filtering.
 
-### Temperature-adjusted probability
+Temperature-adjusted probability
 
 The probability after temperature changes the distribution.
 
-### Final sampling probability
+Final sampling probability
 
 The probability after temperature and any Top-K / Top-P filtering and renormalization.
 
-### Selected token
+Selected token
 
 The token that the random sampling process actually chose.
 
@@ -421,7 +428,7 @@ Model prediction
 
 ---
 
-# 11. The Key Idea
+11. The Key Idea
 
 An LLM is not simply doing:
 
@@ -447,15 +454,15 @@ Repeat
 
 That is how:
 
-> **“What is the capital of Pakistan?”**
+> “What is the capital of Pakistan?”
 
 can eventually become:
 
-> **“Islamabad.”**
+> “Islamabad.”
 
 ---
 
-# 12. Questions to Explore Next
+12. Questions to Explore Next
 
 - What exactly are logits?
 - How does softmax convert logits into probabilities?
@@ -470,7 +477,7 @@ can eventually become:
 
 ---
 
-## TL;DR
+TL;DR
 
 ```text
 Prompt
@@ -494,4 +501,4 @@ Next token
 Repeat
 ```
 
-> **An LLM generates text one token at a time by repeatedly predicting a probability distribution over possible next tokens and selecting one according to the chosen decoding strategy.**
+> An LLM generates text one token at a time by repeatedly predicting a probability distribution over possible next tokens and selecting one according to the chosen decoding strategy.

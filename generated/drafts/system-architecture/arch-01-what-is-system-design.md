@@ -6,6 +6,7 @@ MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  System design is choosing what can break
 LAYOUT:    ANATOMY
+VISUALS:   1 = What is it? · 2 = Key properties we design for · 3 = Steps to design any system · rest = text
 STATUS:    draft
 ---
 Your code works on your laptop. Then 10,000 people use it at once, and it falls over.
@@ -46,6 +47,13 @@ Steps to design any system
 [PERSONAL: one line on a real system where load, not code, was the problem]
 
 There is no perfect design. Every choice trades one property for another. Faster reads can cost fresher data. More servers cost more money.
+
+Keep in mind when you design your first system
+→ Write numbers down: "lots of users" is not a requirement.
+→ Start with one server and one database. Add parts later.
+→ Every part you add is one more thing that can fail.
+→ Find the weak spot by measuring, not by guessing.
+→ For each choice, name what it costs, not just what it gains.
 
 Takeaway: System design is not about knowing tools. It is about choosing which trade-off you can live with.
 

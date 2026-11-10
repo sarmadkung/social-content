@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:24px;padding-top:24px}
+.rows{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:270px 1fr;column-gap:20px;align-items:baseline;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:17px 24px}
+.n{font-family:var(--mono);font-size:24px;color:var(--ink)}
+.q{font-size:24px;color:var(--ink-2);line-height:1.35}
+.cap{font-family:var(--mono);font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+.trade{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tc{border:2px solid var(--accent);border-radius:12px;padding:22px 22px}
+.tc + .tc{border:1.5px dashed #3A4453}
+.tc .a{font-family:var(--mono);font-size:20px;color:var(--ink)}
+.tc .g{font-size:22px;color:var(--ink-2);margin-top:10px;line-height:1.4}
+.tc .g b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Five things <em>every design trades</em></h1>
+  <div class="stage">
+    <div class="rows">
+      <div class="row"><span class="n">scalability</span><span class="q">Can it serve more users if we add machines?</span></div>
+      <div class="row"><span class="n">availability</span><span class="q">Does it stay up when one part fails?</span></div>
+      <div class="row"><span class="n">latency</span><span class="q">How long does one request take?</span></div>
+      <div class="row"><span class="n">consistency</span><span class="q">Does every user see the same, correct data?</span></div>
+      <div class="row"><span class="n">cost + simplicity</span><span class="q">What does it take to run it and to change it?</span></div>
+    </div>
+    <div class="cap">you can't max them all. two examples:</div>
+    <div class="trade">
+      <div class="tc"><div class="a">add a cache</div><div class="g"><b>gain:</b> faster reads (latency)<br><b>cost:</b> older data (consistency)</div></div>
+      <div class="tc"><div class="a">add more servers</div><div class="g"><b>gain:</b> more users (scalability)<br><b>cost:</b> a bigger bill, more to run (cost)</div></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 3</span></div>
+</div></body></html>

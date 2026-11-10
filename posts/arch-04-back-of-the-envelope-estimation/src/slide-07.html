@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+body{height:1350px}
+h1{font-size:56px;max-width:18ch}
+.stage{justify-content:center;gap:38px}
+.big{display:flex;align-items:baseline;gap:22px;font-family:var(--mono)}
+.big .n{font-size:190px;line-height:1;letter-spacing:-.04em;color:var(--ink);font-weight:500}
+.big .u{font-size:34px;color:var(--ink-2);line-height:1.3}
+.tiles{display:grid;gap:18px}
+.tile{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 32px;display:flex;flex-direction:column;gap:10px}
+.tile.hero{border:2px solid var(--accent)}
+.k{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.v{font-family:var(--mono);font-size:36px;color:var(--ink);line-height:1.35}
+.hero .r{color:var(--accent)}
+.s{font-size:24px;color:var(--ink-2);line-height:1.4}
+.s b{color:var(--ink);font-weight:600}
+.close{font-family:var(--mono);font-size:25px;color:var(--ink-2);line-height:1.5;border-top:1px solid var(--line);padding-top:24px}
+.close b{color:var(--ink);font-weight:500}
+.cap{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:36px 32px;display:flex;flex-direction:column;gap:16px}
+.card.hero{border:2px solid var(--accent)}
+.val{font-family:var(--mono);font-size:56px;line-height:1.05;letter-spacing:-.03em;color:var(--ink)}
+.hero .val{color:var(--accent)}
+.nm{font-family:var(--mono);font-size:19px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em}
+.arrow{font-size:29px;font-weight:600;line-height:1.3;color:var(--ink)}
+.card .s{font-size:22px;line-height:1.4;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+
+</style></head><body>
+<div class="frame">
+<div class="series">System Architecture #04<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>What the numbers <em>decide</em></h1>
+  <div class="stage">
+    <div class="grid">
+      <div class="card"><div class="val">200 : 1</div><div class="nm">views per upload</div><div class="arrow">→ Read-heavy. Make reading fast first.</div></div>
+      <div class="card"><div class="val">730 TB / yr</div><div class="nm">photo files</div><div class="arrow">→ Keep them in object storage, not the database.</div><div class="s"><b>Object storage:</b> a service that stores files by name. Example: Amazon S3.</div></div>
+      <div class="card"><div class="val">365 GB / yr</div><div class="nm">metadata</div><div class="arrow">→ One ordinary database holds it for a long time.</div></div>
+      <div class="card hero"><div class="val">30 / s</div><div class="nm">uploads at peak</div><div class="arrow">→ Writes are modest. No sharding yet.</div><div class="s"><b>Sharding:</b> splitting one database across many machines.</div></div>
+    </div>
+    <div class="close">→ Pick tools after the maths. <b>"We need sharding" means nothing</b> until you know writes are about 30 a second.</div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>07 / 08</span></div>
+</div></body></html>

@@ -6,6 +6,7 @@ MODE:      COMPARE
 FORMAT:    VISUAL
 HEADLINE:  Four array patterns, four different clues
 LAYOUT:    GRID
+VISUALS:   1 = Two pointers (post #09) + Sliding window (post #10) + Prefix sum (post #11) + Kadane (post #12) · 2 = Spot it when the problem says… · 3 = One array, four questions · 4 = The senior detail: Kadane is prefix sum in disguise · rest = text
 STATUS:    draft
 ---
 Four patterns. All walk an array in O(n). All replace a nested loop.
@@ -48,6 +49,11 @@ The common wrong choice
 Using a variable sliding window for "subarray sum equals k" when the array has negative numbers. Use prefix sum + hash map instead.
 
 The senior detail: Kadane is prefix sum in disguise. The best subarray is the biggest gap between a running total and the smallest total before it. Kadane just does not store the totals.
+
+Keep in mind when you pick an array pattern
+→ See negative numbers? Rule out a sum-based window first.
+→ Sorting for two pointers costs O(n log n) and loses indexes.
+→ Seed the prefix-sum map with 0 → 1, or you miss subarrays starting at index 0.
 
 Takeaway: ask what you must remember as you walk. Two ends, a range, every total, or the best run so far.
 

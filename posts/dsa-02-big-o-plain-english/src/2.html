@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;padding-top:22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px 26px;height:300px;display:flex;flex-direction:column;gap:14px}
+.card.hero{border:2px solid var(--accent)}
+.top{display:flex;gap:12px;align-items:baseline;font-family:var(--mono)}
+.no{font-size:17px;color:var(--ink-3)}
+.nm{font-size:24px;color:var(--ink)}
+.hero .nm{color:var(--accent)}
+.eq{font-family:var(--mono);font-size:27px;color:var(--ink)}
+.eq .k{color:var(--accent)}
+.d{font-size:22px;color:var(--ink-2);line-height:1.4}
+.d b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #02<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Four rules of <em>reading Big-O</em></h1>
+  <div class="stage">
+    <div class="grid">
+      <div class="card">
+        <div class="top"><span class="no">01</span><span class="nm">drops constants</span></div>
+        <div class="eq">3n steps → <span class="k">O(n)</span></div>
+        <div class="d">Hides real costs. An array walk and a linked-list walk are both O(n). <b>The array is faster:</b> it reads memory in order, which the CPU cache loves.</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="no">02</span><span class="nm">drops smaller terms</span></div>
+        <div class="eq">n² + n → <span class="k">O(n²)</span></div>
+        <div class="d">At n = 1,000: n² is 1,000,000 steps and n adds only 1,000 more. <b>The biggest term wins</b> as n grows.</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="no">03</span><span class="nm">usually the worst case</span></div>
+        <div class="eq">find x in n items → <span class="k">O(n)</span></div>
+        <div class="d">Best case: x is first, 1 step. Worst case: x is last or missing, n steps. <b>Say which case you mean.</b></div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="no">04</span><span class="nm">works for memory too</span></div>
+        <div class="eq">copy an array → <span class="k">O(n)</span></div>
+        <div class="d">Summing an array needs one extra number: O(1) space. Copying it needs n new slots. <b>That is space complexity.</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 4</span></div>
+</div></body></html>

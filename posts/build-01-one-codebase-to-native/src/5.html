@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--build)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:14px;gap:16px}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.12em;color:var(--accent);margin-bottom:8px}
+.lbl i{font-style:normal;color:var(--ink-3)}
+.rows{display:flex;flex-direction:column;gap:7px}
+.r{display:grid;grid-template-columns:262px 30px 1fr;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:0 20px;height:52px;font-family:var(--mono);font-size:19px}
+.k{color:var(--ink)}
+.ar{color:var(--accent);text-align:center}
+.h{color:var(--ink-2)}
+/* both are wins: kept = slide 1's green, gained = pillar green */
+.g .lbl,.g .k{color:#4ADE80}
+.l .lbl,.l .k{color:var(--accent)}
+.price{font-family:var(--mono);font-size:18px;color:var(--ink-3);text-align:center;margin-top:4px}
+</style></head><body>
+<div class="frame">
+  <div class="series">Building #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 04: agents port every change, tests check it</div>
+  <h1>What did we achieve <em>in the end?</em></h1>
+  <div class="stage">
+    <div class="g">
+      <div class="lbl">KEPT <i>· every win cross-platform gave us</i></div>
+      <div class="rows">
+        <div class="r"><span class="k">one codebase</span><span class="ar">→</span><span class="h">one rules file + shared tests drive every app</span></div>
+        <div class="r"><span class="k">one team</span><span class="ar">→</span><span class="h">agents write the Swift and Kotlin</span></div>
+        <div class="r"><span class="k">every platform at once</span><span class="ar">→</span><span class="h">built on web, ported to native within days</span></div>
+        <div class="r"><span class="k">apps that match</span><span class="ar">→</span><span class="h">shared tests fail the build on drift</span></div>
+      </div>
+    </div>
+    <div class="l">
+      <div class="lbl">PLUS <i>· what only native apps can do</i></div>
+      <div class="rows">
+        <div class="r"><span class="k">calls outside the app</span><span class="ar">→</span><span class="h">iOS Live Activity, Android foreground service</span></div>
+        <div class="r"><span class="k">text size, safe areas</span><span class="ar">→</span><span class="h">built into SwiftUI and Compose</span></div>
+        <div class="r"><span class="k">performance</span><span class="ar">→</span><span class="h">no JavaScript layer between app and OS</span></div>
+        <div class="r"><span class="k">independence</span><span class="ar">→</span><span class="h">an Android fix can't touch iOS</span></div>
+        <div class="r"><span class="k">own builds</span><span class="ar">→</span><span class="h">each app, its own tools and CI</span></div>
+      </div>
+    </div>
+    <div class="price">the price moved to us: more review, more releases, tests to keep</div>
+  </div>
+  <div class="next">next <b>→</b> so, is cross-platform dead?</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>5 / 7</span></div>
+</div></body></html>

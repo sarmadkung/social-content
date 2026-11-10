@@ -8,6 +8,7 @@ HEADLINE:  sort() does not sort numbers
 LAYOUT:    STATEMENT
 STATUS:    draft
 VARIANT:   C (source mode)
+VISUALS:   1 = Example · 2 = Three properties decide which sort you want: · 3 = Key properties · rest = text
 ---
 [1, 10, 2].sort() gives you [1, 10, 2].
 Not a bug. JavaScript converted every element to a string first.
@@ -23,7 +24,7 @@ Stable — equal elements keep their original order. Sort by date, then by autho
 
 In-place — it sorts inside the array instead of allocating a second one. O(1) extra space instead of O(n).
 
-Comparison-based — it works by comparing pairs, which caps it at O(n log n). Counting sort and radix sort beat that by not comparing at all, but they need small integer keys.
+Comparison-based — it works by comparing pairs, so in the worst case it can never beat O(n log n). Counting sort and radix sort beat that by not comparing at all, but they need keys like small integers or fixed-length strings.
 
 Why do we need it?
 Sorted data makes other things possible. Binary search needs it. Two pointers usually needs it. Deduplication becomes one pass. Merging two datasets becomes one pass.
@@ -51,6 +52,13 @@ Spot it when the problem says…
 → "pairs", "duplicates", "closest" or "overlapping intervals" on unsorted data
 → order helps but the input has none: sort first, then two pointers or binary search
 → the limits allow O(n log n) but not O(n²)
+
+Keep in mind when you call sort()
+→ Sorting numbers in JS? Always pass a comparator.
+→ Return a - b, never a > b: the sign is the answer.
+→ Strings: use a.localeCompare(b). a - b gives NaN.
+→ sort() changes the array. Use toSorted() to keep the original.
+→ Need only the min or max? One O(n) pass beats an O(n log n) sort.
 
 The interview takeaway
 "Which sorting algorithm" is rarely the real question. The real one is: does your data have structure the sort can exploit, do you need stability, and can you afford the extra array? Answer those three and the algorithm picks itself.

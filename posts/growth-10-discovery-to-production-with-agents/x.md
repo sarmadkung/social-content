@@ -26,6 +26,6 @@ What breaks: vague specs, long chats that drift, two agents on the same files, a
 ---
 Agents made code cheap. Deciding what to build, and checking it's right, is still your job.
 
-Next: how to break a problem down before you code.
+Next: why your stack and product still matter with agents.
 
 #AIAgents #SoftwareEngineering

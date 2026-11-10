@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+body{height:1350px}
+h1{font-size:56px;max-width:18ch}
+.stage{justify-content:center;gap:34px;padding-top:24px}
+svg{width:100%;display:block}
+svg text{font-family:"SF Mono",Menlo,monospace}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.def{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.def b{color:var(--ink);font-weight:600}
+.def i{font-style:normal;font-family:var(--mono);font-size:20px;color:var(--ink-3);letter-spacing:.04em}
+.panel{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 28px}
+.panel.hero{border:2px solid var(--accent)}
+.panel.ghost{border:1.5px dashed #3A4453;background:transparent}
+.pt{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.hero .pt{color:var(--accent)}
+.big{font-size:34px;font-weight:700;letter-spacing:-.01em;margin-top:10px;line-height:1.2}
+.txt{font-size:25px;color:var(--ink-2);line-height:1.42;margin-top:10px}
+.txt b{color:var(--ink);font-weight:600}
+.mono{font-family:var(--mono);font-size:20px;color:var(--ink-2);line-height:1.55}
+.cost{display:grid;grid-template-columns:auto 1fr;column-gap:16px;border-top:1px solid var(--line);padding-top:20px}
+.cost .k{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding-top:4px}
+.cost .v{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.cost .v b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.foot{transform:translateZ(0)}
+.bars{display:flex;align-items:flex-end;gap:22px;height:560px;border-bottom:1.5px solid #3A4453;padding:0 10px;position:relative}
+.col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:12px}
+.val{font-family:var(--mono);font-size:30px;color:var(--ink-2)}
+.bar{width:100%;background:#3A4453;border-radius:8px 8px 0 0}
+.col.hot .val{color:var(--accent);font-size:44px}
+.col.hot .bar{background:var(--accent)}
+.names{display:flex;gap:22px;padding:0 10px}
+.names div{flex:1;text-align:center;font-family:var(--mono);font-size:19px;color:var(--ink-2);line-height:1.35}
+.scale{font-family:var(--mono);font-size:16px;color:var(--ink-3)}
+.note{display:flex;justify-content:space-between;align-items:center}
+.tag{font-family:var(--mono);font-size:20px;color:var(--ink);border:1px solid #3A4453;border-radius:999px;padding:10px 20px}
+</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>App at 30%, <em>database at 90%</em></h1>
+  <div class="stage">
+    <div class="note"><span class="lbl">CPU at peak · scale 0–100%</span><span class="tag">big launch next week</span></div>
+    <div class="bars">
+      <div class="col"><div class="val">30%</div><div class="bar" style="height:30%"></div></div>
+      <div class="col"><div class="val">30%</div><div class="bar" style="height:30%"></div></div>
+      <div class="col"><div class="val">30%</div><div class="bar" style="height:30%"></div></div>
+      <div class="col hot"><div class="val">90%</div><div class="bar" style="height:90%"></div></div>
+    </div>
+    <div class="names"><div>app<br>server 1</div><div>app<br>server 2</div><div>app<br>server 3</div><div style="color:var(--ink)">the one<br>database</div></div>
+    <div class="def">The app servers are mostly idle. They are <b>waiting on the database</b>. The slow part is not your app code, so start where the CPU is.</div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>02 / 09</span></div>
+</div></body></html>

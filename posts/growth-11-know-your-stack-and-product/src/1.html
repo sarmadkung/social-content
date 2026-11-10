@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:10px;gap:24px}
+.ask{font-family:var(--mono);font-size:23px;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 22px}
+.ask span{color:var(--ink-3)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pan{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:12px}
+.pan.good{border:2px solid var(--accent)}
+.lbl{font-family:var(--mono);font-size:16px;letter-spacing:.14em;color:var(--ink-3);margin-bottom:2px}
+.good .lbl{color:var(--accent)}
+.st{font-family:var(--mono);font-size:20px;line-height:1.4;color:var(--ink-2);border:1px solid var(--line);border-radius:9px;padding:14px 15px}
+.ar{font-family:var(--mono);font-size:21px;color:var(--ink-3);text-align:center;line-height:1}
+.bad .end{color:var(--ink-3);border-style:dashed}
+.good .st{color:var(--ink)}
+.good .end{border-color:var(--accent)}
+.do{display:flex;flex-direction:column;gap:10px}
+.do .h{font-family:var(--mono);font-size:16px;letter-spacing:.14em;color:var(--accent)}
+.do div:not(.h){font-size:23px;color:var(--ink-2);line-height:1.3}
+.do b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #11<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Pick a stack <em>you could review</em></h1>
+  <div class="stage">
+    <div class="ask"><span>agent asks:</span> "Store sessions in Redis or Postgres?"</div>
+    <div class="cmp">
+      <div class="pan bad">
+        <div class="lbl">A STACK YOU DON'T KNOW</div>
+        <div class="st">you can't judge either option, so you guess</div>
+        <div class="ar">↓</div>
+        <div class="st">the agent builds login, logout and rate limits on it</div>
+        <div class="ar">↓</div>
+        <div class="st end">weeks later: it doesn't fit how you deploy. Rewrite auth.</div>
+      </div>
+      <div class="pan good">
+        <div class="lbl">A STACK YOU KNOW</div>
+        <div class="st">you know the trade-offs, so you choose</div>
+        <div class="ar">↓</div>
+        <div class="st">"Postgres. We already run it."</div>
+        <div class="ar">↓</div>
+        <div class="st end">the agent builds on a choice you can defend</div>
+      </div>
+    </div>
+    <div class="do">
+      <div class="h">WHAT TO DO</div>
+      <div><b>Pick tools you could review a diff in.</b> A boring stack you know beats a new one you don't.</div>
+      <div><b>Learn new tools on side projects,</b> not on the product you need to ship.</div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 3</span></div>
+</div></body></html>

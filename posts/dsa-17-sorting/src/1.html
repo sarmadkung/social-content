@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-c/base.css">
+<style>:root{--accent:var(--dsa)}
+.series .brand{margin-left:auto;display:flex;align-items:center;gap:12px}
+.series .brand img{height:28px;display:block}
+.series .brand img:first-child{height:36px}
+h1{font-size:56px}
+.code{font-size:24px;line-height:2;justify-content:center}
+.def{margin-top:24px;font-size:21px;line-height:1.4;color:var(--ink-2)}
+.def b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #17<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>sort() does not <em>sort numbers</em></h1>
+  <div class="win">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="file">sort.js</span><span class="tag">default comparator</span></div>
+    <div class="code">
+      <div class="ln"><span class="no">1</span><span class="tx"><span class="c">// no comparator: items are compared as strings</span></span></div>
+      <div class="ln out"><span class="no">2</span><span class="tx"><span class="s">[1, 10, 2].sort();</span>  <span class="c">// [1, 10, 2]</span></span></div>
+      <div class="ln"><span class="no">3</span><span class="tx"><span class="c">// "10" comes before "2", because "1" &lt; "2"</span></span></div>
+      <div class="ln hl"><span class="no">4</span><span class="tx">[1, 10, 2].sort((a, b) =&gt; a - b);  <span class="c">// [1, 2, 10]</span></span></div>
+      <div class="ln"><span class="no">5</span><span class="tx"></span></div>
+      <div class="ln"><span class="no">6</span><span class="tx"><span class="c">// the comparator must return a number</span></span></div>
+      <div class="ln out"><span class="no">7</span><span class="tx"><span class="s">users.sort((a, b) =&gt; a.age &gt; b.age);</span>  <span class="c">// true/false</span></span></div>
+      <div class="ln hl"><span class="no">8</span><span class="tx">users.sort((a, b) =&gt; a.age - b.age);  <span class="c">// -, 0 or +</span></span></div>
+    </div>
+  </div>
+  <div class="def"><b>Comparator:</b> the function you pass to sort(). It gets two items, a and b, and returns a number: negative puts a first, positive puts b first, 0 means they are equal.</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 3</span></div>
+</div></body></html>

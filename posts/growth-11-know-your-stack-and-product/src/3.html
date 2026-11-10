@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:10px;gap:24px}
+.bad{font-family:var(--mono);font-size:20px;color:var(--ink-3);border:1px dashed #3A4453;border-radius:10px;padding:16px 20px;line-height:1.35}
+.bad b{color:var(--ink-2);font-weight:400}
+.doc{background:var(--code);border:2px solid var(--accent);border-radius:14px;overflow:hidden}
+.doc .top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:17px;color:var(--ink-2);background:var(--chrome);border-bottom:1px solid var(--line);padding:12px 20px}
+.doc .top i{font-style:normal;color:var(--accent);letter-spacing:.1em}
+.sec{display:grid;grid-template-columns:200px 1fr;gap:14px;padding:19px 22px;border-bottom:1px solid var(--line);font-family:var(--mono)}
+.sec:last-child{border-bottom:0}
+.sec .k{font-size:21px;color:var(--accent)}
+.sec .v{font-size:21px;color:var(--ink);line-height:1.45}
+.sec .v span{color:var(--ink-3)}
+.loop{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.loop div{font-family:var(--mono);font-size:21px;color:var(--ink-2);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;line-height:1.35}
+.loop b{color:var(--ink);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #11<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Keep the <em>big picture</em> yourself</h1>
+  <div class="stage">
+    <div class="bad"><b>without it:</b> you only give commands. Every session starts from scratch, and the product never reaches the end.</div>
+    <div class="doc">
+      <div class="top"><span>progress.md · in the repo</span><i>EXAMPLE</i></div>
+      <div class="sec"><span class="k">Done</span><span class="v">login, logout <span>· tests pass, tried in the browser</span></span></div>
+      <div class="sec"><span class="k">In progress</span><span class="v">"remember me" <span>· token saved, expiry not done</span></span></div>
+      <div class="sec"><span class="k">Next</span><span class="v">1. rate limits on login<br>2. password reset<br>3. invite a teammate</span></div>
+      <div class="sec"><span class="k">Decisions</span><span class="v">Postgres for sessions <span>· we already run it</span></span></div>
+    </div>
+    <div class="loop">
+      <div><b>start of a session:</b><br>the agent reads it</div>
+      <div><b>end of a session:</b><br>you update it</div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 3</span></div>
+</div></body></html>

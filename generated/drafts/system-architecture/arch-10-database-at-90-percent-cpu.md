@@ -57,6 +57,13 @@ Treating "database at 90%" as an architecture problem. It is often one query.
 
 [PERSONAL: one line on a database CPU spike you traced to a single query or missing index]
 
+Keep in mind when your database runs hot
+→ Sort queries by total time, not by the slowest single call.
+→ Check the query plan (EXPLAIN) before and after an index.
+→ Every index slows writes a little. Add only the ones you use.
+→ Cache only data that is allowed to be a little old.
+→ Read your own fresh writes from the primary, not a replica.
+
 Takeaway: Fix the query before you fix the architecture.
 
 Next: sharding, for when steps 1 to 4 have truly run out.

@@ -6,6 +6,7 @@ MODE:      WHY
 FORMAT:    VISUAL
 HEADLINE:  AI writes code. Fundamentals judge it.
 LAYOUT:    STATEMENT
+VISUALS:   1 = The proof · 2 = The reason, step by step · rest = text
 STATUS:    draft
 ---
 An AI tool writes a function. It passes the tests. It runs fine on 100 rows. In production, with 100,000 rows, the page times out.
@@ -45,6 +46,12 @@ What goes wrong if you skip fundamentals
 
 For seniors
 Fundamentals are now the review skill. When a junior's diff came from a tool, ask "why this approach?" The answer shows what they understand.
+
+Keep in mind when you review AI-written code
+→ Test with real data sizes. Slow code hides in 100-row tests.
+→ Ask how the work grows as the input grows, before you accept.
+→ When the tool fixes something, learn the idea behind the fix.
+→ Can't explain why it works? Don't merge it yet.
 
 Takeaway
 AI makes code cheap. Knowing whether it is right is the skill that stays scarce.

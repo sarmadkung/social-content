@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+body{height:1350px}
+h1{font-size:56px;max-width:18ch}
+.stage{justify-content:center;gap:34px;padding-top:24px}
+svg{width:100%;display:block}
+svg text{font-family:"SF Mono",Menlo,monospace}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.def{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.def b{color:var(--ink);font-weight:600}
+.def i{font-style:normal;font-family:var(--mono);font-size:20px;color:var(--ink-3);letter-spacing:.04em}
+.panel{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 28px}
+.panel.hero{border:2px solid var(--accent)}
+.panel.ghost{border:1.5px dashed #3A4453;background:transparent}
+.pt{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.hero .pt{color:var(--accent)}
+.big{font-size:34px;font-weight:700;letter-spacing:-.01em;margin-top:10px;line-height:1.2}
+.txt{font-size:25px;color:var(--ink-2);line-height:1.42;margin-top:10px}
+.txt b{color:var(--ink);font-weight:600}
+.mono{font-family:var(--mono);font-size:20px;color:var(--ink-2);line-height:1.55}
+.cost{display:grid;grid-template-columns:auto 1fr;column-gap:16px;border-top:1px solid var(--line);padding-top:20px}
+.cost .k{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding-top:4px}
+.cost .v{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.cost .v b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.foot{transform:translateZ(0)}
+.rep{display:grid;grid-template-columns:200px 1fr;gap:0;align-items:center}
+.lane{font-family:var(--mono);font-size:18px;color:var(--ink-3)}
+</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>3. Read replicas for <em>reads you can't cache</em></h1>
+  <div class="stage">
+    <svg viewBox="0 0 928 370">
+      <rect x="0" y="140" width="170" height="80" rx="12" fill="#11141B" stroke="#3A4453" stroke-width="1.5"/>
+      <text x="85" y="187" text-anchor="middle" font-size="22" fill="#F2F5F9">app</text>
+      <rect x="330" y="20" width="230" height="80" rx="12" fill="#11141B" stroke="#3A4453" stroke-width="1.5"/>
+      <text x="445" y="56" text-anchor="middle" font-size="22" fill="#F2F5F9">primary</text>
+      <text x="445" y="82" text-anchor="middle" font-size="16" fill="#9BA6B7">all writes</text>
+      <rect x="330" y="200" width="230" height="64" rx="12" fill="#11141B" stroke="#C084FC" stroke-width="2"/>
+      <text x="445" y="239" text-anchor="middle" font-size="21" fill="#C084FC">replica 1</text>
+      <rect x="330" y="282" width="230" height="64" rx="12" fill="#11141B" stroke="#C084FC" stroke-width="2"/>
+      <text x="445" y="321" text-anchor="middle" font-size="21" fill="#C084FC">replica 2</text>
+      <g stroke="#5E6977" stroke-width="1.6" fill="none">
+        <path d="M174 165 C250 165 250 60 322 60"/><path d="M315 54 L322 60 L315 66"/>
+        <path d="M174 195 C250 195 250 232 322 232"/><path d="M315 226 L322 232 L315 238"/>
+        <path d="M174 205 C250 205 250 314 322 314"/><path d="M315 308 L322 314 L315 320"/>
+        <path d="M564 60 H640 V314 H568" stroke-dasharray="6 6"/><path d="M640 232 H568" stroke-dasharray="6 6"/>
+        <path d="M575 226 L568 232 L575 238"/><path d="M575 308 L568 314 L575 320"/>
+      </g>
+      <text x="180" y="62" font-size="18" fill="#9BA6B7">writes</text>
+      <text x="180" y="346" font-size="18" fill="#9BA6B7">reads</text>
+      <text x="662" y="150" font-size="17" fill="#9BA6B7">copies every</text>
+      <text x="662" y="174" font-size="17" fill="#9BA6B7">change, a moment</text>
+      <text x="662" y="198" font-size="17" fill="#9BA6B7">later</text>
+    </svg>
+    <div class="def"><b>Read replica:</b> a copy of the database that only answers reads. The primary takes every write and sends each change to the replicas. <i>Example:</i> search results and order history read from a replica.</div>
+    <div class="cost"><span class="k">cost</span><span class="v"><b>replication lag:</b> a user saves a new address, the next page reads a replica, and shows the old one for a moment.</span></div>
+    <div class="cost"><span class="k">limit</span><span class="v"><b>no help for writes.</b> Every write still lands on the one primary.</span></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>06 / 09</span></div>
+</div></body></html>

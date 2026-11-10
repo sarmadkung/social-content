@@ -6,6 +6,7 @@ MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  Big-O measures growth, not speed
 LAYOUT:    GRID
+VISUALS:   1 = What is it? · 2 = Key properties + The senior detail: · 3 = The common ones, for n = 1,000: · 4 = Example · rest = text
 STATUS:    draft
 ---
 Big-O does not tell you how fast your code runs.
@@ -51,6 +52,13 @@ Read the loops. One loop over n: O(n). A loop inside a loop: O(n²).
 The senior detail: dropping constants hides real costs. Two O(n) loops can differ a lot in practice. Walking an array reads memory in order, which the CPU cache loves. Walking a linked list jumps around memory. Same Big-O, different speed.
 
 [PERSONAL: one real case where an O(n²) loop showed up in code review or production]
+
+Keep in mind when you work out Big-O
+→ Say what n is: users, rows or characters.
+→ Two inputs, two letters: O(n × m), not O(n²).
+→ Loops in a row add. Loops inside loops multiply.
+→ includes() inside a loop is a hidden nested loop.
+→ Give time and space: faster code often uses more memory.
 
 Takeaway: Big-O tells you how cost grows, not how fast code runs.
 

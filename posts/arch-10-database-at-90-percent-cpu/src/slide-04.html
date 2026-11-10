@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+body{height:1350px}
+h1{font-size:56px;max-width:18ch}
+.stage{justify-content:center;gap:34px;padding-top:24px}
+svg{width:100%;display:block}
+svg text{font-family:"SF Mono",Menlo,monospace}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.def{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.def b{color:var(--ink);font-weight:600}
+.def i{font-style:normal;font-family:var(--mono);font-size:20px;color:var(--ink-3);letter-spacing:.04em}
+.panel{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 28px}
+.panel.hero{border:2px solid var(--accent)}
+.panel.ghost{border:1.5px dashed #3A4453;background:transparent}
+.pt{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.hero .pt{color:var(--accent)}
+.big{font-size:34px;font-weight:700;letter-spacing:-.01em;margin-top:10px;line-height:1.2}
+.txt{font-size:25px;color:var(--ink-2);line-height:1.42;margin-top:10px}
+.txt b{color:var(--ink);font-weight:600}
+.mono{font-family:var(--mono);font-size:20px;color:var(--ink-2);line-height:1.55}
+.cost{display:grid;grid-template-columns:auto 1fr;column-gap:16px;border-top:1px solid var(--line);padding-top:20px}
+.cost .k{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding-top:4px}
+.cost .v{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.cost .v b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.foot{transform:translateZ(0)}
+.rows{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px}
+.rows i{width:24px;height:18px;border-radius:3px;background:#2A313D}
+.rows i.m{background:var(--ink)}
+.hero .rows i.m{background:var(--accent)}
+.rows i.s{background:transparent;border:1px dashed #2A313D}
+.code{font-family:var(--mono);font-size:20px;color:var(--ink);background:var(--code);border:1px solid var(--line);border-radius:10px;padding:16px 20px}
+.code .k{color:var(--accent)}
+</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>1. Add <em>the missing index</em></h1>
+  <div class="stage">
+    <div class="def"><b>Index:</b> a sorted lookup the database keeps next to a table, like the index at the back of a book. <i>Example:</i> user_id 42 → rows 1,207, 88,410, 3,901,155.</div>
+    <div class="two">
+      <div class="panel"><div class="pt">no index</div><div class="big">read all 5,000,000 rows</div><div class="txt">check each one, keep the few that match user 42</div>
+        <div class="rows"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="m"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="m"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="m"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="panel hero"><div class="pt">index on user_id</div><div class="big">jump straight to user 42's rows</div><div class="txt">look up 42 in the sorted index, read only those rows</div>
+        <div class="rows"><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="m"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="m"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="m"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i></div></div>
+    </div>
+    <div class="code"><span class="k">CREATE INDEX</span> orders_user_id <span class="k">ON</span> orders (user_id);</div>
+    <div class="cost"><span class="k">also</span><span class="v"><b>N+1 queries:</b> 1 query for a list of 100 orders, then 1 more per order = 101 trips. Fetch them in one query instead.</span></div>
+    <div class="cost"><span class="k">cost</span><span class="v">every index makes writes a little slower and uses disk.</span></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>04 / 09</span></div>
+</div></body></html>

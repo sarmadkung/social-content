@@ -73,6 +73,10 @@ next unwritten number for that series.
    an angle *was* given, show the draft and ask
    whether to rewrite it. If any earlier number in the
    series has no draft, warn — the validator fails on skipped numbers.
+   **No duplicates.** Before writing a new draft or post folder, search
+   `generated/drafts/`, `posts/` and every pillar roadmap for the same topic
+   under another number or title. If one already covers it, stop and name it —
+   never make a second draft, folder or roadmap line for the same idea.
 4. Read, in full: `skills/linkedin-content.skill.md`,
    `prompts/master-content-prompt.md`, the pillar file, and every draft listed
    in `needs` (so the post builds on them and does not repeat them). For
@@ -129,6 +133,25 @@ next unwritten number for that series.
      (e.g. "23 technique write-ups") do not go on the image — not in the
      diagram, not in the footer. The image adds what the text can't show; the
      footer's right side is the topic, complexity, or `1 / 2` page number.
+   - **Titles: simple, true to the content, and a question where it fits.**
+     Every image title (and draft section heading) says in plain words what
+     that image shows. Prefer a question the image answers ("Who keeps the
+     apps in sync now?", "Before and after: what did we change?"). No
+     slogans, idioms or clever contrasts ("Native where it matters, web where
+     it doesn't", "Tests hold the line") — they sound good but don't say what
+     is on the slide. Test: a reader who sees only the title can guess what
+     the slide shows. If the title fits a different slide just as well,
+     rewrite it.
+   - **No separate image for a repeated idea.** If an image's title or
+     points repeat the previous image, merge its few new points into that
+     image (as examples under the matching item) and drop the image.
+   - **No idea twice across images.** Each image teaches one idea no other
+     image in the post (or earlier post in the series) already shows.
+   - **Link every image to its neighbours.** With 2+ images, each one picks
+     up where the previous one ended and hands off to the next, per the visual
+     skill's section 5 rule 8: a `from` cue naming what the previous image
+     established, a `next` cue naming the next image's point, and the same
+     names, colours and objects for the same thing on every image.
    - Images are numbered in posting order: `1.png` is the first image shown.
    - **Feed cover for 3+ images.** When the post has 3 or more images, also
      write `src/0.html` → `0.png` per the visual skill's section 5c: the

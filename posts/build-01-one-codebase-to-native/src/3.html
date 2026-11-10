@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--build)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:14px;gap:12px}
+.hd{display:grid;grid-template-columns:150px 1fr 40px 1fr;gap:0 14px;font-family:var(--mono);font-size:16px;letter-spacing:.14em;color:var(--ink-3);padding:0 22px}
+.hd .f{color:#F87171}.hd .t{color:#4ADE80}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;gap:10px}
+.mv{display:grid;grid-template-columns:150px 1fr 40px 1fr;gap:0 14px;align-items:center}
+.pf{font-size:26px;font-weight:600;color:var(--ink)}
+/* comparison colours: from = red (costly), to = green (good) */
+.from-b,.to-b{font-family:var(--mono);font-size:19px;border-radius:9px;padding:10px 14px}
+.from-b{color:var(--ink-2);background:color-mix(in srgb,#F87171 8%,var(--panel));border:1.5px solid color-mix(in srgb,#F87171 40%,transparent)}
+.to-b{color:var(--ink);background:color-mix(in srgb,#4ADE80 8%,var(--panel));border:1.5px solid color-mix(in srgb,#4ADE80 45%,transparent)}
+.ar{font-family:var(--mono);font-size:24px;color:var(--accent);text-align:center}
+.why{font-family:var(--mono);font-size:17px;color:var(--ink-3);padding-left:164px}
+.why b{color:var(--ink-2);font-weight:400}
+.row.stay .to-b{color:var(--ink-2);background:var(--panel);border:1.5px dashed #3A4453}
+.cost{font-family:var(--mono);font-size:19px;color:var(--ink-2);text-align:center;margin-top:4px}
+.cost b{color:var(--ink-3);font-weight:400}
+</style></head><body>
+<div class="frame">
+  <div class="series">Building #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 02: every platform still needed its own work</div>
+  <h1>What did we <em>migrate to?</em></h1>
+  <div class="stage">
+    <div class="hd"><span>PLATFORM</span><span class="f">FROM</span><span></span><span class="t">TO</span></div>
+    <div class="row">
+      <div class="mv"><span class="pf">iOS</span><span class="from-b">shared Expo app</span><span class="ar">→</span><span class="to-b">Swift · SwiftUI</span></div>
+      <div class="why">why: <b>the OS is part of the product</b></div>
+    </div>
+    <div class="row">
+      <div class="mv"><span class="pf">Android</span><span class="from-b">shared Expo app</span><span class="ar">→</span><span class="to-b">Kotlin · Compose</span></div>
+      <div class="why">why: <b>the OS is part of the product</b></div>
+    </div>
+    <div class="row">
+      <div class="mv"><span class="pf">Web</span><span class="from-b">shared Expo app</span><span class="ar">→</span><span class="to-b">its own web app</span></div>
+      <div class="why">why: <b>web code stays out of the phones</b></div>
+    </div>
+    <div class="row stay">
+      <div class="mv"><span class="pf">Desktop</span><span class="from-b">shared Expo app</span><span class="ar">→</span><span class="to-b">web app, native window</span></div>
+      <div class="why">why: <b>web is fast enough there; native would add little</b></div>
+    </div>
+    <div class="cost"><b>the cost:</b> more code to review, more pipelines, more releases</div>
+  </div>
+  <div class="next">next <b>→</b> separate apps: who keeps them in sync?</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 7</span></div>
+</div></body></html>

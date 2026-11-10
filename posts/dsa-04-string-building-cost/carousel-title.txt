@@ -1,0 +1,1 @@
+String building cost: why += in a loop is O(n²)

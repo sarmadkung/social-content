@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+body{height:1350px}
+h1{font-size:56px;max-width:18ch}
+.stage{justify-content:center;gap:34px;padding-top:24px}
+svg{width:100%;display:block}
+svg text{font-family:"SF Mono",Menlo,monospace}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.def{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.def b{color:var(--ink);font-weight:600}
+.def i{font-style:normal;font-family:var(--mono);font-size:20px;color:var(--ink-3);letter-spacing:.04em}
+.panel{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 28px}
+.panel.hero{border:2px solid var(--accent)}
+.panel.ghost{border:1.5px dashed #3A4453;background:transparent}
+.pt{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.hero .pt{color:var(--accent)}
+.big{font-size:34px;font-weight:700;letter-spacing:-.01em;margin-top:10px;line-height:1.2}
+.txt{font-size:25px;color:var(--ink-2);line-height:1.42;margin-top:10px}
+.txt b{color:var(--ink);font-weight:600}
+.mono{font-family:var(--mono);font-size:20px;color:var(--ink-2);line-height:1.55}
+.cost{display:grid;grid-template-columns:auto 1fr;column-gap:16px;border-top:1px solid var(--line);padding-top:20px}
+.cost .k{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding-top:4px}
+.cost .v{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.cost .v b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.foot{transform:translateZ(0)}
+.two .panel{display:flex;flex-direction:column}
+ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+li{font-size:24px;color:var(--ink-2);line-height:1.38;padding-left:22px;position:relative}
+li::before{content:"–";position:absolute;left:0;color:var(--ink-3)}
+li b{color:var(--ink);font-weight:600}
+.pic{font-family:var(--mono);font-size:21px;color:var(--ink-2);margin-top:16px;line-height:1.6;background:var(--code);border-radius:10px;padding:14px 16px}
+</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>4. Scale up. <em>5. Then shard.</em></h1>
+  <div class="stage">
+    <div class="two">
+      <div class="panel hero"><div class="pt">4 · scale up</div><div class="big">a bigger machine</div>
+        <div class="pic">8 cores, 32 GB<br>→ 32 cores, 128 GB</div>
+        <ul><li><b>no code change</b></li><li>buys time while you fix the cause</li><li>cost: money, and there is a biggest machine</li></ul></div>
+      <div class="panel ghost"><div class="pt">5 · shard</div><div class="big">split the data</div>
+        <div class="pic">users A–H → db 1<br>users I–P → db 2 …</div>
+        <ul><li><b>weeks of work</b></li><li>queries across shards get hard</li><li>cost: complexity you keep forever</li></ul></div>
+    </div>
+    <div class="def"><b>Shard:</b> one piece of the data, on its own database. Each shard holds some of the rows. <i>Example:</i> users A–H on database 1, I–P on database 2.</div>
+    <div class="cost"><span class="k">rule</span><span class="v">Shard only when steps 1 to 4 have truly run out.</span></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>07 / 09</span></div>
+</div></body></html>

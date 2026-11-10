@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:54px;max-width:none}
+.stage{justify-content:center;gap:22px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.p{background:var(--panel);border:1.5px solid #3A4453;border-radius:14px;padding:24px 24px;display:flex;flex-direction:column;gap:11px}
+.p.hero{border:2px solid var(--accent)}
+.lbl{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.hero .lbl{color:var(--accent)}
+.t{font-size:31px;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.q{font-size:21px;color:var(--ink-2);line-height:1.35;margin-bottom:4px}
+.s{display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:10px;background:var(--code);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.s .n{font-family:var(--mono);font-size:17px;color:var(--ink-3)}
+.s .x{font-size:21px;color:var(--ink);line-height:1.3}
+.s .w{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.s .w.m{color:var(--accent)}
+.dn{font-family:var(--mono);font-size:17px;color:var(--ink-3);text-align:center;line-height:1}
+.loop{border:1.5px dashed #3A4453;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.loop .h{font-family:var(--mono);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.v{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-family:var(--mono);font-size:19px;color:var(--ink-2);line-height:1.4}
+.v b{color:var(--ink);font-weight:500}
+.hero .v b{color:var(--accent)}
+.rule{font-family:var(--mono);font-size:21px;color:var(--ink-2);text-align:center}
+.rule b{color:var(--ink);font-weight:500}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #14<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Known steps vs <em>steps you find</em></h1>
+  <div class="stage">
+    <div class="cols">
+      <div class="p hero">
+        <div class="lbl">Task 1 · a workflow</div>
+        <div class="t">Sort a support email</div>
+        <div class="q">The steps are the same for every email.</div>
+        <div class="s"><span class="n">1</span><span class="x">Label it: refund, bug or question</span><span class="w m">model</span></div>
+        <div class="dn">↓</div>
+        <div class="s"><span class="n">2</span><span class="x">Send it to the right handler</span><span class="w">code</span></div>
+        <div class="dn">↓</div>
+        <div class="s"><span class="n">3</span><span class="x">Draft a reply</span><span class="w m">model</span></div>
+        <div class="dn">↓</div>
+        <div class="s"><span class="n">4</span><span class="x">Approve and send</span><span class="w">human</span></div>
+        <div class="v"><b>You wrote the order.</b> The model only fills in steps 1 and 3.</div>
+      </div>
+      <div class="p">
+        <div class="lbl">Task 2 · an agent</div>
+        <div class="t">Fix a failing test</div>
+        <div class="q">Nobody knows in advance which files to read.</div>
+        <div class="loop">
+          <div class="h">loop: the model picks each step</div>
+          <div class="s"><span class="n">→</span><span class="x">Read the test and the error</span><span class="w m">model</span></div>
+          <div class="s"><span class="n">→</span><span class="x">Open the file it now suspects</span><span class="w m">model</span></div>
+          <div class="s"><span class="n">→</span><span class="x">Edit, run the tests, read the result</span><span class="w m">model</span></div>
+          <div class="h">↺ again, until the test passes or the cap is hit</div>
+        </div>
+        <div class="v"><b>The path depends on what it finds.</b> It may take 3 steps or 30.</div>
+      </div>
+    </div>
+    <div class="rule">Can you write the steps down before it runs? <b>Then it's a workflow.</b></div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 3</span></div>
+</div></body></html>

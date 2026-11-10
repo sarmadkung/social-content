@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;padding-top:20px;gap:12px}
+.r{display:grid;grid-template-columns:330px 190px 1fr;align-items:center;column-gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:0 26px;height:110px}
+.r.h{background:none;border:none;height:auto;padding:0 27px 2px;font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.r.hero{border:2px solid var(--accent)}
+.op{font-family:var(--mono);font-size:24px;color:var(--ink);line-height:1.35}
+.op small{display:block;font-size:17px;color:var(--ink-3)}
+.o{font-family:var(--mono);font-size:28px;color:var(--ink)}
+.hero .o{color:var(--accent)}
+.w{font-size:21px;color:var(--ink-2);line-height:1.35}
+.key{margin-top:10px;font-family:var(--mono);font-size:19px;color:var(--ink-2);text-align:center}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #04<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>What strings <em>really cost</em></h1>
+  <div class="stage">
+    <div class="r h"><span>operation</span><span>cost</span><span>why</span></div>
+    <div class="r"><span class="op">read s[i]</span><span class="o">O(1)</span><span class="w">laid out like an array (#03): jump straight to slot i</span></div>
+    <div class="r hero"><span class="op">any change<small>+, slice, replace, toUpperCase</small></span><span class="o">O(k)</span><span class="w">builds a new string and copies k characters</span></div>
+    <div class="r"><span class="op">compare a === b</span><span class="o">O(k)</span><span class="w">checks character by character, not O(1)</span></div>
+    <div class="r"><span class="op">parts + join<small>or StringBuilder</small></span><span class="o">O(n) total</span><span class="w">each character is copied once</span></div>
+    <div class="key">k = the string's length · n = the final string's length</div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 3</span></div>
+</div></body></html>

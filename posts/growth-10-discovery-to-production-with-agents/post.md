@@ -44,6 +44,6 @@ Keep in mind
 Takeaway
 Agents made writing code cheap. Deciding what to build, and checking it's right, is still your job.
 
-Next: how to break a problem down before you write any code.
+Next: why your stack and product knowledge still matter when you build with agents.
 
 #AIEngineering #SoftwareEngineering #DeveloperGrowth #AIAgents #ProductEngineering

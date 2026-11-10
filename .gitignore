@@ -4,3 +4,9 @@ __pycache__/
 
 # LinkedIn carousel PDFs — build output of scripts/carousel_pdf.sh
 posts/*/carousel.pdf
+
+# Post images — rendered from posts/*/src/*.html (./render.sh), so not committed.
+# Exceptions: images with no HTML source can't be regenerated, so they stay tracked.
+posts/*/*.png
+!posts/dsa-01-reclaiming-dsa/cover-1.png
+!posts/growth-11-know-your-stack-and-product/cover.png

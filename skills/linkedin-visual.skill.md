@@ -120,6 +120,17 @@ A, B or C.
 border. One shared line underneath names what was *spent*, not just what was
 gained. Variant A (side by side) or C (diff mode).
 
+*Comparison colours* — every two-sided comparison (gave/took, before/after,
+pros/cons) tints both panels, never one bright and one greyed out:
+- Good / after side: green background (`#4ADE80` at ~8% over `--panel`,
+  2px border at ~45%), label in green.
+- Costly / before side: red background (`#F87171`, same mix), label in red.
+- Text on both sides stays readable (ink / ink-2); the pillar accent stays on
+  the headline and on highlighted items.
+- Change only the colours. Keep the post's shared layout: every image in a
+  post uses the same pattern (series row, h1, panels or rows, footer). Do not
+  give each image its own new format.
+
 **FLOW** — one chain of steps. Horizontal when ≤5 steps; vertical when 5+ and
 each step needs a sentence. A loop-back is a dashed panel under the chain, not a
 curved arrow — curved arrows across a flex row do not survive rendering.
@@ -230,18 +241,20 @@ Change a colour there, never in a variant's `base.css`.
 | System design | `SYSTEM ARCHITECTURE` | `#C084FC` violet |
 | AI engineering | `AI ENGINEERING` | `#8AA4FF` indigo |
 | Dev growth | `DEV GROWTH` | `#8B5CF6` deep violet |
-| Building | `BUILDING` | `#2DD4BF` teal |
+| Building | `BUILDING` | `#3BEA62` parrot green |
 | For business | `FOR BUSINESS` / `SOLUTIONS` | `#A3E635` lime |
 
 Software engineering has three subsections. Their tags add the subsection
 (`SOFTWARE ENGINEERING · BACKEND`, `· WEB`, `· MOBILE`) and all use the same green.
 
-Building uses teal for real-world building. It sits near Software
-engineering's green; the series label is what tells the two apart. For
-business uses lime, the widest free gap on the wheel (between amber and
-green). Never use a client's brand colour for any pillar.
+Building uses parrot green (chosen by the user, 2026-11-07): brighter and
+more saturated than Software engineering's mint green, so the two read as
+related but distinct. On a Building card, keep the green/red comparison tint
+(section on comparisons) — the accent marks the headline, the tint marks good vs costly. For business uses lime, the widest free gap on the wheel
+(between amber and green). Never use a client's brand colour for any pillar.
 
-One accent per pillar, seven pillars, no sharing. If another pillar ever appears it
+One accent per pillar, seven pillars. Building and Software engineering are
+both green by choice; every other pillar keeps its own hue. If another pillar ever appears it
 gets its own hue — never a second pillar on an existing accent, which is what makes
 two different posts look like the same series.
 
@@ -257,6 +270,10 @@ Never use the accent as a gradient, and never give one card two accents.
 
 ## 4. Content rules for the image itself
 
+0. **The headline says what the image shows, simply.** Plain words, ideally a
+   question the image answers ("How do we know the apps still match?"). No
+   slogans, idioms or clever contrasts that could sit on any slide. If a
+   reader cannot guess the image's content from its headline alone, rewrite it.
 1. **Draw the mechanism, not a quote.** A pull-quote on a dark background
    teaches nothing. Before designing, answer: *what should a reader understand
    from this image with the caption collapsed?* If the answer is "that the post
@@ -305,6 +322,17 @@ Never use the accent as a gradient, and never give one card two accents.
 7. Export: one 1080 × 1350 PNG per slide. LinkedIn gets them as one PDF
    document (image posts show as a grid, not a swipe); Instagram gets the
    PNGs as a carousel. Same files, both platforms.
+8. Every slide is linked to the one before and after it — this also applies
+   to multi-image posts (`1.png`, `2.png`, …). The deck reads as one story:
+   - Top, tertiary ink, one short line: `← from 02: <what slide 02 showed>`.
+     The first content slide has none (the cover sets it up).
+   - Bottom, above the footer hairline, one short line:
+     `next → <the next slide's point>`. The final slide has none.
+   - The same thing keeps the same name, colour, shape and position on every
+     slide (a "cache" box drawn on slide 2 is the same box on slide 4, now with
+     the new part added), so the reader sees it grow, not restart.
+   - No slide repeats another slide's idea, stat or diagram. A recap on the
+     final slide names the points in one line each; it does not redraw them.
 
 ## 5b. Cover rules (daily.dev and link previews)
 
@@ -336,7 +364,11 @@ cover: the first image already is the hook.
 2. It is a contents slide, not a title card: series label with brand mark, the
    post's `HEADLINE:` (accent via `<em>`), an `In this post` label, then one
    numbered row per image — plain name + 3–6 word description. The rows follow
-   the `VISUALS:` order, so row 1 is `1.png`.
+   the `VISUALS:` order, so row 1 is `1.png`. Each row's name is that
+   image's own headline, so the reader finds it again on the slide; when an
+   image's headline changes, update its row. Under the headline, one or two
+   plain sentences say what the post explores (the starting point, where it
+   ends up). Label the list `What we'll explore`.
 3. No diagram, no stats, no lines copied from the post body.
 4. Footer: name lockup left, `swipe →` right. The other images keep their
    `1 / N` numbers; the cover is not counted.
@@ -375,6 +407,9 @@ Before returning any image, verify each:
 9. Code or terminal body is 12 lines or fewer.
 10. Whitespace is balanced between headline and footer — a void at the bottom
     means the diagram is too small, not the padding too large.
+11. In a deck or multi-image post: `from` and `next` cues are present and
+    match the actual neighbouring slides, shared objects look the same on
+    every slide, and no two slides show the same idea (section 5 rule 8).
 
 ## 7. Examples
 

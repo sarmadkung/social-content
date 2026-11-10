@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:26px;padding-top:18px}
+.def{font-size:24px;color:var(--ink-2);line-height:1.4}
+.def b{color:var(--ink);font-weight:600}
+.rows{display:flex;flex-direction:column;gap:14px}
+.row{display:grid;grid-template-columns:140px 1fr 200px;align-items:center;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:32px 26px}
+.row.hero{border:2px solid var(--accent)}
+.o{font-family:var(--mono);font-size:34px;color:var(--ink)}
+.hero .o{color:var(--accent)}
+.what{font-size:24px;color:var(--ink-2);line-height:1.35}
+.what b{color:var(--ink);font-weight:600}
+.n{font-family:var(--mono);font-size:21px;color:var(--ink-2);text-align:right;line-height:1.55}
+.n b{color:var(--ink);font-weight:500}
+.hero .n b{color:var(--accent)}
+.cap{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);display:grid;grid-template-columns:140px 1fr 200px;gap:22px;padding:0 28px}
+.cap span:last-child{text-align:right}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #02<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Big-O counts<br><em>how work grows</em></h1>
+  <div class="stage">
+    <div class="def"><b>Big-O:</b> how an algorithm's work grows as n, the size of its input, grows. Example: delivering flyers on a street of n houses.</div>
+    <div class="cap"><span>Big-O</span><span>the job</span><span>6 → 12 houses</span></div>
+    <div class="rows">
+      <div class="row">
+        <div class="o">O(1)</div>
+        <div class="what"><b>One flyer to one house.</b><br>The street's size doesn't matter.</div>
+        <div class="n"><b>1</b> → <b>1</b> flyer</div>
+      </div>
+      <div class="row">
+        <div class="o">O(n)</div>
+        <div class="what"><b>One flyer to every house.</b><br>Twice the houses, twice the work.</div>
+        <div class="n"><b>6</b> → <b>12</b> flyers</div>
+      </div>
+      <div class="row hero">
+        <div class="o">O(n²)</div>
+        <div class="what"><b>Every house sends one to every other house.</b><br>Twice the houses, about 4× the work.</div>
+        <div class="n">6×5 = <b>30</b><br>12×11 = <b>132</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 4</span></div>
+</div></body></html>

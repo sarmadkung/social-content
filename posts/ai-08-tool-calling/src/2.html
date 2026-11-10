@@ -1,0 +1,56 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:14px}
+.who{font-family:var(--mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.code{font-family:var(--mono);font-size:19px;color:var(--ink-2);line-height:1.45;white-space:pre}
+.code b{color:var(--accent);font-weight:500}
+.code i{font-style:normal;color:var(--ink-3)}
+.def{font-size:18px;color:var(--ink-2);line-height:1.35}
+.def b{color:var(--ink);font-weight:600}
+.stage{gap:12px}
+.pair{display:grid;grid-template-columns:1fr 330px;gap:18px;align-items:stretch}
+.panel .code{font-size:18px}
+.panel{background:var(--code);border:1px solid #3A4453;border-radius:12px;padding:16px 20px}
+.panel.hero{border:2px solid var(--accent)}
+.panel .who{margin-bottom:8px}
+.notes{display:flex;flex-direction:column;justify-content:space-around;gap:10px}
+.nt{font-size:19px;color:var(--ink-2);line-height:1.35;border-left:2px solid #3A4453;padding-left:14px}
+.nt b{font-family:var(--mono);font-weight:500;color:var(--ink);font-size:18px}
+.nt.hero{border-left-color:var(--accent)}
+.nt.hero b{color:var(--accent)}
+.lbl{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #08<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>You describe the tool. <em>The model fills it in.</em></h1>
+  <div class="stage">
+    <div class="lbl">what you send · the tool definition</div>
+    <div class="pair">
+      <div class="panel"><div class="code">{
+  "name": "getOrder",
+  "description": <b>"Look up one order by its ID.
+    Use when the user asks where
+    their order is."</b>,
+  "parameters": {
+    "type": "object",
+    "properties": { "id": { "type": "string" } },
+    "required": ["id"]
+  }
+}</div></div>
+      <div class="notes">
+        <div class="nt"><b>name</b><br>what the model asks for</div>
+        <div class="nt hero"><b>description</b><br>how the model picks a tool. Write it with care.</div>
+        <div class="nt"><b>parameters</b><br>the schema: the shape of the arguments</div>
+      </div>
+    </div>
+    <div class="lbl">what the model sends back · the tool call</div>
+    <div class="pair">
+      <div class="panel"><div class="code">{ "tool": "getOrder", "args": { "id": "A123" } }</div></div>
+      <div class="notes"><div class="nt"><b>args can still be wrong</b><br>validate them, like any model output</div></div>
+    </div>
+    <div class="def"><b>Schema:</b> a rule for which fields exist and what type each one is. Example: "id" must be a string, and it is required.</div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 3</span></div>
+</div></body></html>

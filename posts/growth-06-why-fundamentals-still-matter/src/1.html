@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-c/base.css">
+<style>
+:root{--accent:var(--grow)}
+.series .brand{margin-left:auto;display:flex;align-items:center;gap:12px}
+.series .brand img{height:28px;display:block}
+.series .brand img:first-child{height:36px}
+h1{font-size:54px;max-width:none}
+.win{margin-top:30px}
+.code{font-size:23px;line-height:1.85;flex:none;padding:26px 0 22px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 26px 0}
+.cmp>div{border:1px solid var(--line);border-radius:10px;padding:24px 22px;font-family:var(--mono)}
+.cmp .k1{font-size:23px;color:var(--ink-2)}
+.cmp .k2{font-size:18px;color:var(--ink-3);margin-top:6px;line-height:1.4}
+.cmp .n{font-size:22px;margin-top:16px;margin-top:12px;color:var(--ink-2);line-height:1.35}
+.cmp .slow .n{color:#737D8B}
+.cmp .fast{border:2px solid var(--accent)}
+.cmp .fast .k1,.cmp .fast .n{color:var(--accent)}
+.def{margin:auto 26px 30px;padding-top:24px;font-size:22px;line-height:1.45;color:var(--ink-2)}
+.def b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #06<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>AI writes code.<br><em>Fundamentals judge it.</em></h1>
+  <div class="win">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="file">blocked-orders.js</span><span class="tag">100,000 orders</span></div>
+    <div class="code term">
+      <div class="ln"><span class="tx c">  // AI-written. Passed the tests. Timed out in production.</span></div>
+      <div class="ln add"><span class="tx">+ const blocked = new Set(blockedIds);</span></div>
+      <div class="ln"><span class="tx">  for (const order of orders) {</span></div>
+      <div class="ln out"><span class="tx"><span class="s">-   if (blockedIds.includes(order.userId)) { … }</span></span></div>
+      <div class="ln add"><span class="tx">+   if (blocked.has(order.userId)) { … }</span></div>
+      <div class="ln"><span class="tx">  }</span></div>
+    </div>
+    <div class="cmp">
+      <div class="slow"><div class="k1">list.includes()</div><div class="k2">checks the list one item at a time</div><div class="n">100,000 orders × 100,000 IDs = up to 10 billion checks</div></div>
+      <div class="fast"><div class="k1">Set.has()</div><div class="k2">about one step per lookup (average)</div><div class="n">100,000 lookups + 100,000 to build the Set</div></div>
+    </div>
+    <div class="def"><b>Big-O</b> is how the work grows as the input grows. Here the list check grows with orders <b>×</b> IDs; the Set check grows with orders <b>+</b> IDs.</div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 2</span></div>
+</div></body></html>

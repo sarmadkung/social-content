@@ -6,6 +6,7 @@ MODE:      TEACH
 FORMAT:    VISUAL
 HEADLINE:  The model asks. Your code runs.
 LAYOUT:    FLOW
+VISUALS:   1 = Steps · 2 = Key properties · 3 = Senior detail: · rest = text
 STATUS:    draft
 ---
 A model cannot check your order status. It has no access to your database. Tool calling is how it asks your code to check.
@@ -43,6 +44,13 @@ Use it when the answer needs live data or an action.
 Skip it when the prompt already holds everything the model needs.
 
 Senior detail: treat every tool call as untrusted input. Check permissions in your code, not in the prompt. For tools that change things, like refunds or deletes, add limits or a human approval step.
+
+Keep in mind when you give a model tools
+→ Offer only the tools this task needs. Fewer tools, fewer wrong picks.
+→ Send tool errors back as results, so the model can retry or explain.
+→ Cap tool calls per request, so a confused model can't loop forever.
+→ Log every call with its arguments. You'll need them to debug.
+→ Run tools with the user's permissions, never an admin key.
 
 Takeaway: the model decides what to ask for. Your code decides what runs.
 

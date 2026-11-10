@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+body{height:1350px}
+h1{font-size:56px;max-width:18ch}
+.stage{justify-content:center;gap:38px}
+.big{display:flex;align-items:baseline;gap:22px;font-family:var(--mono)}
+.big .n{font-size:190px;line-height:1;letter-spacing:-.04em;color:var(--ink);font-weight:500}
+.big .u{font-size:34px;color:var(--ink-2);line-height:1.3}
+.tiles{display:grid;gap:18px}
+.tile{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 32px;display:flex;flex-direction:column;gap:10px}
+.tile.hero{border:2px solid var(--accent)}
+.k{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.v{font-family:var(--mono);font-size:36px;color:var(--ink);line-height:1.35}
+.hero .r{color:var(--accent)}
+.s{font-size:24px;color:var(--ink-2);line-height:1.4}
+.s b{color:var(--ink);font-weight:600}
+.close{font-family:var(--mono);font-size:25px;color:var(--ink-2);line-height:1.5;border-top:1px solid var(--line);padding-top:24px}
+.close b{color:var(--ink);font-weight:500}
+.cap{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+
+.tiles{grid-template-columns:1fr 1fr}
+
+</style></head><body>
+<div class="frame">
+<div class="series">System Architecture #04<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Step 2: <em>200M views</em> a day</h1>
+  <div class="stage">
+    <div class="big"><span class="n">200M</span><span class="u">views<br>a day</span></div>
+    <div class="tiles">
+      <div class="tile hero"><div class="k">Views a day</div><div class="v">10M users<br>× 20 views<br>= <span class="r">200M</span></div></div>
+      <div class="tile"><div class="k">Uploads a day</div><div class="v">10M users<br>× 1/10<br>= 1M</div></div>
+    </div>
+    <div class="s"><b>M</b> = million. Multiply users by what each one does in a day.</div>
+    <div class="close">→ People use the app per day. <b>Servers feel it per second</b>: that is the next step.</div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>03 / 08</span></div>
+</div></body></html>

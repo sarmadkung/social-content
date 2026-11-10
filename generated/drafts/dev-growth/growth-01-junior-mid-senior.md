@@ -6,6 +6,7 @@ MODE:      COMPARE
 FORMAT:    VISUAL
 HEADLINE:  Seniority grows by scope, not years
 LAYOUT:    FLOW
+VISUALS:   1 = What changes at each level · 2 = The same bug, three ways · rest = text
 STATUS:    draft
 ---
 Years of experience do not make someone senior. Five years of the same work is one year, five times.
@@ -37,6 +38,12 @@ What does not change
 
 For mid-levels aiming higher
 Seniority is visible in the work you prevent. A senior who says "we do not need a new service, a database index is enough" saved weeks. Write those decisions down, because nobody sees work that did not happen.
+
+Keep in mind when you aim for the next level
+→ Ask your lead what the next level means here. It differs by team.
+→ Take the vague ticket. Owning the unclear part is how scope grows.
+→ Ask "what problem does this solve?" before you build, at any level.
+→ Count reviews, docs and unblocking others as real work.
 
 Takeaway
 Junior owns a task, mid owns a feature, senior owns the outcome.

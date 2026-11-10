@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:22px;padding-top:16px}
+.def{font-size:22px;color:var(--ink-2);line-height:1.4}
+.def b{color:var(--ink);font-weight:600}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pan{background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:26px 26px;display:flex;flex-direction:column;gap:10px}
+.pan.hero{border:2px solid var(--accent)}
+.lb{font-family:var(--mono);font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.code{font-family:var(--mono);font-size:22px;color:var(--ink)}
+.st{display:grid;grid-template-columns:1fr auto;font-family:var(--mono);font-size:24px;line-height:1.75;color:var(--ink-2)}
+.st .s{letter-spacing:.12em;color:var(--ink)}
+.st .c{text-align:right}
+.cells{display:flex;gap:10px;margin:10px 0 14px}
+.cells span{width:56px;height:56px;border:1px solid #3A4453;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:24px}
+.tot{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;font-family:var(--mono);font-size:22px;color:var(--ink-2)}
+.tot b{color:var(--ink);font-weight:500}
+.hero .tot b{color:var(--accent)}
+.scale{font-family:var(--mono);font-size:21px;color:var(--ink-2);text-align:center;line-height:1.6}
+.scale b{color:var(--ink);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #04<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Every += copies<br><em>the whole string</em></h1>
+  <div class="stage">
+    <div class="def"><b>Immutable:</b> a string can't be changed after it is made, so every "change" builds a new string. Example: out += "O" makes a new string "HELLO" and copies H, E, L, L into it first.</div>
+    <div class="cmp">
+      <div class="pan">
+        <div class="lb">out += c, building HELLO</div>
+        <div class="st">
+          <span class="s">H</span><span class="c">copy 1</span>
+          <span class="s">HE</span><span class="c">copy 2</span>
+          <span class="s">HEL</span><span class="c">copy 3</span>
+          <span class="s">HELL</span><span class="c">copy 4</span>
+          <span class="s">HELLO</span><span class="c">copy 5</span>
+        </div>
+        <div class="tot">1+2+3+4+5 = <b>15</b> ≈ n²/2</div>
+      </div>
+      <div class="pan hero">
+        <div class="lb">parts.push(c), then join</div>
+        <div class="code">parts:</div>
+        <div class="cells"><span>H</span><span>E</span><span>L</span><span>L</span><span>O</span></div>
+        <div class="st"><span class="s">join → HELLO</span><span class="c">copy 5</span></div>
+        <div class="tot">each char once = <b>5</b> = n</div>
+      </div>
+    </div>
+    <div class="scale">n = 1,000: <b>~500,000</b> copies, so small tests pass<br>n = 100,000: <b>~5,000,000,000</b> copies vs 100,000</div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 3</span></div>
+</div></body></html>

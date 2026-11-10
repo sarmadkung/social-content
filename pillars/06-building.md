@@ -1,6 +1,6 @@
 # Pillar 6 — Building (Real Projects)
 
-Series label: `BUILDING #NN` · Visual accent: teal `#2DD4BF` · Tag: `BUILDING`
+Series label: `BUILDING #NN` · Visual accent: parrot green `#3BEA62` · Tag: `BUILDING`
 
 ## Purpose
 

@@ -20,11 +20,13 @@ master prompt. Never more than 4 TEACH posts in a row.
 - #08 How to prepare for coding interviews · TEACH · needs —
 - #09 How to review a PR an AI agent wrote (and why you still must) · LIST · needs #07
 - #10 From discovery to production: a feature workflow with agents · TEACH · needs #07, #09
-- #11 How to break a problem down before you code · TEACH · needs #04
-- #12 Estimating work honestly · TEACH · needs #11
-- #13 5 questions to ask before you start any task · LIST · needs #11, #12
-- #14 Writing a pull request people want to review · TEACH · needs —
-- #15 Giving and receiving code review · TEACH · needs #14
-- #16 Writing a design doc · TEACH · needs #11
-- #17 Explaining technical ideas to non-engineers · TEACH · needs —
-- #18 What I'd tell my junior self · PERSONAL · needs #01
+- #11 Building with agents: why your stack and product knowledge still matter · WHY · needs #07, #10
+- #12 Agents changed the case for cross-platform frameworks · WHY · needs #09, #11
+- #13 How to break a problem down before you code · TEACH · needs #04
+- #14 Estimating work honestly · TEACH · needs #13
+- #15 Writing a design doc · TEACH · needs #13, #14
+- #16 5 questions to ask before you start any task · LIST · needs #13, #14, #15
+- #17 Writing a pull request people want to review · TEACH · needs —
+- #18 Giving and receiving code review · TEACH · needs #17
+- #19 Explaining technical ideas to non-engineers · TEACH · needs —
+- #20 What I'd tell my junior self · PERSONAL · needs #01

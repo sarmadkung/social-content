@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+body{height:1350px}
+h1{font-size:56px;max-width:18ch}
+.stage{justify-content:center;gap:34px;padding-top:24px}
+svg{width:100%;display:block}
+svg text{font-family:"SF Mono",Menlo,monospace}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.def{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.def b{color:var(--ink);font-weight:600}
+.def i{font-style:normal;font-family:var(--mono);font-size:20px;color:var(--ink-3);letter-spacing:.04em}
+.panel{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 28px}
+.panel.hero{border:2px solid var(--accent)}
+.panel.ghost{border:1.5px dashed #3A4453;background:transparent}
+.pt{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.hero .pt{color:var(--accent)}
+.big{font-size:34px;font-weight:700;letter-spacing:-.01em;margin-top:10px;line-height:1.2}
+.txt{font-size:25px;color:var(--ink-2);line-height:1.42;margin-top:10px}
+.txt b{color:var(--ink);font-weight:600}
+.mono{font-family:var(--mono);font-size:20px;color:var(--ink-2);line-height:1.55}
+.cost{display:grid;grid-template-columns:auto 1fr;column-gap:16px;border-top:1px solid var(--line);padding-top:20px}
+.cost .k{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding-top:4px}
+.cost .v{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.cost .v b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.foot{transform:translateZ(0)}
+.flow{display:grid;grid-template-columns:1fr 50px 1fr 50px 1fr;align-items:stretch}
+.ar{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:30px;color:var(--ink-3)}
+.node{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:46px 18px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.node.hero{border:2px solid var(--accent)}
+.node .n{font-family:var(--mono);font-size:23px;color:var(--ink)}
+.node.hero .n{color:var(--accent)}
+.node .m{font-family:var(--mono);font-size:44px;color:var(--ink);font-weight:500}
+.node .s{font-family:var(--mono);font-size:18px;color:var(--ink-3);line-height:1.4}
+</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>2. Cache <em>hot reads</em></h1>
+  <div class="stage">
+    <div class="lbl">one product page, one minute</div>
+    <div class="flow">
+      <div class="node"><div class="n">page reads</div><div class="m">1,000</div><div class="s">same page,<br>same data</div></div>
+      <div class="ar">→</div>
+      <div class="node hero"><div class="n">Redis</div><div class="m">999</div><div class="s">answered<br>from memory</div></div>
+      <div class="ar">→</div>
+      <div class="node"><div class="n">database</div><div class="m">1</div><div class="s">only when the<br>copy expired</div></div>
+    </div>
+    <div class="two">
+      <div class="panel ghost"><div class="pt">without the cache</div><div class="big">1,000 database reads a minute</div></div>
+      <div class="panel"><div class="pt">with the cache, TTL 60 s</div><div class="big">1 database read a minute</div></div>
+    </div>
+    <div class="def"><b>Redis:</b> a store that keeps data in memory, so a read takes well under a millisecond. <b>TTL (time to live):</b> how long a cached copy is used before it expires. <i>Example:</i> TTL 60 s → the database sees this page about once a minute.</div>
+    <div class="cost"><span class="k">cost</span><span class="v"><b>stale data.</b> The price changes at 12:00:05; for up to 60 s some users still see the old price. Cache only what may be a little old.</span></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>05 / 09</span></div>
+</div></body></html>

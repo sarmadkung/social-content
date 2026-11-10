@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;padding-top:22px;gap:16px}
+.p{display:grid;grid-template-columns:1fr 1.05fr;gap:26px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.nm{font-size:32px;font-weight:700;letter-spacing:-.01em}
+.d{font-size:20px;line-height:1.4;color:var(--ink-2);margin-top:8px}
+.demo{font-family:var(--mono);font-size:18px;color:var(--ink-2)}
+.cap{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.cols{display:grid;grid-template-columns:1fr 26px 1fr;align-items:center;gap:6px}
+.list div{border:1px solid #3A4453;border-radius:6px;padding:5px 10px;margin:4px 0;white-space:nowrap}
+.list.ok div{border-color:var(--accent);color:var(--ink)}
+.ar{color:var(--ink-3);text-align:center}
+.mem{display:flex;flex-direction:column;gap:10px}
+.mrow{display:flex;align-items:center;gap:12px}
+.cells{display:flex;gap:4px}
+.cells span{width:36px;height:34px;border:1px solid #3A4453;border-radius:5px;display:flex;align-items:center;justify-content:center}
+.ok .cells span{border-color:var(--accent);color:var(--ink)}
+.ghost .cells span{border-style:dashed;color:var(--ink-3)}
+.lbl{font-size:16px;color:var(--ink-3)}
+.ok .lbl{color:var(--accent)}
+.floor{display:flex;flex-direction:column;gap:10px}
+.frow{display:grid;grid-template-columns:1fr;gap:4px;align-items:center;border:1px solid #3A4453;border-radius:8px;padding:12px 14px}
+.frow.k{border:2px solid var(--accent)}
+.frow .fh{color:var(--ink-2)}
+.frow.k .fv{color:var(--accent)}
+.frow .fv{color:var(--ink)}
+.bar2{display:flex;align-items:center;gap:12px}
+.bar2 .b{height:30px;border-radius:5px;border:1px solid #3A4453}
+.bar2.k .b{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.bar2 .t{font-size:16px;white-space:nowrap}
+.bar2.k .t{color:var(--accent)}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #17<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Three properties <em>pick your sort</em></h1>
+  <div class="stage">
+    <div class="p">
+      <div><div class="nm">Stable</div><div class="d">Equal items keep their original order. Sort posts by date, then by author: each author's posts stay in date order.</div></div>
+      <div class="demo"><div class="cap">sorted by author</div>
+        <div class="cols">
+          <div class="list ok"><div>Ali · Mon</div><div>Ali · Wed</div><div>Sara · Tue</div></div>
+          <span class="ar">vs</span>
+          <div class="list"><div>Ali · Wed</div><div>Ali · Mon</div><div>Sara · Tue</div></div>
+        </div>
+        <div class="cols lbl" style="margin-top:6px"><span style="color:var(--accent)">stable</span><span></span><span>unstable: Wed first</span></div>
+      </div>
+    </div>
+    <div class="p">
+      <div><div class="nm">In-place</div><div class="d">Sorts inside the same array instead of building a second one: O(1) extra space, not O(n).</div></div>
+      <div class="demo mem">
+        <div class="mrow ok"><div class="cells"><span>3</span><span>1</span><span>2</span></div><span class="lbl">in-place: one array</span></div>
+        <div class="mrow ghost"><div class="cells"><span>3</span><span>1</span><span>2</span></div><span class="lbl">+ a copy:</span><div class="cells"><span>·</span><span>·</span><span>·</span></div></div>
+      </div>
+    </div>
+    <div class="p">
+      <div><div class="nm">Comparison-based</div><div class="d">Works by comparing pairs, so in the worst case it can never beat O(n log n). Counting and radix sort don't compare, but need keys like small integers.</div></div>
+      <div class="demo floor">
+        <div class="frow k"><span class="fh">compares pairs</span><span class="fv">worst case: O(n log n) at best</span></div>
+        <div class="frow"><span class="fh">no comparing: counting, radix sort</span><span class="fv">about O(n) on small integer keys</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 3</span></div>
+</div></body></html>

@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--ai)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;gap:14px}
+.who{font-family:var(--mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.code{font-family:var(--mono);font-size:19px;color:var(--ink-2);line-height:1.45;white-space:pre}
+.code b{color:var(--accent);font-weight:500}
+.code i{font-style:normal;color:var(--ink-3)}
+.def{font-size:18px;color:var(--ink-2);line-height:1.35}
+.def b{color:var(--ink);font-weight:600}
+.stage{gap:14px}
+.req{background:var(--code);border:1px solid #3A4453;border-radius:12px;padding:14px 20px}
+.req .who{margin-bottom:6px}
+.dn{font-family:var(--mono);font-size:20px;color:var(--ink-3);text-align:center;line-height:1}
+.gate{border:2px solid var(--accent);border-radius:14px;padding:16px 20px;display:flex;flex-direction:column;gap:10px}
+.gate .who{color:var(--accent)}
+.ck{display:grid;grid-template-columns:44px 1fr;align-items:baseline;font-size:21px;color:var(--ink);line-height:1.3}
+.ck .n{font-family:var(--mono);font-size:18px;color:var(--accent)}
+.ck small{display:block;font-family:var(--mono);font-size:17px;color:var(--ink-2);margin-top:2px}
+.out{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.o{background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:12px 18px;font-size:20px;color:var(--ink-2);line-height:1.35}
+.o b{color:var(--ink);font-weight:600}
+.lbl2{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cmp .c{background:var(--panel);border:1px solid #3A4453;border-radius:12px;padding:12px 18px;display:flex;flex-direction:column;gap:6px}
+.cmp .c.hero{border-left:4px solid var(--accent)}
+.cmp .k{font-family:var(--mono);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.cmp .x{font-family:var(--mono);font-size:17px;color:#7B8494;text-decoration:line-through}
+.cmp .y{font-family:var(--mono);font-size:17px;color:var(--ink)}
+.cmp .s{font-size:17px;color:var(--ink-2);line-height:1.3}
+</style></head><body>
+<div class="frame">
+<div class="series">AI Engineering #08<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Treat every tool call as <em>untrusted input</em></h1>
+  <div class="stage">
+    <div class="req"><div class="who">the model asks · signed in as the owner of order A123</div><div class="code">{ "tool": "refundOrder", "args": { "id": "B999", "amount": 5000 } }</div></div>
+    <div class="dn">↓</div>
+    <div class="gate">
+      <div class="who">your code checks, before anything runs</div>
+      <div class="ck"><span class="n">01</span><span>Are the arguments valid?<small>schema: id is a string, amount is a number</small></span></div>
+      <div class="ck"><span class="n">02</span><span>May this user do this?<small>B999 is not this user's order → refuse</small></span></div>
+      <div class="ck"><span class="n">03</span><span>Does it change something?<small>refunds, deletes → a limit or a human approves</small></span></div>
+    </div>
+    <div class="dn">↓</div>
+    <div class="out">
+      <div class="o"><b>Refused:</b> send the error back as the tool result. The model tells the user.</div>
+      <div class="o"><b>Allowed:</b> run it, then send the result back to the model.</div>
+    </div>
+    <div class="lbl2">where the permission check lives</div>
+    <div class="cmp"><div class="c"><span class="k">in the prompt</span><span class="x">"Only refund the user's own orders."</span><span class="s">a clever message can talk the model out of it</span></div><div class="c hero"><span class="k">in your code</span><span class="y">if (order.owner !== user.id) refuse()</span><span class="s">runs on every call, whatever the model says</span></div></div>
+  </div>
+<div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 3</span></div>
+</div></body></html>

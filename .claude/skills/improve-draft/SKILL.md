@@ -50,12 +50,22 @@ and wait for the user's approval before starting the next.
 
 ## Checklist
 
+- **Section headings say what the section shows.** Plain words, a question
+  the section answers where it fits; no slogans or idioms ("Tests hold the
+  line"). A heading that would fit another section just as well gets rewritten.
 - **Headline matches the body.** A count in the headline ("five ideas")
   equals the number of sections that carry an idea.
 - **VISUALS line.** One entry per image, no section listed twice, each entry
   is the exact heading of a section in the body, ends with `· rest = text`.
 - **One section = one idea = one image.** No two sections teach the same
   thing (e.g. "prediction" and "inference" are one idea — merge them).
+- **No duplication across the series.** Nothing the draft explains is
+  already explained in another draft — point to that post in one line
+  instead. If two drafts cover the same topic, report it and recommend which
+  to keep; never create a new draft that duplicates an existing one.
+- **VISUALS sections link up.** The listed sections run in an order where each
+  builds on the one before, so the images can carry `from` / `next` cues
+  (visual skill, section 5 rule 8).
 - **Right scope for its place in the series.** It covers the basics it is
   meant to cover, and leaves out what earlier or later posts teach. Missing
   basics that no post covers can be added here.

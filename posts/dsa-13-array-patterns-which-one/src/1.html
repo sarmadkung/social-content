@@ -1,0 +1,65 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;padding-top:22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px 18px;display:flex;flex-direction:column;gap:10px}
+.top{display:flex;align-items:baseline;gap:12px}
+.no{font-family:var(--mono);font-size:18px;color:var(--ink-3)}
+.nm{white-space:nowrap;font-size:32px;font-weight:700;letter-spacing:-.01em}
+.mem{font-family:var(--mono);font-size:19px;color:var(--ink-2)}
+.mem b{color:var(--accent);font-weight:500}
+.cells{display:flex;gap:6px;margin-top:4px}
+.c{flex:1;height:46px;border:1px solid #3A4453;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:21px;color:var(--ink-2)}
+.c.on{border:2px solid var(--accent);color:var(--accent)}
+.c.in{background:color-mix(in srgb,var(--accent) 14%,transparent);border-color:var(--accent);color:var(--ink)}
+.c.off{color:var(--ink-3);border-style:dashed}
+.lab{display:flex;gap:6px;font-family:var(--mono);font-size:16px;color:var(--ink-3)}
+.lab span{flex:1;text-align:center}
+.lab .a{color:var(--accent)}
+.how{font-size:19px;line-height:1.3;color:var(--ink-2)}
+.arrlbl{margin-left:auto;font-family:var(--mono);font-size:16px;color:var(--ink-3)}
+.cx{margin-top:auto;font-family:var(--mono);font-size:16px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:10px}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #13<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Same O(n), different <em>memory</em></h1>
+  <div class="stage">
+    <div class="grid">
+      <div class="card">
+        <div class="top"><span class="no">01</span><span class="nm">Two pointers</span></div>
+        <div class="mem">remembers: <b>two ends</b> · target 4</div>
+        <div class="cells"><div class="c off">-4</div><div class="c on">-1</div><div class="c">2</div><div class="c">3</div><div class="c on">5</div></div>
+        <div class="lab"><span></span><span class="a">L →</span><span></span><span></span><span class="a">← R</span></div>
+        <div class="how">Sorted data. -1 + 5 = 4. Each compare drops one end for good.</div>
+        <div class="cx">O(n) time · O(1) space</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="no">02</span><span class="nm">Sliding window</span></div>
+        <div class="mem">remembers: <b>one range</b></div>
+        <div class="cells"><div class="c off">2</div><div class="c in">1</div><div class="c in">3</div><div class="c in">4</div><div class="c">5</div></div>
+        <div class="lab"><span>leaves</span><span></span><span class="a">window</span><span></span><span>enters</span></div>
+        <div class="how">Add what enters, remove what leaves. Never re-add the middle.</div>
+        <div class="cx">O(n) time · O(1), or O(k) with a map</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="no">03</span><span class="nm">Prefix sum</span></div>
+        <div class="mem">remembers: <b>every running total</b></div>
+        <div class="cells"><div class="c">0</div><div class="c on">2</div><div class="c">1</div><div class="c">4</div><div class="c on">0</div><div class="c">5</div></div>
+        <div class="lab"><span></span><span class="a">pre[1]</span><span></span><span></span><span class="a">pre[4]</span><span></span></div>
+        <div class="how">For a = [2, -1, 3, -4, 5]: pre[i] = sum of the first i items. a[1..3] = pre[4] − pre[1] = -2.</div>
+        <div class="cx">O(n) build + space · O(1) per range</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="no">04</span><span class="nm">Kadane</span><span class="arrlbl">same a</span></div>
+        <div class="mem">remembers: <b>best run ending here</b></div>
+        <div class="cells"><div class="c">2</div><div class="c">-1</div><div class="c">3</div><div class="c">-4</div><div class="c on">5</div></div>
+        <div class="lab"><span>2</span><span>1</span><span>4</span><span>0</span><span class="a">5</span></div>
+        <div class="how">Under each item: cur, the best sum ending there. Extend the run or start again. Best = 5.</div>
+        <div class="cx">O(n) time · O(1) space</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 4</span></div>
+</div></body></html>

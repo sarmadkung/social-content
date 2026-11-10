@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--arch)}
+body{height:1350px}
+h1{font-size:56px;max-width:18ch}
+.stage{justify-content:center;gap:34px;padding-top:24px}
+svg{width:100%;display:block}
+svg text{font-family:"SF Mono",Menlo,monospace}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.def{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.def b{color:var(--ink);font-weight:600}
+.def i{font-style:normal;font-family:var(--mono);font-size:20px;color:var(--ink-3);letter-spacing:.04em}
+.panel{background:var(--panel);border:1px solid #3A4453;border-radius:14px;padding:30px 28px}
+.panel.hero{border:2px solid var(--accent)}
+.panel.ghost{border:1.5px dashed #3A4453;background:transparent}
+.pt{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.hero .pt{color:var(--accent)}
+.big{font-size:34px;font-weight:700;letter-spacing:-.01em;margin-top:10px;line-height:1.2}
+.txt{font-size:25px;color:var(--ink-2);line-height:1.42;margin-top:10px}
+.txt b{color:var(--ink);font-weight:600}
+.mono{font-family:var(--mono);font-size:20px;color:var(--ink-2);line-height:1.55}
+.cost{display:grid;grid-template-columns:auto 1fr;column-gap:16px;border-top:1px solid var(--line);padding-top:20px}
+.cost .k{font-family:var(--mono);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding-top:4px}
+.cost .v{font-size:26px;line-height:1.42;color:var(--ink-2)}
+.cost .v b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.foot{transform:translateZ(0)}
+h1{font-size:84px;line-height:1.05;max-width:12ch;margin-top:0}
+.stage{justify-content:center;gap:40px}
+.lad{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.lad div{display:grid;grid-template-columns:60px 1fr auto;padding:20px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:26px;color:var(--ink-2);align-items:baseline}
+.lad div span:first-child{color:var(--ink-3)}
+.lad div span:last-child{font-size:16px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+.lad div.f span:nth-child(2){color:var(--ink)}
+</style></head><body>
+<div class="frame">
+  <div class="series">System Architecture #10<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="stage">
+    <h1>Often it is <em>just one query</em></h1>
+    <div class="lad">
+      <div class="f"><span>0</span><span>measure</span><span>cheapest</span></div>
+      <div class="f"><span>1</span><span>fix the query, add the index</span><span></span></div>
+      <div><span>2</span><span>cache hot reads</span><span></span></div>
+      <div><span>3</span><span>read replicas</span><span></span></div>
+      <div><span>4</span><span>scale up</span><span></span></div>
+      <div><span>5</span><span>shard</span><span>costliest</span></div>
+    </div>
+    <div class="def" style="font-size:30px"><b>Fix the query before you fix the architecture.</b></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>09 / 09</span></div>
+</div></body></html>

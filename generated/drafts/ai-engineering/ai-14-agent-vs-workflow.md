@@ -6,6 +6,7 @@ MODE:      COMPARE
 FORMAT:    VISUAL
 HEADLINE:  Agent or workflow: who picks the next step?
 LAYOUT:    COMPARE
+VISUALS:   1 = Key properties · 2 = Example · 3 = Senior detail: · rest = text
 STATUS:    draft
 ---
 Last post said: try the simplest option first. The same rule applies here. Many "agents" would be better as a plain workflow.
@@ -41,6 +42,12 @@ Agent: the steps depend on what it finds along the way.
 Senior detail: start with a workflow, even if you plan an agent. Where it breaks shows which step truly needs the model to decide. Often you end with a workflow that has one small agent inside.
 
 [PERSONAL: a feature you built as an agent and later turned into a workflow, or the reverse]
+
+Keep in mind before you build an agent
+→ Log every step: two runs of one task can take different paths.
+→ Test on many runs, not one: one pass proves little.
+→ Give each tool only the access it needs: the model picks the calls.
+→ Ask a human before anything you can't undo: send, pay, delete.
 
 Takeaway: if you can draw the flowchart, build a workflow.
 

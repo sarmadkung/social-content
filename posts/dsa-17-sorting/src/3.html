@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;padding-top:22px;gap:14px}
+.t{display:grid;grid-template-columns:1.4fr 1fr 0.9fr 0.8fr 0.6fr;align-items:center;gap:12px;font-family:var(--mono)}
+.hd{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:0 24px}
+.r{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px 24px;font-size:22px;color:var(--ink-2)}
+.r .nm{font-family:var(--sans);font-size:28px;font-weight:700;color:var(--ink)}
+.r .sub{display:block;font-family:var(--mono);font-size:15px;color:var(--ink-3);margin-top:4px;font-weight:400}
+.y{color:var(--ink)}
+.n{color:var(--ink-3)}
+.bad{color:var(--ink)}
+.r.hero{border-color:color-mix(in srgb,var(--accent) 60%,transparent);box-shadow:inset 3px 0 0 var(--accent)}
+.r.hero .nm{color:var(--accent)}
+.ask{margin-top:14px;border-top:1px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.ask .h{font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.ask .q{font-size:27px;line-height:1.35}
+.ask .q b{color:var(--accent);font-weight:700}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #17<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Four sorts, <em>three trade-offs</em></h1>
+  <div class="stage">
+    <div class="t hd"><span>algorithm</span><span>average</span><span>worst</span><span>in-place</span><span>stable</span></div>
+    <div class="t r"><span class="nm">Merge sort</span><span>n log n</span><span>n log n</span><span class="n">no · O(n)</span><span class="y">yes</span></div>
+    <div class="t r"><span class="nm">Quicksort</span><span>n log n</span><span class="bad">n²</span><span class="y">yes</span><span class="n">no</span></div>
+    <div class="t r"><span class="nm">Heapsort</span><span>n log n</span><span>n log n</span><span class="y">yes</span><span class="n">no</span></div>
+    <div class="t r hero"><span class="nm">Timsort<span class="sub">Python, V8, Java objects</span></span><span>n log n<span class="sub">less if partly sorted</span></span><span>n log n</span><span class="n">no · O(n)</span><span class="y">yes</span></div>
+    <div class="ask"><div class="h">before you pick one, ask</div>
+      <div class="q">Is the data <b>partly sorted</b>? Do you need <b>stability</b>? Can you afford <b>a second array</b>?</div></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 3</span></div>
+</div></body></html>

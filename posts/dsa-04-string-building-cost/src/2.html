@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-c/base.css">
+<style>
+:root{--accent:var(--dsa)}
+.series .brand{margin-left:auto;display:flex;align-items:center;gap:12px}
+.series .brand img{height:28px;display:block}
+.series .brand img:first-child{height:36px}
+h1{font-size:56px;max-width:19ch}
+.code{font-size:23px;justify-content:center}
+.lang{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 28px 26px}
+.lang span{padding:18px;border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:20px;text-align:center;color:var(--ink-2)}
+.lang b{color:var(--ink);font-weight:500}
+.bar .tag{text-transform:none;letter-spacing:.04em}
+.cap{margin:0 28px 12px;font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #04<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Build in parts,<br><em>join once</em></h1>
+  <div class="win">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="file">build.js</span><span class="tag">O(n²) → O(n)</span></div>
+    <div class="code term">
+      <div class="ln"><span class="tx"><span class="dim">@@ each += copied everything built so far @@</span></span></div>
+      <div class="ln"><span class="tx"> </span></div>
+      <div class="ln out"><span class="tx"><span class="s">- let out = "";</span></span></div>
+      <div class="ln out"><span class="tx"><span class="s">- for (const c of chars) out += c;</span></span></div>
+      <div class="ln add"><span class="tx">+ const parts = [];</span></div>
+      <div class="ln add"><span class="tx">+ for (const c of chars) parts.push(c);</span></div>
+      <div class="ln add"><span class="tx">+ const out = parts.join("");</span></div>
+      <div class="ln"><span class="tx"> </span></div>
+      <div class="ln"><span class="tx"><span class="dim">// each character is copied once: O(n)</span></span></div>
+    </div>
+    <div class="cap">the same fix in other languages</div>
+    <div class="lang"><span>Java, C#: <b>StringBuilder</b></span><span>Python: <b>"".join(parts)</b></span></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 3</span></div>
+</div></body></html>

@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--build)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;padding-top:14px;gap:16px}
+.pan{border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:9px}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.14em;margin-bottom:2px}
+/* same colours as slide 1: costly = red, good = green */
+.dead{background:color-mix(in srgb,#F87171 8%,var(--panel));border:2px solid color-mix(in srgb,#F87171 45%,transparent)}
+.dead .lbl{color:#F87171}
+.tell{background:color-mix(in srgb,#4ADE80 8%,var(--panel));border:2px solid color-mix(in srgb,#4ADE80 45%,transparent)}
+.tell .lbl{color:#4ADE80}
+.it{border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.it b{display:block;font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.dead .it b{text-decoration:line-through;text-decoration-color:#F87171;text-decoration-thickness:2px}
+.it span{display:block;margin-top:4px;font-family:var(--mono);font-size:16px;line-height:1.35;color:var(--ink-2)}
+.tell p{font-size:23px;font-weight:600;line-height:1.35;color:var(--ink)}
+.tell p i{font-style:normal;color:var(--accent)}
+.res{font-family:var(--mono);font-size:19px;color:var(--ink-2);text-align:center}
+.res b{color:var(--accent);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">Building #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 05: every win kept, plus native-only features</div>
+  <h1>Is cross&#8209;platform dead? <em>As a default, yes.</em></h1>
+  <div class="stage">
+    <div class="pan dead">
+      <div class="lbl">ALSO DEAD, FOR US</div>
+      <div class="it"><b>"Write once, run everywhere"</b><span>in practice: write once, debug everywhere</span></div>
+      <div class="it"><b>"A native rewrite takes years"</b><span>agents write the native code from shared rules and tests</span></div>
+      <div class="it"><b>"You're locked into your framework"</b><span>our sync rules are plain text: changing them is an edit</span></div>
+    </div>
+    <div class="pan tell">
+      <div class="lbl">WHAT WE'D TELL A TEAM STARTING TODAY</div>
+      <p>Don't pick cross&#8209;platform by default. <i>Native where the OS is the product, web where it is fast enough.</i></p>
+    </div>
+    <div class="res">result: the whole move took <b>weeks, not years</b></div>
+  </div>
+  <div class="next">next <b>→</b> your turn: where else is it dead?</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>6 / 7</span></div>
+</div></body></html>

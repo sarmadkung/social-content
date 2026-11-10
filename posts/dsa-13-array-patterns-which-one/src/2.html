@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--dsa)}
+h1{font-size:56px;max-width:19ch}
+.stage{justify-content:center;padding-top:14px;gap:10px}
+.cap{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);display:grid;grid-template-columns:270px 1fr;padding:0 26px}
+.row{display:grid;grid-template-columns:270px 1fr;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 26px}
+.nm{font-size:30px;font-weight:700;letter-spacing:-.01em}
+.cl{font-family:var(--mono);font-size:21px;color:var(--ink-2);line-height:1.5}
+.cl q{color:var(--ink)}
+.cl q::before,.cl q::after{content:'"'}
+.note{font-family:var(--mono);font-size:18px;color:var(--ink-3)}
+.trap{margin-top:8px;border:2px solid var(--accent);border-radius:12px;padding:18px 26px;display:flex;flex-direction:column;gap:8px}
+.trap .h{font-family:var(--mono);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.trap .t{font-size:25px;line-height:1.35}
+.trap .t b{color:var(--accent);font-weight:700}
+.trap .s{font-family:var(--mono);font-size:18px;color:var(--ink-2)}
+</style></head><body>
+<div class="frame">
+  <div class="series">DSA Series #13<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Read the clue, <em>pick the pattern</em></h1>
+  <div class="stage">
+    <div class="cap"><span>pattern</span><span>the problem says…</span></div>
+    <div class="row"><span class="nm">Two pointers</span><div class="cl"><q>sorted</q> + <q>pair</q> or <q>triplet</q><div class="note">or: compare from both ends</div></div></div>
+    <div class="row"><span class="nm">Sliding window</span><div class="cl"><q>longest / shortest subarray</q> + <q>at most K</q><div class="note">a sum rule? only if all numbers ≥ 0</div></div></div>
+    <div class="row"><span class="nm">Prefix sum</span><div class="cl"><q>count subarrays that sum to k</q><div class="note">or many range sums · negatives are fine</div></div></div>
+    <div class="row"><span class="nm">Kadane</span><div class="cl"><q>maximum subarray sum</q><div class="note">no target given</div></div></div>
+    <div class="trap">
+      <div class="h">the common wrong choice</div>
+      <div class="t">"Subarray sum equals k" with negative numbers: not a window. Use <b>prefix sum + hash map</b>.</div>
+      <div class="s">a negative item breaks shrinking: removing it makes the sum bigger</div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 4</span></div>
+</div></body></html>
