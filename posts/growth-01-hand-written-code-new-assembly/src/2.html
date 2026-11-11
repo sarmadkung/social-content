@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;gap:16px;padding-top:10px}
+.feat{font-family:var(--mono);font-size:20px;color:var(--ink-2);text-align:center}
+.feat b{color:var(--ink);font-weight:500}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pan{border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.14em;margin-bottom:2px}
+.bef{background:color-mix(in srgb,#F87171 8%,var(--panel));border:2px solid color-mix(in srgb,#F87171 45%,transparent)}
+.bef .lbl{color:#F87171}
+.aft{background:color-mix(in srgb,#4ADE80 8%,var(--panel));border:2px solid color-mix(in srgb,#4ADE80 45%,transparent)}
+.aft .lbl{color:#4ADE80}
+.it{border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:20px;color:var(--ink)}
+.it span{display:block;margin-top:3px;font-family:var(--mono);font-size:15px;color:var(--ink-2)}
+.spec{font-family:var(--mono);font-size:16px;line-height:1.45;color:var(--ink);background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.cost{margin-top:auto;font-family:var(--mono);font-size:17px;color:var(--ink-2);padding-top:6px}
+.cost b{color:var(--ink);font-weight:500}
+.note{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center}
+.note b{color:var(--accent);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 01: agents are the new level</div>
+  <h1>What changes in <em>a normal day?</em></h1>
+  <div class="stage">
+    <div class="feat">one feature: <b>"users can mute a chat for 8 hours"</b></div>
+    <div class="cmp">
+      <div class="pan bef">
+        <div class="lbl">BEFORE · YOU TYPE IT</div>
+        <div class="it">The data change<span>store when the mute ends</span></div>
+        <div class="it">The API endpoint<span>mute and unmute a chat</span></div>
+        <div class="it">The UI toggle<span>the mute switch and its menu</span></div>
+        <div class="it">The tests<span>every rule, by hand</span></div>
+        <div class="cost"><b>~300 lines</b> · most of a day</div>
+      </div>
+      <div class="pan aft">
+        <div class="lbl">NOW · YOU SAY WHAT IT MUST DO</div>
+        <div class="spec">→ A mute lasts 8 hours, then turns off by itself.<br>→ Muted chats send no notifications, but still show unread counts.<br>→ Test: a message at hour 7 is silent; at hour 9 it notifies.</div>
+        <div class="it">The agent writes the code<span>the same ~300 lines</span></div>
+        <div class="it">You read the diff and run the tests<span>then fix what is wrong</span></div>
+      </div>
+    </div>
+    <div class="note">the 300 lines still exist. <b>You just did not type them.</b></div>
+  </div>
+  <div class="next">next <b>→</b> an agent is not a compiler</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 5</span></div>
+</div></body></html>

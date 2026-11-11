@@ -240,7 +240,7 @@ Change a colour there, never in a variant's `base.css`.
 | Software engineering | `SOFTWARE ENGINEERING` | `#4ADE80` green |
 | System design | `SYSTEM ARCHITECTURE` | `#C084FC` violet |
 | AI engineering | `AI ENGINEERING` | `#8AA4FF` indigo |
-| Dev growth | `DEV GROWTH` | `#8B5CF6` deep violet |
+| Dev growth | `DEV GROWTH` | `#FACC15` amber |
 | Building | `BUILDING` | `#3BEA62` parrot green |
 | For business | `FOR BUSINESS` / `SOLUTIONS` | `#A3E635` lime |
 

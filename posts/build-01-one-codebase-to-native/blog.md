@@ -179,4 +179,4 @@ One codebase was a fix for the cost of writing everything twice and keeping the 
 
 ## Next in the series
 
-The general case behind this story: why agents changed the case for cross-platform frameworks (Dev Growth #12).
+The general case behind this story: why agents changed the case for cross-platform frameworks (Dev Growth #13).

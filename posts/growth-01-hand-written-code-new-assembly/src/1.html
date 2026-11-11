@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:none;font-size:56px}
+.stage{justify-content:center;gap:12px;padding-top:10px}
+.lv{display:grid;grid-template-columns:200px 1fr 300px;gap:18px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.lv b{font-size:24px;font-weight:600;color:var(--ink)}
+.lv .d{font-family:var(--mono);font-size:16px;line-height:1.4;color:var(--ink-2)}
+.lv code{font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-3);background:var(--code);border:1px solid var(--line);border-radius:8px;padding:8px 10px;white-space:pre}
+.lv.now{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--panel))}
+.lv.now b{color:var(--accent)}
+.lv.now code{color:var(--ink-2)}
+.up{font-family:var(--mono);font-size:16px;color:var(--ink-3);text-align:center}
+.note{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center;margin-top:6px}
+.note b{color:var(--accent);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>How has the level we write code at <em>moved up?</em></h1>
+  <div class="stage">
+    <div class="lv now"><b>Agents</b><span class="d">you describe the rules and tests; the agent writes the code</span><code>"Mute a chat for 8 hours.
+Test: hour 9 notifies."</code></div>
+    <div class="up">↑ hides the code itself</div>
+    <div class="lv"><b>High-level languages</b><span class="d">C, Java, Python: a compiler turns readable code into instructions</span><code>total = price + tax;</code></div>
+    <div class="up">↑ hides registers</div>
+    <div class="lv"><b>Assembly</b><span class="d">short names for CPU instructions; you manage registers, the CPU's few tiny fast storage slots</span><code>MOV eax, [price]
+ADD eax, [tax]</code></div>
+    <div class="up">↑ hides raw numbers</div>
+    <div class="lv"><b>Machine code</b><span class="d">the raw numbers the CPU runs</span><code>8B 45 F8 03 45 FC</code></div>
+    <div class="note">each time, the old level <b>did not disappear</b>: it moved to where it still pays off</div>
+  </div>
+  <div class="next">next <b>→</b> what this looks like in a normal day</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 5</span></div>
+</div></body></html>

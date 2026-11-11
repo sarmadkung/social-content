@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;gap:14px;padding-top:10px}
+.shift{display:grid;grid-template-columns:1fr 40px 1fr;gap:12px;align-items:center;font-family:var(--mono);font-size:17px}
+.shift .o{color:var(--ink-2);background:color-mix(in srgb,#F87171 8%,var(--panel));border:1.5px solid color-mix(in srgb,#F87171 40%,transparent);border-radius:10px;padding:12px 14px}
+.shift .w{color:var(--ink);background:color-mix(in srgb,#4ADE80 8%,var(--panel));border:1.5px solid color-mix(in srgb,#4ADE80 45%,transparent);border-radius:10px;padding:12px 14px}
+.shift .ar{color:var(--accent);font-size:24px;text-align:center}
+.lbl{font-family:var(--mono);font-size:16px;letter-spacing:.14em;color:var(--ink-3);margin-top:6px}
+.sk{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.s{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.s.wide{grid-column:1 / -1}
+.s b{display:block;font-size:22px;font-weight:600;color:var(--ink)}
+.s span{display:block;margin-top:4px;font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-2)}
+.note{font-family:var(--mono);font-size:19px;color:var(--ink-2);text-align:center;margin-top:4px}
+.note b{color:var(--accent);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 04: hand-written code moves to where it pays off</div>
+  <h1>Which skills <em>matter more now?</em></h1>
+  <div class="stage">
+    <div class="lbl">THE SKILL MOVES UP, AGAIN</div>
+    <div class="shift"><span class="o">compilers: managing registers</span><span class="ar">→</span><span class="w">designing programs</span></div>
+    <div class="shift"><span class="o">agents: typing every line</span><span class="ar">→</span><span class="w">saying what it must do, and checking it</span></div>
+    <div class="lbl">WHAT TO GET GOOD AT</div>
+    <div class="sk">
+      <div class="s"><b>Clear specs</b><span>say exactly what you want, edge cases included</span></div>
+      <div class="s"><b>Small steps</b><span>break a feature into pieces you can test</span></div>
+      <div class="s"><b>Tests first</b><span>they pin the behaviour the agent must meet</span></div>
+      <div class="s"><b>Reading code fast</b><span>spot what is wrong in a diff (more in DEV GROWTH #07)</span></div>
+      <div class="s wide"><b>Architecture</b><span>know where code should live, and why</span></div>
+    </div>
+    <div class="note">typing speed matters less. <b>Judgment matters more.</b></div>
+  </div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>5 / 5</span></div>
+</div></body></html>

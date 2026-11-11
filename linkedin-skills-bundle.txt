@@ -508,7 +508,7 @@ SOFTWARE ENGINEERING · BACKEND #01  Postgres vs MongoDB vs DynamoDB
 SOFTWARE ENGINEERING · MOBILE #03   FlatList vs FlashList
 SYSTEM ARCHITECTURE #01   What System Design Actually Is
 AI ENGINEERING #09        Agents Are Software, Not Magic
-DEV GROWTH #01            Junior vs Mid vs Senior: What Actually Changes
+DEV GROWTH #02            Junior vs Mid vs Senior: What Actually Changes
 BUILDING #01              <a real project story, from the project log>
 SOLUTIONS #01             <a system blueprint, with one call to action>
 ```
@@ -799,7 +799,7 @@ Change a colour there, never in a variant's `base.css`.
 | Software engineering | `SOFTWARE ENGINEERING` | `#4ADE80` green |
 | System design | `SYSTEM ARCHITECTURE` | `#C084FC` violet |
 | AI engineering | `AI ENGINEERING` | `#8AA4FF` indigo |
-| Dev growth | `DEV GROWTH` | `#8B5CF6` deep violet |
+| Dev growth | `DEV GROWTH` | `#FACC15` amber |
 | Building | `BUILDING` | `#3BEA62` parrot green |
 | For business | `FOR BUSINESS` / `SOLUTIONS` | `#A3E635` lime |
 

@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;gap:16px;padding-top:10px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pan{border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.lbl{font-family:var(--mono);font-size:17px;letter-spacing:.14em}
+.ttl{font-size:30px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.c{background:color-mix(in srgb,#4ADE80 8%,var(--panel));border:2px solid color-mix(in srgb,#4ADE80 45%,transparent)}
+.c .lbl{color:#4ADE80}
+.a{background:color-mix(in srgb,#F87171 8%,var(--panel));border:2px solid color-mix(in srgb,#F87171 45%,transparent)}
+.a .lbl{color:#F87171}
+.it{border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:20px;color:var(--ink)}
+.it span{display:block;margin-top:3px;font-family:var(--mono);font-size:15px;color:var(--ink-2)}
+.so{font-family:var(--mono);font-size:19px;color:var(--ink);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.c .so b{color:#4ADE80;font-weight:500}.a .so b{color:#F87171;font-weight:500}
+.note{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center;line-height:1.45}
+.note b{color:var(--accent);font-weight:500}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 02: the agent writes the 300 lines</div>
+  <h1>Where does <em>the comparison break?</em></h1>
+  <div class="stage">
+    <div class="cmp">
+      <div class="pan c">
+        <div class="lbl">COMPILER · C → ASSEMBLY</div>
+        <div class="ttl">Fixed rules</div>
+        <div class="it">Same input, same output<span>every time, on every run</span></div>
+        <div class="it">Almost never the bug<span>proven over decades of use</span></div>
+        <div class="it">Nobody reads its output<span>you never review the assembly</span></div>
+        <div class="so">so you <b>trust</b> the output</div>
+      </div>
+      <div class="pan a">
+        <div class="lbl">AGENT · REQUEST → CODE</div>
+        <div class="ttl">A best guess</div>
+        <div class="it">Same request, different code<span>it can change on every run</span></div>
+        <div class="it">Can be confidently wrong<span>the code looks right and still breaks a rule</span></div>
+        <div class="it">You must read its output<span>review is now the main part of the job</span></div>
+        <div class="so">so you <b>check</b> the output</div>
+      </div>
+    </div>
+    <div class="note">reading code did <b>not</b> become optional the way reading assembly did<br>coming in DEV GROWTH #10: how to review a PR an agent wrote</div>
+  </div>
+  <div class="next">next <b>→</b> where we still type the code ourselves</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 5</span></div>
+</div></body></html>

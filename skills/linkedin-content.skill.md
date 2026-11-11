@@ -499,7 +499,7 @@ SOFTWARE ENGINEERING · BACKEND #01  Postgres vs MongoDB vs DynamoDB
 SOFTWARE ENGINEERING · MOBILE #03   FlatList vs FlashList
 SYSTEM ARCHITECTURE #01   What System Design Actually Is
 AI ENGINEERING #09        Agents Are Software, Not Magic
-DEV GROWTH #01            Junior vs Mid vs Senior: What Actually Changes
+DEV GROWTH #02            Junior vs Mid vs Senior: What Actually Changes
 BUILDING #01              <a real project story, from the project log>
 SOLUTIONS #01             <a system blueprint, with one call to action>
 ```
