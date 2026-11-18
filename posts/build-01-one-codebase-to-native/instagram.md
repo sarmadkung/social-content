@@ -5,6 +5,7 @@ Keeping it working got harder. A fix for one platform broke another. We knew nat
 Now agents write the native code from one set of rules, and tests keep the apps in sync. So we took the app native, in weeks, not years.
 
 Swipe for the full story →
+Full explanation on my blog, link in bio.
 
 Follow @sarmad.dev for real stories from building apps.
 

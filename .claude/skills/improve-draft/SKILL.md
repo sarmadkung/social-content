@@ -75,6 +75,10 @@ and wait for the user's approval before starting the next.
 - **`Keep in mind …` section** exists, 3–8 do/don't lines, each specific to
   the topic. "When not to", "Common mistake" and "Watch out" content is real —
   cut anything invented to fill a block.
+- **Takeaways.** The post ends with a `Takeaway` section, and every section
+  listed in `VISUALS:` ends with a `Takeaway: <one sentence>` line — its one
+  point, plainly, no new facts, not repeating another section's takeaway.
+  When the post has images, `VISUALS:` lists `Takeaway` as its last entry.
 - **Wording fits the level.** Plain, direct sentences; a sentence the
   intended reader would have to read twice gets rewritten. Advanced posts keep
   precise terms and longer reasoning where it is needed.

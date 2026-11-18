@@ -511,12 +511,40 @@ def check_visuals():
             err(css, "redefines a pillar accent — colours belong in templates/theme.css")
 
 
+def _norm(t):
+    t = re.sub(r"[`*]", "", t)          # markdown bold / code marks
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def check_slides_spec():
+    """posts/<post>/slides.md is the source for the images: every piece of text
+    in src/*.html must appear in it word for word (build-visuals skill)."""
+    from html import unescape
+    for src in sorted(glob.glob(os.path.join(ROOT, "posts", "*", "src"))):
+        htmls = sorted(glob.glob(os.path.join(src, "*.html")))
+        if not htmls:
+            continue
+        spec_path = os.path.join(os.path.dirname(src), "slides.md")
+        if not os.path.exists(spec_path):
+            warn(spec_path, "missing — run the write-slides skill so the images have one source file")
+            continue
+        spec = _norm(unescape(open(spec_path).read())).replace("\u2011", "-")
+        for f in htmls:
+            t = open(f).read()
+            t = re.sub(r"(?s)<head>.*?</head>|<style.*?</style>", "", t)
+            for node in re.split(r"<[^>]+>", t):
+                node = _norm(unescape(node)).replace("\u2011", "-")
+                if re.search(r"[A-Za-z0-9]", node) and node not in spec:
+                    err(f, f"text not in slides.md: \"{node[:70]}\" — edit slides.md first, then rebuild")
+
+
 def main():
     check_posts()
     check_post_text()
     check_platform_texts()
     check_blog()
     check_visuals()
+    check_slides_spec()
     for w in warnings:
         print("warn   " + w)
     for e in errors:

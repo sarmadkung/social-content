@@ -22,4 +22,6 @@ For us, cross-platform as the default is dead.
 
 Where else do you think it's dead now, and where does it still win?
 
+Read the full story on my blog: https://www.muhammadsarmad.com/blog/one-codebase-to-native
+
 #MobileDevelopment #iOSDevelopment #AndroidDevelopment #AIAgents #SoftwareEngineering

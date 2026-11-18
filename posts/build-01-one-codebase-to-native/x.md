@@ -24,4 +24,5 @@ Every gain kept. Every loss won back.
 The price moved from our users to us: more review, more releases, more tests to keep.
 
 Where else is cross-platform dead now, and where does it still win?
+Full story: https://www.muhammadsarmad.com/blog/one-codebase-to-native
 [images: 5, 6, 7]

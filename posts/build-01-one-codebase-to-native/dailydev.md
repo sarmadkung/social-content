@@ -13,3 +13,5 @@ So we split it: iOS in Swift and SwiftUI, Android in Kotlin and Compose, web as 
 **Who keeps the apps in sync?** Coding agents port every feature and fix, following rules in the agents' instruction file. **Shared fixtures check the ports:** routes, server messages and strings are pinned once, and every app's tests read them. Skip a port and CI fails.
 
 Every gain kept, every loss won back. The price moved to us: more review, more releases, more fixtures to keep.
+
+The full story, with every bug and fixture: [read it on my blog](https://www.muhammadsarmad.com/blog/one-codebase-to-native)

@@ -87,7 +87,8 @@ next unwritten number for that series.
    reader, the learning outcome in one sentence and why it matters (Senior
    Interest and Learning Value Test). Then apply every rule: adaptive teaching
    order for the `LEVEL:`, mode structure, real-or-nothing examples, limits and
-   mistakes, failure scenario rule (Software Engineering), Keep in mind rule
+   mistakes, failure scenario rule (Software Engineering), Takeaway rule
+   (a closing takeaway plus one `Takeaway:` line per image section), Keep in mind rule
    (every post), Watch out section (when the topic has real drawbacks),
    FORMAT/CAROUSEL choice, banned words, length.
    Add `[PERSONAL: ...]` and `[FACT_CHECK: ...]` markers where the rules say.
@@ -106,59 +107,22 @@ next unwritten number for that series.
    `python3 scripts/build_posts.py <draft basename>` to create this post's
    folder (`posts/<post>/post.md`) and add it to `posts/README.md`. Folders are
    made only for posts the user asks for — never for every draft.
-10. `FULL`/`VISUAL`: build the image(s) per the visual skill from the draft's
-   `HEADLINE:` and `LAYOUT:`.
-   - **Read or write the draft's `VISUALS:` line first.** It names the
-     sections that become images (`1 = <section heading> · 2 = … · rest =
-     text`). If the draft has none, choose the sections and add the line to the
-     header — adding this header line, and a missing `Keep in mind …`
-     section, are the only changes allowed to an existing draft. Make one image per listed section, in that order.
-   - **Text or image, per section.** Any section — including `Keep in mind`
-     and `Watch out` — can stay in the text or become an image. Decide per
-     post: a list of 4+ short items or anything with a shape (steps,
-     comparison, before/after) reads better as an image; a story or a single
-     argument stays in the text.
-   - **Define every term fully, with an example.** In images and in text,
-     every term a beginner may not know gets a complete plain-sentence
-     definition and a complete, concrete `Example:` in simple words — never a
-     fragment like "deep learning trained on text" or "e.g. rule → spam". See
-     the visual skill's section 5d.
-   - **Images explain the content that matters.** First list the 1–3 ideas the
-     post is really about. Make one image per idea that needs a picture — more
-     than one image is fine (LinkedIn multi-image post). Every shape is labelled
-     in plain words. Test: would a reader who skips the text understand the
-     image on its own? If not, redraw. Never a decorative or cryptic diagram
-     (unlabelled dots, symbol-only graphs, tiny icons standing in for ideas).
-   - **Don't repeat the text.** Stats, counts and lines already in the post body
-     (e.g. "23 technique write-ups") do not go on the image — not in the
-     diagram, not in the footer. The image adds what the text can't show; the
-     footer's right side is the topic, complexity, or `1 / 2` page number.
-   - **Titles: simple, true to the content, and a question where it fits.**
-     Every image title (and draft section heading) says in plain words what
-     that image shows. Prefer a question the image answers ("Who keeps the
-     apps in sync now?", "Before and after: what did we change?"). No
-     slogans, idioms or clever contrasts ("Native where it matters, web where
-     it doesn't", "Tests hold the line") — they sound good but don't say what
-     is on the slide. Test: a reader who sees only the title can guess what
-     the slide shows. If the title fits a different slide just as well,
-     rewrite it.
-   - **No separate image for a repeated idea.** If an image's title or
-     points repeat the previous image, merge its few new points into that
-     image (as examples under the matching item) and drop the image.
-   - **No idea twice across images.** Each image teaches one idea no other
-     image in the post (or earlier post in the series) already shows.
-   - **Link every image to its neighbours.** With 2+ images, each one picks
-     up where the previous one ended and hands off to the next, per the visual
-     skill's section 5 rule 8: a `from` cue naming what the previous image
-     established, a `next` cue naming the next image's point, and the same
-     names, colours and objects for the same thing on every image.
-   - Images are numbered in posting order: `1.png` is the first image shown.
-   - **Feed cover for 3+ images.** When the post has 3 or more images, also
-     write `src/0.html` → `0.png` per the visual skill's section 5c: the
-     headline plus a numbered "In this post" list, one row per image. It is
-     shown first everywhere: attach it first on LinkedIn and Instagram, and
-     put `0` first in post 1's `[images: …]` line in `x.md`. 1–2 images: no
-     feed cover.
+10. `FULL`/`VISUAL`: make the images in two skills, in this order.
+   - **Slides first: run `write-slides`.** It writes `posts/<post>/slides.md`
+     from the draft: every image (daily.dev cover, feed cover `0`, content
+     slides, takeaway slide) with all its words and layout. All the rules on
+     what goes on an image live there: the `VISUALS:` line, one idea per image,
+     question titles, from/next cues, the takeaway slide, the feed cover, and
+     the cover content. Show `slides.md` to the user and wait for their OK
+     before building anything, unless they asked for the whole post in one go.
+   - **Then run `build-visuals`.** It builds `src/*.html` from `slides.md`,
+     renders the PNGs, `cover.png` and `carousel.pdf`, and checks them. It never
+     changes wording. If text doesn't fit, it proposes a change to `slides.md`.
+   - **To change a slide later:** edit `slides.md` (via `write-slides`), then
+     run `build-visuals`. Never edit `src/*.html` text directly: `validate.py`
+     fails when HTML text is missing from `slides.md`.
+   - **The image list in the captions comes from `slides.md`.** Use the slide
+     titles as they are written there, so captions and images always match.
    - **LinkedIn caption (`post.md`): select, don't compress.** The draft in
      `generated/drafts/` is the full source and is never trimmed.
      `posts/<post>/post.md` is the LinkedIn caption; with images it is short
@@ -198,24 +162,6 @@ next unwritten number for that series.
      And every inference call comes with a cost.
      What fundamental concept would you add to this list?
      ```
-   - Path: `posts/<draft basename>/src/1.html`, `2.html` … in posting order
-     (carousel: `src/slide-01.html` …). If old sources exist there, replace
-     them when they no longer match the draft.
-   - Link `../../../templates/variant-<x>/base.css` and
-     `../../../brand/…`; set `:root{--accent:...}` for the pillar; include the
-     brand mark in the series row as the templates do.
-   - Render with `./render.sh variant-none` (renders post images only, into
-     `posts/<post>/1.png` …), then open each PNG and check it against the
-     visual skill's review checklist. Fix and re-render until it passes.
-   - **LinkedIn carousel PDF.** `render.sh` ends by running
-     `scripts/carousel_pdf.sh`, which joins the post's images into
-     `posts/<post>/carousel.pdf` — one page per image, in posting order
-     (`0.png`, `1.png` … or `slide-01.png` …). LinkedIn shows a PDF document as
-     a swipeable carousel; images attached directly only show as a grid. After
-     re-rendering one post by hand, rebuild its PDF with
-     `scripts/carousel_pdf.sh posts/<post>`. Every post uses the same name,
-     `carousel.pdf`, inside its own folder. It is git-ignored: a build output,
-     never committed.
    - **Carousel PDF title.** LinkedIn asks for a descriptive title when you
      upload `carousel.pdf`. Write it to `posts/<post>/carousel-title.txt`:
      one line, nothing else — never in `post.md`, so it can't be pasted into
@@ -228,14 +174,6 @@ next unwritten number for that series.
      title file or a title over 60 characters. **Always end a run by showing
      the title on its own line**, labelled `LinkedIn PDF title:`, so the user
      can copy it.
-   - **daily.dev cover** (every `FULL`/`VISUAL` run, `TEXT` posts too): write
-     `posts/<post>/src/cover.html` using `../../../templates/cover/base.css`
-     (1200×630). Only the series label + brand mark, the draft's `HEADLINE:`
-     with the `<em>` accent, one small labelled motif for the post's main idea,
-     and the footer (name lockup · topic). No stats, no grids, no second idea —
-     the cover gets the click; the post images explain. `render.sh` renders
-     it to `posts/<post>/cover.png`. Check it at 300px wide: the headline must
-     still read. See the visual skill's cover rules.
    - **daily.dev text**: write `posts/<post>/dailydev.md` — a `TITLE:` line
      (a clear claim, ≤ 70 characters, not the series label), `COVER: cover.png`,
      `---`, then 150–250 words of Markdown from the draft: the hook, the key
@@ -299,6 +237,16 @@ next unwritten number for that series.
      `## Next in the series` line naming the next post. No hashtags, no
      `→` arrows (use `-` lists), no unresolved `[PERSONAL]` / `[FACT_CHECK]`
      content. Never overwrite an existing `blog.md` unless the user asks.
+   - **Publish the blog when the post goes live** (or when the user asks).
+     Copy `blog.md` to the site repo as
+     `~/Documents/personal/muhammadsarmad/content/blog/<site-slug>.mdx`. Use a
+     short site slug (e.g. `one-codebase-to-native`). The front-matter is
+     `title`, `description`, `date`, `tags` (Title Case) and `draft: false`.
+     Copy the images used to `public/blog/<site-slug>/` and change image paths
+     to `/blog/<site-slug>/N.png`. Run `pnpm build` there; the page must appear
+     as `/blog/<site-slug>`. Then commit and push to `main`, which deploys it.
+     Example: `content/blog/one-codebase-to-native.mdx`. A post that is
+     live on social media must not be missing from the blog.
    - **Blog link** (rule in `skills/linkedin-content.skill.md`, **Blog
      links**): only when the matching article is live on
      muhammadsarmad.com — check the site repo for `<slug>.mdx` with `draft:

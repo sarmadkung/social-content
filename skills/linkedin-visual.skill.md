@@ -333,6 +333,25 @@ Never use the accent as a gradient, and never give one card two accents.
      the new part added), so the reader sees it grow, not restart.
    - No slide repeats another slide's idea, stat or diagram. A recap on the
      final slide names the points in one line each; it does not redraw them.
+9. Takeaways get their own last slide, never a box on each content slide.
+   Title `Takeaway: what to remember`, a `from` cue, then one numbered row
+   per content slide (a small mono label naming that slide's topic, then
+   its `Takeaway:` line from the draft in 22px semibold ink), then a
+   highlighted panel (4px accent left border, accent-tinted background,
+   mono `THE ONE THING` label) holding the post's main takeaway. Text matches
+   the draft word for word. The slide before it gets a `next` cue pointing
+   to it, and the feed cover (`0.png`) lists it as its last row.
+
+## 5a2. Slides spec (`posts/<post>/slides.md`)
+
+Every post with images has one `slides.md` next to `post.md`. It is the
+**source** for every image (cover, feed cover, content slides, takeaway slide):
+all the text on each one, word for word, plus layout and colours (template,
+accent words in the title, from/next cues, footer, panel tints, code boxes with
+their line breaks). The `write-slides` skill writes it from the draft; the
+`build-visuals` skill builds `src/*.html` and the PNGs from it and never changes
+its wording. To change a slide, edit `slides.md`, then rebuild. `validate.py`
+fails when text in `src/*.html` is missing from `slides.md`.
 
 ## 5b. Cover rules (daily.dev and link previews)
 
@@ -410,6 +429,9 @@ Before returning any image, verify each:
 11. In a deck or multi-image post: `from` and `next` cues are present and
     match the actual neighbouring slides, shared objects look the same on
     every slide, and no two slides show the same idea (section 5 rule 8).
+12. A post with images ends with the takeaway slide (section 5 rule 9):
+    one row per content slide, matching the draft's `Takeaway:` lines, plus
+    the main takeaway; content slides carry no takeaway box.
 
 ## 7. Examples
 

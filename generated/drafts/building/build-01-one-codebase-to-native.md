@@ -9,7 +9,7 @@ FORMAT:    VISUAL
 HEADLINE:  One codebase, four apps. Then we went native.
 LAYOUT:    COMPARE
 VISUALS:   1 = What did cross-platform give us, and take? · 2 = Did cross-platform manage everything for us? · 3 = What did we migrate to? · 4 = Who keeps the apps in sync now? · 5 = What did we achieve in the end? · 6 = Is cross-platform dead? As a default, yes. · 7 = Where else is cross-platform dead now? · rest = text
-STATUS:    draft
+STATUS:    published
 ---
 
 We shipped iOS, Android, web and desktop from one codebase. Shared UI, shared libraries, shared packages. Everything that could be shared, was.

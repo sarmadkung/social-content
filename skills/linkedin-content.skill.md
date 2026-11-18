@@ -156,6 +156,18 @@ topic and say something the body doesn't already say word for word. Use 3
 strong lines rather than 8 with filler; no generic advice ("practice daily",
 "keep learning") and no summary of the post.
 
+**Takeaway rule (every post):** every post ends with a `Takeaway` section:
+one or two short lines saying the one thing the reader should remember. And
+every section that becomes an image ends with its own line `Takeaway: <one
+sentence>` — the single point of that section, said plainly (e.g. "You can
+trust a compiler. You must check an agent."). A section takeaway is a
+conclusion, not a summary: it says what the section means for the reader in
+under ~15 words, adds no new fact, and never repeats another section's
+takeaway. In a post with images, the `Takeaway` section is its own last
+image: it lists every section's takeaway in order, then the post's one main
+takeaway (visual skill, section 5 rule 9). List it last in `VISUALS:` as
+`N = Takeaway`. The content images themselves carry no takeaway box.
+
 **Watch out section (optional):** when the topic has real drawbacks, add a
 section whose heading starts with `Watch out`, worded for the topic: `Watch
 out: what caching breaks`, `Watch out: where RAG fails`, `Watch out: what
