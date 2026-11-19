@@ -61,8 +61,18 @@ a series + number (`growth #01`), or `<post> slide N <change>` for one edit.
      "What we'll explore" list, one row per image (title + one grey line).
    - **daily.dev cover**: the series label, the `HEADLINE:` with its accent words, one small
      labelled motif for the main idea, and the footer topic. No second idea.
-   - Simple words, short lines. Each item fits on one or two lines at slide size.
-     If it doesn't, cut words now, not later in the HTML.
+   - **Readable lines, not compressed notes** (visual skill section 5e). Every
+     line, grey line and example is a simple phrase a reader understands on
+     its own, without the post: keep the subject and the verb, say the "so
+     what", and use no arrows, slashes or symbols in place of words.
+     Examples are complete and concrete: real names, real numbers, what
+     happens. Each line must be worth its space: drop a line that adds
+     nothing, never the words that carry the meaning. An item fits on one or
+     two lines at slide size. If it doesn't, split it into two items, move
+     it to another slide or to the text, or change the layout. Never squeeze
+     it into shorthand.
+     Test: read each line aloud by itself. If a reader would ask "meaning
+     what?", rewrite it.
 5. **Write `posts/<post>/slides.md`** in this exact shape:
    ```
    # Slides spec: <Series #NN>: <headline>

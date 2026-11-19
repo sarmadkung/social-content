@@ -7,7 +7,7 @@ seriesNumber: 2
 slug: ai-02-what-an-llm-does
 tags: [llm, ai, machine-learning, inference]
 cover: cover.png
-lab: https://optimallab.dev/next-token
+lab: https://optimallab.dev/tracks/ai/next-token
 ---
 
 An LLM does one thing, over and over: it guesses the next piece of text.
@@ -56,7 +56,7 @@ Raw scores are not percentages. A formula called **softmax** turns them into pro
 
 Then comes the pick, and it is a **weighted random draw**. Run it 100 times and about 79 runs say Islamabad, about 11 say Lahore. The model never "knew" it would say Islamabad. It sampled from a probability distribution. That is also why the same prompt can give a different wording on a rerun.
 
-Settings like temperature, top-K and top-P reshape these odds before the pick: they make the likely tokens even more likely, or cut the unlikely ones out. That is the topic of post #05.
+Settings like temperature, top-K and top-P reshape these odds before the pick: they make the likely tokens even more likely, or cut the unlikely ones out.
 
 ## Why this matters
 
@@ -74,7 +74,7 @@ Use it for language tasks: drafting, summarising, extracting, classifying. Do no
 
 ## Try it on Optimal Lab
 
-[How an LLM picks the next token](https://optimallab.dev/next-token): run one inference step yourself, see the scores turn into odds, and drag the temperature to watch them change.
+[How an LLM picks the next token](https://optimallab.dev/tracks/ai/next-token): run one inference step yourself, see the scores turn into odds, and drag the temperature to watch them change.
 
 ## Keep in mind when you build on an LLM
 
@@ -87,4 +87,4 @@ Use it for language tasks: drafting, summarising, extracting, classifying. Do no
 
 ## Next in the series
 
-Tokens and context windows: what a token really is, and why the limit matters.
+What the model sees in one call: the system prompt, the chat history, documents and your question, all sharing one context window.

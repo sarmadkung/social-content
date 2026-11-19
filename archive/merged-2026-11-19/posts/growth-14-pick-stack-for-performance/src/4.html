@@ -1,0 +1,71 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:none;font-size:56px}
+.stage{justify-content:center;gap:12px;padding-top:2px}
+.job{font-family:var(--mono);font-size:19px;color:var(--ink-2);text-align:center}
+.job b{color:var(--ink);font-weight:500}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pan{border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:9px}
+.lbl{font-family:var(--mono);font-size:14px;letter-spacing:.12em}
+.bef{background:color-mix(in srgb,#F87171 8%,var(--panel));border:2px solid color-mix(in srgb,#F87171 45%,transparent)}
+.bef .lbl{color:#F87171}
+.aft{background:color-mix(in srgb,#4ADE80 8%,var(--panel));border:2px solid color-mix(in srgb,#4ADE80 45%,transparent)}
+.aft .lbl{color:#4ADE80}
+.big{font-size:21px;font-weight:600;line-height:1.3;color:var(--ink)}
+.it{font-size:19px;font-weight:600;color:var(--ink);line-height:1.25}
+.it span{display:block;margin-top:2px;font-family:var(--mono);font-size:14px;font-weight:400;line-height:1.35;color:var(--ink-2)}
+.cl{font-family:var(--mono);font-size:13px;color:var(--ink-3)}
+.cores{display:flex;gap:7px}
+.cores i{width:30px;height:30px;border-radius:6px;border:1.5px solid #3A4453}
+.cores i.r{background:color-mix(in srgb,#F87171 45%,transparent);border-color:#F87171}
+.cores i.gr{background:color-mix(in srgb,#4ADE80 45%,transparent);border-color:#4ADE80}
+.cap{display:flex;gap:7px;font-family:var(--mono);font-size:13px;color:var(--ink-3)}
+.cap .one{width:30px;white-space:nowrap;text-align:left}
+.cap .rest{width:252px;text-align:center}
+.bef .cores{margin-top:2px}
+.bef .cl{margin-top:14px}
+.bot{margin-top:auto;font-family:var(--mono);font-size:16px;color:var(--ink-2)}
+.bot b{color:var(--ink);font-weight:500}
+.strip{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px}
+.strip .sl{font-family:var(--mono);font-size:14px;letter-spacing:.12em;color:var(--accent);margin-bottom:8px}
+.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.steps div{font-family:var(--mono);font-size:15px;line-height:1.35;color:var(--ink)}
+.steps em{font-style:normal;color:var(--accent);margin-right:6px}
+.hp{font-size:18px;line-height:1.4;color:var(--ink-2)}
+.hp b{color:var(--ink);font-weight:600}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #14<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 03: pick the stack per job</div>
+  <h1>What changes in <em>a real job?</em></h1>
+  <div class="stage">
+    <div class="job">the job: <b>import a customer's 2 GB CSV file every night</b></div>
+    <div class="cmp">
+      <div class="pan bef">
+        <div class="lbl">BEFORE · THE STACK WE KNEW</div>
+        <div class="big">Node.js reads one row at a time, on one thread</div>
+        <div class="cl">8 CPU cores</div>
+        <div class="cores"><i class="r"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cap"><span class="one">1 busy</span><span class="rest">7 idle</span></div>
+        <div class="bot">it takes about <b>40 minutes</b>, and longer with every new customer</div>
+      </div>
+      <div class="pan aft">
+        <div class="lbl">AFTER · THE ENGINE THE JOB NEEDS</div>
+        <div class="it">Option A: DuckDB<span>load the CSV into DuckDB and do the totals in SQL; it reads by column and uses every core</span></div>
+        <div class="it">Option B: Go or Rust<span>the agent rewrites only the parser, with one worker on each CPU core</span></div>
+        <div class="cores"><i class="gr"></i><i class="gr"></i><i class="gr"></i><i class="gr"></i><i class="gr"></i><i class="gr"></i><i class="gr"></i><i class="gr"></i></div>
+        <div class="cap"><span style="width:287px;text-align:center">all 8 busy</span></div>
+        <div class="bot">the rest of the app <b>stays in TypeScript</b></div>
+      </div>
+    </div>
+    <div class="strip"><div class="sl">YOUR PART</div><div class="steps">
+      <div><em>1</em>Write the spec, with a time target: "a 2 GB file in under 5 minutes"</div>
+      <div><em>2</em>Give the agent the test file the old version used</div>
+      <div><em>3</em>Review the diff, then time both versions on a real 2 GB file</div>
+    </div></div>
+    <div class="hp"><b>Hot path</b>: the small part of the code where most of the time goes. Here, the parser that reads the file.</div>
+  </div>
+  <div class="next">next <b>→</b> what you still need to know</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>4 / 6</span></div>
+</div></body></html>

@@ -42,14 +42,14 @@ A compiler is deterministic: the same code gives the same output every time, and
 An agent is not like that. The same request can give different code, and the code can be confidently wrong. So reading code did not become optional the way reading assembly did.
 → Compiler: fixed, proven rules → you trust the output.
 → Agent: a model's best guess → you check the output.
-Review is now the main part of the job. DEV GROWTH #10 shows how to review a PR an agent wrote.
+Review is now the main part of the job. DEV GROWTH #07 shows how to review a PR an agent wrote.
 
 What do we still write by hand?
 Assembly survived where it matters most: boot code, drivers and tight loops. Hand-written code survives in the same kind of places:
 → The risky core: money, security checks and code that runs at the same time (concurrency), where one wrong line costs a lot.
 → Hot paths: code that runs millions of times, where you tune every line.
 → The first example of a new pattern, so the agent has a good example to copy.
-→ Learning: you write it yourself while you learn a new idea (DEV GROWTH #08).
+→ Learning: you write it yourself while you learn a new idea (DEV GROWTH #05).
 → The fix when the agent goes in circles on the same bug.
 
 [FACT_CHECK: assembly is still used for boot code, drivers and performance-critical loops → OS kernel / compiler documentation]

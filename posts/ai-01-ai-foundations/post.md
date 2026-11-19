@@ -1,8 +1,3 @@
-> ⚠ NOT READY — resolve these, then delete this block:
-> - [FACT_CHECK: APIs bill per token, with input and output tokens priced separately → OpenAI and Anthropic pricing pages]
-
----
-
 You correct an AI model. It says, "Thanks, noted."
 
 Tomorrow, in a new chat, it makes the same mistake.

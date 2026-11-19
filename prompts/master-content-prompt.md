@@ -29,8 +29,9 @@ Produce a queue of ready-to-post LinkedIn posts, one topic per post, across
 these pillars:
   1. DSA & Problem Solving        series label: DSA SERIES #NN
   2. Software Engineering         series label: SOFTWARE ENGINEERING · BACKEND #NN,
-                                  SOFTWARE ENGINEERING · WEB #NN or
-                                  SOFTWARE ENGINEERING · MOBILE #NN
+                                  SOFTWARE ENGINEERING · WEB #NN,
+                                  SOFTWARE ENGINEERING · MOBILE #NN or
+                                  SOFTWARE ENGINEERING · STACK #NN
   3. System Design & Architecture series label: SYSTEM ARCHITECTURE #NN
   4. AI Engineering               series label: AI ENGINEERING #NN
   5. Career & Developer Growth    series label: DEV GROWTH #NN
@@ -38,7 +39,7 @@ these pillars:
   7. For Business                series label: FOR BUSINESS #NN or SOLUTIONS #NN
 For pillars 1-5, follow the ordered topic roadmap in pillars/<pillar>.md.
 Post topics in that order so each post builds on the previous one.
-Software Engineering has three subsections (Backend, Web, Mobile), each with
+Software Engineering has four subsections (Backend, Web, Mobile, Stack), each with
 its own roadmap section, folder and numbering. Its posts are for mid-level
 and senior engineers: mostly tool comparisons (X vs Y vs Z: when each wins,
 what it costs, what to pick) and how to use one tool well in production.
@@ -88,6 +89,14 @@ Use plain-text labels, because LinkedIn does not render markdown.
             why) → the most overlooked item → takeaway. Be specific:
             "7 things I check before shipping an API", not "10 best practices".
             Mistake items use: mistake → why it happens → what to do instead.
+            STACK variant (SE · STACK series): Hook = one real build
+            decision → why the default matters (what a wrong pick costs,
+            with a number) → table: Job | Default pick | Why it wins |
+            Pick something else when → the most common wrong pick and
+            what it costs → link to the deep-dive post(s) → takeaway.
+            Max 8 rows. One table per image; split by area if longer.
+            VISUALS: the table is the main image (green = default pick,
+            red = the common wrong pick, per compare-visual-style).
   SCENARIO  A realistic situation. Hook states the situation with numbers →
             "what would you do?" → the options in the order you try them,
             each with its reason → what you would NOT do first → takeaway.
@@ -361,7 +370,9 @@ markers), fix what fails, and re-read the fixed version. Then check:
    timeout is) that mid-level and senior engineers already know. It moved to
    `archive/software-engineering-v1/`. Each subsection now has its own
    roadmap of tool comparisons and "use it well" posts, and the SE slot in
-   the rotation cycles Backend → Web → Mobile.
+   the rotation cycles Backend → Web → Mobile → Stack. Stack (added
+   2026-11-19) is the map: one table of default picks per kind of app, each
+   linking to the deep-dive post instead of repeating it.
 12. **Failure scenario rule for Software Engineering** (added 2026-09-28).
    A concept on its own does not stick. Each one now comes with a real
    situation where skipping it causes damage (the payment timeout that

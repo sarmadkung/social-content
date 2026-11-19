@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--grow)}
+h1{max-width:20ch;font-size:56px}
+.stage{justify-content:center;gap:16px;padding-top:6px}
+.then{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center;margin-bottom:2px}
+.then b,.end b{color:var(--ink);font-weight:500}
+.row{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.row .n{font-family:var(--mono);font-size:28px;margin:0;color:var(--accent);text-align:center}
+.row b{display:block;font-size:26px;font-weight:600;color:var(--ink)}
+.row span.g{display:block;margin-top:4px;font-family:var(--mono);font-size:16px;line-height:1.4;color:var(--ink-2)}
+.row{grid-template-columns:56px 1fr auto}
+.tag{font-family:var(--mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:1px solid;border-radius:999px;padding:6px 12px;white-space:nowrap}
+.tag.ok{color:#4ADE80;border-color:color-mix(in srgb,#4ADE80 60%,transparent)}
+.tag.am{color:var(--accent);border-color:var(--accent)}
+.row.now{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--panel))}
+.row.now b{color:var(--accent)}
+.end{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center;margin-top:6px}
+</style></head><body>
+<div class="frame">
+  <div class="series">Dev Growth #14<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>What used to <em>decide the stack?</em></h1>
+  <div class="stage">
+    <div class="then">the questions teams asked, <b>in this order</b>:</div>
+    <div class="row"><span class="n">1</span><div><b>What does the team already know?</b><span class="g">learning a new language took months</span></div><span class="tag ok">AGENTS WRITE ANY LANGUAGE</span></div>
+    <div class="row"><span class="n">2</span><div><b>How fast can we write it?</b><span class="g">writing the code was the slowest, most expensive part</span></div><span class="tag ok">AGENTS WRITE IT FAST</span></div>
+    <div class="row"><span class="n">3</span><div><b>Who can we hire for it?</b><span class="g">it was hard to hire people who knew a rare language</span></div><span class="tag ok">MATTERS LESS NOW</span></div>
+    <div class="row now"><span class="n">4</span><div><b>How fast will it run?</b><span class="g">teams asked this last, or never asked it</span></div><span class="tag am">DID NOT CHANGE</span></div>
+    <div class="end">agents write the code and a person reviews it, so the first three questions matter much less. <b>how fast it runs now decides the stack.</b></div>
+  </div>
+  <div class="next">next <b>→</b> why performance matters more than it used to</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 6</span></div>
+</div></body></html>

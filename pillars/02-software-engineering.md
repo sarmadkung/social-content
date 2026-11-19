@@ -30,9 +30,10 @@ filename prefix and roadmap, and numbers from #01 on its own.
 | Backend | `generated/drafts/software-engineering/backend/` | `SOFTWARE ENGINEERING · BACKEND #NN` | `be` |
 | Web | `generated/drafts/software-engineering/web/` | `SOFTWARE ENGINEERING · WEB #NN` | `web` |
 | Mobile | `generated/drafts/software-engineering/mobile/` | `SOFTWARE ENGINEERING · MOBILE #NN` | `mob` |
+| Stack | `generated/drafts/software-engineering/stack/` | `SOFTWARE ENGINEERING · STACK #NN` | `stack` |
 
 The posting rotation keeps one Software Engineering slot. Each time it comes
-up it takes the next subsection in turn: Backend → Web → Mobile.
+up it takes the next subsection in turn: Backend → Web → Mobile → Stack.
 
 Each roadmap line: `#NN Title · MODE · needs <earlier posts in the same
 subsection>`. Modes are defined in the master prompt. Never more than 4 TEACH
@@ -69,16 +70,43 @@ folded into the Backend posts below.
 - #09 7 web performance mistakes I still see in production · LIST · needs #02–#07
 
 ## Mobile roadmap
-- #01 React Native vs Flutter vs native Swift and Kotlin · COMPARE · needs —
-- #02 Expo vs bare React Native: is there still a reason to eject? · WHY · needs #01
-- #03 FlatList vs FlashList: why your list janks · COMPARE · needs #01
-- #04 Local storage: MMKV vs SQLite vs WatermelonDB · COMPARE · needs #01
-- #05 OTA updates (EAS Update) vs store releases · COMPARE · needs #02
-- #06 Push notifications: Expo push vs FCM and APNs direct · COMPARE · needs #02
-- #07 Expo Router vs React Navigation · COMPARE · needs #02
-- #08 EAS Build vs Fastlane for releases · COMPARE · needs #05
-- #09 7 reasons mobile releases get rejected or rolled back · LIST · needs #05, #08
+The React Native vs Flutter vs native comparison ("who draws the pixels")
+lives in STACK #01, so the Mobile series starts with the Expo deep dive.
+- #01 Expo vs bare React Native: is there still a reason to eject? · WHY · needs —
+- #02 FlatList vs FlashList: why your list janks · COMPARE · needs —
+- #03 Local storage: MMKV vs SQLite vs WatermelonDB · COMPARE · needs —
+- #04 OTA updates (EAS Update) vs store releases · COMPARE · needs #01
+- #05 Push notifications: Expo push vs FCM and APNs direct · COMPARE · needs #01
+- #06 Expo Router vs React Navigation · COMPARE · needs #01
+- #07 EAS Build vs Fastlane for releases · COMPARE · needs #04
+- #08 7 reasons mobile releases get rejected or rolled back · LIST · needs #04, #07
+
+Merged on 2026-11-19 (old → new): #01 → folded into STACK #01 · #02 → #01 · #03 → #02 · #04–#09 → #03–#08. The old drafts are in `archive/merged-2026-11-19/`.
 
 ## Content opportunities
 A tool I replaced and why · A migration between two tools · A benchmark I ran
 myself · A production bug caused by a tool's default · A config that saved us
+
+## Stack roadmap
+Stack posts are the map; Backend, Web and Mobile posts are the deep dives.
+A Stack post gives one default pick per job, in a table, and links to the
+deep-dive post for the reasoning. It never repeats a deep dive.
+
+Problem-first still applies: the hook is one real decision ("you are starting
+a fintech app tomorrow: what do you build each part with?"), and every row
+says what goes wrong if you pick the usual wrong choice.
+
+Picks are opinions, labelled honestly: "my default in 2026", never "the best".
+Every pick has a "pick something else when ..." line. Claims about speed,
+adoption or who uses what get a [FACT_CHECK: claim → source] marker.
+
+- #01 One default stack for each kind of app (backend, web, mobile with who draws the pixels, desktop, AI, data, blockchain) · LIST · needs —
+- #02 Backend by job: TypeScript vs Go vs Rust vs Python (CRUD APIs, high throughput, ML serving, scripts) · LIST · needs #01
+- #03 Databases by data shape: Postgres, Redis, ClickHouse, a vector DB, S3 · LIST · needs #01
+- #04 Blockchain stack: EVM (Solidity, Foundry, viem) vs Solana (Rust, Anchor) · LIST · needs #01
+- #05 AI app stack: model API, orchestration, vector store, evals, tracing · LIST · needs #01, #03
+- #06 Desktop: Tauri vs Electron vs native · LIST · needs #01
+- #07 Infra by stage: what to host on at 0, 10k and 1M users · LIST · needs #01, #03
+- #08 The solo-founder MVP stack vs the stack you move to at scale · LIST · needs #01–#07
+
+Merged on 2026-11-19 (old → new): MOBILE #01 (React Native vs Flutter vs native) → folded into #01 · #03 (Mobile by app type) → folded into #01, which now has the per-app-type mobile picks · #04–#09 → #03–#08.

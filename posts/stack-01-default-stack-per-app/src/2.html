@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--swe)}
+h1{font-size:56px;max-width:20ch}
+.stage{justify-content:center;gap:14px;padding-top:8px}
+.intro{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center}
+.sr{display:grid;grid-template-columns:190px 1fr 250px;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.sr .job b{display:block;font-size:24px;font-weight:600;color:var(--ink);line-height:1.2}
+.sr .job span{display:block;margin-top:6px;font-family:var(--mono);font-size:15px;color:var(--ink-2);line-height:1.35}
+.sr .lab{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--accent);margin-bottom:6px}
+.sr .def b{display:block;font-size:22px;font-weight:600;color:var(--ink);line-height:1.25}
+.sr .def span.why{display:block;margin-top:6px;font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-2)}
+.sr .els{border-left:1px solid var(--line);padding-left:18px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.sr .els .lab{color:var(--ink-3);font-size:12px;letter-spacing:.1em}
+.sr .els p{font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-2)}
+.sr .els p b{color:var(--ink);font-weight:500}
+.ref{font-family:var(--mono);font-size:15px;color:var(--ink-3);text-align:center}
+</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering · Stack #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 01: the parts users see</div>
+  <h1>Which stack for <em>the backend and data?</em></h1>
+  <div class="stage">
+    <div class="sr"><div class="job"><b>API and services</b><span>the server code</span></div><div class="def"><span class="lab">DEFAULT</span><b>Go + Postgres</b><span class="why">one small binary, cheap concurrency, low memory, easy to review</span></div><div class="els"><span class="lab">PICK SOMETHING ELSE WHEN</span><p>a CPU-heavy hot path → <b>Rust for that part</b>; simple CRUD, all-TypeScript team → <b>Node.js</b></p></div></div>
+    <div class="sr"><div class="job"><b>App data</b><span>users, orders, settings</span></div><div class="def"><span class="lab">DEFAULT</span><b>Postgres</b><span class="why">transactions, joins, JSON and full-text search in one database</span></div><div class="els"><span class="lab">PICK SOMETHING ELSE WHEN</span><p>a measured pattern Postgres can't serve, like huge key-value → <b>DynamoDB</b></p></div></div>
+    <div class="sr"><div class="job"><b>Analytics</b><span>reports and dashboards</span></div><div class="def"><span class="lab">DEFAULT</span><b>ClickHouse, or DuckDB for files</b><span class="why">reads only the columns a query needs, on every core</span></div><div class="els"><span class="lab">PICK SOMETHING ELSE WHEN</span><p>a few million rows → <b>a Postgres read replica</b></p></div></div>
+    <div class="ref">more in BACKEND #01 and #02</div>
+  </div>
+  <div class="next">next <b>→</b> AI features and smart contracts</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>2 / 5</span></div>
+</div></body></html>

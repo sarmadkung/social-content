@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--swe)}
+h1{font-size:56px;max-width:20ch}
+.stage{justify-content:center;gap:14px;padding-top:8px}
+.intro{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center}
+.sr{display:grid;grid-template-columns:190px 1fr 250px;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.sr .job b{display:block;font-size:24px;font-weight:600;color:var(--ink);line-height:1.2}
+.sr .job span{display:block;margin-top:6px;font-family:var(--mono);font-size:15px;color:var(--ink-2);line-height:1.35}
+.sr .lab{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--accent);margin-bottom:6px}
+.sr .def b{display:block;font-size:22px;font-weight:600;color:var(--ink);line-height:1.25}
+.sr .def span.why{display:block;margin-top:6px;font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-2)}
+.sr .els{border-left:1px solid var(--line);padding-left:18px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.sr .els .lab{color:var(--ink-3);font-size:12px;letter-spacing:.1em}
+.sr .els p{font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-2)}
+.sr .els p b{color:var(--ink);font-weight:500}
+.ref{font-family:var(--mono);font-size:15px;color:var(--ink-3);text-align:center}
+.sr{padding:22px 20px}
+.defn{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;font-size:20px;line-height:1.45;color:var(--ink)}
+.defn p+p{margin-top:8px;color:var(--ink-2)}
+</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering · Stack #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 02: Go and Postgres behind the app</div>
+  <h1>Which stack for <em>AI and blockchain?</em></h1>
+  <div class="stage">
+    <div class="sr"><div class="job"><b>AI features</b><span>chat, search, agents</span></div><div class="def"><span class="lab">DEFAULT</span><b>Model API + your backend + Postgres with pgvector + evals</b><span class="why">most AI features are calls, context and evals, not training</span></div><div class="els"><span class="lab">PICK SOMETHING ELSE WHEN</span><p>you train or fine-tune → <b>Python (PyTorch)</b>; tens of millions of vectors → <b>a vector database</b></p></div></div>
+    <div class="sr"><div class="job"><b>Smart contracts</b><span>tokens, payments, access rules</span></div><div class="def"><span class="lab">DEFAULT</span><b>Solidity + Foundry + viem (EVM chains)</b><span class="why">the most auditors, tools and audited libraries (OpenZeppelin)</span></div><div class="els"><span class="lab">PICK SOMETHING ELSE WHEN</span><p>building on Solana for speed and low fees → <b>Rust + Anchor</b></p></div></div>
+    <div class="defn"><p><b>Embedding</b>: a list of numbers that captures what a text means, so similar texts get similar numbers.</p><p>Example: "refund my order" and "I want my money back" get close numbers, so a search for one finds the other.</p></div>
+  </div>
+  <div class="next">next <b>→</b> where the usual pick hurts</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>3 / 5</span></div>
+</div></body></html>

@@ -48,6 +48,6 @@ Keep in mind when you aim for the next level
 Takeaway
 Junior owns a task, mid owns a feature, senior owns the outcome.
 
-Next: how to learn a new technology fast.
+Next: new stack, new codebase. How to get productive fast.
 
 #DeveloperGrowth #SoftwareEngineering #CareerGrowth #SeniorEngineer #Programming

@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--swe)}
+h1{font-size:56px;max-width:20ch}
+.stage{justify-content:center;gap:10px;padding-top:6px}
+.intro{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center;margin-bottom:2px}
+.br{display:grid;grid-template-columns:270px 1fr 160px;gap:18px;align-items:center;background:color-mix(in srgb,#F87171 8%,var(--panel));border:1px solid color-mix(in srgb,#F87171 45%,transparent);border-radius:12px;padding:13px 18px}
+.br b{font-size:20px;font-weight:600;line-height:1.25;color:var(--ink)}
+.br .w{font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-2)}
+.ins{font-family:var(--mono);font-size:15px;color:#4ADE80;border-left:1px solid var(--line);padding-left:14px}
+.ins span{display:block;font-size:12px;letter-spacing:.14em;margin-bottom:3px}
+</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering · Stack #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <div class="from"><b>←</b> from 03: AI reuses your stack</div>
+  <h1>Where does <em>the usual pick hurt?</em></h1>
+  <div class="stage">
+    <div class="intro">numbers are illustrative</div>
+    <div class="br"><b>Cross-platform for a hardware-heavy app</b><span class="w">camera, Bluetooth and widgets need native modules anyway: now three languages</span><div class="ins"><span>INSTEAD</span>Swift + Kotlin</div></div>
+    <div class="br"><b>Electron for a tray utility</b><span class="w">say a 150 MB download and 200 MB of RAM to show a menu</span><div class="ins"><span>INSTEAD</span>Tauri</div></div>
+    <div class="br"><b>Rust for a CRUD API</b><span class="w">it waits on the database 90% of the time: slower to change, fewer reviewers</span><div class="ins"><span>INSTEAD</span>Go</div></div>
+    <div class="br"><b>Dashboards on the main Postgres</b><span class="w">a 90-day revenue query scans 50M rows and slows checkout</span><div class="ins"><span>INSTEAD</span>ClickHouse</div></div>
+    <div class="br"><b>A vector database on day one</b><span class="w">50,000 docs in a second store: a deleted contract still shows up in answers</span><div class="ins"><span>INSTEAD</span>pgvector</div></div>
+    <div class="br"><b>Your own token contract</b><span class="w">one missed check and funds are lost; deployed code can't be patched like a server</span><div class="ins"><span>INSTEAD</span>OpenZeppelin</div></div>
+  </div>
+  <div class="next">next <b>→</b> what to remember</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>4 / 5</span></div>
+</div></body></html>

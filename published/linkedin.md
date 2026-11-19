@@ -18,3 +18,4 @@ so the report can join each row to its draft.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2026-10-08 | DSA SERIES #01 | Reclaiming DSA in the Age of AI |  |  |  |  |  |  |  |  |
 | 2026-11-10 | BUILDING #01 | We Shipped Four Platforms From One Codebase. Then We Went Native. |  |  |  |  |  |  |  | carousel.pdf (8 pages); blog live 2026-11-11: muhammadsarmad.com/blog/one-codebase-to-native |
+| 2026-10-08 | AI ENGINEERING #01 | AI Foundations: From "What Is AI" to Inference |  |  |  |  |  |  |  | posting date not confirmed (blog live 2026-10-08): muhammadsarmad.com/blog/ai-foundations |

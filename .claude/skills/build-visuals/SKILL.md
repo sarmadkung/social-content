@@ -45,8 +45,10 @@ optionally only some slides.
    300px wide, cues and footers right. Fix layout problems in the HTML/CSS
    (sizes, spacing, columns) and re-render.
    **If text does not fit even after layout fixes, stop.** Name the slide and
-   the item, and propose shorter wording for `slides.md`. Never shorten or
-   reword text in the HTML yourself.
+   the item, and propose a fix for `slides.md`: split the item, move it to
+   another slide, or change the layout. Propose shorter wording only if it
+   stays a simple, complete phrase (visual skill section 5e), never shorthand.
+   Never shorten or reword text in the HTML yourself.
 7. Run `python3 scripts/validate.py`. There must be no "text not in slides.md"
    error for this post. If there is one, the HTML drifted: fix the HTML to match
    `slides.md`, never the other way round.

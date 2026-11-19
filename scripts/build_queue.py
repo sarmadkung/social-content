@@ -31,12 +31,13 @@ NAMES = {"dsa": "DSA", "ai-engineering": "AI Engineering", "software-engineering
          "business": "For Business", "dev-growth": "Dev Growth"}
 # a pillar with subsections gives its rotation slot to each subsection in turn
 TRACKS = {"software-engineering": ["software-engineering/backend", "software-engineering/web",
-                                   "software-engineering/mobile"]}
+                                   "software-engineering/mobile", "software-engineering/stack"]}
 QUEUED = {"draft", "approved", "scheduled"}
 # pillar folder -> series label, so empty slots read like filled ones
 LABELS = {"dsa": "DSA SERIES", "software-engineering/backend": "SOFTWARE ENGINEERING · BACKEND",
           "software-engineering/web": "SOFTWARE ENGINEERING · WEB",
           "software-engineering/mobile": "SOFTWARE ENGINEERING · MOBILE",
+          "software-engineering/stack": "SOFTWARE ENGINEERING · STACK",
           "system-architecture": "SYSTEM ARCHITECTURE", "ai-engineering": "AI ENGINEERING",
           "dev-growth": "DEV GROWTH", "building": "BUILDING",
           "business": "FOR BUSINESS / SOLUTIONS"}
@@ -46,6 +47,7 @@ ROADMAPS = {"dsa": "01-dsa-problem-solving.md",
             "software-engineering/backend": (SE_ROAD, "Backend roadmap"),
             "software-engineering/web": (SE_ROAD, "Web roadmap"),
             "software-engineering/mobile": (SE_ROAD, "Mobile roadmap"),
+            "software-engineering/stack": (SE_ROAD, "Stack roadmap"),
             "system-architecture": "03-system-design.md", "ai-engineering": "04-ai-engineering.md",
             "dev-growth": "05-dev-growth.md",
             # no roadmap: BUILDING from sources/project-log.md, FOR BUSINESS from

@@ -128,7 +128,7 @@ first and then the HTML. When either one changes, update the other so they match
     2. Can be confidently wrong: the code looks right and still breaks a rule
     3. You must read its output: review is now the main part of the job
     - Bottom: so you **check** the output (*check* in red)
-- Reference line under the panels (mono 16px, ink-3, centred): coming in DEV GROWTH #10: how to review a PR an agent wrote
+- Reference line under the panels (mono 16px, ink-3, centred): coming in DEV GROWTH #07: how to review a PR an agent wrote
 - Next cue: next → where we still type the code ourselves
 - Footer right: `3 / 6`
 
@@ -143,7 +143,7 @@ first and then the HTML. When either one changes, update the other so they match
   1. **The risky core**: money, security checks, concurrency (code that runs at the same time): one wrong line costs a lot
   2. **Hot paths**: code that runs millions of times, where you tune every line
   3. **The first example of a new pattern**: so the agent has a good example to copy
-  4. **Learning**: you write it yourself while you learn a new idea (more in DEV GROWTH #08)
+  4. **Learning**: you write it yourself while you learn a new idea (more in DEV GROWTH #05)
   5. **The bug the agent loops on**: when it tries the same broken fix again and again, you take over
 - Next cue: next → the skills that matter more now
 - Footer right: `4 / 6`

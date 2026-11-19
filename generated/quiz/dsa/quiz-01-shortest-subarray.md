@@ -1,11 +1,11 @@
 SERIES:    DSA QUIZ #01
 TITLE:     Which Pattern Is This? Shortest Subarray With Sum ≥ K
-PILLAR:    DSA & Problem Solving — quiz after DSA #09–#11 (two pointers, sliding window, prefix sum)
+PILLAR:    DSA & Problem Solving — quiz after DSA #06–#07 (two pointers, sliding window, prefix sum)
 LEVEL:     INTERMEDIATE
 MODE:      QUIZ
 FORMAT:    TEXT
 STATUS:    draft
-POST AFTER: DSA SERIES #11 is live
+POST AFTER: DSA SERIES #07 is live
 ---
 Quiz time. No code needed, just the pattern.
 

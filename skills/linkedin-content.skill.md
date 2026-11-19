@@ -354,7 +354,7 @@ real work in `sources/project-log.md`; For Business comes from my own apps in
 | # | Pillar | Series label | Roadmap |
 | --- | --- | --- | --- |
 | 1 | Problem solving | `DSA SERIES #NN` (+ bonus `DSA QUIZ #NN`) | `pillars/01-dsa-problem-solving.md` |
-| 2 | Software engineering | `SOFTWARE ENGINEERING · BACKEND #NN`, `· WEB #NN`, `· MOBILE #NN` (three subsections, each numbered on its own) | `pillars/02-software-engineering.md` (one roadmap section per subsection) |
+| 2 | Software engineering | `SOFTWARE ENGINEERING · BACKEND #NN`, `· WEB #NN`, `· MOBILE #NN`, `· STACK #NN` (four subsections, each numbered on its own) | `pillars/02-software-engineering.md` (one roadmap section per subsection) |
 | 3 | System design | `SYSTEM ARCHITECTURE #NN` | `pillars/03-system-design.md` |
 | 4 | AI engineering | `AI ENGINEERING #NN` | `pillars/04-ai-engineering.md` |
 | 5 | Dev growth | `DEV GROWTH #NN` | `pillars/05-dev-growth.md` |
@@ -505,12 +505,12 @@ system architecture + modern AI engineering.**
 Use recognizable series labels:
 
 ```
-DSA SERIES #07            Hash Maps: The Pattern Behind Two Sum
+DSA SERIES #05            Hash Map Patterns: Two Sum and Group Anagrams
 DSA QUIZ #01              Which Pattern Is This?
 SOFTWARE ENGINEERING · BACKEND #01  Postgres vs MongoDB vs DynamoDB
-SOFTWARE ENGINEERING · MOBILE #03   FlatList vs FlashList
+SOFTWARE ENGINEERING · MOBILE #02   FlatList vs FlashList
 SYSTEM ARCHITECTURE #01   What System Design Actually Is
-AI ENGINEERING #09        Agents Are Software, Not Magic
+AI ENGINEERING #05        Agents Are a Loop: Agent vs Workflow
 DEV GROWTH #02            Junior vs Mid vs Senior: What Actually Changes
 BUILDING #01              <a real project story, from the project log>
 SOLUTIONS #01             <a system blueprint, with one call to action>

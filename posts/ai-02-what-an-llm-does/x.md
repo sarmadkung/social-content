@@ -28,6 +28,6 @@ That explains a lot:
 ---
 Takeaway: an LLM predicts likely text, one token at a time. Give it the facts it needs and check what must be right.
 
-Next: tokens and context windows.
+Next: what the model sees in one call.
 
 #AIEngineering #LLM

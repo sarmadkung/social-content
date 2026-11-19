@@ -8,5 +8,6 @@ posts/*/carousel.pdf
 # Post images — rendered from posts/*/src/*.html (./render.sh), so not committed.
 # Exceptions: images with no HTML source can't be regenerated, so they stay tracked.
 posts/*/*.png
+archive/**/*.png
+archive/**/carousel.pdf
 !posts/dsa-01-reclaiming-dsa/cover-1.png
-!posts/growth-12-know-your-stack-and-product/cover.png

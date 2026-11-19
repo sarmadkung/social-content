@@ -409,12 +409,38 @@ loss, token …), it explains it in full, in simple words:
 4. Body-sized text (19–22px, sans), not tertiary micro-text: the definition
    is content, not a caption.
 
+## 5e. Readable slide text, not compressed notes
+
+Slide text is read on a phone by someone who may skip the caption. Each line
+must carry its full message in simple words.
+
+1. **A phrase a reader understands alone.** Keep the subject and the verb
+   and say the result. "compiled, all cores" → "compiled to machine code, so
+   it uses every CPU core". "cheaper now" → "an agent writes it in a day, so
+   this costs much less".
+2. **No shorthand.** No arrows, slashes, `e.g.`, `vs`, `w/` or symbols in
+   place of words, and no stacked nouns ("runtime cost bill impact"). Arrows
+   are fine only as drawn connectors in a diagram.
+3. **Examples are complete and concrete:** a real tool, a real number, and
+   what happens ("a 2 GB CSV import that takes 40 minutes on one thread"),
+   never "e.g. big import → slow".
+4. **Worth adding.** Every line teaches something the reader needs for the
+   slide's question. Cut a line that adds nothing; never cut the words that
+   carry the meaning.
+5. **Too long? Split, don't squeeze.** Make two items, move the point to
+   another slide or to the post text, or change the layout. Never compress
+   the wording into notes to make it fit.
+6. **Test:** read each line aloud by itself. If a reader would ask "meaning
+   what?" or "so what?", rewrite it.
+
 ## 6. Review checklist
 
 Before returning any image, verify each:
 
 0. Every term a beginner may not know has a full plain definition and a
-   complete example (section 5d).
+   complete example (section 5d). Every line reads as a simple, complete
+   phrase with a concrete example where one helps, not compressed notes
+   (section 5e).
 1. Headline is 8 words or fewer.
 2. Ground is `#0A0C10`; no light variant slipped in.
 3. Exactly one accent on the canvas, and green only where it means correct.

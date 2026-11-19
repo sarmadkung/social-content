@@ -3,7 +3,7 @@ title: "Seniority grows by scope, not years of experience"
 description: "What really changes from junior to mid-level to senior developer: how big a problem you can own, shown with one bug fixed three ways."
 date: 2026-11-03
 series: "Dev Growth"
-seriesNumber: 1
+seriesNumber: 2
 slug: growth-02-junior-mid-senior
 tags: [career, developer-growth, seniority, software-engineering]
 cover: cover.png

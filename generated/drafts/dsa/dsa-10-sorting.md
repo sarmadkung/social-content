@@ -1,0 +1,70 @@
+SERIES:    DSA SERIES #10
+TITLE:     Sorting: stable, in-place, and the comparator that bites everyone
+PILLAR:    DSA & Problem Solving — for juniors who use sort() daily and mid-levels who get asked "which sort, and why"
+LEVEL:     INTERMEDIATE
+MODE:      TEACH
+FORMAT:    VISUAL
+HEADLINE:  sort() does not sort numbers
+LAYOUT:    STATEMENT
+STATUS:    draft
+VARIANT:   C (source mode)
+VISUALS:   1 = Example · 2 = Three properties decide which sort you want: · 3 = Key properties · rest = text
+---
+[1, 10, 2].sort() gives you [1, 10, 2].
+Not a bug. JavaScript converted every element to a string first.
+
+[FACT_CHECK: [1, 10, 2].sort() gives [1, 10, 2] because the default sort compares strings → MDN Array.prototype.sort]
+
+What is it?
+Sorting puts elements in order. Every language ships one. Almost nobody reads what theirs actually does.
+
+Three properties decide which sort you want:
+
+Stable — equal elements keep their original order. Sort by date, then by author, and a stable sort keeps the dates in order inside each author. An unstable one scrambles them.
+
+In-place — it sorts inside the array instead of allocating a second one. O(1) extra space instead of O(n).
+
+Comparison-based — it works by comparing pairs, so in the worst case it can never beat O(n log n). Counting sort and radix sort beat that by not comparing at all, but they need keys like small integers or fixed-length strings.
+
+Why do we need it?
+Sorted data makes other things possible. Binary search needs it. Two pointers usually needs it. Deduplication becomes one pass. Merging two datasets becomes one pass.
+
+Key properties
+→ Merge sort: O(n log n), stable, needs O(n) extra space
+→ Quicksort: O(n log n) average, O(n²) worst, in-place, not stable
+→ Heapsort: O(n log n) always, in-place, not stable
+→ Timsort (Python, Java objects, V8): merge + insertion hybrid, stable, fast on partly-sorted real data
+
+[FACT_CHECK: Timsort is used by Python, Java (objects) and V8 → Python listsort.txt, Java Arrays.sort(Object[]) docs, v8.dev blog "Getting things sorted in V8" (2018)]
+
+Example
+// the default comparator is lexicographic
+[1, 10, 2].sort();              // [1, 10, 2]
+[1, 10, 2].sort((a, b) => a - b); // [1, 2, 10]
+
+// a comparator must return a number, not a boolean
+arr.sort((a, b) => a.age > b.age);      // wrong: true/false
+arr.sort((a, b) => a.age - b.age);      // right: negative/zero/positive
+
+[FACT_CHECK: a boolean comparator is wrong in JS sort (it must return negative/zero/positive) → MDN Array.prototype.sort compareFn]
+
+Spot it when the problem says…
+→ "pairs", "duplicates", "closest" or "overlapping intervals" on unsorted data
+→ order helps but the input has none: sort first, then two pointers or binary search
+→ the limits allow O(n log n) but not O(n²)
+
+Keep in mind when you call sort()
+→ Sorting numbers in JS? Always pass a comparator.
+→ Return a - b, never a > b: the sign is the answer.
+→ Strings: use a.localeCompare(b). a - b gives NaN.
+→ sort() changes the array. Use toSorted() to keep the original.
+→ Need only the min or max? One O(n) pass beats an O(n log n) sort.
+
+The interview takeaway
+"Which sorting algorithm" is rarely the real question. The real one is: does your data have structure the sort can exploit, do you need stability, and can you afford the extra array? Answer those three and the algorithm picks itself.
+
+What is the worst sorting bug you have shipped?
+
+Next: 7 array and string problems, and the pattern that solves each.
+
+#Algorithms #DataStructures #Sorting #CodingInterviews #ProblemSolving

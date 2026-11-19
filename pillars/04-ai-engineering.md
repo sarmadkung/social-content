@@ -16,37 +16,32 @@ master prompt. Never more than 4 TEACH posts in a row.
 
 ### Foundations
 - #01 AI foundations: AI vs ML vs deep learning, what a model is, neural networks, how a model learns, training vs inference (one post, one image per idea) · TEACH · needs —
-- #02 What an LLM actually does (next-token prediction, plainly) · TEACH · needs #01
-- #03 Tokens and context windows · TEACH · needs #02
-- #04 Prompts vs system prompts · COMPARE · needs #03
-- #05 Temperature: why the same prompt gives different answers · WHY · needs #02
-- #06 Embeddings: turning text into numbers · TEACH · needs #03
+- #02 What an LLM actually does: tokens, the next-token loop, logits and softmax, temperature, top-k and top-p · TEACH · needs #01
+- #03 What the model sees in one call: system prompt, user prompt, chat history, documents and the context window · TEACH · needs #02
 
 ### Building LLM apps
-- #07 Structured output (getting JSON you can trust) · TEACH · needs #04
-- #08 Tool calling (function calling) · TEACH · needs #07
-- #09 Agents are software, not magic · WHY · needs #08
-- #10 RAG: Retrieval-Augmented Generation · TEACH · needs #03, #06
-- #11 Vector databases and similarity search · TEACH · needs #06, #10
-- #12 Chunking strategies for RAG · TEACH · needs #10, #11
-- #13 RAG vs fine-tuning vs long context · COMPARE · needs #01, #10
+- #04 Structured output and tool calling: JSON you can trust, and how a model asks your code to act · TEACH · needs #03
+- #05 Agents are software: the loop, and agent vs workflow · COMPARE · needs #04
+- #06 Embeddings and vector search: similarity, ANN indexes (IVF, HNSW), vector databases · TEACH · needs #02
+- #07 RAG and chunking: retrieval at question time, how to cut documents, testing retrieval · TEACH · needs #03, #06
+- #08 RAG vs fine-tuning vs long context · COMPARE · needs #01, #07
 
 ### Agents
-- #14 Agent vs workflow: which one do you need · COMPARE · needs #09
-- #15 Context engineering · TEACH · needs #03, #14
-- #16 AI memory: short-term vs long-term · COMPARE · needs #15
-- #17 Multi-agent systems (and when not to use them) · TEACH · needs #14
-- #18 MCP (Model Context Protocol) in plain English · TEACH · needs #08
-- #19 5 reasons AI agents fail in production · LIST · needs #14–#18
+- #09 Context engineering · TEACH · needs #03, #05
+- #10 AI memory: short-term vs long-term · COMPARE · needs #09
+- #11 Multi-agent systems (and when not to use them) · TEACH · needs #05
+- #12 MCP (Model Context Protocol) in plain English · TEACH · needs #04
+- #13 5 reasons AI agents fail in production · LIST · needs #05, #09–#12
 
 ### Production
-- #20 Evaluating LLM output (evals) · TEACH · needs #02
-- #21 Hallucinations: why they happen and how to defend · WHY · needs #02, #10
-- #22 Cost and latency: caching, model choice, batching · TEACH · needs #03
-- #23 Prompt injection and AI security basics · TEACH · needs #04, #08
-- #24 Observability for AI systems · TEACH · needs #20
-- #25 Your LLM app is accurate but too expensive. What do you change first? · SCENARIO · needs #22
-- #26 Choosing a model · LIST · needs #20, #22
+- #14 Evaluating LLM output (evals) · TEACH · needs #02
+- #15 Hallucinations: why they happen and how to defend · WHY · needs #02, #07
+- #16 Your LLM app is accurate but too expensive. What do you change first? (caching, model choice, batching, latency) · SCENARIO · needs #03, #14
+- #17 Prompt injection and AI security basics · TEACH · needs #03, #04
+- #18 Observability for AI systems · TEACH · needs #14
+- #19 Choosing a model · LIST · needs #14, #16
+
+Merged on 2026-11-19 (old → new): #02 + #05 + the token half of #03 → #02 · #03 (context window) + #04 → #03 · #07 + #08 → #04 · #09 + #14 → #05 · #06 + #11 → #06 · #10 + #12 → #07 · #13 → #08 · #15 → #09 · roadmap #22 (cost and latency) + #25 (too-expensive scenario) → #16. Old drafts are in `archive/merged-2026-11-19/`.
 
 ## Content opportunities
 A project decision [PERSONAL] · A failure mode · Architecture diagram · Cost trade-off

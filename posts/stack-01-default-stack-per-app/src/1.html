@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../templates/variant-b/base.css">
+<style>
+:root{--accent:var(--swe)}
+h1{font-size:56px;max-width:20ch}
+.stage{justify-content:center;gap:14px;padding-top:8px}
+.intro{font-family:var(--mono);font-size:18px;color:var(--ink-2);text-align:center}
+.sr{display:grid;grid-template-columns:190px 1fr 250px;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.sr .job b{display:block;font-size:24px;font-weight:600;color:var(--ink);line-height:1.2}
+.sr .job span{display:block;margin-top:6px;font-family:var(--mono);font-size:15px;color:var(--ink-2);line-height:1.35}
+.sr .lab{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--accent);margin-bottom:6px}
+.sr .def b{display:block;font-size:22px;font-weight:600;color:var(--ink);line-height:1.25}
+.sr .def span.why{display:block;margin-top:6px;font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-2)}
+.sr .els{border-left:1px solid var(--line);padding-left:18px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.sr .els .lab{color:var(--ink-3);font-size:12px;letter-spacing:.1em}
+.sr .els p{font-family:var(--mono);font-size:15px;line-height:1.4;color:var(--ink-2)}
+.sr .els p b{color:var(--ink);font-weight:500}
+.ref{font-family:var(--mono);font-size:15px;color:var(--ink-3);text-align:center}
+</style></head><body>
+<div class="frame">
+  <div class="series">Software Engineering · Stack #01<span class="brand"><img src="../../../brand/truelogics-icon.svg" alt=""><img src="../../../brand/truelogics-logo.svg" alt="truelogics"></span></div>
+  <h1>Which stack for <em>web, mobile and desktop?</em></h1>
+  <div class="stage">
+    <div class="intro">my defaults in 2026: opinions with reasons, not rules</div>
+    <div class="sr"><div class="job"><b>Web app</b><span>SaaS, dashboards</span></div><div class="def"><span class="lab">DEFAULT</span><b>TypeScript + React (Next.js) + Postgres</b><span class="why">one language for UI and server, the biggest library and hiring pool</span></div><div class="els"><span class="lab">PICK SOMETHING ELSE WHEN</span><p>mostly content (blog, docs) → <b>Astro</b></p></div></div>
+    <div class="sr"><div class="job"><b>Mobile app</b><span>iOS and Android</span></div><div class="def"><span class="lab">DEFAULT</span><b>Swift (SwiftUI) + Kotlin (Compose)</b><span class="why">new OS features on day one, no extra layer between code and phone</span></div><div class="els"><span class="lab">PICK SOMETHING ELSE WHEN</span><p>simple screens, tiny team, no hardware work → <b>React Native or Flutter</b></p></div></div>
+    <div class="sr"><div class="job"><b>Desktop app</b><span>macOS, Windows, Linux</span></div><div class="def"><span class="lab">DEFAULT</span><b>Tauri (Rust core + web UI)</b><span class="why">uses the OS's own web view, so the installer is a few MB</span></div><div class="els"><span class="lab">PICK SOMETHING ELSE WHEN</span><p>same rendering everywhere or Node.js libraries → <b>Electron</b></p></div></div>
+    <div class="ref">more in WEB #01 and MOBILE #01</div>
+  </div>
+  <div class="next">next <b>→</b> what runs behind the app</div>
+  <div class="foot"><span><b>Muhammad Sarmad</b> · Senior Software Engineer</span><span>1 / 5</span></div>
+</div></body></html>

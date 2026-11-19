@@ -45,7 +45,7 @@ A compiler follows fixed rules. Same input, same output, every time, and it is a
 An agent makes a best guess. Ask twice and you can get different code. The code can look right and still break a rule.
 → Compiler: fixed rules → you trust the output.
 → Agent: a best guess → you check the output.
-So reading code did not become optional. Reviewing it is now the main part of the job. Later in this series, DEV GROWTH #10 shows how to review a PR an agent wrote.
+So reading code did not become optional. Reviewing it is now the main part of the job. Later in this series, DEV GROWTH #07 shows how to review a PR an agent wrote.
 Takeaway: you can trust a compiler. You must check an agent.
 
 What do we still write by hand?
@@ -53,7 +53,7 @@ Assembly never died. It lives where every detail matters: boot code, drivers and
 → The risky core: money, security checks, and code that runs at the same time (concurrency). One wrong line costs a lot.
 → Hot paths: code that runs millions of times, where you tune every line.
 → The first example of a new pattern, so the agent has a good one to copy.
-→ Learning: you type it yourself while a new idea sinks in (more in DEV GROWTH #08).
+→ Learning: you type it yourself while a new idea sinks in (more in DEV GROWTH #05).
 → The bug the agent keeps looping on: when it tries the same broken fix again and again, you take over.
 Takeaway: type code by hand where one wrong line costs the most.
 

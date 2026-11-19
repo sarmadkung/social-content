@@ -7,7 +7,7 @@ FORMAT:    VISUAL
 HEADLINE:  Nine ideas under every AI system
 LAYOUT:    GRID
 VISUALS:   1 = AI vs ML vs deep learning · 2 = Data: what a model learns from · 3 = What a model actually is · 4 = What a model can give back · 5 = Neural networks: why deep means many layers · 6 = How a model learns: guess, measure, adjust · 7 = Three ways a model can learn · 8 = Memorising is not learning · 9 = Training vs inference · rest = text
-STATUS:    draft
+STATUS:    published
 ---
 You correct a chat model. It says "thanks, noted". Tomorrow, in a new chat, it makes the same mistake. It did not forget. It never learned.
 
@@ -82,8 +82,6 @@ Training vs inference
 → Inference happens on every call. With a hosted model API you pay for it per token (a small piece of text, about a word or part of one). A big model runs billions of weights for each answer, so every call costs real compute.
 → So the chat model never learned from your correction. A chat feels like it remembers because the app sends the whole conversation again with each message. New chat, no history, same mistake. Some apps also save notes about you and add them to the input, but that is still input. The weights never change.
 → Fine-tuning is more training on a trained model, with your own examples. It gives you a new version of the model. Do not start there: most products only need inference with good prompts.
-
-[FACT_CHECK: APIs bill per token, with input and output tokens priced separately → OpenAI and Anthropic pricing pages]
 
 Keep in mind when you start building with models
 → The model won't learn from use. Send what it needs on every call.
